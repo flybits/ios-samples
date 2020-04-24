@@ -1,6 +1,11 @@
-# Anonymous Connection
-This project is to show how simple it is to connect anonymously to Flybits using the Flybits SDKs.
+# iOS Samples
+The idea of this repository is to provide a variety of iOS sample codes using Flybits SDKs.
+All samples provided here will require you to have at least a tenant/project create on [Flybits Developer Portal](https://devportal.flybits.com/)
 
-To be able to use this sample you only need to provide the Project Identifier that you wish to connect.
+# Connection
+It is possible to connect to Flybits via multiple interfaces, that's why we have the `IDP` protocol. Not only the protocol but the SDKs provide a gamma of embbed options such like:
 
-To get a project Identifier you need to create a tenant on [Flybits Developer Portal](https://devportal.flybits.com/)
+- [AnonymousIDP](Connection/Anonymous-Connect)
+
+
+
