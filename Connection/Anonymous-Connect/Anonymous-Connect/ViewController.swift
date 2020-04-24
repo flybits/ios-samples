@@ -19,7 +19,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Validate if there is already a previous connection
         if FlybitsManager.isConnected {
+            // In case there is a previous connection don't allow to connect again.
+            // The desirable scenario is always disconnect before start another connection
             UIView.animate(withDuration: self.animationTimeInterval) {
                 self.connectButton.isHidden = true
                 self.discconnectButton.isHidden = false
@@ -34,7 +37,9 @@ class ViewController: UIViewController {
             return
         }
 
-        FlybitsManager.connect(AnonymousIDP(), projectId: projectId) { (user, error) in
+        let anonIDP = AnonymousIDP()
+
+        FlybitsManager.connect(anonIDP, projectId: projectId) { (user, error) in
             guard let user = user else {
                 let errorNonNil: Error
 
@@ -104,6 +109,7 @@ class ViewController: UIViewController {
     }
 }
 
+/// Extension added to override the basic implementation and avoid have too much code on the sample code
 extension User: CustomStringConvertible {
     override public var description: String {
         return """
