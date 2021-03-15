@@ -1,16 +1,16 @@
 PODS:
-  - FlybitsSDK (3.3.1)
+  - FlybitsSDK (3.6)
 
 DEPENDENCIES:
   - FlybitsSDK (~> 3.0)
 
 SPEC REPOS:
-  https://github.com/flybits/Spec-Xcode-11.3.1.git:
+  trunk:
     - FlybitsSDK
 
 SPEC CHECKSUMS:
-  FlybitsSDK: eaed244bd33fa931c9b5318c0f400f6d9a40a6c8
+  FlybitsSDK: 1623874535fb4dcc823c97b0355027988e3d8002
 
-PODFILE CHECKSUM: 1eab852dd33d6439a1139b83e62a3fd7cd149be9
+PODFILE CHECKSUM: 058485e69cf3f34a2a1ee821a2e35391b1b3f527
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.10.1

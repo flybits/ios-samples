@@ -1,0 +1,1929 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3.2 effective-4.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-module-flags: -target armv7s-apple-ios9.0 -enable-objc-interop -enable-library-evolution -swift-version 4.2 -enforce-exclusivity=checked -O -module-name FlybitsSDK
+import CoreData
+import CoreLocation
+import Dispatch
+@_exported import FlybitsSDK
+import Foundation
+import MobileCoreServices
+import Swift
+import SystemConfiguration
+import UIKit
+public enum DictionaryConvertibleError : Swift.Int, FlybitsSDK.ErrorConformable {
+  case notImplemented
+  public static var Domain: Swift.String {
+    get
+  }
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public protocol DictionaryConvertible {
+  func toDictionary() throws -> [Swift.String : Any]
+}
+extension DictionaryConvertible {
+  public func toDictionary() throws -> [Swift.String : Any]
+}
+public protocol AnalyticsContext {
+  var viewed: Swift.Bool? { get set }
+  var engaged: Swift.Bool? { get set }
+  var componentEngaged: Swift.Bool? { get set }
+  var componentId: Swift.String { get set }
+  var pluginId: Swift.String { get }
+  func valuesDictionary() -> [Swift.String : Swift.Bool]
+}
+public protocol FulfillableAnalyticsContext : FlybitsSDK.AnalyticsContext {
+  var fulfilled: Swift.Bool? { get set }
+  var componentFulfilled: Swift.Bool? { get set }
+}
+public enum CachePolicy : Swift.Int {
+  case none
+  case cachedAndServerData
+  case cachedOrServerData
+  case onlyCachedData
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class CacheManager : ObjectiveC.NSObject {
+  public static let shared: FlybitsSDK.CacheManager
+  final public var policy: FlybitsSDK.CachePolicy
+  final public var limit: Swift.Int
+  final public var expirationTimeInterval: Foundation.TimeInterval? {
+    get
+    set
+  }
+  final public func save(_ data: Foundation.Data, for urlString: Swift.String)
+  final public func read(_ urlString: Swift.String) -> Foundation.Data?
+  final public func deleteAll()
+  @objc deinit
+}
+public protocol FlybitsQuery : FlybitsSDK.DictionaryConvertible, Swift.CustomDebugStringConvertible {
+  var pager: FlybitsSDK.Pager? { get set }
+  func toDictionary() throws -> [Swift.String : Any]
+  func toURLParams() -> Swift.String?
+  init(_ pager: FlybitsSDK.Pager?)
+}
+extension FlybitsQuery {
+  public func toDictionary() throws -> [Swift.String : Any]
+  public func toURLParams() -> Swift.String?
+  public var debugDescription: Swift.String {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+}
+@objc open class Query : ObjectiveC.NSObject, FlybitsSDK.FlybitsQuery, FlybitsSDK.DictionaryConvertible {
+  public var pager: FlybitsSDK.Pager?
+  required public init(_ pager: FlybitsSDK.Pager? = nil)
+  open func toDictionary() throws -> [Swift.String : Any]
+  public func toURLParams() -> Swift.String?
+  @objc override dynamic open var debugDescription: Swift.String {
+    @objc get
+  }
+  @objc override dynamic open var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc public class JwtIDP : ObjectiveC.NSObject, FlybitsSDK.IDP {
+  public init(token: Swift.String)
+  @objc public var projectID: Swift.String? {
+    @objc get
+  }
+  @objc public var authenticationEndPoint: Swift.String {
+    @objc get
+  }
+  @objc public var provider: Swift.String {
+    @objc get
+  }
+  @objc public var requestBody: Swift.String {
+    @objc get
+  }
+  @objc public var requestHeaders: [Swift.String : Swift.String] {
+    @objc get
+  }
+  @objc public var requestMethod: FlybitsSDK.RequestMethod {
+    @objc get
+  }
+  @objc public func didAuthenticate(user: FlybitsSDK.User)
+  @objc required convenience public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc public class OAuthIDP : ObjectiveC.NSObject, FlybitsSDK.IDP {
+  @objc public enum SupportedIDP : Swift.Int {
+    case Facebook
+    case Google
+    case Okta
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public init(provider: Swift.String, accessToken: Swift.String, clientID: Swift.String? = nil)
+  convenience public init(supportedIDP: FlybitsSDK.OAuthIDP.SupportedIDP, accessToken: Swift.String, clientID: Swift.String? = nil)
+  @objc public var provider: Swift.String {
+    @objc get
+  }
+  @objc public var projectID: Swift.String? {
+    @objc get
+  }
+  @objc public var authenticationEndPoint: Swift.String {
+    @objc get
+  }
+  @objc public var requestBody: Swift.String {
+    @objc get
+  }
+  @objc required convenience public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc deinit
+  @objc override dynamic public init()
+}
+public class LocalizedObject<T> : Swift.CustomStringConvertible, FlybitsSDK.DictionaryConvertible {
+  public var totalLocalizations: Swift.Int {
+    get
+  }
+  public var localizations: [Foundation.Locale] {
+    get
+  }
+  public init(key: Swift.String, localizations: [Swift.String : [Swift.String : Any]]?, defaultLocale: Foundation.Locale = Locale.current, decodeHTML: Swift.Bool = false)
+  public func toDictionary() throws -> [Swift.String : Any]
+  public static func toDictionary(_ localizedObjects: [FlybitsSDK.LocalizedObject<Swift.String>]) -> [Swift.String : [Swift.String : Swift.String]]?
+  public init(unlocalizedValue: T)
+  public var defaultLocale: Foundation.Locale {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+  public var defaultValue: T? {
+    get
+  }
+  public var value: T? {
+    get
+  }
+  public var isUnlocalized: Swift.Bool {
+    get
+  }
+  public func removeUnlocalizedValue()
+  public func update(localizations: [Swift.String : [Swift.String : Any]]?, forKey key: Swift.String, defaultLocale defaultLocaleValue: Foundation.Locale, decodeHTML: Swift.Bool = false) throws
+  public func value(for locale: Foundation.Locale) throws -> T?
+  public func add(_ locale: Foundation.Locale, item: T, isDefault: Swift.Bool = false) throws
+  public func remove(_ locale: Foundation.Locale) throws
+  public func has(_ locale: Foundation.Locale) -> Swift.Bool
+  public func has(_ languageCode: Swift.String) -> Swift.Bool
+  @objc deinit
+}
+extension String {
+  public func toRTF() -> Swift.String
+}
+@_inheritsConvenienceInitializers public class Paged<T> : ObjectiveC.NSObject, FlybitsSDK.DictionaryConvertible where T : FlybitsSDK.ResponseObjectSerializable {
+  public typealias Element = T
+  public var elements: [FlybitsSDK.Paged<T>.Element]
+  public var pager: FlybitsSDK.Pager
+  @objc override dynamic public init()
+  public init(elements: [FlybitsSDK.Paged<T>.Element]? = nil, pager: FlybitsSDK.Pager? = nil, urlRequest: Foundation.URLRequest? = nil)
+  public func getNext(appends: Swift.Bool = true, completion: @escaping (FlybitsSDK.Paged<FlybitsSDK.Paged<T>.Element>?, Swift.Error?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest?
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class Operation : Foundation.Operation {
+  @available(*, deprecated, message: "use BlockObserver completions instead")
+  @objc override dynamic open var completionBlock: (() -> Swift.Void)? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc deinit
+  @objc override dynamic open func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
+  @objc override dynamic open var isReady: Swift.Bool {
+    @objc get
+  }
+  open var userInitiated: Swift.Bool {
+    get
+    set
+  }
+  @objc override dynamic open var isExecuting: Swift.Bool {
+    @objc get
+  }
+  @objc override dynamic open var isFinished: Swift.Bool {
+    @objc get
+  }
+  @objc override dynamic open var isCancelled: Swift.Bool {
+    @objc get
+  }
+  open func addObserver(_ observer: FlybitsSDK.OperationObserver)
+  @objc override dynamic open func addDependency(_ operation: Foundation.Operation)
+  @objc override final public func main()
+  open func execute()
+  open var errors: [Foundation.NSError] {
+    get
+  }
+  @objc override dynamic open func cancel()
+  open func cancelWithErrors(_ errors: [Foundation.NSError])
+  open func cancelWithError(_ error: Foundation.NSError)
+  final public func produceOperation(_ operation: Foundation.Operation)
+  final public func finishWithError(_ error: Foundation.NSError?)
+  final public func finish(_ errors: [Foundation.NSError] = [])
+  open func finished(_ errors: [Foundation.NSError])
+  @objc override dynamic open func waitUntilFinished()
+}
+public protocol OperationObserver {
+  func operationDidStart(_ operation: FlybitsSDK.Operation)
+  func operationDidCancel(_ operation: FlybitsSDK.Operation)
+  func operation(_ operation: FlybitsSDK.Operation, didProduceOperation newOperation: Foundation.Operation)
+  func operationDidFinish(_ operation: FlybitsSDK.Operation, errors: [Foundation.NSError])
+}
+@objc public class FlybitsIDP : ObjectiveC.NSObject, FlybitsSDK.IDP {
+  @objc convenience public init(email: Swift.String, password: Swift.String, firstName: Swift.String, lastName: Swift.String, requireAccountActivation: Swift.Bool = false)
+  @objc(initWithEmail:password:requireAccountActivation:) public init(email: Swift.String, password: Swift.String, requireAccountActivation: Swift.Bool = false)
+  @objc public var provider: Swift.String {
+    @objc get
+  }
+  @objc public var projectID: Swift.String? {
+    @objc get
+  }
+  @objc public var authenticationEndPoint: Swift.String {
+    @objc get
+  }
+  @objc public var requestBody: Swift.String {
+    @objc get
+  }
+  public static func requestNewPassword(email: Swift.String, completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public static func changePassword(currentPassword: Swift.String, newPassword: Swift.String, completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public func requestConfirmationEmail(completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest?
+  @objc required convenience public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc deinit
+  @objc override dynamic public init()
+}
+open class XCGLogger : Swift.CustomDebugStringConvertible {
+  public struct Constants {
+    public static let baseIdentifier: Swift.String
+    public static let defaultInstanceIdentifier: Swift.String
+    public static let baseConsoleDestinationIdentifier: Swift.String
+    public static let systemLogDestinationIdentifier: Swift.String
+    public static let fileDestinationIdentifier: Swift.String
+    public static let logQueueIdentifier: Swift.String
+    public static let userInfoKeyTags: Swift.String
+    public static let userInfoKeyDevs: Swift.String
+    public static let userInfoKeyInternal: Swift.String
+    public static let versionString: Swift.String
+    public static let extendedAttributeArchivedLogIdentifierKey: Swift.String
+    public static let extendedAttributeArchivedLogTimestampKey: Swift.String
+  }
+  @objc public enum Level : Swift.Int, Swift.Comparable, Swift.CustomStringConvertible {
+    case verbose
+    case debug
+    case info
+    case warning
+    case error
+    case severe
+    case none
+    public var description: Swift.String {
+      get
+    }
+    public static let all: [FlybitsSDK.XCGLogger.Level]
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public static var `default`: FlybitsSDK.XCGLogger
+  open var identifier: Swift.String
+  open var outputLevel: FlybitsSDK.XCGLogger.Level {
+    get
+    set
+  }
+  open var noMessageClosure: () -> Any?
+  open var levelDescriptions: [FlybitsSDK.XCGLogger.Level : Swift.String]
+  open var formatters: [FlybitsSDK.LogFormatterProtocol]?
+  open var filters: [FlybitsSDK.FilterProtocol]?
+  open class var logQueue: Dispatch.DispatchQueue {
+    get
+  }
+  open var formatter: Foundation.DateFormatter? {
+    get
+    set
+  }
+  open var destinations: [FlybitsSDK.DestinationProtocol]
+  public init(identifier: Swift.String = "", includeDefaultDestinations: Swift.Bool = true)
+  open class func setup(level: FlybitsSDK.XCGLogger.Level = .debug, showLogIdentifier: Swift.Bool = false, showFunctionName: Swift.Bool = true, showThreadName: Swift.Bool = false, showLevel: Swift.Bool = true, showFileNames: Swift.Bool = true, showLineNumbers: Swift.Bool = true, showDate: Swift.Bool = true, writeToFile: Any? = nil, fileLevel: FlybitsSDK.XCGLogger.Level? = nil)
+  open func setup(level: FlybitsSDK.XCGLogger.Level = .debug, showLogIdentifier: Swift.Bool = false, showFunctionName: Swift.Bool = true, showThreadName: Swift.Bool = false, showLevel: Swift.Bool = true, showFileNames: Swift.Bool = true, showLineNumbers: Swift.Bool = true, showDate: Swift.Bool = true, writeToFile: Any? = nil, fileLevel: FlybitsSDK.XCGLogger.Level? = nil)
+  open class func logln(_ closure: @autoclosure () -> Any?, level: FlybitsSDK.XCGLogger.Level = .debug, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open class func logln(_ level: FlybitsSDK.XCGLogger.Level = .debug, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:], closure: () -> Any?)
+  open class func logln(_ level: FlybitsSDK.XCGLogger.Level = .debug, functionName: Swift.String = #function, fileName: Swift.String = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:], closure: () -> Any?)
+  open func logln(_ closure: @autoclosure () -> Any?, level: FlybitsSDK.XCGLogger.Level = .debug, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open func logln(_ level: FlybitsSDK.XCGLogger.Level = .debug, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:], closure: () -> Any?)
+  open func logln(_ level: FlybitsSDK.XCGLogger.Level = .debug, functionName: Swift.String = #function, fileName: Swift.String = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:], closure: () -> Any?)
+  open class func exec(_ level: FlybitsSDK.XCGLogger.Level = .debug, closure: () -> () = {})
+  open func exec(_ level: FlybitsSDK.XCGLogger.Level = .debug, closure: () -> () = {})
+  open func logAppDetails(selectedDestination: FlybitsSDK.DestinationProtocol? = nil)
+  open class func verbose(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open class func verbose(_ closure: @autoclosure () -> Any?, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open class func verbose(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:], closure: () -> Any?)
+  open func verbose(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open func verbose(_ closure: @autoclosure () -> Any?, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open func verbose(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:], closure: () -> Any?)
+  open class func debug(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open class func debug(_ closure: @autoclosure () -> Any?, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open class func debug(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:], closure: () -> Any?)
+  open func debug(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open func debug(_ closure: @autoclosure () -> Any?, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open func debug(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:], closure: () -> Any?)
+  open class func info(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open class func info(_ closure: @autoclosure () -> Any?, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open class func info(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:], closure: () -> Any?)
+  open func info(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open func info(_ closure: @autoclosure () -> Any?, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open func info(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:], closure: () -> Any?)
+  open class func warning(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open class func warning(_ closure: @autoclosure () -> Any?, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open class func warning(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:], closure: () -> Any?)
+  open func warning(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open func warning(_ closure: @autoclosure () -> Any?, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open func warning(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:], closure: () -> Any?)
+  open class func error(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open class func error(_ closure: @autoclosure () -> Any?, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open class func error(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:], closure: () -> Any?)
+  open func error(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open func error(_ closure: @autoclosure () -> Any?, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open func error(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:], closure: () -> Any?)
+  open class func severe(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open class func severe(_ closure: @autoclosure () -> Any?, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open class func severe(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:], closure: () -> Any?)
+  open func severe(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open func severe(_ closure: @autoclosure () -> Any?, functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:])
+  open func severe(_ functionName: Swift.StaticString = #function, fileName: Swift.StaticString = #file, lineNumber: Swift.Int = #line, userInfo: [Swift.String : Any] = [:], closure: () -> Any?)
+  open class func verboseExec(_ closure: () -> () = {})
+  open func verboseExec(_ closure: () -> () = {})
+  open class func debugExec(_ closure: () -> () = {})
+  open func debugExec(_ closure: () -> () = {})
+  open class func infoExec(_ closure: () -> () = {})
+  open func infoExec(_ closure: () -> () = {})
+  open class func warningExec(_ closure: () -> () = {})
+  open func warningExec(_ closure: () -> () = {})
+  open class func errorExec(_ closure: () -> () = {})
+  open func errorExec(_ closure: () -> () = {})
+  open class func severeExec(_ closure: () -> () = {})
+  open func severeExec(_ closure: () -> () = {})
+  open func destination(withIdentifier identifier: Swift.String) -> FlybitsSDK.DestinationProtocol?
+  @discardableResult
+  open func add(destination: FlybitsSDK.DestinationProtocol) -> Swift.Bool
+  @discardableResult
+  open func remove(destination: FlybitsSDK.DestinationProtocol) -> Swift.Bool
+  @discardableResult
+  open func remove(destinationWithIdentifier identifier: Swift.String) -> Swift.Bool
+  open func isEnabledFor(level: FlybitsSDK.XCGLogger.Level) -> Swift.Bool
+  open var debugDescription: Swift.String {
+    get
+  }
+  @objc deinit
+}
+public func < (lhs: FlybitsSDK.XCGLogger.Level, rhs: FlybitsSDK.XCGLogger.Level) -> Swift.Bool
+@objc public protocol FlybitsScope : Foundation.NSCoding {
+  @objc optional func onStart(currentActiveUserIsOptedIn: Swift.Bool)
+  @objc optional func onStop()
+  @objc func onConnected(user: FlybitsSDK.User)
+  @objc func onDisconnected(jwtToken: Swift.String)
+  @objc func onAccountDestroyed(jwtToken: Swift.String)
+  @objc func onOptIn()
+  @objc func onOptOut()
+  @objc var identifier: Swift.String { get }
+}
+open class UserInfoFilter : FlybitsSDK.FilterProtocol {
+  open var userInfoKey: Swift.String
+  open var applyFilterToInternalMessages: Swift.Bool
+  open var inverse: Swift.Bool
+  public init<S>(includeFrom items: S) where S : Swift.Sequence, S.Element == Swift.String
+  public init<S>(excludeFrom items: S) where S : Swift.Sequence, S.Element == Swift.String
+  @discardableResult
+  open func add(item: Swift.String) -> Swift.Bool
+  open func add<S>(items: S) where S : Swift.Sequence, S.Element == Swift.String
+  open func clear()
+  open func shouldExclude(logDetails: inout FlybitsSDK.LogDetails, message: inout Swift.String) -> Swift.Bool
+  open var debugDescription: Swift.String {
+    get
+  }
+  @objc deinit
+}
+@_inheritsConvenienceInitializers open class TagFilter : FlybitsSDK.UserInfoFilter {
+  override public init<S>(includeFrom tags: S) where S : Swift.Sequence, S.Element == Swift.String
+  override public init<S>(excludeFrom tags: S) where S : Swift.Sequence, S.Element == Swift.String
+  @objc deinit
+}
+@_inheritsConvenienceInitializers open class ConsoleDestination : FlybitsSDK.BaseQueuedDestination {
+  override open func write(message: Swift.String)
+  override public init(owner: FlybitsSDK.XCGLogger? = super, identifier: Swift.String = super)
+  @objc deinit
+}
+public class CoreDataManager {
+  public init(bundleClass: Swift.AnyClass, modelName: Swift.String, storeName: Swift.String)
+  public var applicationDocumentsDirectory: Foundation.URL {
+    get
+    set
+  }
+  public var persistentStoreCoordinator: CoreData.NSPersistentStoreCoordinator? {
+    get
+    set
+  }
+  public var managedObjectContext: CoreData.NSManagedObjectContext? {
+    get
+    set
+  }
+  public func entity<T>(from description: Swift.String) -> T? where T : CoreData.NSManagedObject
+  public func insertObject(with name: Swift.String) -> CoreData.NSManagedObject?
+  public func fetchObjects(with name: Swift.String, predicate: Foundation.NSPredicate? = nil, distinctResults: Swift.Bool = false) -> [CoreData.NSManagedObject]?
+  public func fetchObject(with id: CoreData.NSManagedObjectID) -> CoreData.NSManagedObject?
+  public func deleteObjects(with name: Swift.String, predicate: Foundation.NSPredicate?) -> Swift.Bool
+  public func saveContext() -> Foundation.NSError?
+  public func delete(_ object: CoreData.NSManagedObject)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(FlybitsUtilities) public class Utilities : ObjectiveC.NSObject {
+  public static var isSimulator: Swift.Bool {
+    get
+  }
+  public static func isValid(_ url: Foundation.URL) -> Swift.Bool
+  public static let sdkVersion: Swift.String
+  public static var vendorUUID: Swift.String {
+    get
+  }
+  public static let dateFormatter: Foundation.DateFormatter
+  @available(*, deprecated, message: "Please use `convertServerDateTimeStampToDateComponents` instead")
+  public static func serverDateTimeStampToDateComponents(_ date: Swift.String) -> (date: Foundation.Date?, year: Swift.Int, month: Swift.Int, day: Swift.Int, hour: Swift.Int, mintue: Swift.Int, seconds: Swift.Int)?
+  public static func convertServerDateTimeStampToDateComponents(_ date: Swift.String) -> Foundation.DateComponents?
+  public static func createNSErrorUserInfo(_ description: Swift.String, failure: Swift.String? = nil, recovery: Swift.String? = nil) -> [Swift.String : Any]
+  public static let deviceType: Swift.String
+  @objc deinit
+  @objc override dynamic public init()
+}
+extension Utilities {
+  @objc(FlybitsUtilitiesSortOrder) public enum SortOrder : Swift.Int {
+    case ascending
+    case descending
+    public var stringValue: Swift.String {
+      get
+    }
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc(FlybitsUtilitiesSortBy) public enum SortBy : Swift.Int {
+    case priority
+    case evaluatedAt
+    case createdAt
+    case modifiedAt
+    public var stringValue: Swift.String {
+      get
+    }
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc(FlybitsUtilitiesLengthUnit) public enum LengthUnit : Swift.Int {
+    case meters
+    case miles
+    case kilometers
+    case yards
+    case feet
+    public func convert(distance: Swift.Double, to: FlybitsSDK.Utilities.LengthUnit) -> Swift.Double
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc(FlybitsUtilitiesTimeUnit) public enum TimeUnit : Swift.Int {
+    case seconds = 1
+    case minutes = 60
+    case hours = 3600
+    case days = 86400
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+}
+public protocol FilterProtocol : Swift.CustomDebugStringConvertible {
+  func shouldExclude(logDetails: inout FlybitsSDK.LogDetails, message: inout Swift.String) -> Swift.Bool
+}
+@_inheritsConvenienceInitializers open class DevFilter : FlybitsSDK.UserInfoFilter {
+  override public init<S>(includeFrom devs: S) where S : Swift.Sequence, S.Element == Swift.String
+  override public init<S>(excludeFrom devs: S) where S : Swift.Sequence, S.Element == Swift.String
+  @objc deinit
+}
+@objc public protocol IDP : Foundation.NSCoding {
+  @objc var provider: Swift.String { get }
+  @objc var projectID: Swift.String? { get }
+  @objc var authenticationEndPoint: Swift.String { get }
+  @objc var requestBody: Swift.String { get }
+  @objc optional var requestHeaders: [Swift.String : Swift.String] { get }
+  @objc optional var requestMethod: FlybitsSDK.RequestMethod { get }
+  @objc optional func didAuthenticate(user: FlybitsSDK.User)
+}
+@objc public class SignedIDP : ObjectiveC.NSObject, FlybitsSDK.IDP {
+  public init(accessToken: Swift.String, signature: Swift.String)
+  @objc public var provider: Swift.String {
+    @objc get
+  }
+  @objc public var projectID: Swift.String? {
+    @objc get
+  }
+  @objc public var authenticationEndPoint: Swift.String {
+    @objc get
+  }
+  @objc public var requestBody: Swift.String {
+    @objc get
+  }
+  public static func accessToken(for email: Swift.String) -> Swift.String
+  @objc required convenience public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc deinit
+  @objc override dynamic public init()
+}
+public func += <K, V>(left: inout [K : V], right: [K : V]) where K : Swift.Hashable
+public func + <K, V>(left: [K : V], right: [K : V]) -> [K : V] where K : Swift.Hashable
+public func += <K, T, V>(left: inout [K : [T : V]], right: [K : [T : V]]) where K : Swift.Hashable, T : Swift.Hashable
+public func + <K, T, V>(left: [K : [T : V]], right: [K : [T : V]]) -> [K : [T : V]] where K : Swift.Hashable, T : Swift.Hashable
+public func && <T>(left: [T], right: [T]) -> [T] where T : Swift.Equatable
+public func || <T>(left: [T], right: [T]) -> [T] where T : Swift.Hashable
+@objc public enum FlybitsRequestType : Swift.Int {
+  case gateway
+  case rules
+  case contextUpdate
+  case push
+  case custom
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public protocol Requestable {
+  var requestType: FlybitsSDK.FlybitsRequestType { get }
+  var baseURI: Swift.String { get }
+  var headers: [Swift.String : Swift.String] { get }
+  var method: FlybitsSDK.HTTPMethod { get }
+  var encoding: FlybitsSDK.HTTPEncoding { get }
+  var path: Swift.String { get }
+  var query: FlybitsSDK.Query? { get }
+  var parameters: [Swift.String : Any]? { get }
+  var parametersArray: [[Swift.String : Any]]? { get }
+  var cacheToken: Swift.String? { get }
+  var urlRequest: Foundation.URLRequest { get }
+  @discardableResult
+  func execute() -> FlybitsSDK.FlybitsRequest
+  func response<T>(completion: @escaping (Foundation.URLRequest?, Foundation.HTTPURLResponse?, T?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest where T : FlybitsSDK.ResponseObjectSerializable
+  func responseList<T>(completion: @escaping (Foundation.URLRequest?, Foundation.HTTPURLResponse?, [T]?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest where T : FlybitsSDK.ResponseObjectSerializable
+  func responseListPaged<T>(completion: @escaping (Foundation.URLRequest?, Foundation.HTTPURLResponse?, FlybitsSDK.Paged<T>?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest where T : FlybitsSDK.ResponseObjectSerializable
+}
+extension Requestable {
+  public var baseURI: Swift.String {
+    get
+  }
+  public var headers: [Swift.String : Swift.String] {
+    get
+  }
+  public var method: FlybitsSDK.HTTPMethod {
+    get
+  }
+  public var encoding: FlybitsSDK.HTTPEncoding {
+    get
+  }
+  public var query: FlybitsSDK.Query? {
+    get
+  }
+  public var parameters: [Swift.String : Any]? {
+    get
+  }
+  public var parametersArray: [[Swift.String : Any]]? {
+    get
+  }
+  public var cacheToken: Swift.String? {
+    get
+  }
+  public var urlRequest: Foundation.URLRequest {
+    get
+  }
+  public func response<T>(completion: @escaping (Foundation.URLRequest?, Foundation.HTTPURLResponse?, T?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest where T : FlybitsSDK.ResponseObjectSerializable
+  public func responseList<T>(completion: @escaping (Foundation.URLRequest?, Foundation.HTTPURLResponse?, [T]?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest where T : FlybitsSDK.ResponseObjectSerializable
+  public func responseListPaged<T>(completion: @escaping (Foundation.URLRequest?, Foundation.HTTPURLResponse?, FlybitsSDK.Paged<T>?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest where T : FlybitsSDK.ResponseObjectSerializable
+  @discardableResult
+  public func execute() -> FlybitsSDK.FlybitsRequest
+  public func handleEmptyResponse(statusCode: Swift.Int = Network.Constants.HTTPResponseCodes.NoContent, completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+}
+public typealias URLRequestConvertible = Foundation.URLRequest
+public enum HTTPEncoding {
+  case url
+  case json
+  case jsonArray([Swift.AnyObject])
+  @available(*, deprecated, message: "Please use `mediaUpload` instead")
+  case imageUpload((image: UIKit.UIImage, contentType: Swift.String, URL: Swift.String, additionalParams: [Swift.String : Swift.String]?, filename: Swift.String, uploadname: Swift.String))
+  case mediaUpload(FlybitsSDK.MediaUpload)
+  case propertyList(Foundation.PropertyListSerialization.PropertyListFormat, Foundation.PropertyListSerialization.WriteOptions)
+  case custom(((FlybitsSDK.URLRequestConvertible, [Swift.String : Any]?) -> (Foundation.URLRequest, Foundation.NSError?)))
+}
+public struct MediaUpload {
+}
+@available(*, deprecated, message: "Use RequestMethod enum")
+public enum HTTPMethod : Swift.String {
+  case GET
+  case POST
+  case PUT
+  case DELETE
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@objc public enum RequestMethod : Swift.Int {
+  case GET
+  case POST
+  case PUT
+  case DELETE
+  public var httpMethod: Swift.String {
+    get
+  }
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc public class Network : ObjectiveC.NSObject {
+  @objc @_inheritsConvenienceInitializers public class Constants : ObjectiveC.NSObject {
+    public static var APIMaxRecords: Swift.UInt {
+      get
+    }
+    public static var FlybitsHeaders: [Swift.String : Swift.String] {
+      get
+    }
+    public struct Header {
+      public static let AcceptLanguageKey: Swift.String
+      public static let ContentTypeJSON: Swift.String
+      public static let ContentTypeKey: Swift.String
+      public static let Authorization: Swift.String
+      public static let UserAgent: Swift.String
+    }
+    public struct HTTPResponseCodes {
+      public static let OK: Swift.Int
+      public static let Created: Swift.Int
+      public static let NonAuthorative: Swift.Int
+      public static let NoContent: Swift.Int
+      public static let InvalidRequest: Swift.Int
+      public static let Unauthorized: Swift.Int
+      public static let Forbidden: Swift.Int
+      public static let NotFound: Swift.Int
+      public static let APIUsageExceeded: Swift.Int
+      public static let InternalError: Swift.Int
+      public static let FlybitsUnavailable: Swift.Int
+      public static let FlybitsNetworkRequestCancelled: Swift.Int
+      public static let AcceptedHTTPErrorCodes: Swift.Set<Swift.Int>
+    }
+    @objc deinit
+    @objc override dynamic public init()
+  }
+  @objc deinit
+  @objc override dynamic public init()
+}
+public struct Notification {
+  public struct Constants {
+    public static let UserChanged: Swift.String
+  }
+}
+open class PrePostFixLogFormatter : FlybitsSDK.LogFormatterProtocol, Swift.CustomDebugStringConvertible {
+  public init()
+  open func apply(prefix: Swift.String? = nil, postfix: Swift.String? = nil, to level: FlybitsSDK.XCGLogger.Level? = nil)
+  open func clearFormatting()
+  @discardableResult
+  open func format(logDetails: inout FlybitsSDK.LogDetails, message: inout Swift.String) -> Swift.String
+  open var debugDescription: Swift.String {
+    get
+  }
+  @objc deinit
+}
+open class ANSIColorLogFormatter : FlybitsSDK.LogFormatterProtocol, Swift.CustomDebugStringConvertible {
+  public static let escape: Swift.String
+  public static let reset: Swift.String
+  public enum ANSIColor : Swift.CustomStringConvertible {
+    case black
+    case red
+    case green
+    case yellow
+    case blue
+    case magenta
+    case cyan
+    case lightGrey, lightGray
+    case darkGrey, darkGray
+    case lightRed
+    case lightGreen
+    case lightYellow
+    case lightBlue
+    case lightMagenta
+    case lightCyan
+    case white
+    case `default`
+    case rgb(red: Swift.Int, green: Swift.Int, blue: Swift.Int)
+    case colorIndex(number: Swift.Int)
+    public var foregroundCode: Swift.String {
+      get
+    }
+    public var backgroundCode: Swift.String {
+      get
+    }
+    public var description: Swift.String {
+      get
+    }
+  }
+  public enum ANSIOption : Swift.CustomStringConvertible {
+    case bold
+    case faint
+    case italic
+    case underline
+    case blink
+    case blinkFast
+    case strikethrough
+    public var code: Swift.String {
+      get
+    }
+    public var description: Swift.String {
+      get
+    }
+    public static func == (a: FlybitsSDK.ANSIColorLogFormatter.ANSIOption, b: FlybitsSDK.ANSIColorLogFormatter.ANSIOption) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  public init()
+  open func colorize(level: FlybitsSDK.XCGLogger.Level, with foregroundColor: FlybitsSDK.ANSIColorLogFormatter.ANSIColor = .default, on backgroundColor: FlybitsSDK.ANSIColorLogFormatter.ANSIColor = .default, options: [FlybitsSDK.ANSIColorLogFormatter.ANSIOption] = [])
+  open func colorize(level: FlybitsSDK.XCGLogger.Level, custom: Swift.String)
+  open func resetFormatting()
+  open func clearFormatting()
+  @discardableResult
+  open func format(logDetails: inout FlybitsSDK.LogDetails, message: inout Swift.String) -> Swift.String
+  open var debugDescription: Swift.String {
+    get
+  }
+  @objc deinit
+}
+@objc public class Project : ObjectiveC.NSObject, FlybitsSDK.ResponseObjectSerializable {
+  public var identifier: Swift.String {
+    get
+  }
+  public var name: Swift.String? {
+    get
+  }
+  public var subdomain: Swift.String? {
+    get
+  }
+  public var creatorID: Swift.String? {
+    get
+  }
+  public var isActive: Swift.Bool {
+    get
+  }
+  public var tierID: Swift.String? {
+    get
+  }
+  required public init?(responseData: Any)
+  public static func getSettings(completion: @escaping ([Swift.String : Any]?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public static func config(forKey key: Swift.String, completion: @escaping ([Swift.String : Any]?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public static func getPushSubscriptions(completion: @escaping ([FlybitsSDK.PushSubscription]?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @objc deinit
+  @objc override dynamic public init()
+}
+public enum ReachabilityError : Swift.Error {
+  case FailedToCreateWithAddress(Darwin.sockaddr_in)
+  case FailedToCreateWithHostname(Swift.String)
+  case UnableToSetCallback
+  case UnableToSetDispatchQueue
+}
+public let ReachabilityChangedNotification: Foundation.NSNotification.Name
+public class Reachability {
+  public typealias NetworkReachable = (FlybitsSDK.Reachability) -> ()
+  public typealias NetworkUnreachable = (FlybitsSDK.Reachability) -> ()
+  public enum NetworkStatus : Swift.CustomStringConvertible {
+    case notReachable, reachableViaWiFi, reachableViaWWAN
+    public var description: Swift.String {
+      get
+    }
+    public static func == (a: FlybitsSDK.Reachability.NetworkStatus, b: FlybitsSDK.Reachability.NetworkStatus) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  public var whenReachable: FlybitsSDK.Reachability.NetworkReachable?
+  public var whenUnreachable: FlybitsSDK.Reachability.NetworkUnreachable?
+  public var reachableOnWWAN: Swift.Bool
+  public var notificationCenter: Foundation.NotificationCenter
+  public var currentReachabilityString: Swift.String {
+    get
+  }
+  public var currentReachabilityStatus: FlybitsSDK.Reachability.NetworkStatus {
+    get
+  }
+  required public init(reachabilityRef: SystemConfiguration.SCNetworkReachability)
+  convenience public init?(hostname: Swift.String)
+  convenience public init?()
+  @objc deinit
+}
+extension Reachability {
+  public func startNotifier() throws
+  public func stopNotifier()
+  public var isReachable: Swift.Bool {
+    get
+  }
+  public var isReachableViaWWAN: Swift.Bool {
+    get
+  }
+  public var isReachableViaWiFi: Swift.Bool {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc public class FlyJWT : ObjectiveC.NSObject {
+  @discardableResult
+  public static func refreshJWT(completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @objc deinit
+  @objc override dynamic public init()
+}
+public protocol ErrorConformable : Swift.Error, Swift.RawRepresentable {
+  static var Domain: Swift.String { get }
+}
+public enum FLBErrorType : Swift.Int {
+  case requestError
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public class FLBError<T> : Foundation.NSError where T : FlybitsSDK.ErrorConformable {
+  convenience public init(_ type: T)
+  convenience public init(_ type: T, description: Swift.String, failure: Swift.String? = nil, recovery: Swift.String? = nil)
+  public init(_ type: T, userInfo: [Swift.String : Any]?)
+  public init(domain: Swift.String, code: Swift.Int, description: Swift.String, failure: Swift.String? = nil, recovery: Swift.String? = nil)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  public static func buildUserInfoForErrorType(_ errorType: FlybitsSDK.FLBErrorType) -> [Swift.String : Any]?
+  @objc override dynamic public init(domain: Swift.String, code: Swift.Int, userInfo dict: [Swift.String : Any]? = nil)
+  @objc deinit
+}
+@objc public enum CocoaError : Swift.Int, FlybitsSDK.ErrorConformable {
+  case formattingError = 0
+  public static var Domain: Swift.String
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+  public static var _nsErrorDomain: Swift.String {
+    get
+  }
+}
+@objc public enum CacheError : Swift.Int, FlybitsSDK.ErrorConformable {
+  case tokenNotFound = 0
+  public static var Domain: Swift.String
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+  public static var _nsErrorDomain: Swift.String {
+    get
+  }
+}
+@objc public enum CoreDataError : Swift.Int, FlybitsSDK.ErrorConformable {
+  case storeNotFound = 0
+  public static var Domain: Swift.String
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+  public static var _nsErrorDomain: Swift.String {
+    get
+  }
+}
+@objc public enum NetworkingRequestError : Swift.Int, FlybitsSDK.ErrorConformable {
+  case unableToParseResponse = 0
+  case invalidRequest = 400
+  case flybitsUnavailable = 503
+  case unauthorized = 401
+  case forbidden = 403
+  case notFound = 404
+  case apiUsageExceeded = 429
+  case emptyData = 430
+  case expectationNotMet
+  public static var Domain: Swift.String
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public static var _nsErrorDomain: Swift.String {
+    get
+  }
+}
+@objc public enum LoginError : Swift.Int, FlybitsSDK.ErrorConformable {
+  case missingRequiredData
+  case invalidData
+  case alreadyConnected
+  case notConnected
+  public static var Domain: Swift.String
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+  public static var _nsErrorDomain: Swift.String {
+    get
+  }
+}
+@objc public enum RegistrationError : Swift.Int, FlybitsSDK.ErrorConformable {
+  case missingRequiredData
+  case invalidData
+  case failedSendingConfirmationEmail
+  case confirmationRequired
+  public static var Domain: Swift.String
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+  public static var _nsErrorDomain: Swift.String {
+    get
+  }
+}
+@objc public enum LocalizationError : Swift.Int, FlybitsSDK.ErrorConformable {
+  case unknownLanguageCode = 0
+  case invalidFormat
+  public static var Domain: Swift.String
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+  public static var _nsErrorDomain: Swift.String {
+    get
+  }
+}
+@objc public enum JWTError : Swift.Int, FlybitsSDK.ErrorConformable {
+  case maxRetries
+  public static var Domain: Swift.String
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+  public static var _nsErrorDomain: Swift.String {
+    get
+  }
+}
+@objc public enum QueryExpressionError : Swift.Int, FlybitsSDK.ErrorConformable {
+  case unsupported
+  public static var Domain: Swift.String
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+  public static var _nsErrorDomain: Swift.String {
+    get
+  }
+}
+@objc public enum ErrorList : Swift.Int, FlybitsSDK.ErrorConformable {
+  case array
+  public static let Domain: Swift.String
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+  public static var _nsErrorDomain: Swift.String {
+    get
+  }
+}
+@objc public enum ToDictionaryError : Swift.Int, FlybitsSDK.ErrorConformable {
+  case invalidCoordinate
+  case invalidDictionary
+  public static let Domain: Swift.String
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+  public static var _nsErrorDomain: Swift.String {
+    get
+  }
+}
+public struct LogDetails {
+  public var level: FlybitsSDK.XCGLogger.Level
+  public var date: Foundation.Date
+  public var message: Swift.String
+  public var functionName: Swift.String
+  public var fileName: Swift.String
+  public var lineNumber: Swift.Int
+  public var userInfo: [Swift.String : Any]
+  public init(level: FlybitsSDK.XCGLogger.Level, date: Foundation.Date, message: Swift.String, functionName: Swift.String, fileName: Swift.String, lineNumber: Swift.Int, userInfo: [Swift.String : Any] = [:])
+}
+@_inheritsConvenienceInitializers @objc public class FlybitsPreference : ObjectiveC.NSObject {
+  public static func value(forKey key: Swift.String, completion: @escaping (Any?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public static func bool(forKey key: Swift.String, completion: @escaping (Swift.Bool?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public static func string(forKey key: Swift.String, completion: @escaping (Swift.String?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public static func int(forKey key: Swift.String, completion: @escaping (Swift.Int?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public static func double(forKey key: Swift.String, completion: @escaping (Swift.Double?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public static func dictionary(forKey key: Swift.String, completion: @escaping ([Swift.String : Any]?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public static func array(forKey key: Swift.String, completion: @escaping ([Any]?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @objc(set:object:forKey:) public static func set(_ value: [Swift.String : Any], forKey key: Swift.String, completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @objc(set:array:forKey:) public static func set(_ value: [Any], forKey key: Swift.String, completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @objc(set:bool:forKey:) public static func set(_ value: Swift.Bool, forKey key: Swift.String, completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @objc(set:string:forKey:) public static func set(_ value: Swift.String, forKey key: Swift.String, completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @objc(set:int:forKey:) public static func set(_ value: Swift.Int, forKey key: Swift.String, completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @objc(set:double:forKey:) public static func set(_ value: Swift.Double, forKey key: Swift.String, completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public static func remove(forKey key: Swift.String, completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public static func deleteUserPreference(completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @objc deinit
+  @objc override dynamic public init()
+}
+extension FlybitsPreference {
+  public static func getFavorites(completion: @escaping ([Swift.String], Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public static func addFavorites(_ contentIDs: [Swift.String], completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public static func addFavorite(_ contentID: Swift.String, completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public static func removeFavorites(_ contentIDs: [Swift.String], completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public static func removeFavorite(_ contentID: Swift.String, completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public static func isFavorite(_ contentID: Swift.String, completion: @escaping (Swift.Bool, Swift.Error?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+}
+@_inheritsConvenienceInitializers open class TestDestination : FlybitsSDK.BaseQueuedDestination {
+  open var expectedLogMessages: [Swift.String]
+  open var unexpectedLogMessages: [Swift.String]
+  open var remainingNumberOfExpectedLogMessages: Swift.Int {
+    get
+  }
+  open var numberOfUnexpectedLogMessages: Swift.Int {
+    get
+  }
+  open func add(expectedLogMessage message: Swift.String)
+  open func reset()
+  override open func output(logDetails: FlybitsSDK.LogDetails, message: Swift.String)
+  @objc deinit
+  override public init(owner: FlybitsSDK.XCGLogger? = super, identifier: Swift.String = super)
+}
+public let log: FlybitsSDK.XCGLogger
+@objc public enum CustomerStatus : Swift.Int {
+  case unknown
+  case activeOptedIn
+  case activeOptedInExpiredToken
+  case activeOptedOutExpiredToken
+  case activeOptedOut
+  case notActiveOptedIn
+  case notActiveOptedOut
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc public class FlybitsManager : ObjectiveC.NSObject, Foundation.NSCoding {
+  public var projectID: Swift.String? {
+    get
+  }
+  public var idProvider: FlybitsSDK.IDP? {
+    get
+  }
+  public var scopes: [FlybitsSDK.FlybitsScope] {
+    get
+  }
+  final public let languageCodes: [Swift.String]
+  public static var environment: FlybitsSDK.FlybitsManager.Environment
+  @objc public static var gatewayURL: Swift.String {
+    @objc get
+  }
+  public static var activeUser: FlybitsSDK.UserInfo? {
+    get
+  }
+  @objc public static var isConnected: Swift.Bool {
+    @objc get
+  }
+  @objc public static var currentActiveUserIsOptedIn: Swift.Bool {
+    @objc get
+  }
+  @available(*, deprecated, message: "Please use static functions to access FlybitsManager")
+  @objc(initWithProjectID:idProvider:scopes:) public init?(projectID: Swift.String?, idProvider: FlybitsSDK.IDP, scopes: [FlybitsSDK.FlybitsScope])
+  @available(*, deprecated, message: "Please use static functions to access FlybitsManager")
+  @objc(initWithProjectID:scopes:) public init(projectID: Swift.String?, scopes: [FlybitsSDK.FlybitsScope])
+  @objc override dynamic public init()
+  @available(*, deprecated, renamed: "FlybitsManager.add", message: "Please use static version of this method")
+  public func add(scope: FlybitsSDK.FlybitsScope)
+  public func update(idProvider: FlybitsSDK.IDP)
+  public static func add(scope: FlybitsSDK.FlybitsScope, forkey key: Swift.String)
+  public static func removeScope(forKey key: Swift.String)
+  public static func update(userInfo: FlybitsSDK.UserInfo)
+  @available(*, deprecated, renamed: "connect(idp:customerId:projectId:completion:)", message: "Please use static version of this method")
+  @objc(connectWithCompletion:) public func connect(completion: @escaping (FlybitsSDK.User?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @available(*, deprecated, renamed: "connect(idp:customerId:projectId:completion:)", message: "Please use static version of this method")
+  @objc(connectWithIDP:completion:) public func connect(_ idp: FlybitsSDK.IDP, completion: @escaping (FlybitsSDK.User?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @available(*, deprecated, renamed: "connect(idp:customerId:projectId:completion:)", message: "Please use static version of this method")
+  @objc(connectWithIDP:projectId:completion:) public func connect(_ idp: FlybitsSDK.IDP, projectId: Swift.String, completion: @escaping (FlybitsSDK.User?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @available(*, deprecated, renamed: "connect(idp:customerId:projectId:completion:)", message: "Please use static version of this method")
+  public func connect(_ idp: FlybitsSDK.IDP, customerId: Swift.String, projectId: Swift.String, completion: @escaping (FlybitsSDK.User?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @available(*, deprecated, renamed: "connect(idp:customerId:projectId:completion:)", message: "Please use static version of this method")
+  @objc(connectWithIDP:customerId:completion:) public func connect(_ idp: FlybitsSDK.IDP, customerId: Swift.String? = nil, completion: @escaping (FlybitsSDK.User?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @discardableResult
+  @objc(connectWithIDP:customerId:projectId:completion:) public static func connect(_ idp: FlybitsSDK.IDP, customerId: Swift.String? = nil, projectId: Swift.String? = nil, completion: @escaping (FlybitsSDK.User?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @discardableResult
+  @objc(connectWithIDP:customerId:projectId:physicalDeviceId:completion:) public static func connect(_ idp: FlybitsSDK.IDP, customerId: Swift.String? = nil, projectId: Swift.String? = nil, physicalDeviceId: Swift.String? = nil, completion: @escaping (FlybitsSDK.User?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @discardableResult
+  @objc(disconnectWithCompletion:) public static func disconnect(completion: @escaping (Swift.String?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @available(*, deprecated, renamed: "disconnect(_:completion:)", message: "Please use static version of this method")
+  @objc(disconnectWithCompletion:) public func disconnect(completion: @escaping (Swift.String?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public func destroy(completion: @escaping (Swift.String?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public func getUser(completion: @escaping (FlybitsSDK.User?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @available(*, deprecated, message: "Use connect(_:completion:)")
+  public static func isConnected(completion: @escaping (FlybitsSDK.User?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest?
+  public func getProjects(_ pager: FlybitsSDK.Pager? = nil, completion: @escaping (FlybitsSDK.Paged<FlybitsSDK.Project>?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public func bindProject(projectID: Swift.String, completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public static func enableLogging(forLevel level: FlybitsSDK.XCGLogger.Level = .verbose)
+  @objc(enableLogging) public static func enableLogging()
+  @discardableResult
+  @available(*, deprecated, message: "Please use static functions to access FlybitsManager")
+  public func refreshConnectedUserInfo(completion: @escaping (FlybitsSDK.User?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @discardableResult
+  public static func refreshConnectedUserInfo(completion: @escaping (FlybitsSDK.User?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @discardableResult
+  @available(*, deprecated, message: "Please use static version of this method")
+  public func optIn(completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @discardableResult
+  public static func optIn(completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @discardableResult
+  @available(*, deprecated, message: "Please use static version of this method")
+  public func optOut(completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @discardableResult
+  public static func optOut(completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public enum Environment : Swift.Equatable {
+    @available(*, deprecated, renamed: "productionUS")
+    case production
+    case productionUS
+    case productionEurope
+    case productionCanada
+    @available(*, deprecated, renamed: "stagingUS")
+    case staging
+    @available(*, deprecated, renamed: "developmentUS")
+    case development
+    case stagingUS
+    case developmentUS
+    case demo
+    case other(Swift.String)
+    public func stringURL() -> Swift.String
+    public static func == (a: FlybitsSDK.FlybitsManager.Environment, b: FlybitsSDK.FlybitsManager.Environment) -> Swift.Bool
+  }
+  @objc public func encode(with coder: Foundation.NSCoder)
+  @objc required convenience public init?(coder decoder: Foundation.NSCoder)
+  @objc deinit
+}
+extension FlybitsManager {
+  @objc public static func status(for customerId: Swift.String) -> FlybitsSDK.CustomerStatus
+}
+extension DispatchQueue {
+  public static var currentQueueLabel: Swift.String? {
+    get
+  }
+}
+open class Base64LogFormatter : FlybitsSDK.LogFormatterProtocol, Swift.CustomDebugStringConvertible {
+  @discardableResult
+  open func format(logDetails: inout FlybitsSDK.LogDetails, message: inout Swift.String) -> Swift.String
+  public init()
+  open var debugDescription: Swift.String {
+    get
+  }
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class DeviceManager : ObjectiveC.NSObject {
+  @discardableResult
+  public static func addAssociation(_ associationId: Swift.String, completion: @escaping (Swift.Error?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @discardableResult
+  public static func deleteAssociation(_ associationId: Swift.String, completion: @escaping (Swift.Error?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @discardableResult
+  public static func anonymize(completion: @escaping (Swift.Error?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @discardableResult
+  public static func update(make: Swift.String, model: Swift.String, osVersion: Swift.String, completion: @escaping (Swift.Error?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc public class OpenIDP : ObjectiveC.NSObject, FlybitsSDK.IDP {
+  public init(idToken: Swift.String)
+  @objc public var provider: Swift.String {
+    @objc get
+  }
+  @objc public var projectID: Swift.String? {
+    @objc get
+  }
+  @objc public var authenticationEndPoint: Swift.String {
+    @objc get
+  }
+  @objc public var requestBody: Swift.String {
+    @objc get
+  }
+  @objc required convenience public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc public class FlybitsRequestList : FlybitsSDK.FlybitsRequest {
+  @objc override dynamic public init()
+  public init(requests: [FlybitsSDK.FlybitsRequest])
+  public func add(_ request: FlybitsSDK.FlybitsRequest)
+  public func remove(_ request: FlybitsSDK.FlybitsRequest)
+  @objc override public init(_ request: Foundation.URLRequest?, type: FlybitsSDK.FlybitsRequestType = super, isCachable: Swift.Bool = super, error: Foundation.NSError? = super)
+  @objc deinit
+}
+@objc public class JwtLoginIDP : ObjectiveC.NSObject, FlybitsSDK.IDP {
+  @objc public var provider: Swift.String {
+    @objc get
+  }
+  @objc public var projectID: Swift.String? {
+    @objc get
+  }
+  @objc public var authenticationEndPoint: Swift.String {
+    @objc get
+  }
+  @objc public var requestHeaders: [Swift.String : Swift.String] {
+    @objc get
+  }
+  public init(jwtLoginToken: Swift.String)
+  @objc public var requestMethod: FlybitsSDK.RequestMethod {
+    @objc get
+  }
+  @objc public var requestBody: Swift.String {
+    @objc get
+  }
+  @objc public func encode(with coder: Foundation.NSCoder)
+  @objc required convenience public init?(coder: Foundation.NSCoder)
+  @objc deinit
+  @objc override dynamic public init()
+}
+public protocol ResponseObjectSerializable {
+  init?(responseData: Any) throws
+}
+extension Int : FlybitsSDK.ResponseObjectSerializable {
+  public init?(responseData: Any)
+}
+extension UInt8 : FlybitsSDK.ResponseObjectSerializable {
+  public init?(responseData: Any)
+}
+extension Float : FlybitsSDK.ResponseObjectSerializable {
+  public init?(responseData: Any)
+}
+extension Double : FlybitsSDK.ResponseObjectSerializable {
+  public init?(responseData: Any)
+}
+extension String : FlybitsSDK.ResponseObjectSerializable {
+  public init?(responseData: Any)
+}
+extension Array : FlybitsSDK.ResponseObjectSerializable {
+  public init?(responseData: Any)
+}
+extension Dictionary : FlybitsSDK.ResponseObjectSerializable {
+  public init?(responseData: Any)
+}
+extension Data : FlybitsSDK.ResponseObjectSerializable {
+  public init?(responseData: Any)
+}
+@_inheritsConvenienceInitializers @objc public class FlybitsRequest : ObjectiveC.NSObject {
+  public var completionCallbackQueue: Dispatch.DispatchQueue!
+  public var isCachable: Swift.Bool {
+    get
+  }
+  @available(*, deprecated, message: "Use constructGatewayRequest(endPoint:query: requestBody:requestMethod:)")
+  public static func constructGatewayRequest(endPoint: Swift.String, query: Swift.String? = nil, requestBody: Swift.String? = nil, httpMethod: FlybitsSDK.HTTPMethod, isExternal: Swift.Bool = false) -> Foundation.URLRequest
+  public static func constructGatewayRequest(endPoint: Swift.String, query: Swift.String? = nil, requestBody: Swift.String? = nil, requestMethod: FlybitsSDK.RequestMethod, isExternal: Swift.Bool = false) -> Foundation.URLRequest
+  public var urlRequest: Foundation.URLRequest? {
+    get
+  }
+  public var httpSuccessStatusCode: Swift.Range<Swift.Int>?
+  public var timeoutIntervalForRequest: Foundation.TimeInterval
+  @objc(initWithRequest:requestType:isCachable:error:) public init(_ request: Foundation.URLRequest?, type: FlybitsSDK.FlybitsRequestType = .custom, isCachable: Swift.Bool = false, error: Foundation.NSError? = nil)
+  @objc override dynamic public init()
+  public func set(httpSuccessStatusCode: Swift.Range<Swift.Int>?) -> FlybitsSDK.FlybitsRequest
+  @objc(setHttpSuccessStatusCode:) public func set(httpSuccessStatusCode: Swift.Int) -> FlybitsSDK.FlybitsRequest
+  @objc(setHttpSuccessStatusCodeWithLowerBound:upperBound:) public func setHttpSuccessStatusCodeBound(lower: Swift.Int, upper: Swift.Int) -> FlybitsSDK.FlybitsRequest
+  @discardableResult
+  @objc(responseWithCompletion:) public func response(completion: @escaping (Foundation.URLRequest?, Foundation.HTTPURLResponse?, Foundation.Data?, Foundation.NSError?) -> Swift.Void) -> Self
+  @objc public func uploadTask(_ completion: @escaping (Foundation.Data?, Foundation.URLResponse?, Swift.Error?) -> Swift.Void) -> Self
+  public func response<T>(completion: @escaping (Foundation.URLRequest?, Foundation.HTTPURLResponse?, T?, Foundation.NSError?) -> Swift.Void) -> Self where T : FlybitsSDK.ResponseObjectSerializable
+  public func responseList<T>(completion: @escaping (Foundation.URLRequest?, Foundation.HTTPURLResponse?, [T]?, Foundation.NSError?) -> Swift.Void) -> Self where T : FlybitsSDK.ResponseObjectSerializable
+  public func cancel()
+  public func responseListPaged<T>(completion: @escaping (Foundation.URLRequest?, Foundation.HTTPURLResponse?, FlybitsSDK.Paged<T>?, Foundation.NSError?) -> Swift.Void) -> Self where T : FlybitsSDK.ResponseObjectSerializable
+  public func parseList<T>(_ list: [Swift.AnyObject], from response: Foundation.HTTPURLResponse?) throws -> [T] where T : FlybitsSDK.ResponseObjectSerializable
+  @objc deinit
+}
+@objc public class Pager : ObjectiveC.NSObject, FlybitsSDK.ResponseObjectSerializable, FlybitsSDK.DictionaryConvertible {
+  public struct Constants {
+    public static let limit: Swift.String
+    public static let offset: Swift.String
+  }
+  public struct Limit {
+    public static let max: Swift.UInt
+  }
+  public var limit: Swift.UInt {
+    get
+  }
+  public var offset: Swift.UInt {
+    get
+  }
+  public var total: Swift.UInt? {
+    get
+  }
+  public var sortBy: FlybitsSDK.Utilities.SortBy? {
+    get
+  }
+  public var sortOrder: FlybitsSDK.Utilities.SortOrder? {
+    get
+  }
+  public var pageIndex: Swift.UInt {
+    get
+  }
+  public init(limit: Swift.UInt = Pager.Limit.max, offset: Swift.UInt = 0, totalRecords: Swift.UInt? = nil, sortBy: FlybitsSDK.Utilities.SortBy? = nil, sortOrder: FlybitsSDK.Utilities.SortOrder? = nil)
+  @objc public init(limit: Swift.UInt, offset: Swift.UInt, totalRecords: Swift.UInt, sortBy: FlybitsSDK.Utilities.SortBy, sortOrder: FlybitsSDK.Utilities.SortOrder)
+  required public init?(responseData: Any)
+  public func goto(_ pageIndex: Swift.UInt)
+  public func toDictionary(_ key: Swift.String? = nil) throws -> [Swift.String : Any]
+  public func toURLParams(withKey key: Swift.String? = nil) -> Swift.String
+  public func hasMore() -> Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+}
+prefix public func ++ (pager: FlybitsSDK.Pager) -> FlybitsSDK.Pager
+prefix public func -- (pager: FlybitsSDK.Pager) -> FlybitsSDK.Pager
+postfix public func ++ (pager: FlybitsSDK.Pager) -> FlybitsSDK.Pager
+postfix public func -- (pager: FlybitsSDK.Pager) -> FlybitsSDK.Pager
+public func += (pager: inout FlybitsSDK.Pager, pages: Swift.UInt) -> FlybitsSDK.Pager
+public func -= (pager: inout FlybitsSDK.Pager, pages: Swift.UInt) -> FlybitsSDK.Pager
+extension Pager {
+  convenience public init(limit: Swift.UInt, offset: Swift.UInt, sortBy: FlybitsSDK.Utilities.SortBy, sortOrder: FlybitsSDK.Utilities.SortOrder)
+}
+open class AutoRotatingFileDestination : FlybitsSDK.FileDestination {
+  public static let autoRotatingFileDefaultMaxFileSize: Swift.UInt64
+  public static let autoRotatingFileDefaultMaxTimeInterval: Swift.Double
+  open var targetMaxFileSize: Swift.UInt64 {
+    get
+    set
+  }
+  open var targetMaxTimeInterval: Foundation.TimeInterval {
+    get
+    set
+  }
+  open var targetMaxLogFiles: Swift.UInt8 {
+    get
+    set
+  }
+  open var archiveFolderURL: Foundation.URL? {
+    get
+    set
+  }
+  open var autoRotationCompletion: ((Swift.Bool) -> Swift.Void)?
+  open var archiveSuffixDateFormatter: Foundation.DateFormatter! {
+    get
+    set
+  }
+  open class var defaultLogFolderURL: Foundation.URL {
+    get
+  }
+  public init(owner: FlybitsSDK.XCGLogger? = nil, writeToFile: Any, identifier: Swift.String = "", shouldAppend: Swift.Bool = false, appendMarker: Swift.String? = "-- ** ** ** --", attributes: [Foundation.FileAttributeKey : Any]? = nil, maxFileSize: Swift.UInt64 = autoRotatingFileDefaultMaxFileSize, maxTimeInterval: Foundation.TimeInterval = autoRotatingFileDefaultMaxTimeInterval, archiveSuffixDateFormatter: Foundation.DateFormatter? = nil, targetMaxLogFiles: Swift.UInt8 = 10)
+  open func cleanUpLogFiles()
+  open func purgeArchivedLogFiles()
+  open func archivedFileURLs() -> [Foundation.URL]
+  open func rotateFile()
+  open func shouldRotate() -> Swift.Bool
+  override open func write(message: Swift.String)
+  @objc deinit
+  override public init(owner: FlybitsSDK.XCGLogger? = super, writeToFile: Any, identifier: Swift.String = super, shouldAppend: Swift.Bool = super, appendMarker: Swift.String? = super, attributes: [Foundation.FileAttributeKey : Any]? = super)
+}
+@_hasMissingDesignatedInitializers @objc public class User : ObjectiveC.NSObject, FlybitsSDK.ResponseObjectSerializable, FlybitsSDK.DictionaryConvertible {
+  public var identifier: Swift.String {
+    get
+  }
+  public var deviceID: Swift.String? {
+    get
+  }
+  public var firstName: Swift.String?
+  public var lastName: Swift.String?
+  public var email: Swift.String?
+  public var isConfirmed: Swift.Bool {
+    get
+  }
+  public var isOptedIn: Swift.Bool {
+    get
+  }
+  required public init?(responseData: Any)
+  public func toDictionary() throws -> [Swift.String : Any]?
+  @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
+  @objc override dynamic public var hash: Swift.Int {
+    @objc get
+  }
+  @objc deinit
+  @objc override dynamic public init()
+}
+open class BaseDestination : FlybitsSDK.DestinationProtocol, Swift.CustomDebugStringConvertible {
+  open var owner: FlybitsSDK.XCGLogger?
+  open var identifier: Swift.String
+  open var outputLevel: FlybitsSDK.XCGLogger.Level
+  open var haveLoggedAppDetails: Swift.Bool
+  open var formatters: [FlybitsSDK.LogFormatterProtocol]?
+  open var filters: [FlybitsSDK.FilterProtocol]?
+  open var showLogIdentifier: Swift.Bool
+  open var showFunctionName: Swift.Bool
+  open var showThreadName: Swift.Bool
+  open var showFileName: Swift.Bool
+  open var showLineNumber: Swift.Bool
+  open var showLevel: Swift.Bool
+  open var showDate: Swift.Bool
+  open var levelDescriptions: [FlybitsSDK.XCGLogger.Level : Swift.String]
+  open var debugDescription: Swift.String {
+    get
+  }
+  public init(owner: FlybitsSDK.XCGLogger? = nil, identifier: Swift.String = "")
+  open func process(logDetails: FlybitsSDK.LogDetails)
+  open func processInternal(logDetails: FlybitsSDK.LogDetails)
+  open func isEnabledFor(level: FlybitsSDK.XCGLogger.Level) -> Swift.Bool
+  open func output(logDetails: FlybitsSDK.LogDetails, message: Swift.String)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class FlybitsAnalytics : ObjectiveC.NSObject {
+  public static func track(context: FlybitsSDK.AnalyticsContext, sendImmediately: Swift.Bool = false)
+  @discardableResult
+  @objc public static func sendAnalytics(completion: ((Swift.Error?) -> Swift.Void)?) -> FlybitsSDK.FlybitsRequest?
+  @objc public func encode(with coder: Foundation.NSCoder)
+  @objc required convenience public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+}
+extension FlybitsAnalytics : FlybitsSDK.FlybitsScope {
+  @objc dynamic public var identifier: Swift.String {
+    @objc get
+  }
+  @objc dynamic public func onStart(currentActiveUserIsOptedIn: Swift.Bool)
+  @objc dynamic public func onStop()
+  @objc dynamic public func onConnected(user: FlybitsSDK.User)
+  @objc dynamic public func onDisconnected(jwtToken: Swift.String)
+  @objc dynamic public func onAccountDestroyed(jwtToken: Swift.String)
+  @objc dynamic public func onOptIn()
+  @objc dynamic public func onOptOut()
+}
+public protocol LogFormatterProtocol : Swift.CustomDebugStringConvertible {
+  @discardableResult
+  func format(logDetails: inout FlybitsSDK.LogDetails, message: inout Swift.String) -> Swift.String
+}
+@_inheritsConvenienceInitializers open class AppleSystemLogDestination : FlybitsSDK.BaseQueuedDestination {
+  override open var showDate: Swift.Bool {
+    get
+    set
+  }
+  override open func write(message: Swift.String)
+  @objc deinit
+  override public init(owner: FlybitsSDK.XCGLogger? = super, identifier: Swift.String = super)
+}
+@objc @_hasMissingDesignatedInitializers public class PushSubscription : ObjectiveC.NSObject {
+  final public let id: Swift.String
+  final public let name: Swift.String
+  final public let value: Swift.String
+  final public let isEnabled: Swift.Bool
+  final public let isChecked: Swift.Bool
+  final public let isRequired: Swift.Bool
+  final public let createdAt: Swift.Double
+  final public let updatedAt: Swift.Double
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers open class BaseQueuedDestination : FlybitsSDK.BaseDestination {
+  open var logQueue: Dispatch.DispatchQueue?
+  override open func output(logDetails: FlybitsSDK.LogDetails, message: Swift.String)
+  open func write(message: Swift.String)
+  override public init(owner: FlybitsSDK.XCGLogger? = super, identifier: Swift.String = super)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class QueryUtils {
+  public static func add(values: [Swift.String]?, forKey key: Swift.String, to dictionary: inout [Swift.String : Any])
+  public static func add(value: Swift.String?, forKey key: Swift.String, to dictionary: inout [Swift.String : Any])
+  @objc deinit
+}
+extension URLSession {
+  public func uploadMultipartTaskWithURL(url: Foundation.URL, parameters: [Swift.String : Swift.AnyObject]?, fileKeyName: Swift.String?, fileURLs: [Foundation.URL]?, localFileURL: Foundation.URL? = nil) throws -> Foundation.URLSessionUploadTask
+  public func uploadMultipartTaskWithURL(url: Foundation.URL, parameters: [Swift.String : Swift.AnyObject]?, fileKeyName: Swift.String?, fileURLs: [Foundation.URL]?, completionHandler: @escaping (Foundation.Data?, Foundation.URLResponse?, Swift.Error?) -> Swift.Void) throws -> Foundation.URLSessionUploadTask
+  public func dataMultipartTaskWithURL(url: Foundation.URL, parameters: [Swift.String : Swift.AnyObject]?, fileKeyName: Swift.String?, fileURLs: [Foundation.URL]?) throws -> Foundation.URLSessionDataTask
+  public func dataMultipartTaskWithURL(url: Foundation.URL, parameters: [Swift.String : Swift.AnyObject]?, fileKeyName: Swift.String?, fileURLs: [Foundation.URL]?, completionHandler: @escaping (Foundation.Data?, Foundation.URLResponse?, Swift.Error?) -> Swift.Void) throws -> Foundation.URLSessionDataTask
+  public func createMultipartRequestWithURL(_ url: Foundation.URL, parameters: [Swift.String : Swift.AnyObject]?, fileKeyName: Swift.String?, fileURLs: [Foundation.URL]?) throws -> (Foundation.URLRequest, Foundation.Data)
+}
+public protocol DestinationProtocol : Swift.CustomDebugStringConvertible {
+  var owner: FlybitsSDK.XCGLogger? { get set }
+  var identifier: Swift.String { get set }
+  var outputLevel: FlybitsSDK.XCGLogger.Level { get set }
+  var haveLoggedAppDetails: Swift.Bool { get set }
+  var formatters: [FlybitsSDK.LogFormatterProtocol]? { get set }
+  var filters: [FlybitsSDK.FilterProtocol]? { get set }
+  func process(logDetails: FlybitsSDK.LogDetails)
+  func processInternal(logDetails: FlybitsSDK.LogDetails)
+  func isEnabledFor(level: FlybitsSDK.XCGLogger.Level) -> Swift.Bool
+  func shouldExclude(logDetails: inout FlybitsSDK.LogDetails, message: inout Swift.String) -> Swift.Bool
+  func applyFormatters(logDetails: inout FlybitsSDK.LogDetails, message: inout Swift.String)
+}
+extension DestinationProtocol {
+  public func shouldExclude(logDetails: inout FlybitsSDK.LogDetails, message: inout Swift.String) -> Swift.Bool
+  public func applyFormatters(logDetails: inout FlybitsSDK.LogDetails, message: inout Swift.String)
+}
+@objc public enum ConfigurationError : Swift.Int, Swift.Error {
+  case hasStoredEvents
+  case apiKeyNotSet
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+  public static var _nsErrorDomain: Swift.String {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class Analytics : ObjectiveC.NSObject {
+  @objc public enum StorageType : Swift.Int {
+    case coreData
+    case memory
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public static let shared: FlybitsSDK.Analytics
+  public var customDeviceId: Swift.String? {
+    get
+  }
+  public var storageType: FlybitsSDK.Analytics.StorageType {
+    get
+  }
+  public var serviceTime: FlybitsSDK.Analytics.UploadServiceTime? {
+    get
+  }
+  public var timeForDataFlush: Swift.Double {
+    get
+  }
+  public var timeForDataFlushFlex: Swift.Double {
+    get
+  }
+  @objc public class UploadServiceTime : ObjectiveC.NSObject {
+    public var timeUpdate: Swift.Double {
+      get
+    }
+    public var timeFlex: Swift.Double {
+      get
+    }
+    public var metric: FlybitsSDK.Utilities.TimeUnit {
+      get
+    }
+    public init(with timeUpdate: Swift.Double, timeFlex: Swift.Double, metric: FlybitsSDK.Utilities.TimeUnit)
+    @objc deinit
+    @objc override dynamic public init()
+  }
+  public func configure(storageType: FlybitsSDK.Analytics.StorageType, uploadServiceTime: FlybitsSDK.Analytics.UploadServiceTime? = UploadServiceTime(with: 1.0, timeFlex: 1.0, metric: .minutes), customDeviceId: Swift.String? = nil) throws
+  @objc public func flushEvents()
+  public func cancelFlush()
+  public func logEvent(eventName: Swift.String, properties: FlybitsSDK.Properties? = nil)
+  public func startTimedEvent(eventName: Swift.String, properties: FlybitsSDK.Properties? = nil) -> Swift.Int
+  public func endTimedEvent(reference: Swift.Int) -> Swift.Bool
+  @objc deinit
+}
+open class FileNameFilter : FlybitsSDK.FilterProtocol {
+  open var inverse: Swift.Bool
+  public init<S>(includeFrom fileNames: S, excludePathWhenMatching: Swift.Bool = true) where S : Swift.Sequence, S.Element == Swift.String
+  public init<S>(excludeFrom fileNames: S, excludePathWhenMatching: Swift.Bool = true) where S : Swift.Sequence, S.Element == Swift.String
+  @discardableResult
+  open func add(fileName: Swift.String) -> Swift.Bool
+  open func add<S>(fileNames: S) where S : Swift.Sequence, S.Element == Swift.String
+  open func clear()
+  open func shouldExclude(logDetails: inout FlybitsSDK.LogDetails, message: inout Swift.String) -> Swift.Bool
+  open var debugDescription: Swift.String {
+    get
+  }
+  @objc deinit
+}
+extension String {
+  public func substring(fromStartIndex: Swift.Int) -> Swift.String
+}
+extension String {
+  public func slice(from: Swift.String, to: Swift.String) -> Swift.String?
+}
+extension Date {
+  public var startOfDay: Foundation.Date {
+    get
+  }
+  public var endOfDay: Foundation.Date {
+    get
+  }
+}
+extension String {
+  public var htmlDecodedString: Swift.String {
+    get
+  }
+  public func convertHTMLEntitiesWithHexString() -> Swift.String
+  public func rangeFromNSRange(_ nsRange: Foundation.NSRange) -> Swift.Range<Swift.String.Index>?
+  public func NSRangeFromRange(_ range: Swift.Range<Swift.String.Index>) -> Foundation.NSRange
+}
+extension CLLocation : FlybitsSDK.DictionaryConvertible {
+  public func toDictionary() throws -> [Swift.String : Any]
+}
+extension CLLocationCoordinate2D : FlybitsSDK.DictionaryConvertible {
+  public func toDictionary() throws -> [Swift.String : Any]
+}
+public protocol UserInfoTaggingProtocol {
+  var name: Swift.String { get set }
+  var dictionary: [Swift.String : Swift.String] { get }
+  init(_ name: Swift.String)
+}
+public struct XCGTag : FlybitsSDK.UserInfoTaggingProtocol {
+  public var name: Swift.String
+  public var dictionary: [Swift.String : Swift.String] {
+    get
+  }
+  public init(_ name: Swift.String)
+  public static func name(_ name: Swift.String) -> FlybitsSDK.XCGTag
+  public static func names(_ names: Swift.String...) -> [Swift.String : [Swift.String]]
+}
+public struct XCGDev : FlybitsSDK.UserInfoTaggingProtocol {
+  public var name: Swift.String
+  public var dictionary: [Swift.String : Swift.String] {
+    get
+  }
+  public init(_ name: Swift.String)
+  public static func name(_ name: Swift.String) -> FlybitsSDK.XCGDev
+  public static func names(_ names: Swift.String...) -> [Swift.String : [Swift.String]]
+}
+public func | <Key, Value>(lhs: Swift.Dictionary<Key, Value>, rhs: Swift.Dictionary<Key, Value>) -> Swift.Dictionary<Key, Any> where Key : Swift.Hashable
+public func | (lhs: FlybitsSDK.UserInfoTaggingProtocol, rhs: FlybitsSDK.UserInfoTaggingProtocol) -> Swift.Dictionary<Swift.String, Any>
+public func | (lhs: FlybitsSDK.UserInfoTaggingProtocol, rhs: Swift.Dictionary<Swift.String, Any>) -> Swift.Dictionary<Swift.String, Any>
+public func | (lhs: Swift.Dictionary<Swift.String, Any>, rhs: FlybitsSDK.UserInfoTaggingProtocol) -> Swift.Dictionary<Swift.String, Any>
+extension UserInfoFilter {
+  convenience public init(includeFrom tags: [FlybitsSDK.UserInfoTaggingProtocol])
+  convenience public init(excludeFrom tags: [FlybitsSDK.UserInfoTaggingProtocol])
+}
+@objc @_inheritsConvenienceInitializers public class Properties : ObjectiveC.NSObject, Foundation.NSCoding {
+  public var items: [Swift.String : Any] {
+    get
+  }
+  @objc public func encode(with coder: Foundation.NSCoder)
+  @objc required public init?(coder decoder: Foundation.NSCoder)
+  @objc required override dynamic public init()
+  convenience public init(dict: [Swift.String : Any])
+  convenience public init(json: Swift.String) throws
+  public func toJSON() -> Swift.String?
+  public func addProperty(_ value: Any, forKey key: Swift.String)
+  @objc deinit
+}
+@objcMembers public class UserInfo : Swift.Codable, Swift.Equatable {
+  public static func == (lhs: FlybitsSDK.UserInfo, rhs: FlybitsSDK.UserInfo) -> Swift.Bool
+  @objc final public let identifier: Swift.String
+  @objc final public let customerId: Swift.String
+  @objc public var projectId: Swift.String {
+    get
+  }
+  @objc final public let optInStatus: Swift.Bool
+  public var pushNotificationStatus: Swift.Bool?
+  @objc @available(*, deprecated, message: "Use init(identifier: String, customerId: String, isActive: Bool, optInStatus: Bool) initializer")
+  public init(identifier: Swift.String, customerId: Swift.String, isActive: Swift.Bool, optInStatus: Swift.Bool)
+  public init(identifier: Swift.String, customerId: Swift.String, projectId: Swift.String, isActive: Swift.Bool, optInStatus: Swift.Bool, pushNotificationStatus: Swift.Bool? = nil)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@_inheritsConvenienceInitializers @objc open class SharedElements : ObjectiveC.NSObject {
+  public static var projectID: Swift.String? {
+    get
+  }
+  public static var deviceID: Swift.String? {
+    get
+  }
+  public static var userID: Swift.String? {
+    get
+  }
+  public static var physicalDeviceId: Swift.String? {
+    get
+  }
+  public static var connectedIDP: Swift.String? {
+    get
+  }
+  public static var jwtToken: Swift.String? {
+    get
+  }
+  public static var languageCodes: [Swift.String]? {
+    get
+  }
+  public static var scopes: [FlybitsSDK.FlybitsScope]? {
+    get
+  }
+  public static func read(fromDomain domain: Swift.String) -> [Swift.String : Any]
+  public static func write(_ dictionary: [Swift.String : Any], to domain: Swift.String) -> Swift.Bool
+  @objc deinit
+  @objc override dynamic public init()
+}
+extension SharedElements {
+}
+@_inheritsConvenienceInitializers @objc public class AnonymousIDP : ObjectiveC.NSObject, FlybitsSDK.IDP {
+  @objc public var provider: Swift.String {
+    @objc get
+  }
+  @objc public var projectID: Swift.String? {
+    @objc get
+  }
+  @objc public var authenticationEndPoint: Swift.String {
+    @objc get
+  }
+  @objc public var requestBody: Swift.String {
+    @objc get
+  }
+  @objc required convenience public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc deinit
+  @objc override dynamic public init()
+}
+open class XcodeColorsLogFormatter : FlybitsSDK.LogFormatterProtocol, Swift.CustomDebugStringConvertible {
+  public static let escape: Swift.String
+  public static let resetForeground: Swift.String
+  public static let resetBackground: Swift.String
+  public static let reset: Swift.String
+  public struct XcodeColor : Swift.CustomStringConvertible {
+    public var red: Swift.Int {
+      get
+      set
+    }
+    public var green: Swift.Int {
+      get
+      set
+    }
+    public var blue: Swift.Int {
+      get
+      set
+    }
+    public var foregroundCode: Swift.String {
+      get
+    }
+    public var backgroundCode: Swift.String {
+      get
+    }
+    public init(red: Swift.Int, green: Swift.Int, blue: Swift.Int)
+    public init(_ red: Swift.Int, _ green: Swift.Int, _ blue: Swift.Int)
+    public init(color: UIKit.UIColor)
+    public var description: Swift.String {
+      get
+    }
+    public static let red: FlybitsSDK.XcodeColorsLogFormatter.XcodeColor
+    public static let green: FlybitsSDK.XcodeColorsLogFormatter.XcodeColor
+    public static let blue: FlybitsSDK.XcodeColorsLogFormatter.XcodeColor
+    public static let black: FlybitsSDK.XcodeColorsLogFormatter.XcodeColor
+    public static let white: FlybitsSDK.XcodeColorsLogFormatter.XcodeColor
+    public static let lightGrey: FlybitsSDK.XcodeColorsLogFormatter.XcodeColor
+    public static let darkGrey: FlybitsSDK.XcodeColorsLogFormatter.XcodeColor
+    public static let orange: FlybitsSDK.XcodeColorsLogFormatter.XcodeColor
+    public static let purple: FlybitsSDK.XcodeColorsLogFormatter.XcodeColor
+    public static let darkGreen: FlybitsSDK.XcodeColorsLogFormatter.XcodeColor
+    public static let cyan: FlybitsSDK.XcodeColorsLogFormatter.XcodeColor
+  }
+  public init()
+  open func colorize(level: FlybitsSDK.XCGLogger.Level, with foregroundColor: FlybitsSDK.XcodeColorsLogFormatter.XcodeColor? = nil, on backgroundColor: FlybitsSDK.XcodeColorsLogFormatter.XcodeColor? = nil)
+  open func resetFormatting()
+  open func clearFormatting()
+  @discardableResult
+  open func format(logDetails: inout FlybitsSDK.LogDetails, message: inout Swift.String) -> Swift.String
+  open var debugDescription: Swift.String {
+    get
+  }
+  @objc deinit
+}
+open class FileDestination : FlybitsSDK.BaseQueuedDestination {
+  override open var owner: FlybitsSDK.XCGLogger? {
+    get
+    set
+  }
+  open var writeToFileURL: Foundation.URL? {
+    get
+    set
+  }
+  public init(owner: FlybitsSDK.XCGLogger? = nil, writeToFile: Any, identifier: Swift.String = "", shouldAppend: Swift.Bool = false, appendMarker: Swift.String? = "-- ** ** ** --", attributes: [Foundation.FileAttributeKey : Any]? = nil)
+  @objc deinit
+  open func flush(closure: (() -> Swift.Void)? = nil)
+  @discardableResult
+  open func rotateFile(to archiveToFile: Any, closure: ((Swift.Bool) -> Swift.Void)? = nil) -> Swift.Bool
+  override open func write(message: Swift.String)
+  override public init(owner: FlybitsSDK.XCGLogger? = super, identifier: Swift.String = super)
+}
+@_inheritsConvenienceInitializers @objc(Cache) public class Cache : CoreData.NSManagedObject {
+  @objc deinit
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+}
+extension Cache {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<FlybitsSDK.Cache>
+  @objc @NSManaged dynamic public var jsonData: Foundation.Data? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var lastReadAt: Foundation.Date? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var savedAt: Foundation.Date? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var url: Swift.String? {
+    @objc get
+    @objc set
+  }
+}
+extension FlybitsSDK.DictionaryConvertibleError : Swift.Equatable {}
+extension FlybitsSDK.DictionaryConvertibleError : Swift.Hashable {}
+extension FlybitsSDK.CachePolicy : Swift.Equatable {}
+extension FlybitsSDK.CachePolicy : Swift.Hashable {}
+extension FlybitsSDK.CachePolicy : Swift.RawRepresentable {}
+extension FlybitsSDK.OAuthIDP.SupportedIDP : Swift.Equatable {}
+extension FlybitsSDK.OAuthIDP.SupportedIDP : Swift.Hashable {}
+extension FlybitsSDK.OAuthIDP.SupportedIDP : Swift.RawRepresentable {}
+extension FlybitsSDK.XCGLogger.Level : Swift.Hashable {}
+extension FlybitsSDK.XCGLogger.Level : Swift.RawRepresentable {}
+extension FlybitsSDK.Utilities.SortOrder : Swift.Equatable {}
+extension FlybitsSDK.Utilities.SortOrder : Swift.Hashable {}
+extension FlybitsSDK.Utilities.SortOrder : Swift.RawRepresentable {}
+extension FlybitsSDK.Utilities.SortBy : Swift.Equatable {}
+extension FlybitsSDK.Utilities.SortBy : Swift.Hashable {}
+extension FlybitsSDK.Utilities.SortBy : Swift.RawRepresentable {}
+extension FlybitsSDK.Utilities.LengthUnit : Swift.Equatable {}
+extension FlybitsSDK.Utilities.LengthUnit : Swift.Hashable {}
+extension FlybitsSDK.Utilities.LengthUnit : Swift.RawRepresentable {}
+extension FlybitsSDK.Utilities.TimeUnit : Swift.Equatable {}
+extension FlybitsSDK.Utilities.TimeUnit : Swift.Hashable {}
+extension FlybitsSDK.Utilities.TimeUnit : Swift.RawRepresentable {}
+extension FlybitsSDK.FlybitsRequestType : Swift.Equatable {}
+extension FlybitsSDK.FlybitsRequestType : Swift.Hashable {}
+extension FlybitsSDK.FlybitsRequestType : Swift.RawRepresentable {}
+@available(*, deprecated, message: "Use RequestMethod enum")
+extension FlybitsSDK.HTTPMethod : Swift.Equatable {}
+@available(*, deprecated, message: "Use RequestMethod enum")
+extension FlybitsSDK.HTTPMethod : Swift.Hashable {}
+@available(*, deprecated, message: "Use RequestMethod enum")
+extension FlybitsSDK.HTTPMethod : Swift.RawRepresentable {}
+extension FlybitsSDK.RequestMethod : Swift.Equatable {}
+extension FlybitsSDK.RequestMethod : Swift.Hashable {}
+extension FlybitsSDK.RequestMethod : Swift.RawRepresentable {}
+extension FlybitsSDK.ANSIColorLogFormatter.ANSIOption : Swift.Equatable {}
+extension FlybitsSDK.ANSIColorLogFormatter.ANSIOption : Swift.Hashable {}
+extension FlybitsSDK.Reachability.NetworkStatus : Swift.Equatable {}
+extension FlybitsSDK.Reachability.NetworkStatus : Swift.Hashable {}
+extension FlybitsSDK.FLBErrorType : Swift.Equatable {}
+extension FlybitsSDK.FLBErrorType : Swift.Hashable {}
+extension FlybitsSDK.FLBErrorType : Swift.RawRepresentable {}
+extension FlybitsSDK.CocoaError : Swift.Equatable {}
+extension FlybitsSDK.CocoaError : Swift.Hashable {}
+extension FlybitsSDK.CacheError : Swift.Equatable {}
+extension FlybitsSDK.CacheError : Swift.Hashable {}
+extension FlybitsSDK.CoreDataError : Swift.Equatable {}
+extension FlybitsSDK.CoreDataError : Swift.Hashable {}
+extension FlybitsSDK.NetworkingRequestError : Swift.Equatable {}
+extension FlybitsSDK.NetworkingRequestError : Swift.Hashable {}
+extension FlybitsSDK.LoginError : Swift.Equatable {}
+extension FlybitsSDK.LoginError : Swift.Hashable {}
+extension FlybitsSDK.RegistrationError : Swift.Equatable {}
+extension FlybitsSDK.RegistrationError : Swift.Hashable {}
+extension FlybitsSDK.LocalizationError : Swift.Equatable {}
+extension FlybitsSDK.LocalizationError : Swift.Hashable {}
+extension FlybitsSDK.JWTError : Swift.Equatable {}
+extension FlybitsSDK.JWTError : Swift.Hashable {}
+extension FlybitsSDK.QueryExpressionError : Swift.Equatable {}
+extension FlybitsSDK.QueryExpressionError : Swift.Hashable {}
+extension FlybitsSDK.ErrorList : Swift.Equatable {}
+extension FlybitsSDK.ErrorList : Swift.Hashable {}
+extension FlybitsSDK.ToDictionaryError : Swift.Equatable {}
+extension FlybitsSDK.ToDictionaryError : Swift.Hashable {}
+extension FlybitsSDK.CustomerStatus : Swift.Equatable {}
+extension FlybitsSDK.CustomerStatus : Swift.Hashable {}
+extension FlybitsSDK.CustomerStatus : Swift.RawRepresentable {}
+extension FlybitsSDK.ConfigurationError : Swift.Equatable {}
+extension FlybitsSDK.ConfigurationError : Swift.Hashable {}
+extension FlybitsSDK.ConfigurationError : Swift.RawRepresentable {}
+extension FlybitsSDK.Analytics.StorageType : Swift.Equatable {}
+extension FlybitsSDK.Analytics.StorageType : Swift.Hashable {}
+extension FlybitsSDK.Analytics.StorageType : Swift.RawRepresentable {}

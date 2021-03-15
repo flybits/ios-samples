@@ -9,8 +9,9 @@
 /* Begin PBXAggregateTarget section */
 		DB6E2C47AA985715613545815BE4D579 /* FlybitsSDK */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 07C7F6CF9017438D840A8832409D7E42 /* Build configuration list for PBXAggregateTarget "FlybitsSDK" */;
+			buildConfigurationList = 975F94981DD593495DE551E33705E904 /* Build configuration list for PBXAggregateTarget "FlybitsSDK" */;
 			buildPhases = (
+				5782AD97A92E1FF27F56833624512281 /* [CP] Copy XCFrameworks */,
 			);
 			dependencies = (
 			);
@@ -19,13 +20,13 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		3423303DA17C07D69CCAA88AB9C6D254 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		A936F79E8839314925E2A551E3095C7E /* Pods-Anonymous-Connect-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E2C2A6CCA92D7B26D8170C70FB13EAF6 /* Pods-Anonymous-Connect-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CC3E43ADF232959DAF8DE0D3052C2814 /* Pods-Anonymous-Connect-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 526E985E1BB12E460F73E8E438728BB1 /* Pods-Anonymous-Connect-dummy.m */; };
+		7CEA341F9934CF8D3B228D080146DD22 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		8D4C339944B765B90FAF9F06EFEF6B22 /* Pods-Anonymous-Connect-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 526E985E1BB12E460F73E8E438728BB1 /* Pods-Anonymous-Connect-dummy.m */; };
+		FC120E7CC9EDC841402458147621E456 /* Pods-Anonymous-Connect-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E2C2A6CCA92D7B26D8170C70FB13EAF6 /* Pods-Anonymous-Connect-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C8475C629A9840B12056E0FD986ED44B /* PBXContainerItemProxy */ = {
+		ABFE8E288B3706D18B05CE55A778B2D5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -37,26 +38,28 @@
 /* Begin PBXFileReference section */
 		0C743CEEE09677A58281E1781A4905EA /* Pods-Anonymous-Connect-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Anonymous-Connect-acknowledgements.plist"; sourceTree = "<group>"; };
 		27912EDD855EF66D147F6FF7FD806432 /* Pods_Anonymous_Connect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Anonymous_Connect.framework; path = "Pods-Anonymous-Connect.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2DAF2AFCA35CB88655DA0B59BD57910C /* FlybitsSDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FlybitsSDK.xcconfig; sourceTree = "<group>"; };
-		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		34AA19FE8B25380E7A2F0F882112BFEC /* Pods-Anonymous-Connect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Anonymous-Connect.debug.xcconfig"; sourceTree = "<group>"; };
-		373B566F668AA36606F498E8238E7C88 /* FlybitsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FlybitsSDK.framework; sourceTree = "<group>"; };
 		46C5D3DE363C760DB24FA4F21A7C2132 /* Pods-Anonymous-Connect-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Anonymous-Connect-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4E7085F50D2102EBC690F17C9ACFCB4A /* FlybitsSDK.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = FlybitsSDK.xcframework; sourceTree = "<group>"; };
 		526E985E1BB12E460F73E8E438728BB1 /* Pods-Anonymous-Connect-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Anonymous-Connect-dummy.m"; sourceTree = "<group>"; };
 		5AA62FE9298342E45580FCC7301578D1 /* Pods-Anonymous-Connect.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Anonymous-Connect.modulemap"; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		94F5D6C8D586F2BEBA02DE7B4396F291 /* Pods-Anonymous-Connect-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Anonymous-Connect-Info.plist"; sourceTree = "<group>"; };
+		97F578929D1ED44E11AC3A4B9458040B /* FlybitsSDK-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "FlybitsSDK-xcframeworks.sh"; sourceTree = "<group>"; };
+		98BB97F11E7885B830995A77AEC535CC /* FlybitsSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FlybitsSDK.debug.xcconfig; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BE13C6FA04E090CFF27C49A5710CC7BE /* Pods-Anonymous-Connect-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Anonymous-Connect-frameworks.sh"; sourceTree = "<group>"; };
+		CD7C30868A1CD06DF78E6CC0324CB1E5 /* FlybitsSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FlybitsSDK.release.xcconfig; sourceTree = "<group>"; };
 		DD65E7E75A77238BB39397C3B46925BB /* Pods-Anonymous-Connect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Anonymous-Connect.release.xcconfig"; sourceTree = "<group>"; };
 		E2C2A6CCA92D7B26D8170C70FB13EAF6 /* Pods-Anonymous-Connect-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Anonymous-Connect-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1C417D5717674CD97A226C75AE2D1662 /* Frameworks */ = {
+		2F7D599990D417E63AFDC7F36C4A555C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3423303DA17C07D69CCAA88AB9C6D254 /* Foundation.framework in Frameworks */,
+				7CEA341F9934CF8D3B228D080146DD22 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,9 +77,28 @@
 		243954AB37EFE660CD3524ED636085A0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				817349A0E6EF661983B1B26FC89F3A27 /* FlybitsSDK */,
+				9BAD42D00CC630062E18860EE0A4AE96 /* FlybitsSDK */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		46F97B07ECE3429F0E0FA698890ADA75 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				97F578929D1ED44E11AC3A4B9458040B /* FlybitsSDK-xcframeworks.sh */,
+				98BB97F11E7885B830995A77AEC535CC /* FlybitsSDK.debug.xcconfig */,
+				CD7C30868A1CD06DF78E6CC0324CB1E5 /* FlybitsSDK.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/FlybitsSDK";
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		6794D0D48C7A1E2E9884C81526BAA968 /* Products */ = {
@@ -85,16 +107,6 @@
 				27912EDD855EF66D147F6FF7FD806432 /* Pods_Anonymous_Connect.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		817349A0E6EF661983B1B26FC89F3A27 /* FlybitsSDK */ = {
-			isa = PBXGroup;
-			children = (
-				D67E09076E74E2EA6E963421699E1C6A /* Frameworks */,
-				AAE1D5D12395F46776E3789D6F0F462C /* Support Files */,
-			);
-			name = FlybitsSDK;
-			path = FlybitsSDK;
 			sourceTree = "<group>";
 		};
 		9B105A9020FA0F53A04363B99758F9AE /* Pods-Anonymous-Connect */ = {
@@ -114,21 +126,22 @@
 			path = "Target Support Files/Pods-Anonymous-Connect";
 			sourceTree = "<group>";
 		};
-		AAE1D5D12395F46776E3789D6F0F462C /* Support Files */ = {
+		9BAD42D00CC630062E18860EE0A4AE96 /* FlybitsSDK */ = {
 			isa = PBXGroup;
 			children = (
-				2DAF2AFCA35CB88655DA0B59BD57910C /* FlybitsSDK.xcconfig */,
+				A10448B39EC756739A5EEDF9181EF265 /* Frameworks */,
+				46F97B07ECE3429F0E0FA698890ADA75 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/FlybitsSDK";
+			name = FlybitsSDK;
+			path = FlybitsSDK;
 			sourceTree = "<group>";
 		};
-		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+		A10448B39EC756739A5EEDF9181EF265 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+				4E7085F50D2102EBC690F17C9ACFCB4A /* FlybitsSDK.xcframework */,
 			);
-			name = iOS;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -145,15 +158,7 @@
 		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D67E09076E74E2EA6E963421699E1C6A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				373B566F668AA36606F498E8238E7C88 /* FlybitsSDK.framework */,
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -161,11 +166,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		040F4AD0C93175FD3765A4F3E65397CF /* Headers */ = {
+		EACF17D31B7158C7C27109CEAD4B2861 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A936F79E8839314925E2A551E3095C7E /* Pods-Anonymous-Connect-umbrella.h in Headers */,
+				FC120E7CC9EDC841402458147621E456 /* Pods-Anonymous-Connect-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,17 +179,17 @@
 /* Begin PBXNativeTarget section */
 		9EE22517AF8909D4A0D5D920E2803D39 /* Pods-Anonymous-Connect */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0C5095481AC5F773277C348708870A4B /* Build configuration list for PBXNativeTarget "Pods-Anonymous-Connect" */;
+			buildConfigurationList = 428F11C11F21A242C53863B84E540442 /* Build configuration list for PBXNativeTarget "Pods-Anonymous-Connect" */;
 			buildPhases = (
-				040F4AD0C93175FD3765A4F3E65397CF /* Headers */,
-				A3D04624CBA025BFFC0941700152494C /* Sources */,
-				1C417D5717674CD97A226C75AE2D1662 /* Frameworks */,
-				A6330C460CFB398E90B52D86C9280BC5 /* Resources */,
+				EACF17D31B7158C7C27109CEAD4B2861 /* Headers */,
+				BAFF7D313CB690493B482513A7844F5C /* Sources */,
+				2F7D599990D417E63AFDC7F36C4A555C /* Frameworks */,
+				6E539D1FC04F86833F4A03C82027EECA /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				53FAA8D8EF73A4D9EBB5118AB32AF4DE /* PBXTargetDependency */,
+				C82E4C2A39D61B70659B8932EC978039 /* PBXTargetDependency */,
 			);
 			name = "Pods-Anonymous-Connect";
 			productName = "Pods-Anonymous-Connect";
@@ -220,7 +225,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A6330C460CFB398E90B52D86C9280BC5 /* Resources */ = {
+		6E539D1FC04F86833F4A03C82027EECA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -229,70 +234,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5782AD97A92E1FF27F56833624512281 /* [CP] Copy XCFrameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/FlybitsSDK/FlybitsSDK-xcframeworks-input-files.xcfilelist",
+			);
+			name = "[CP] Copy XCFrameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/FlybitsSDK/FlybitsSDK-xcframeworks-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/FlybitsSDK/FlybitsSDK-xcframeworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		A3D04624CBA025BFFC0941700152494C /* Sources */ = {
+		BAFF7D313CB690493B482513A7844F5C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC3E43ADF232959DAF8DE0D3052C2814 /* Pods-Anonymous-Connect-dummy.m in Sources */,
+				8D4C339944B765B90FAF9F06EFEF6B22 /* Pods-Anonymous-Connect-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		53FAA8D8EF73A4D9EBB5118AB32AF4DE /* PBXTargetDependency */ = {
+		C82E4C2A39D61B70659B8932EC978039 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FlybitsSDK;
 			target = DB6E2C47AA985715613545815BE4D579 /* FlybitsSDK */;
-			targetProxy = C8475C629A9840B12056E0FD986ED44B /* PBXContainerItemProxy */;
+			targetProxy = ABFE8E288B3706D18B05CE55A778B2D5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1EE9A0F712CF398BF16519826A1C088B /* Debug */ = {
+		11DC75F989131DB7FB396892F3ACB9FC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 34AA19FE8B25380E7A2F0F882112BFEC /* Pods-Anonymous-Connect.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Anonymous-Connect/Pods-Anonymous-Connect-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Anonymous-Connect/Pods-Anonymous-Connect.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		58C6E5713F6183DA2396A47149DF5914 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2DAF2AFCA35CB88655DA0B59BD57910C /* FlybitsSDK.xcconfig */;
+			baseConfigurationReference = 98BB97F11E7885B830995A77AEC535CC /* FlybitsSDK.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -303,10 +291,11 @@
 			};
 			name = Debug;
 		};
-		8F17DC3A99F99FBAD606CE6963886315 /* Release */ = {
+		25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -329,66 +318,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		916E0404255105F480DC4950B7625F7A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -427,29 +357,11 @@
 			};
 			name = Debug;
 		};
-		A48457F29CD9DD65E30B7C19A361C695 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2DAF2AFCA35CB88655DA0B59BD57910C /* FlybitsSDK.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		CF0EC642775C1FCDD213F0DBBFEEB700 /* Release */ = {
+		554C3D4D3A52EB2DB5670073CC02CF93 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DD65E7E75A77238BB39397C3B46925BB /* Pods-Anonymous-Connect.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -482,23 +394,129 @@
 			};
 			name = Release;
 		};
+		7EE62A95E9062947DE9A0A7BEDCA02B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD7C30868A1CD06DF78E6CC0324CB1E5 /* FlybitsSDK.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BB1D98816CB8A4C585987D675B4011C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34AA19FE8B25380E7A2F0F882112BFEC /* Pods-Anonymous-Connect.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Anonymous-Connect/Pods-Anonymous-Connect-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Anonymous-Connect/Pods-Anonymous-Connect.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CA547D2C7E9A8A153DC2B27FBE00B112 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		07C7F6CF9017438D840A8832409D7E42 /* Build configuration list for PBXAggregateTarget "FlybitsSDK" */ = {
+		428F11C11F21A242C53863B84E540442 /* Build configuration list for PBXNativeTarget "Pods-Anonymous-Connect" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				58C6E5713F6183DA2396A47149DF5914 /* Debug */,
-				A48457F29CD9DD65E30B7C19A361C695 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0C5095481AC5F773277C348708870A4B /* Build configuration list for PBXNativeTarget "Pods-Anonymous-Connect" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1EE9A0F712CF398BF16519826A1C088B /* Debug */,
-				CF0EC642775C1FCDD213F0DBBFEEB700 /* Release */,
+				BB1D98816CB8A4C585987D675B4011C5 /* Debug */,
+				554C3D4D3A52EB2DB5670073CC02CF93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -506,8 +524,17 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				916E0404255105F480DC4950B7625F7A /* Debug */,
-				8F17DC3A99F99FBAD606CE6963886315 /* Release */,
+				25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */,
+				CA547D2C7E9A8A153DC2B27FBE00B112 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		975F94981DD593495DE551E33705E904 /* Build configuration list for PBXAggregateTarget "FlybitsSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11DC75F989131DB7FB396892F3ACB9FC /* Debug */,
+				7EE62A95E9062947DE9A0A7BEDCA02B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
