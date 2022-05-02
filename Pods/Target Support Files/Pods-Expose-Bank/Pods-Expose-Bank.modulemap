@@ -1,0 +1,6 @@
+framework module Pods_Expose_Bank {
+  umbrella header "Pods-Expose-Bank-umbrella.h"
+
+  export *
+  module * { export * }
+}

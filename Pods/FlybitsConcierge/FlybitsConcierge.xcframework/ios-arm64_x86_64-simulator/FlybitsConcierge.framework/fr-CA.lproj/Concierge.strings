@@ -1,0 +1,186 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "1nf-LK-ryJ"; */
+"1nf-LK-ryJ.text" = "Label";
+
+/* Class = "UILabel"; text = "CREDIT CARD ACTIVATION BONUS"; ObjectID = "28p-Wb-Q9u"; */
+"28p-Wb-Q9u.text" = "CREDIT CARD ACTIVATION BONUS";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "2Ef-cc-ws1"; */
+"2Ef-cc-ws1.text" = "Label";
+
+/* Class = "UILabel"; text = "1/4"; ObjectID = "5sr-cR-UmA"; */
+"5sr-cR-UmA.text" = "1/4";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "618-3m-sPc"; */
+"618-3m-sPc.text" = "Label";
+
+/* Class = "UILabel"; text = "Welcome to Concierge! This feature will allow you to discover perks, offers, and rewards catered just for you, including\n\n•  Bonus offers that come with your accounts\n\n•  Limited-time perks that come with your cards\n\n•  Nearby community events relevant to you \n\n•  New app features that make banking easier for you"; ObjectID = "A1Q-x8-YVb"; */
+"A1Q-x8-YVb.text" = "Bienvenue au concierge ! Cette fonction vous permettra de découvrir des avantages, des offres et des récompenses juste pour vous, incluant :\n\n•  Offres de bonus qui viennent avec votre compte\n\n•   Avantages de durée limitée pour vos cartes\n\n•  Événements communautaires à proximité qui sont pertinents pour vous \n\n•  De nouvelles fonctionnalités dans l’application pour simplifier votre expérience bancaire";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "CZ7-er-9pD"; */
+"CZ7-er-9pD.text" = "Label";
+
+/* Class = "UILabel"; text = "Description"; ObjectID = "D8V-Nu-qs8"; */
+"D8V-Nu-qs8.text" = "Description";
+
+/* Class = "UILabel"; text = "By signing up, you indicate that you agree to the"; ObjectID = "FhK-hS-uVP"; */
+"FhK-hS-uVP.text" = "By signing up, you indicate that you agree to the";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "J5h-y3-upN"; */
+"J5h-y3-upN.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "JS0-Tf-53C"; */
+"JS0-Tf-53C.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Opening Cocktails"; ObjectID = "Jsm-sx-rPh"; */
+"Jsm-sx-rPh.text" = "Opening Cocktails";
+
+/* Class = "UILabel"; text = "Oops, something went wrong!"; ObjectID = "Krd-yQ-Mrb"; */
+"Krd-yQ-Mrb.text" = "Oops, something went wrong!";
+
+/* Class = "UILabel"; text = "Governor Level 1, Room 108"; ObjectID = "M3l-32-Jdm"; */
+"M3l-32-Jdm.text" = "Governor Level 1, Room 108";
+
+/* Class = "UILabel"; text = "Your personalized content will appear here."; ObjectID = "Nt6-vS-80D"; */
+"Nt6-vS-80D.text" = "Votre contenu personnalisé s’affichera ici.";
+
+/* Class = "UILabel"; text = "Opt-in to Concierge"; ObjectID = "OBl-XE-8QB"; */
+"OBl-XE-8QB.text" = "S’inscrire au concierge";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "OlH-vu-06b"; */
+"OlH-vu-06b.text" = "Label";
+
+/* Class = "UILabel"; text = "Survey Question"; ObjectID = "QHO-o7-J8e"; */
+"QHO-o7-J8e.text" = "Survey Question";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Srq-NR-vdK"; */
+"Srq-NR-vdK.text" = "Label";
+
+/* Class = "UILabel"; text = "TD Aeroplan Visa Infinite card currently offers the most lucrative Aeroplan sign-up bonus on the market: 30000 Aeroplan Miles. "; ObjectID = "W5w-Ak-HhQ"; */
+"W5w-Ak-HhQ.text" = "TD Aeroplan Visa Infinite card currently offers the most lucrative Aeroplan sign-up bonus on the market: 30000 Aeroplan Miles. ";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "XEJ-Sv-jly"; */
+"XEJ-Sv-jly.text" = "Label";
+
+/* Class = "UILabel"; text = "3:00PM - 5:00PM"; ObjectID = "Xqz-eg-Lms"; */
+"Xqz-eg-Lms.text" = "3:00PM - 5:00PM";
+
+/* Class = "UILabel"; text = "Single"; ObjectID = "Ycu-AM-pHp"; */
+"Ycu-AM-pHp.text" = "Single";
+
+/* Class = "UILabel"; text = "Opt-In"; ObjectID = "agY-Ct-QuB"; */
+"agY-Ct-QuB.text" = "S’inscrire";
+
+/* Class = "UIViewController"; title = "Survey"; ObjectID = "arB-tg-ndA"; */
+"arB-tg-ndA.title" = "Survey";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "dk1-lV-484"; */
+"dk1-lV-484.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "dwA-zR-SI1"; */
+"dwA-zR-SI1.normalTitle" = "Done";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "etA-Ab-EzB"; */
+"etA-Ab-EzB.text" = "Label";
+
+/* Class = "UILabel"; text = "Photo description... "; ObjectID = "f5L-wd-kg6"; */
+"f5L-wd-kg6.text" = "Photo description... ";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "fg7-ZK-TEM"; */
+"fg7-ZK-TEM.text" = "Label";
+
+/* Class = "UILabel"; text = "Multiple"; ObjectID = "g79-YK-maM"; */
+"g79-YK-maM.text" = "Multiple";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "gHB-mR-Qt3"; */
+"gHB-mR-Qt3.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Connect to Live Stream"; ObjectID = "gTL-WE-7pj"; */
+"gTL-WE-7pj.normalTitle" = "Connect to Live Stream";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "h4a-KR-haO"; */
+"h4a-KR-haO.text" = "Title";
+
+/* Class = "UIButton"; normalTitle = "Go back"; ObjectID = "hWf-Du-uDI"; */
+"hWf-Du-uDI.normalTitle" = "Go back";
+
+/* Class = "UITextView"; text = "orem ipsum dolor sit amet, consectetur adipiscing elit. Integer sollicitudin at risus at dapibus. Cras ultrices, eros in laoreet cursus, velit velit maximus metus, eget porttitor dui enim at diam. Ut ultrices interdum magna sed venenatis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi vel faucibus urna. Donec justo nisi, elementum quis volutpat eu, vehicula eget ex. Aliquam viverra, nunc ut volutpat lacinia, enim enim accumsan sem, pretium efficitur quam mauris commodo nunc. Nunc pellentesque, quam rutrum cursus efficitur, diam urna euismod sem, quis condimentum purus tellus et massa. Suspendisse accumsan, nisi non pretium efficitur, augue nisl tempor ex, ut consequat mi tellus ac nibh. Donec id posuere lacus. Donec dapibus eu eros non vehicula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi hendrerit dolor eget tellus mollis convallis. Donec justo ante, aliquet vel commodo pulvinar, elementum in libero. Fusce et mollis tellus. Praesent nec ligula at est pharetra efficitur at id dui. Pellentesque orci sem, pulvinar in purus a, fermentum finibus ex. orem ipsum dolor sit amet, consectetur adipiscing elit. Integer sollicitudin at risus at dapibus. Cras ultrices, eros in laoreet cursus, velit velit maximus metus, eget porttitor orem ipsum dolor sit amet, consectetur adipiscing elit. Integer sollicitudin at risus at dapibus. Cras ultrices, eros in laoreet cursus, velit velit maximus metus, eget porttitor dui enim at diam. Ut ultrices interdum magna sed venenatis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi vel faucibus urna. Donec justo nisi, elementum quis volutpat eu, vehicula eget ex. Aliquam viverra, nunc ut volutpat lacinia, enim enim accumsan sem, pretium efficitur quam mauris commodo nunc. Nunc pellentesque, quam rutrum cursus efficitur, diam urna euismod sem, quis condimentum purus tellus et massa. Suspendisse accumsan, nisi non pretium efficitur, augue nisl tempor ex, ut consequat mi tellus ac nibh. Donec id posuere lacus. Donec dapibus eu eros non vehicula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi hendrerit dolor eget tellus mollis convallis. Donec justo ante, aliquet vel commodo pulvinar, elementum in libero. Fusce et mollis tellus. Praesent nec ligula at est pharetra efficitur at id dui. Pellentesque orci sem, pulvinar in purus a, fermentum finibus ex. orem ipsum dolor sit amet, consectetur adipiscing elit. Integer sollicitudin at risus at dapibus. Cras ultrices, eros in laoreet cursus, velit velit maximus metus, eget porttitor dui enim at diam. Ut ultrices interdum magna sed venenatis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi vel faucibus urna. Donec justo nisi, elementum quis volutpat eu, vehicula eget ex. Aliquam viverra, nunc ut volutpat lacinia, enim enim accumsan sem, pretium efficitur quam mauris commodo nunc. Nunc pellentesque, quam rutrum cursus efficitur, diam urna euismod sem, quis condimentum purus tellus et massa. Suspendisse accumsan, nisi non pretium efficitur, augue nisl tempor ex, ut consequat mi tellus ac nibh. Donec id posuere lacus. Donec dapibus eu eros non vehicula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi hendrerit dolor eget tellus mollis convallis. Donec justo ante, aliquet vel commodo pulvinar, elementum in libero. Fusce et mollis tellus. Praesent nec ligula at est pharetra efficitur at id dui. Pellentesque orci sem, pulvinar in purus a, fermentum finibus ex. \ndui enim at diam. Ut ultrices interdum magna sed venenatis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi vel faucibus urna. Donec justo "; ObjectID = "hiS-NZ-lEG"; */
+"hiS-NZ-lEG.text" = "orem ipsum dolor sit amet, consectetur adipiscing elit. Integer sollicitudin at risus at dapibus. Cras ultrices, eros in laoreet cursus, velit velit maximus metus, eget porttitor dui enim at diam. Ut ultrices interdum magna sed venenatis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi vel faucibus urna. Donec justo nisi, elementum quis volutpat eu, vehicula eget ex. Aliquam viverra, nunc ut volutpat lacinia, enim enim accumsan sem, pretium efficitur quam mauris commodo nunc. Nunc pellentesque, quam rutrum cursus efficitur, diam urna euismod sem, quis condimentum purus tellus et massa. Suspendisse accumsan, nisi non pretium efficitur, augue nisl tempor ex, ut consequat mi tellus ac nibh. Donec id posuere lacus. Donec dapibus eu eros non vehicula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi hendrerit dolor eget tellus mollis convallis. Donec justo ante, aliquet vel commodo pulvinar, elementum in libero. Fusce et mollis tellus. Praesent nec ligula at est pharetra efficitur at id dui. Pellentesque orci sem, pulvinar in purus a, fermentum finibus ex. orem ipsum dolor sit amet, consectetur adipiscing elit. Integer sollicitudin at risus at dapibus. Cras ultrices, eros in laoreet cursus, velit velit maximus metus, eget porttitor orem ipsum dolor sit amet, consectetur adipiscing elit. Integer sollicitudin at risus at dapibus. Cras ultrices, eros in laoreet cursus, velit velit maximus metus, eget porttitor dui enim at diam. Ut ultrices interdum magna sed venenatis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi vel faucibus urna. Donec justo nisi, elementum quis volutpat eu, vehicula eget ex. Aliquam viverra, nunc ut volutpat lacinia, enim enim accumsan sem, pretium efficitur quam mauris commodo nunc. Nunc pellentesque, quam rutrum cursus efficitur, diam urna euismod sem, quis condimentum purus tellus et massa. Suspendisse accumsan, nisi non pretium efficitur, augue nisl tempor ex, ut consequat mi tellus ac nibh. Donec id posuere lacus. Donec dapibus eu eros non vehicula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi hendrerit dolor eget tellus mollis convallis. Donec justo ante, aliquet vel commodo pulvinar, elementum in libero. Fusce et mollis tellus. Praesent nec ligula at est pharetra efficitur at id dui. Pellentesque orci sem, pulvinar in purus a, fermentum finibus ex. orem ipsum dolor sit amet, consectetur adipiscing elit. Integer sollicitudin at risus at dapibus. Cras ultrices, eros in laoreet cursus, velit velit maximus metus, eget porttitor dui enim at diam. Ut ultrices interdum magna sed venenatis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi vel faucibus urna. Donec justo nisi, elementum quis volutpat eu, vehicula eget ex. Aliquam viverra, nunc ut volutpat lacinia, enim enim accumsan sem, pretium efficitur quam mauris commodo nunc. Nunc pellentesque, quam rutrum cursus efficitur, diam urna euismod sem, quis condimentum purus tellus et massa. Suspendisse accumsan, nisi non pretium efficitur, augue nisl tempor ex, ut consequat mi tellus ac nibh. Donec id posuere lacus. Donec dapibus eu eros non vehicula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi hendrerit dolor eget tellus mollis convallis. Donec justo ante, aliquet vel commodo pulvinar, elementum in libero. Fusce et mollis tellus. Praesent nec ligula at est pharetra efficitur at id dui. Pellentesque orci sem, pulvinar in purus a, fermentum finibus ex. \ndui enim at diam. Ut ultrices interdum magna sed venenatis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi vel faucibus urna. Donec justo ";
+
+/* Class = "UILabel"; text = "10:45"; ObjectID = "hjB-J5-zfP"; */
+"hjB-J5-zfP.text" = "10:45";
+
+/* Class = "UITextField"; placeholder = "String placeholder"; ObjectID = "i4W-GG-O4p"; */
+"i4W-GG-O4p.placeholder" = "String placeholder";
+
+/* Class = "UITextField"; text = "Bringing it back"; ObjectID = "i4W-GG-O4p"; */
+"i4W-GG-O4p.text" = "Bringing it back";
+
+/* Class = "UILabel"; text = "Introducing Flybits White-Labeled Solution"; ObjectID = "iTf-0v-HFz"; */
+"iTf-0v-HFz.text" = "Introducing Flybits White-Labeled Solution";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "iZE-EI-xSM"; */
+"iZE-EI-xSM.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Number placeholder"; ObjectID = "igb-tM-qwJ"; */
+"igb-tM-qwJ.placeholder" = "Number placeholder";
+
+/* Class = "UITextField"; text = "Bringing it back"; ObjectID = "igb-tM-qwJ"; */
+"igb-tM-qwJ.text" = "Bringing it back";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "irE-U8-PzE"; */
+"irE-U8-PzE.text" = "Label";
+
+/* Class = "UITextView"; text = "By selecting to opt in to Concierge and pressing continue, you are agreeing to the Flybits Terms and Conditions."; ObjectID = "jlU-AI-iCS"; */
+"jlU-AI-iCS.text" = "By selecting to opt in to Concierge and pressing continue, you are agreeing to the Flybits Terms and Conditions.";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "kfP-Ea-lwD"; */
+"kfP-Ea-lwD.text" = "Label";
+
+/* Class = "UILabel"; text = "Activate your new card for 30,000 reward points"; ObjectID = "l7R-L9-E8n"; */
+"l7R-L9-E8n.text" = "Activate your new card for 30,000 reward points";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "lCg-ma-INE"; */
+"lCg-ma-INE.text" = "Label";
+
+/* Class = "UILabel"; text = "There was an issue completing your request. Please go back and try again."; ObjectID = "lGz-bJ-j8I"; */
+"lGz-bJ-j8I.text" = "There was an issue completing your request. Please go back and try again.";
+
+/* Class = "UILabel"; text = "7:00pm"; ObjectID = "lOg-fY-1fb"; */
+"lOg-fY-1fb.text" = "7:00pm";
+
+/* Class = "UILabel"; text = "Loading..."; ObjectID = "noI-F1-Kqg"; */
+"noI-F1-Kqg.text" = "Chargement...";
+
+/* Class = "UILabel"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."; ObjectID = "pWJ-et-ZyP"; */
+"pWJ-et-ZyP.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+
+/* Class = "UIButton"; normalTitle = "Terms of Service"; ObjectID = "ps5-2C-tQy"; */
+"ps5-2C-tQy.normalTitle" = "Terms of Service";
+
+/* Class = "UILabel"; text = "and"; ObjectID = "qFT-t1-bEe"; */
+"qFT-t1-bEe.text" = "and";
+
+/* Class = "UILabel"; text = "Question 1"; ObjectID = "qup-Qj-hrl"; */
+"qup-Qj-hrl.text" = "Question 1";
+
+/* Class = "UITextView"; text = "Please read these “Terms of Service” fully and carefully before using https://www.flybits.com (the “Flybits Platform”) and any of the services, features, or applications made available by Flybits (“Flybits”, “we”, “us”) or any other Flybits services that links to these Terms of Service (collectively, the “Services”).\n\nThese Terms of Service incorporate Flybits Inc.’s Privacy Policy, which is hereby made a part of these Terms of Service.\n\nThese Terms of Service set forth the legally binding terms and conditions for your use of the Services.\n\nBy “signing up”, you or the company or entity that you represent (“you,” “your,” “yours” or “customer”) are consenting to be bound by and are becoming a party to these Terms of Service. You are also representing and warranting that the individual signing up is authorized to enter into this agreement and bind such entity. Your continued use of any portion of the services shall also constitute assent to the terms of these Terms of Service. If you are using the services on behalf of a company or other entity, then all references to “you” or “your” herein shall refer to both the individual and the entity.\n\nIf you do not unconditionally agree to all of the terms of these Terms of Service, you will have no right to use the Services (and you should immediately cease all such use)."; ObjectID = "rdJ-pQ-G1q"; */
+"rdJ-pQ-G1q.text" = "Please read these “Terms of Service” fully and carefully before using https://www.flybits.com (the “Flybits Platform”) and any of the services, features, or applications made available by Flybits (“Flybits”, “we”, “us”) or any other Flybits services that links to these Terms of Service (collectively, the “Services”).\n\nThese Terms of Service incorporate Flybits Inc.’s Privacy Policy, which is hereby made a part of these Terms of Service.\n\nThese Terms of Service set forth the legally binding terms and conditions for your use of the Services.\n\nBy “signing up”, you or the company or entity that you represent (“you,” “your,” “yours” or “customer”) are consenting to be bound by and are becoming a party to these Terms of Service. You are also representing and warranting that the individual signing up is authorized to enter into this agreement and bind such entity. Your continued use of any portion of the services shall also constitute assent to the terms of these Terms of Service. If you are using the services on behalf of a company or other entity, then all references to “you” or “your” herein shall refer to both the individual and the entity.\n\nIf you do not unconditionally agree to all of the terms of these Terms of Service, you will have no right to use the Services (and you should immediately cease all such use).";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "sdR-Kw-Nlq"; */
+"sdR-Kw-Nlq.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Continue"; ObjectID = "td4-kg-QWW"; */
+"td4-kg-QWW.normalTitle" = "Continuer";
+
+/* Class = "UILabel"; text = "Description"; ObjectID = "uDP-yL-zR4"; */
+"uDP-yL-zR4.text" = "Description";
+
+/* Class = "UILabel"; text = "Note that new cardholders get 15,000 miles after a first purchase and an additional 5 points per $1 spent for the first three months; up to an extra 5,000 miles per month.  30,000 potential bonus points total. When redeemed at Air Canada those 30000 Miles are enough for two premium economy short-haul flights anywhere in Canada or the continental US."; ObjectID = "ugf-xu-zvy"; */
+"ugf-xu-zvy.text" = "Note that new cardholders get 15,000 miles after a first purchase and an additional 5 points per $1 spent for the first three months; up to an extra 5,000 miles per month.  30,000 potential bonus points total. When redeemed at Air Canada those 30000 Miles are enough for two premium economy short-haul flights anywhere in Canada or the continental US.";
+
+/* Class = "UILabel"; text = "Terms and Conditions"; ObjectID = "vj8-EF-Fex"; */
+"vj8-EF-Fex.text" = "Terms and Conditions";
+
+/* Class = "UIButton"; normalTitle = "Privacy Policy."; ObjectID = "x4W-Kq-tnS"; */
+"x4W-Kq-tnS.normalTitle" = "Privacy Policy.";

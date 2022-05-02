@@ -1,0 +1,329 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name FlybitsPushSDK
+@_exported import FlybitsPushSDK
+import FlybitsSDK
+import Foundation
+import Swift
+import UIKit
+import UserNotifications
+@_inheritsConvenienceInitializers @objc public class PushScope : ObjectiveC.NSObject, FlybitsSDK.FlybitsScope {
+  public var scopeName: Swift.String {
+    get
+  }
+  @objc public var identifier: Swift.String {
+    get
+  }
+  @objc public func onStart(currentActiveUserIsOptedIn: Swift.Bool)
+  @objc public func onStop()
+  @objc public func onConnected(user: FlybitsSDK.User)
+  @objc public func onDisconnected()
+  @objc public func onOptIn()
+  @objc public func onOptOut()
+  @objc required convenience public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  public func onCachedDataRetrieved(data: Swift.AnyObject)
+  public static func trackNotificationStatus(granted: Swift.Bool)
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc @_inheritsConvenienceInitializers public class PushContentAnalyticsContext : ObjectiveC.NSObject {
+  public static func trackViewed(contentId: Swift.String, pushId: Swift.String, value: Swift.Bool = true, timestamp: Swift.Double? = nil, sendImmediately: Swift.Bool = false)
+  public static func trackFulfilled(contentId: Swift.String, pushId: Swift.String, value: Swift.Bool = true, timestamp: Swift.Double? = nil, sendImmediately: Swift.Bool = false)
+  public static func trackEngaged(contentId: Swift.String, pushId: Swift.String, value: Swift.Bool = true, timestamp: Swift.Double? = nil, sendImmediately: Swift.Bool = false)
+  public static func trackComponentFulfilled(contentId: Swift.String, pushId: Swift.String, componentId: Swift.String, value: Swift.Bool = true, timestamp: Swift.Double? = nil, sendImmediately: Swift.Bool = false)
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc @_inheritsConvenienceInitializers public class PushAuthorizationAnalyticsContext : ObjectiveC.NSObject {
+  public static func trackPushAuthorization(optInState: Swift.Bool, timestamp: Swift.Double? = nil, immediately: Swift.Bool = false)
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class APNSPreferences : ObjectiveC.NSObject, Swift.Decodable, FlybitsSDK.DictionaryConvertible {
+  public var requiresSave: Swift.Bool {
+    get
+  }
+  public var isLoaded: Swift.Bool {
+    get
+  }
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc override dynamic public var debugDescription: Swift.String {
+    @objc get
+  }
+  required public init?(responseData: Any)
+  required public init(from decoder: Swift.Decoder) throws
+  public func isPushDisabled<T>(for element: T) -> Swift.Bool where T : FlybitsPushSDK.PushConfigurable
+  public func isPushDisabled(for topic: Swift.String) -> Swift.Bool
+  public func enablePush<T>(for element: T) where T : FlybitsPushSDK.PushConfigurable
+  public func enablePush(for topic: Swift.String)
+  public func disablePush<T>(for element: T) where T : FlybitsPushSDK.PushConfigurable
+  public func disablePush(for topic: Swift.String)
+  public func save()
+  public func load()
+  public func clearAllKeywords()
+  public func toDictionary() throws -> [Swift.String : Any]
+  @objc deinit
+}
+public enum PushError : Swift.Int, FlybitsSDK.ErrorConformable {
+  case apnsTokenLength
+  public static let Domain: Swift.String
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum APNSPreferenceError : Swift.Int, FlybitsSDK.ErrorConformable {
+  case parseError
+  public static let Domain: Swift.String
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc public class PushManagerErrorConstants : ObjectiveC.NSObject {
+  public static var FetchEmpty: Swift.String {
+    get
+  }
+  public static var Parse: Swift.String {
+    get
+  }
+  public static var PayloadEmpty: Swift.String {
+    get
+  }
+  public static var PayloadData: Swift.String {
+    get
+  }
+  public static var PayloadFormat: Swift.String {
+    get
+  }
+  public static var TokenRegistration: Swift.String {
+    get
+  }
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_inheritsConvenienceInitializers @objc public class PushManagerConstants : ObjectiveC.NSObject {
+  public static var PushFetchError: Swift.String {
+    get
+  }
+  public static var PushMessageContent: Swift.String {
+    get
+  }
+  public static var PushErrorData: Swift.String {
+    get
+  }
+  public static var PushErrorTopic: Foundation.Notification.Name {
+    get
+  }
+  public static var PushPreferencesErrorTopic: Foundation.Notification.Name {
+    get
+  }
+  public static var PushPreferencesUpdatedTopic: Foundation.Notification.Name {
+    get
+  }
+  public static var PushErrorType: Swift.String {
+    get
+  }
+  public static var PushFetchedContent: Swift.String {
+    get
+  }
+  public static var PushSourceNetwork: Swift.String {
+    get
+  }
+  public static var SourceContent: Swift.String {
+    get
+  }
+  public static var PushTokenError: Foundation.Notification.Name {
+    get
+  }
+  public static var PushTokenUpdated: Foundation.Notification.Name {
+    get
+  }
+  public static var UnderlyingErrors: Swift.String {
+    get
+  }
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc public protocol PushConfigurable {
+  @objc var identifier: Swift.String { get }
+  @objc var route: Swift.String { get }
+  @objc func subscribeToPush()
+  @objc func unsubscribeFromPush()
+}
+@objc public class PushConfiguration : ObjectiveC.NSObject {
+  public var autoFetchData: Swift.Bool
+  public var autoReconnect: Swift.Bool
+  public var deviceRegistrationData: [Swift.String : Any]?
+  public var autoSavePushPreferences: Swift.Bool
+  public var apnsToken: Foundation.Data? {
+    get
+    set
+  }
+  public init(autoFetchData: Swift.Bool = true, autoReconnect: Swift.Bool = true, deviceRegistrationData: [Swift.String : Any]? = nil)
+  public static func configuration() -> FlybitsPushSDK.PushConfiguration
+  public func clearDeviceRegistrationData()
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_hasMissingDesignatedInitializers @objc public class PushManager : ObjectiveC.NSObject {
+  public static let shared: FlybitsPushSDK.PushManager
+  public var configuration: FlybitsPushSDK.PushConfiguration {
+    get
+  }
+  final public let backgroundPreferences: FlybitsPushSDK.APNSPreferences
+  public static func toPush(_ notification: [Swift.String : Any]) -> FlybitsPushSDK.Push?
+  @discardableResult
+  @objc public func unsubscribedTopics(completion: @escaping ([Swift.String]?, Swift.Error?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @discardableResult
+  @objc public func unsubscribeTo(topic: Swift.String, completion: (([Swift.String]?, Swift.Error?) -> Swift.Void)?) -> FlybitsSDK.FlybitsRequest
+  @discardableResult
+  @objc public func subscribeTo(topic: Swift.String, completion: (([Swift.String]?, Swift.Error?) -> Swift.Void)?) -> FlybitsSDK.FlybitsRequest
+  @discardableResult
+  @objc public func userNotifications(query: FlybitsPushSDK.PushQuery? = nil, completion: @escaping ([FlybitsPushSDK.PushData]?, Swift.Error?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @discardableResult
+  @objc public static func setPreferredLanguage(code: Swift.String, completion: @escaping (Swift.Error?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @discardableResult
+  @objc public static func setPreferredLanguages(codes: [Swift.String], completion: @escaping (Swift.Error?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public static func removeDeviceToken(completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest?
+  @discardableResult
+  public static func uploadToken(_ token: Foundation.Data, completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @objc override dynamic public init()
+  @objc deinit
+}
+public enum PushRequest : FlybitsSDK.Requestable {
+  case removeNotification(id: Swift.String, completion: (Swift.Bool, Foundation.NSError?) -> Swift.Void)
+  case notificationHistory(query: FlybitsPushSDK.PushQuery, completion: (FlybitsSDK.Paged<FlybitsPushSDK.PushData>?, Foundation.NSError?) -> Swift.Void)
+  public var requestType: FlybitsSDK.FlybitsRequestType {
+    get
+  }
+  public var method: FlybitsSDK.HTTPMethod {
+    get
+  }
+  public var encoding: FlybitsSDK.HTTPEncoding {
+    get
+  }
+  public var path: Swift.String {
+    get
+  }
+  public var parameters: [Swift.String : Any]? {
+    get
+  }
+  public func execute() -> FlybitsSDK.FlybitsRequest
+}
+@_hasMissingDesignatedInitializers public class PushAnalyticsContext {
+  public static func trackViewed(pushId: Swift.String, value: Swift.Bool = true, timestamp: Swift.Double? = nil, sendImmediately: Swift.Bool = false)
+  public static func trackEngaged(pushId: Swift.String, value: Swift.Bool = true, timestamp: Swift.Double? = nil, sendImmediately: Swift.Bool = false)
+  public static func trackComponentFulfilled(pushId: Swift.String, componentId: Swift.String, value: Swift.Bool = true, timestamp: Swift.Double? = nil, sendImmediately: Swift.Bool = false)
+  @objc deinit
+}
+@objc public class PushTemplateOptions : ObjectiveC.NSObject {
+  public var max: Swift.Int {
+    get
+  }
+  public var delay: Swift.Int {
+    get
+  }
+  public var cooldown: Swift.Int {
+    get
+  }
+  public init(max: Swift.Int, delay: Swift.Int, cooldown: Swift.Int)
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc public enum RuleResult : Swift.Int {
+  case `true` = 1
+  case `false` = 2
+  case trueOrFalse = 3
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc final public class PushTemplate : ObjectiveC.NSObject, FlybitsSDK.ResponseObjectSerializable, FlybitsSDK.DictionaryConvertible {
+  final public var identifier: Swift.String?
+  final public var name: Swift.String
+  final public var title: Swift.String
+  final public var message: Swift.String
+  final public var action: Swift.String?
+  final public var options: FlybitsPushSDK.PushTemplateOptions?
+  final public var customFields: [Swift.String : Swift.String]?
+  final public var users: [Swift.String : Swift.String]? {
+    get
+  }
+  final public var rules: [Swift.String : Swift.Int]? {
+    get
+  }
+  final public func addUser(userID: Swift.String, deviceID: Swift.String) -> FlybitsPushSDK.PushTemplate
+  final public func addRule(ruleID: Swift.String, result: FlybitsPushSDK.RuleResult) -> FlybitsPushSDK.PushTemplate
+  convenience public init?(responseData: Any)
+  public init(name: Swift.String, title: Swift.String, message: Swift.String)
+  final public func toDictionary() throws -> [Swift.String : Any]
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc @_hasMissingDesignatedInitializers public class Push : ObjectiveC.NSObject {
+  final public let id: Swift.String
+  final public let timestamp: Swift.UInt64
+  final public let pushRequestId: Swift.String
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class BasicPush : FlybitsPushSDK.Push {
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class CustomPush : FlybitsPushSDK.Push {
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class ContentPush : FlybitsPushSDK.Push {
+  public var contentId: Swift.String
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class WeblinkPush : FlybitsPushSDK.Push {
+  public var url: Swift.String
+  @objc deinit
+}
+@objc public class PushData : ObjectiveC.NSObject, Swift.Decodable {
+  @objc public class PushContent : ObjectiveC.NSObject, Swift.Decodable {
+    final public let entity: Swift.String
+    final public let value: Swift.String
+    @objc deinit
+    required public init(from decoder: Swift.Decoder) throws
+  }
+  public struct Body : Swift.Decodable {
+    public let pushRequestId: Swift.String?
+    public let pushPayloadTypeId: Swift.String?
+    public let content: FlybitsPushSDK.PushData.PushContent?
+    public let url: Swift.String?
+    public init(from decoder: Swift.Decoder) throws
+  }
+  final public let id: Swift.String
+  final public let timestamp: Swift.UInt64
+  final public let body: FlybitsPushSDK.PushData.Body
+  public func toPush() -> FlybitsPushSDK.Push
+  @objc deinit
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc public class PushQuery : ObjectiveC.NSObject, FlybitsSDK.FlybitsQuery {
+  public var pager: FlybitsSDK.Pager?
+  required public init(_ pager: FlybitsSDK.Pager?)
+  public var start: Foundation.NSDate?
+  public var end: Foundation.NSDate?
+  public var sortOrder: FlybitsSDK.Utilities.SortOrder
+  public func toDictionary() throws -> [Swift.String : Any]
+  @objc deinit
+  @objc override dynamic public init()
+}
+extension FlybitsPushSDK.PushError : Swift.Equatable {}
+extension FlybitsPushSDK.PushError : Swift.Hashable {}
+extension FlybitsPushSDK.APNSPreferenceError : Swift.Equatable {}
+extension FlybitsPushSDK.APNSPreferenceError : Swift.Hashable {}
+extension FlybitsPushSDK.RuleResult : Swift.Equatable {}
+extension FlybitsPushSDK.RuleResult : Swift.Hashable {}
+extension FlybitsPushSDK.RuleResult : Swift.RawRepresentable {}

@@ -1,0 +1,7 @@
+${PODS_ROOT}/Target Support Files/Pods-Expose-Bank/Pods-Expose-Bank-frameworks.sh
+${PODS_XCFRAMEWORKS_BUILD_DIR}/FlybitsSDK/FlybitsSDK.framework/FlybitsSDK
+${PODS_XCFRAMEWORKS_BUILD_DIR}/FlybitsConcierge/FlybitsConcierge.framework/FlybitsConcierge
+${PODS_XCFRAMEWORKS_BUILD_DIR}/FlybitsContextSDK/FlybitsContextSDK.framework/FlybitsContextSDK
+${PODS_XCFRAMEWORKS_BUILD_DIR}/FlybitsCoreConcierge/FlybitsCoreConcierge.framework/FlybitsCoreConcierge
+${PODS_XCFRAMEWORKS_BUILD_DIR}/FlybitsKernelSDK/FlybitsKernelSDK.framework/FlybitsKernelSDK
+${PODS_XCFRAMEWORKS_BUILD_DIR}/FlybitsPushSDK/FlybitsPushSDK.framework/FlybitsPushSDK
