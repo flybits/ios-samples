@@ -6,14 +6,27 @@
 //
 
 import UIKit
+import FlybitsConcierge
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        /// Default configuration auto setup to open the sample app with content to be displayed
+        let config = FlybitsConciergeConfiguration.Builder().setProjectId("D57EBC96-209B-44F7-88F7-091EF8CEA4B5").setGatewayUrl("https://api.demo.flybits.com").build()
+        Concierge.configure(configuration: config, contextPlugins: [], launchOptions: launchOptions)
+
+        /// Default connect
+        if !Concierge.isConnected {
+            Concierge.connect(with: AnonymousConciergeIDP()) { error in
+                guard error == nil else {
+                    print("Error: failed to connect due to \(error!.localizedDescription)")
+                    return
+                }
+
+                print("Flybits connection succeed.")
+            }
+        }
         return true
     }
 
