@@ -14,7 +14,7 @@ class MainViewController: UITableViewController {
 
     private lazy var resizeHandler = ResizeHandler(tableView: tableView)
 
-    private lazy var discoverableViewController: UIViewController = {
+    private lazy var exposeConciergeViewController: UIViewController = {
         let result = Concierge.viewController(.expose, params: [], options: [])
         if let resizeVc = result as? ConciergeAutoResizeViewController {
             resizeVc.addResizedListeners { [weak self] viewController, size in
@@ -103,15 +103,18 @@ class MainViewController: UITableViewController {
             content.text = "Credit"
             content.secondaryText = "$12,000.00"
         case 3:
+            // Get the ConciergeContainerCell from tableView
             let newCell = tableView.dequeueReusableCell(withIdentifier: ConciergeContainerCell.identifier)
             guard let containerCell = newCell as? ConciergeContainerCell else {
                 return cell
             }
 
-            containerCell.installConcierge(viewController: discoverableViewController)
-            if discoverableViewController.parent == nil {
-                addChild(discoverableViewController)
-                discoverableViewController.didMove(toParent: self)
+            // Attach the Expose Concierge into the custom cell
+            containerCell.installConcierge(viewController: exposeConciergeViewController)
+            if exposeConciergeViewController.parent == nil {
+                // trigger the proper events to make Concierge do its life cycle
+                addChild(exposeConciergeViewController)
+                exposeConciergeViewController.didMove(toParent: self)
             }
 
             return containerCell
@@ -140,8 +143,9 @@ class MainViewController: UITableViewController {
     }
 }
 
-// Support Classes
+// MARK: - Support Classes
 
+/// Custom Cell to host the Expose Concierge.
 class ConciergeContainerCell: UITableViewCell {
 
     static let identifier = "ConciergeContainerCell"
@@ -185,6 +189,7 @@ class ConciergeContainerCell: UITableViewCell {
 
 }
 
+/// This class will guarantee the tableView will resize the cell properly to acomodate Expose Concierge dynamically based on its content.
 class ResizeHandler {
 
     weak var tableView: UITableView?
@@ -195,6 +200,7 @@ class ResizeHandler {
         self.tableView = tableView
     }
 
+    /// To set the height dynamically
     func updateSize(viewControlleIdentifier: Int, size: CGSize) {
         guard let foundSize = sizeMapping[viewControlleIdentifier] else {
             sizeMapping[viewControlleIdentifier] = size
