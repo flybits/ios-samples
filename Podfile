@@ -1,14 +1,25 @@
-
-platform :ios, '9.0'
-
 workspace 'ios-samples'
+
+source 'https://github.com/flybits/Spec-XCFramework.git'
 
 use_frameworks!
 
+$flybitsSDKVersion = '~> 4.1'
+
 target 'Anonymous-Connect' do
+    platform :ios, '10.0'
     project 'Connection/Anonymous-Connect/Anonymous-Connect.xcodeproj'
     inherit! :search_paths
 
     # Pods
-    pod 'FlybitsSDK', '~> 3.0'
+    pod 'FlybitsSDK', $flybitsSDKVersion
+end
+
+target 'Expose-Bank' do
+  platform :ios, '12'
+  project 'Concierge/Expose-Bank/Expose-Bank.xcodeproj'
+  inherit! :search_paths
+
+  # Pods
+  pod 'FlybitsConcierge', $flybitsSDKVersion
 end

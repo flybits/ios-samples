@@ -1,0 +1,1187 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name FlybitsSDK
+import CoreData
+import CoreLocation
+@_exported import FlybitsSDK
+import Foundation
+import Swift
+import UIKit
+import os
+public enum DictionaryConvertibleError : Swift.Int, FlybitsSDK.ErrorConformable {
+  case notImplemented
+  public static var Domain: Swift.String {
+    get
+  }
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public protocol DictionaryConvertible {
+  func toDictionary() throws -> [Swift.String : Any]
+}
+extension DictionaryConvertible {
+  public func toDictionary() throws -> [Swift.String : Any]
+}
+public protocol FlybitsQuery : FlybitsSDK.DictionaryConvertible, Swift.CustomDebugStringConvertible {
+  var pager: FlybitsSDK.Pager? { get set }
+  func toDictionary() throws -> [Swift.String : Any]
+  func toURLParams() -> Swift.String?
+  init(_ pager: FlybitsSDK.Pager?)
+}
+extension FlybitsQuery {
+  public func toDictionary() throws -> [Swift.String : Any]
+  public func toURLParams() -> Swift.String?
+  public var debugDescription: Swift.String {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+}
+@objc open class Query : ObjectiveC.NSObject, FlybitsSDK.FlybitsQuery, FlybitsSDK.DictionaryConvertible {
+  public var pager: FlybitsSDK.Pager?
+  required public init(_ pager: FlybitsSDK.Pager? = nil)
+  open func toDictionary() throws -> [Swift.String : Any]
+  public func toURLParams() -> Swift.String?
+  @objc override dynamic open var debugDescription: Swift.String {
+    @objc get
+  }
+  @objc override dynamic open var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class AnalyticsEvent : ObjectiveC.NSObject {
+  public init(analyticsScope: Swift.String, action: Swift.String, value: Any = true, timestamp: Swift.Double? = nil)
+  @objc deinit
+}
+@objc public class JwtIDP : ObjectiveC.NSObject, FlybitsSDK.IDP {
+  public init(token: Swift.String)
+  @objc public var authenticationEndPoint: Swift.String {
+    @objc get
+  }
+  @objc public var provider: Swift.String {
+    @objc get
+  }
+  @objc public var requestBody: Swift.String {
+    @objc get
+  }
+  @objc public var requestHeaders: [Swift.String : Swift.String] {
+    @objc get
+  }
+  @objc public var requestMethod: FlybitsSDK.HTTPMethod {
+    @objc get
+  }
+  @objc public func didAuthenticate(user: FlybitsSDK.User)
+  @objc required convenience public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc deinit
+  @objc override dynamic public init()
+}
+public struct ProjectConfiguration : Swift.Decodable {
+  public let projectId: Swift.String?
+  public let gatewayUrl: Swift.String?
+  public let autoRegisterForLocation: Swift.Bool?
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers public class FlybitsConfiguration : Swift.Codable {
+  public var projectId: Swift.String {
+    get
+  }
+  public var gatewayUrl: Swift.String {
+    get
+  }
+  public var autoRegisterForLocation: Swift.Bool {
+    get
+  }
+  public class Builder {
+    public init()
+    @discardableResult
+    public func setProjectId(_ projectId: Swift.String) -> Self
+    @discardableResult
+    public func setGateWayUrl(_ gatewayUrl: Swift.String) -> Self
+    @discardableResult
+    public func setAutoRegisterForLocation(_ value: Swift.Bool) -> Self
+    public func build() -> FlybitsSDK.FlybitsConfiguration
+    @objc deinit
+  }
+  @objc deinit
+  required public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@objc public class OAuthIDP : ObjectiveC.NSObject, FlybitsSDK.IDP {
+  @objc public enum SupportedIDP : Swift.Int {
+    case Facebook
+    case Google
+    case Okta
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public init(provider: Swift.String, accessToken: Swift.String, clientID: Swift.String? = nil)
+  convenience public init(supportedIDP: FlybitsSDK.OAuthIDP.SupportedIDP, accessToken: Swift.String, clientID: Swift.String? = nil)
+  @objc public var provider: Swift.String {
+    @objc get
+  }
+  @objc public var authenticationEndPoint: Swift.String {
+    @objc get
+  }
+  @objc public var requestBody: Swift.String {
+    @objc get
+  }
+  @objc required convenience public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc deinit
+  @objc override dynamic public init()
+}
+public class LocalizedObject<T> : Swift.CustomStringConvertible, FlybitsSDK.DictionaryConvertible {
+  public var totalLocalizations: Swift.Int {
+    get
+  }
+  public var localizations: [Foundation.Locale] {
+    get
+  }
+  public init(key: Swift.String, localizations: [Swift.String : [Swift.String : Any]]?, defaultLocale: Foundation.Locale = Locale.current, decodeHTML: Swift.Bool = false)
+  public func toDictionary() throws -> [Swift.String : Any]
+  public static func toDictionary(_ localizedObjects: [FlybitsSDK.LocalizedObject<Swift.String>]) -> [Swift.String : [Swift.String : Swift.String]]?
+  public init(unlocalizedValue: T)
+  public var defaultLocale: Foundation.Locale {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+  public var defaultValue: T? {
+    get
+  }
+  public var value: T? {
+    get
+  }
+  public var isUnlocalized: Swift.Bool {
+    get
+  }
+  public func removeUnlocalizedValue()
+  public func update(localizations: [Swift.String : [Swift.String : Any]]?, forKey key: Swift.String, defaultLocale defaultLocaleValue: Foundation.Locale, decodeHTML: Swift.Bool = false) throws
+  public func value(for locale: Foundation.Locale) throws -> T?
+  public func add(_ locale: Foundation.Locale, item: T, isDefault: Swift.Bool = false) throws
+  public func remove(_ locale: Foundation.Locale) throws
+  public func has(_ locale: Foundation.Locale) -> Swift.Bool
+  public func has(_ languageCode: Swift.String) -> Swift.Bool
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class Operation : Foundation.Operation {
+  @objc override dynamic public init()
+  @objc deinit
+  @objc override dynamic open func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
+  @objc override dynamic open var isReady: Swift.Bool {
+    @objc get
+  }
+  open var userInitiated: Swift.Bool {
+    get
+    set
+  }
+  @objc override dynamic open var isExecuting: Swift.Bool {
+    @objc get
+  }
+  @objc override dynamic open var isFinished: Swift.Bool {
+    @objc get
+  }
+  @objc override dynamic open var isCancelled: Swift.Bool {
+    @objc get
+  }
+  open func addObserver(_ observer: FlybitsSDK.OperationObserver)
+  @objc override dynamic open func addDependency(_ operation: Foundation.Operation)
+  @objc override final public func main()
+  open func execute()
+  open var errors: [Foundation.NSError] {
+    get
+  }
+  @objc override dynamic open func cancel()
+  open func cancelWithErrors(_ errors: [Foundation.NSError])
+  open func cancelWithError(_ error: Foundation.NSError)
+  final public func produceOperation(_ operation: Foundation.Operation)
+  final public func finishWithError(_ error: Foundation.NSError?)
+  final public func finish(_ errors: [Foundation.NSError] = [])
+  open func finished(_ errors: [Foundation.NSError])
+  @objc override dynamic open func waitUntilFinished()
+}
+public protocol OperationObserver {
+  func operationDidStart(_ operation: FlybitsSDK.Operation)
+  func operationDidCancel(_ operation: FlybitsSDK.Operation)
+  func operation(_ operation: FlybitsSDK.Operation, didProduceOperation newOperation: Foundation.Operation)
+  func operationDidFinish(_ operation: FlybitsSDK.Operation, errors: [Foundation.NSError])
+}
+public struct AnalyticsConstants {
+  public struct Scope {
+    public static let content: Swift.String
+    public static let push: Swift.String
+    public static let pushContent: Swift.String
+    public static let pushDevice: Swift.String
+    public static let experienceContent: Swift.String
+    public static let locationDevice: Swift.String
+  }
+  public struct RequestBodyKeys {
+    public static let viewed: Swift.String
+    public static let engaged: Swift.String
+    public static let fulfilled: Swift.String
+    public static let componentEngaged: Swift.String
+    public static let componentFulfilled: Swift.String
+  }
+}
+public enum AnalyticsEngageType {
+  case viewed
+  case engaged
+  case fulfilled
+  case componentEngaged
+  case componentFulfilled
+  public var requestKey: Swift.String {
+    get
+  }
+  public static func == (a: FlybitsSDK.AnalyticsEngageType, b: FlybitsSDK.AnalyticsEngageType) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+@objc public protocol FlybitsScope : Foundation.NSCoding {
+  @objc func onStart(currentActiveUserIsOptedIn: Swift.Bool)
+  @objc func onStop()
+  @objc func onConnected(user: FlybitsSDK.User)
+  @objc func onDisconnected()
+  @objc func onOptIn()
+  @objc func onOptOut()
+  @objc var identifier: Swift.String { get }
+}
+@_inheritsConvenienceInitializers @objc(FlybitsUtilities) public class Utilities : ObjectiveC.NSObject {
+  public static var isSimulator: Swift.Bool {
+    get
+  }
+  public static func isValid(_ url: Foundation.URL) -> Swift.Bool
+  public static let sdkVersion: Swift.String
+  public static var vendorUUID: Swift.String {
+    get
+  }
+  public static let dateFormatter: Foundation.DateFormatter
+  public static func convertServerDateTimeStampToDateComponents(_ date: Swift.String) -> Foundation.DateComponents?
+  public static func createNSErrorUserInfo(_ description: Swift.String, failure: Swift.String? = nil, recovery: Swift.String? = nil) -> [Swift.String : Any]
+  public static let deviceType: Swift.String
+  @objc deinit
+  @objc override dynamic public init()
+}
+extension Utilities {
+  @objc(FlybitsUtilitiesSortOrder) public enum SortOrder : Swift.Int, Swift.Decodable {
+    case ascending
+    case descending
+    public var stringValue: Swift.String {
+      get
+    }
+    public init(from decoder: Swift.Decoder) throws
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc(FlybitsUtilitiesSortBy) public enum SortBy : Swift.Int, Swift.Decodable {
+    case priority
+    case evaluatedAt
+    case createdAt
+    case modifiedAt
+    public var stringValue: Swift.String {
+      get
+    }
+    public init(from decoder: Swift.Decoder) throws
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc(FlybitsUtilitiesLengthUnit) public enum LengthUnit : Swift.Int {
+    case meters
+    case miles
+    case kilometers
+    case yards
+    case feet
+    public func convert(distance: Swift.Double, to: FlybitsSDK.Utilities.LengthUnit) -> Swift.Double
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc(FlybitsUtilitiesTimeUnit) public enum TimeUnit : Swift.Int {
+    case seconds = 1
+    case minutes = 60
+    case hours = 3600
+    case days = 86400
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+}
+@objc public protocol IDP : Foundation.NSCoding {
+  @objc var provider: Swift.String { get }
+  @objc var authenticationEndPoint: Swift.String { get }
+  @objc var requestBody: Swift.String { get }
+  @objc optional var queryParams: Swift.String? { get }
+  @objc optional var requestHeaders: [Swift.String : Swift.String] { get }
+  @objc optional var requestMethod: FlybitsSDK.HTTPMethod { get }
+  @objc optional func didAuthenticate(user: FlybitsSDK.User)
+}
+@objc public class SignedIDP : ObjectiveC.NSObject, FlybitsSDK.IDP {
+  public init(accessToken: Swift.String, signature: Swift.String)
+  @objc public var provider: Swift.String {
+    @objc get
+  }
+  @objc public var authenticationEndPoint: Swift.String {
+    @objc get
+  }
+  @objc public var requestBody: Swift.String {
+    @objc get
+  }
+  public static func accessToken(for email: Swift.String) -> Swift.String
+  @objc required convenience public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc deinit
+  @objc override dynamic public init()
+}
+public func += <K, V>(left: inout [K : V], right: [K : V]) where K : Swift.Hashable
+public func + <K, V>(left: [K : V], right: [K : V]) -> [K : V] where K : Swift.Hashable
+public func += <K, T, V>(left: inout [K : [T : V]], right: [K : [T : V]]) where K : Swift.Hashable, T : Swift.Hashable
+public func + <K, T, V>(left: [K : [T : V]], right: [K : [T : V]]) -> [K : [T : V]] where K : Swift.Hashable, T : Swift.Hashable
+public func && <T>(left: [T], right: [T]) -> [T] where T : Swift.Equatable
+public func || <T>(left: [T], right: [T]) -> [T] where T : Swift.Hashable
+@objc public enum FlybitsRequestType : Swift.Int {
+  case gateway
+  case rules
+  case contextUpdate
+  case push
+  case custom
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public protocol Requestable {
+  var requestType: FlybitsSDK.FlybitsRequestType { get }
+  var baseURI: Swift.String { get }
+  var headers: [Swift.String : Swift.String] { get }
+  var method: FlybitsSDK.HTTPMethod { get }
+  var encoding: FlybitsSDK.HTTPEncoding { get }
+  var path: Swift.String { get }
+  var query: FlybitsSDK.Query? { get }
+  var parameters: [Swift.String : Any]? { get }
+  var parametersArray: [[Swift.String : Any]]? { get }
+  var cacheToken: Swift.String? { get }
+  var urlRequest: Foundation.URLRequest? { get }
+  @discardableResult
+  func execute() -> FlybitsSDK.FlybitsRequest
+  func response<T>(completion: @escaping (Foundation.URLRequest?, Foundation.HTTPURLResponse?, T?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest where T : Swift.Decodable
+  func responseListPaged<T>(completion: @escaping (Foundation.URLRequest?, Foundation.HTTPURLResponse?, FlybitsSDK.Paged<T>?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest where T : Swift.Decodable
+}
+extension Requestable {
+  public var baseURI: Swift.String {
+    get
+  }
+  public var headers: [Swift.String : Swift.String] {
+    get
+  }
+  public var method: FlybitsSDK.HTTPMethod {
+    get
+  }
+  public var encoding: FlybitsSDK.HTTPEncoding {
+    get
+  }
+  public var query: FlybitsSDK.Query? {
+    get
+  }
+  public var parameters: [Swift.String : Any]? {
+    get
+  }
+  public var parametersArray: [[Swift.String : Any]]? {
+    get
+  }
+  public var cacheToken: Swift.String? {
+    get
+  }
+  public var urlRequest: Foundation.URLRequest? {
+    get
+  }
+  public func response<T>(completion: @escaping (Foundation.URLRequest?, Foundation.HTTPURLResponse?, T?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest where T : Swift.Decodable
+  public func responseListPaged<T>(completion: @escaping (Foundation.URLRequest?, Foundation.HTTPURLResponse?, FlybitsSDK.Paged<T>?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest where T : Swift.Decodable
+  @discardableResult
+  public func execute() -> FlybitsSDK.FlybitsRequest
+  public func handleEmptyResponse(statusCode: Swift.Int = Network.Constants.HTTPResponseCodes.NoContent, completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+}
+public typealias URLRequestConvertible = Foundation.URLRequest
+public enum HTTPEncoding {
+  case url
+  case json
+  case jsonArray([Swift.AnyObject])
+  case mediaUpload(FlybitsSDK.MediaUpload)
+  case propertyList(Foundation.PropertyListSerialization.PropertyListFormat, Foundation.PropertyListSerialization.WriteOptions)
+  case custom(((FlybitsSDK.URLRequestConvertible, [Swift.String : Any]?) -> (Foundation.URLRequest, Foundation.NSError?)))
+}
+public struct MediaUpload {
+}
+@objc public enum HTTPMethod : Swift.Int {
+  case GET
+  case POST
+  case PUT
+  case DELETE
+  public var value: Swift.String {
+    get
+  }
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc public class Network : ObjectiveC.NSObject {
+  @objc @_inheritsConvenienceInitializers public class Constants : ObjectiveC.NSObject {
+    public static var APIMaxRecords: Swift.UInt {
+      get
+    }
+    public static var FlybitsHeaders: [Swift.String : Swift.String] {
+      get
+    }
+    public struct Header {
+      public static let AcceptLanguageKey: Swift.String
+      public static let ContentTypeJSON: Swift.String
+      public static let ContentTypeKey: Swift.String
+      public static let Authorization: Swift.String
+      public static let UserAgent: Swift.String
+    }
+    public struct HTTPResponseCodes {
+      public static let OK: Swift.Int
+      public static let Created: Swift.Int
+      public static let NonAuthorative: Swift.Int
+      public static let NoContent: Swift.Int
+      public static let InvalidRequest: Swift.Int
+      public static let Unauthorized: Swift.Int
+      public static let Forbidden: Swift.Int
+      public static let NotFound: Swift.Int
+      public static let APIUsageExceeded: Swift.Int
+      public static let InternalError: Swift.Int
+      public static let FlybitsUnavailable: Swift.Int
+      public static let FlybitsNetworkRequestCancelled: Swift.Int
+      public static let AcceptedHTTPErrorCodes: Swift.Set<Swift.Int>
+    }
+    @objc deinit
+    @objc override dynamic public init()
+  }
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_inheritsConvenienceInitializers public class Paged<T> : ObjectiveC.NSObject, FlybitsSDK.DictionaryConvertible, Swift.Decodable where T : Swift.Decodable {
+  public typealias Element = T
+  public var elements: [FlybitsSDK.Paged<T>.Element]
+  public var pager: FlybitsSDK.Pager
+  @objc override dynamic public init()
+  public init(elements: [FlybitsSDK.Paged<T>.Element]? = nil, pager: FlybitsSDK.Pager? = nil, urlRequest: Foundation.URLRequest? = nil)
+  required public init(from decoder: Swift.Decoder) throws
+  public func getNext(appends: Swift.Bool = true, completion: @escaping (FlybitsSDK.Paged<FlybitsSDK.Paged<T>.Element>?, Swift.Error?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest?
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class FlybitsLogger {
+  public enum Level : Swift.Int, Swift.Comparable, Swift.Equatable {
+    case verbose
+    case debug
+    case info
+    case warning
+    case error
+    case fault
+    public static func < (lhs: FlybitsSDK.FlybitsLogger.Level, rhs: FlybitsSDK.FlybitsLogger.Level) -> Swift.Bool
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public func debug(_ closure: @autoclosure @escaping () -> Any?, file: Swift.String = #file, line: Swift.Int = #line)
+  public func debugExec(_ block: () -> Swift.Void)
+  public func warning(_ closure: @autoclosure @escaping () -> Any?, file: Swift.String = #file, line: Swift.Int = #line)
+  public func wariningExec(_ block: () -> Swift.Void)
+  public func error(_ closure: @autoclosure @escaping () -> Any?, file: Swift.String = #file, line: Swift.Int = #line)
+  public func errorExec(_ block: () -> Swift.Void)
+  public func info(_ closure: @autoclosure @escaping () -> Any?, file: Swift.String = #file, line: Swift.Int = #line)
+  public func infoExec(_ block: () -> Swift.Void)
+  public func fault(_ closure: @autoclosure @escaping () -> Any?, file: Swift.String = #file, line: Swift.Int = #line)
+  public func faultExec(_ block: () -> Swift.Void)
+  public func verbose(_ closure: @autoclosure @escaping () -> Any?, file: Swift.String = #file, line: Swift.Int = #line)
+  public func verboseExec(_ block: () -> Swift.Void)
+  @objc deinit
+}
+@objc public class Project : ObjectiveC.NSObject, Swift.Decodable {
+  public var identifier: Swift.String {
+    get
+  }
+  public var name: Swift.String? {
+    get
+  }
+  public var subdomain: Swift.String? {
+    get
+  }
+  public var creatorID: Swift.String? {
+    get
+  }
+  public var isActive: Swift.Bool {
+    get
+  }
+  public var tierID: Swift.String? {
+    get
+  }
+  required public init?(responseData: Any)
+  public static func getSettings(completion: @escaping ([Swift.String : Any]?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public static func config(forKey key: Swift.String, completion: @escaping ([Swift.String : Any]?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public static func getPushSubscriptions(completion: @escaping ([FlybitsSDK.PushSubscription]?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @objc deinit
+  @objc override dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class FlyJWT : ObjectiveC.NSObject {
+  @discardableResult
+  public static func refreshJWT(completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @objc deinit
+  @objc override dynamic public init()
+}
+public protocol ErrorConformable : Swift.Error, Swift.RawRepresentable {
+  static var Domain: Swift.String { get }
+}
+public enum FLBErrorType : Swift.Int {
+  case requestError
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public class FLBError<T> : Foundation.NSError where T : FlybitsSDK.ErrorConformable {
+  convenience public init(_ type: T)
+  convenience public init(_ type: T, description: Swift.String, failure: Swift.String? = nil, recovery: Swift.String? = nil)
+  public init(_ type: T, userInfo: [Swift.String : Any]?)
+  public init(domain: Swift.String, code: Swift.Int, description: Swift.String, failure: Swift.String? = nil, recovery: Swift.String? = nil)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  public static func buildUserInfoForErrorType(_ errorType: FlybitsSDK.FLBErrorType) -> [Swift.String : Any]?
+  @objc override dynamic public init(domain: Swift.String, code: Swift.Int, userInfo dict: [Swift.String : Any]? = nil)
+  @objc deinit
+}
+@objc public enum CocoaError : Swift.Int, FlybitsSDK.ErrorConformable {
+  case formattingError = 0
+  public static var Domain: Swift.String
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+  public static var _nsErrorDomain: Swift.String {
+    get
+  }
+}
+@objc public enum CacheError : Swift.Int, FlybitsSDK.ErrorConformable {
+  case tokenNotFound = 0
+  public static var Domain: Swift.String
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+  public static var _nsErrorDomain: Swift.String {
+    get
+  }
+}
+@objc public enum CoreDataError : Swift.Int, FlybitsSDK.ErrorConformable {
+  case storeNotFound = 0
+  public static var Domain: Swift.String
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+  public static var _nsErrorDomain: Swift.String {
+    get
+  }
+}
+@objc public enum NetworkingRequestError : Swift.Int, FlybitsSDK.ErrorConformable {
+  case unableToParseResponse = 0
+  case invalidRequest = 400
+  case flybitsUnavailable = 503
+  case unauthorized = 401
+  case forbidden = 403
+  case notFound = 404
+  case apiUsageExceeded = 429
+  case emptyData = 430
+  case expectationNotMet
+  public static var Domain: Swift.String
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public static var _nsErrorDomain: Swift.String {
+    get
+  }
+}
+@objc public enum LoginError : Swift.Int, FlybitsSDK.ErrorConformable {
+  case missingRequiredData
+  case invalidData
+  case alreadyConnected
+  case notConnected
+  public static var Domain: Swift.String
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+  public static var _nsErrorDomain: Swift.String {
+    get
+  }
+}
+@objc public enum RegistrationError : Swift.Int, FlybitsSDK.ErrorConformable {
+  case missingRequiredData
+  case invalidData
+  case failedSendingConfirmationEmail
+  case confirmationRequired
+  public static var Domain: Swift.String
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+  public static var _nsErrorDomain: Swift.String {
+    get
+  }
+}
+@objc public enum LocalizationError : Swift.Int, FlybitsSDK.ErrorConformable {
+  case unknownLanguageCode = 0
+  case invalidFormat
+  public static var Domain: Swift.String
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+  public static var _nsErrorDomain: Swift.String {
+    get
+  }
+}
+@objc public enum JWTError : Swift.Int, FlybitsSDK.ErrorConformable {
+  case maxRetries
+  public static var Domain: Swift.String
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+  public static var _nsErrorDomain: Swift.String {
+    get
+  }
+}
+@objc public enum QueryExpressionError : Swift.Int, FlybitsSDK.ErrorConformable {
+  case unsupported
+  public static var Domain: Swift.String
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+  public static var _nsErrorDomain: Swift.String {
+    get
+  }
+}
+@objc public enum ErrorList : Swift.Int, FlybitsSDK.ErrorConformable {
+  case array
+  public static let Domain: Swift.String
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+  public static var _nsErrorDomain: Swift.String {
+    get
+  }
+}
+@objc public enum ToDictionaryError : Swift.Int, FlybitsSDK.ErrorConformable {
+  case invalidCoordinate
+  case invalidDictionary
+  public static let Domain: Swift.String
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+  public static var _nsErrorDomain: Swift.String {
+    get
+  }
+}
+@objc public class APIKeyIDP : ObjectiveC.NSObject, FlybitsSDK.IDP {
+  final public let apiKey: Swift.String
+  final public let email: Swift.String
+  final public let accessToken: Swift.String?
+  @objc public var provider: Swift.String {
+    @objc get
+  }
+  @objc public var authenticationEndPoint: Swift.String {
+    @objc get
+  }
+  @objc public var requestBody: Swift.String {
+    @objc get
+  }
+  public init(email: Swift.String, apiKey: Swift.String)
+  @objc public func encode(with coder: Foundation.NSCoder)
+  @objc required convenience public init?(coder: Foundation.NSCoder)
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_inheritsConvenienceInitializers @objc public class FlybitsPreference : ObjectiveC.NSObject {
+  public static func value(forKey key: Swift.String, completion: @escaping (Any?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public static func bool(forKey key: Swift.String, completion: @escaping (Swift.Bool?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public static func string(forKey key: Swift.String, completion: @escaping (Swift.String?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public static func int(forKey key: Swift.String, completion: @escaping (Swift.Int?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public static func double(forKey key: Swift.String, completion: @escaping (Swift.Double?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public static func dictionary(forKey key: Swift.String, completion: @escaping ([Swift.String : Any]?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public static func array(forKey key: Swift.String, completion: @escaping ([Any]?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @objc(set:object:forKey:) public static func set(_ value: [Swift.String : Any], forKey key: Swift.String, completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @objc(set:array:forKey:) public static func set(_ value: [Any], forKey key: Swift.String, completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @objc(set:bool:forKey:) public static func set(_ value: Swift.Bool, forKey key: Swift.String, completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @objc(set:string:forKey:) public static func set(_ value: Swift.String, forKey key: Swift.String, completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @objc(set:int:forKey:) public static func set(_ value: Swift.Int, forKey key: Swift.String, completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @objc(set:double:forKey:) public static func set(_ value: Swift.Double, forKey key: Swift.String, completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public static func remove(forKey key: Swift.String, completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public static func deleteUserPreference(completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @objc deinit
+  @objc override dynamic public init()
+}
+extension FlybitsPreference {
+  public static func getFavorites(completion: @escaping ([Swift.String], Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public static func addFavorites(_ contentIDs: [Swift.String], completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public static func addFavorite(_ contentID: Swift.String, completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public static func removeFavorites(_ contentIDs: [Swift.String], completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public static func removeFavorite(_ contentID: Swift.String, completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public static func isFavorite(_ contentID: Swift.String, completion: @escaping (Swift.Bool, Swift.Error?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+}
+public let log: FlybitsSDK.FlybitsLogger
+@objc public enum CustomerStatus : Swift.Int {
+  case unknown
+  case activeOptedIn
+  case activeOptedInExpiredToken
+  case activeOptedOutExpiredToken
+  case activeOptedOut
+  case notActiveOptedIn
+  case notActiveOptedOut
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc public class FlybitsManager : ObjectiveC.NSObject, Foundation.NSCoding {
+  public var idProvider: FlybitsSDK.IDP? {
+    get
+  }
+  public var scopes: [FlybitsSDK.FlybitsScope] {
+    get
+  }
+  final public let languageCodes: [Swift.String]
+  public static var configuration: FlybitsSDK.FlybitsConfiguration {
+    get
+  }
+  public static var activeUser: FlybitsSDK.UserInfo? {
+    get
+  }
+  @objc public static var isConnected: Swift.Bool {
+    @objc get
+  }
+  @objc public static var currentActiveUserIsOptedIn: Swift.Bool {
+    @objc get
+  }
+  @objc override dynamic public init()
+  public func update(idProvider: FlybitsSDK.IDP)
+  public static func configure(configuration: FlybitsSDK.FlybitsConfiguration? = nil)
+  public static func add(scope: FlybitsSDK.FlybitsScope, forkey key: Swift.String)
+  public static func removeScope(forKey key: Swift.String)
+  public static func update(userInfo: FlybitsSDK.UserInfo)
+  @discardableResult
+  @objc(connectWithIDP:customerId:physicalDeviceId:completion:) public static func connect(_ idp: FlybitsSDK.IDP, customerId: Swift.String? = nil, physicalDeviceId: Swift.String? = nil, completion: @escaping (FlybitsSDK.User?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest?
+  @discardableResult
+  @objc(disconnectWithCompletion:) public static func disconnect(completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public func getUser(completion: @escaping (FlybitsSDK.User?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  public static func enableLogging(forLevel level: FlybitsSDK.FlybitsLogger.Level = .verbose)
+  @objc(enableLogging) public static func enableLogging()
+  @discardableResult
+  public static func refreshConnectedUserInfo(completion: @escaping (FlybitsSDK.User?, Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @discardableResult
+  public static func optIn(completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @discardableResult
+  public static func optOut(completion: @escaping (Foundation.NSError?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @objc public func encode(with coder: Foundation.NSCoder)
+  @objc required convenience public init?(coder decoder: Foundation.NSCoder)
+  @objc deinit
+}
+extension FlybitsManager {
+  @objc public static func status(for customerId: Swift.String) -> FlybitsSDK.CustomerStatus
+}
+@_inheritsConvenienceInitializers @objc public class DeviceManager : ObjectiveC.NSObject {
+  @discardableResult
+  public static func addAssociation(_ associationId: Swift.String, completion: @escaping (Swift.Error?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @discardableResult
+  public static func deleteAssociation(_ associationId: Swift.String, completion: @escaping (Swift.Error?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @discardableResult
+  public static func anonymize(completion: @escaping (Swift.Error?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @discardableResult
+  public static func update(make: Swift.String, model: Swift.String, osVersion: Swift.String, completion: @escaping (Swift.Error?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc public class OpenIDP : ObjectiveC.NSObject, FlybitsSDK.IDP {
+  public init(idToken: Swift.String)
+  @objc public var provider: Swift.String {
+    @objc get
+  }
+  @objc public var authenticationEndPoint: Swift.String {
+    @objc get
+  }
+  @objc public var requestBody: Swift.String {
+    @objc get
+  }
+  @objc required convenience public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc public class FlybitsRequestList : FlybitsSDK.FlybitsRequest {
+  @objc override dynamic public init()
+  public init(requests: [FlybitsSDK.FlybitsRequest])
+  public func add(_ request: FlybitsSDK.FlybitsRequest)
+  public func remove(_ request: FlybitsSDK.FlybitsRequest)
+  @objc deinit
+  @objc override public init(_ request: Foundation.URLRequest?, type: FlybitsSDK.FlybitsRequestType = super, isCachable: Swift.Bool = super, error: Foundation.NSError? = super)
+}
+@objc public class JwtLoginIDP : ObjectiveC.NSObject, FlybitsSDK.IDP {
+  @objc public var provider: Swift.String {
+    @objc get
+  }
+  @objc public var authenticationEndPoint: Swift.String {
+    @objc get
+  }
+  @objc public var requestHeaders: [Swift.String : Swift.String] {
+    @objc get
+  }
+  public init(jwtLoginToken: Swift.String)
+  @objc public var requestMethod: FlybitsSDK.HTTPMethod {
+    @objc get
+  }
+  @objc public var requestBody: Swift.String {
+    @objc get
+  }
+  @objc public func encode(with coder: Foundation.NSCoder)
+  @objc required convenience public init?(coder: Foundation.NSCoder)
+  @objc deinit
+  @objc override dynamic public init()
+}
+public protocol ResponseObjectSerializable {
+  init?(responseData: Any) throws
+}
+extension Int : FlybitsSDK.ResponseObjectSerializable {
+  public init?(responseData: Any)
+}
+extension UInt8 : FlybitsSDK.ResponseObjectSerializable {
+  public init?(responseData: Any)
+}
+extension Float : FlybitsSDK.ResponseObjectSerializable {
+  public init?(responseData: Any)
+}
+extension Double : FlybitsSDK.ResponseObjectSerializable {
+  public init?(responseData: Any)
+}
+extension String : FlybitsSDK.ResponseObjectSerializable {
+  public init?(responseData: Any)
+}
+extension Array : FlybitsSDK.ResponseObjectSerializable {
+  public init?(responseData: Any)
+}
+extension Dictionary : FlybitsSDK.ResponseObjectSerializable {
+  public init?(responseData: Any)
+}
+extension Data : FlybitsSDK.ResponseObjectSerializable {
+  public init?(responseData: Any)
+}
+@_inheritsConvenienceInitializers @objc public class FlybitsRequest : ObjectiveC.NSObject {
+  public var completionCallbackQueue: Dispatch.DispatchQueue?
+  public var isCachable: Swift.Bool {
+    get
+  }
+  public static func constructGatewayRequest(endPoint: Swift.String, query: Swift.String? = nil, requestBody: Swift.String? = nil, requestMethod: FlybitsSDK.HTTPMethod, isExternal: Swift.Bool = false) -> Foundation.URLRequest?
+  public var urlRequest: Foundation.URLRequest? {
+    get
+  }
+  public var httpSuccessStatusCode: Swift.Range<Swift.Int>
+  public static var timeoutIntervalForRequest: Foundation.TimeInterval
+  @objc(initWithRequest:requestType:isCachable:error:) public init(_ request: Foundation.URLRequest?, type: FlybitsSDK.FlybitsRequestType = .custom, isCachable: Swift.Bool = false, error: Foundation.NSError? = nil)
+  @objc override dynamic public init()
+  public func set(httpSuccessStatusCode: Swift.Range<Swift.Int>) -> FlybitsSDK.FlybitsRequest
+  @objc(setHttpSuccessStatusCode:) public func set(httpSuccessStatusCode: Swift.Int) -> FlybitsSDK.FlybitsRequest
+  @objc(setHttpSuccessStatusCodeWithLowerBound:upperBound:) public func setHttpSuccessStatusCodeBound(lower: Swift.Int, upper: Swift.Int) -> FlybitsSDK.FlybitsRequest
+  @discardableResult
+  @objc(responseWithCompletion:) public func response(completion: @escaping (Foundation.URLRequest?, Foundation.HTTPURLResponse?, Foundation.Data?, Foundation.NSError?) -> Swift.Void) -> Self
+  @objc public func uploadTask(_ completion: @escaping (Foundation.Data?, Foundation.URLResponse?, Swift.Error?) -> Swift.Void) -> Self
+  public func response<T>(completion: @escaping (Foundation.URLRequest?, Foundation.HTTPURLResponse?, T?, Foundation.NSError?) -> Swift.Void) -> Self where T : Swift.Decodable
+  public func responseListPaged<T>(completion: @escaping (Foundation.URLRequest?, Foundation.HTTPURLResponse?, FlybitsSDK.Paged<T>?, Foundation.NSError?) -> Swift.Void) -> Self where T : Swift.Decodable
+  public func cancel()
+  public func parseList<T>(_ list: [Swift.AnyObject], from response: Foundation.HTTPURLResponse?) throws -> [T] where T : FlybitsSDK.ResponseObjectSerializable
+  @objc deinit
+}
+public struct AnalyticsData {
+  public let contentId: Swift.String
+  public let experienceId: Swift.String
+  public let componentId: Swift.String
+  public init(contentId: Swift.String, experienceId: Swift.String, componentId: Swift.String = "")
+}
+extension String {
+  public func toRTF() -> Swift.String
+}
+@objc public class Pager : ObjectiveC.NSObject, Swift.Decodable, FlybitsSDK.DictionaryConvertible {
+  public struct Constants {
+    public static let limit: Swift.String
+    public static let offset: Swift.String
+  }
+  public struct Limit {
+    public static let max: Swift.UInt
+  }
+  public var limit: Swift.UInt {
+    get
+  }
+  public var offset: Swift.UInt {
+    get
+  }
+  public var total: Swift.UInt? {
+    get
+  }
+  public var sortBy: FlybitsSDK.Utilities.SortBy? {
+    get
+  }
+  public var sortOrder: FlybitsSDK.Utilities.SortOrder? {
+    get
+  }
+  public var pageIndex: Swift.UInt {
+    get
+  }
+  public init(limit: Swift.UInt = Pager.Limit.max, offset: Swift.UInt = 0, totalRecords: Swift.UInt? = nil, sortBy: FlybitsSDK.Utilities.SortBy? = nil, sortOrder: FlybitsSDK.Utilities.SortOrder? = nil)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc public init(limit: Swift.UInt, offset: Swift.UInt, totalRecords: Swift.UInt, sortBy: FlybitsSDK.Utilities.SortBy, sortOrder: FlybitsSDK.Utilities.SortOrder)
+  public func goto(_ pageIndex: Swift.UInt)
+  public func toDictionary(_ key: Swift.String? = nil) throws -> [Swift.String : Any]
+  public func toURLParams(withKey key: Swift.String? = nil) -> Swift.String
+  public func hasMore() -> Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+}
+prefix public func ++ (pager: FlybitsSDK.Pager) -> FlybitsSDK.Pager
+prefix public func -- (pager: FlybitsSDK.Pager) -> FlybitsSDK.Pager
+postfix public func ++ (pager: FlybitsSDK.Pager) -> FlybitsSDK.Pager
+postfix public func -- (pager: FlybitsSDK.Pager) -> FlybitsSDK.Pager
+public func += (pager: inout FlybitsSDK.Pager, pages: Swift.UInt) -> FlybitsSDK.Pager
+public func -= (pager: inout FlybitsSDK.Pager, pages: Swift.UInt) -> FlybitsSDK.Pager
+extension Pager {
+  convenience public init(limit: Swift.UInt, offset: Swift.UInt, sortBy: FlybitsSDK.Utilities.SortBy, sortOrder: FlybitsSDK.Utilities.SortOrder)
+}
+@_hasMissingDesignatedInitializers @objc public class User : ObjectiveC.NSObject, FlybitsSDK.DictionaryConvertible, Swift.Decodable {
+  public var identifier: Swift.String {
+    get
+  }
+  public var deviceID: Swift.String? {
+    get
+  }
+  public var firstName: Swift.String?
+  public var lastName: Swift.String?
+  public var email: Swift.String?
+  public var isConfirmed: Swift.Bool {
+    get
+  }
+  public var isOptedIn: Swift.Bool {
+    get
+  }
+  required public init(from decoder: Swift.Decoder) throws
+  public func toDictionary() throws -> [Swift.String : Any]?
+  @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
+  @objc override dynamic public var hash: Swift.Int {
+    @objc get
+  }
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc public class UserPreference : ObjectiveC.NSObject, Swift.Decodable {
+  final public let identifier: Swift.String
+  final public let userID: Swift.String
+  final public let projectID: Swift.String
+  final public let data: [Swift.String : Any]?
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class FlybitsAnalytics : ObjectiveC.NSObject {
+  public static func track(_ analytic: FlybitsSDK.AnalyticsEvent, sendImmediately: Swift.Bool = false)
+  @discardableResult
+  @objc public static func sendAnalytics(completion: ((Swift.Error?) -> Swift.Void)?) -> FlybitsSDK.FlybitsRequest?
+  @objc public func encode(with coder: Foundation.NSCoder)
+  @objc required convenience public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+}
+extension FlybitsAnalytics : FlybitsSDK.FlybitsScope {
+  @objc dynamic public var identifier: Swift.String {
+    @objc get
+  }
+  @objc dynamic public func onStart(currentActiveUserIsOptedIn: Swift.Bool)
+  @objc dynamic public func onStop()
+  @objc dynamic public func onConnected(user: FlybitsSDK.User)
+  @objc dynamic public func onDisconnected()
+  @objc dynamic public func onOptIn()
+  @objc dynamic public func onOptOut()
+}
+@objc @_hasMissingDesignatedInitializers public class PushSubscription : ObjectiveC.NSObject {
+  final public let id: Swift.String
+  final public let name: Swift.String
+  final public let value: Swift.String
+  final public let isEnabled: Swift.Bool
+  final public let isChecked: Swift.Bool
+  final public let isRequired: Swift.Bool
+  final public let createdAt: Swift.Double
+  final public let updatedAt: Swift.Double
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class QueryUtils {
+  public static func add(values: [Swift.String]?, forKey key: Swift.String, to dictionary: inout [Swift.String : Any])
+  public static func add(value: Swift.String?, forKey key: Swift.String, to dictionary: inout [Swift.String : Any])
+  @objc deinit
+}
+extension CLLocation : FlybitsSDK.DictionaryConvertible {
+  public func toDictionary() throws -> [Swift.String : Any]
+}
+extension CLLocationCoordinate2D : FlybitsSDK.DictionaryConvertible {
+  public func toDictionary() throws -> [Swift.String : Any]
+}
+@objcMembers public class UserInfo : Swift.Codable, Swift.Equatable {
+  public static func == (lhs: FlybitsSDK.UserInfo, rhs: FlybitsSDK.UserInfo) -> Swift.Bool
+  @objc final public let identifier: Swift.String
+  @objc final public let customerId: Swift.String
+  @objc public var projectId: Swift.String {
+    get
+  }
+  @objc final public let optInStatus: Swift.Bool
+  public var pushNotificationStatus: Swift.Bool?
+  public init(identifier: Swift.String, customerId: Swift.String, projectId: Swift.String, isActive: Swift.Bool, optInStatus: Swift.Bool, pushNotificationStatus: Swift.Bool? = nil)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@_inheritsConvenienceInitializers @objc open class SharedElements : ObjectiveC.NSObject {
+  public static var deviceID: Swift.String? {
+    get
+  }
+  public static var userID: Swift.String? {
+    get
+  }
+  public static var physicalDeviceId: Swift.String? {
+    get
+  }
+  public static var connectedIDP: Swift.String? {
+    get
+  }
+  public static var jwtToken: Swift.String? {
+    get
+  }
+  public static var languageCodes: [Swift.String]? {
+    get
+  }
+  public static var scopes: [FlybitsSDK.FlybitsScope]? {
+    get
+  }
+  public static func read(fromDomain domain: Swift.String) -> [Swift.String : Any]
+  public static func write(_ dictionary: [Swift.String : Any], to domain: Swift.String) -> Swift.Bool
+  @objc deinit
+  @objc override dynamic public init()
+}
+extension SharedElements {
+}
+@_inheritsConvenienceInitializers @objc public class AnonymousIDP : ObjectiveC.NSObject, FlybitsSDK.IDP {
+  @objc public var provider: Swift.String {
+    @objc get
+  }
+  @objc public var authenticationEndPoint: Swift.String {
+    @objc get
+  }
+  @objc public var requestBody: Swift.String {
+    @objc get
+  }
+  @objc required convenience public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc deinit
+  @objc override dynamic public init()
+}
+extension FlybitsSDK.DictionaryConvertibleError : Swift.Equatable {}
+extension FlybitsSDK.DictionaryConvertibleError : Swift.Hashable {}
+extension FlybitsSDK.OAuthIDP.SupportedIDP : Swift.Equatable {}
+extension FlybitsSDK.OAuthIDP.SupportedIDP : Swift.Hashable {}
+extension FlybitsSDK.OAuthIDP.SupportedIDP : Swift.RawRepresentable {}
+extension FlybitsSDK.AnalyticsEngageType : Swift.Equatable {}
+extension FlybitsSDK.AnalyticsEngageType : Swift.Hashable {}
+extension FlybitsSDK.Utilities.SortOrder : Swift.Equatable {}
+extension FlybitsSDK.Utilities.SortOrder : Swift.Hashable {}
+extension FlybitsSDK.Utilities.SortOrder : Swift.RawRepresentable {}
+extension FlybitsSDK.Utilities.SortBy : Swift.Equatable {}
+extension FlybitsSDK.Utilities.SortBy : Swift.Hashable {}
+extension FlybitsSDK.Utilities.SortBy : Swift.RawRepresentable {}
+extension FlybitsSDK.Utilities.LengthUnit : Swift.Equatable {}
+extension FlybitsSDK.Utilities.LengthUnit : Swift.Hashable {}
+extension FlybitsSDK.Utilities.LengthUnit : Swift.RawRepresentable {}
+extension FlybitsSDK.Utilities.TimeUnit : Swift.Equatable {}
+extension FlybitsSDK.Utilities.TimeUnit : Swift.Hashable {}
+extension FlybitsSDK.Utilities.TimeUnit : Swift.RawRepresentable {}
+extension FlybitsSDK.FlybitsRequestType : Swift.Equatable {}
+extension FlybitsSDK.FlybitsRequestType : Swift.Hashable {}
+extension FlybitsSDK.FlybitsRequestType : Swift.RawRepresentable {}
+extension FlybitsSDK.HTTPMethod : Swift.Equatable {}
+extension FlybitsSDK.HTTPMethod : Swift.Hashable {}
+extension FlybitsSDK.HTTPMethod : Swift.RawRepresentable {}
+extension FlybitsSDK.FlybitsLogger.Level : Swift.Hashable {}
+extension FlybitsSDK.FlybitsLogger.Level : Swift.RawRepresentable {}
+extension FlybitsSDK.FLBErrorType : Swift.Equatable {}
+extension FlybitsSDK.FLBErrorType : Swift.Hashable {}
+extension FlybitsSDK.FLBErrorType : Swift.RawRepresentable {}
+extension FlybitsSDK.CocoaError : Swift.Equatable {}
+extension FlybitsSDK.CocoaError : Swift.Hashable {}
+extension FlybitsSDK.CacheError : Swift.Equatable {}
+extension FlybitsSDK.CacheError : Swift.Hashable {}
+extension FlybitsSDK.CoreDataError : Swift.Equatable {}
+extension FlybitsSDK.CoreDataError : Swift.Hashable {}
+extension FlybitsSDK.NetworkingRequestError : Swift.Equatable {}
+extension FlybitsSDK.NetworkingRequestError : Swift.Hashable {}
+extension FlybitsSDK.LoginError : Swift.Equatable {}
+extension FlybitsSDK.LoginError : Swift.Hashable {}
+extension FlybitsSDK.RegistrationError : Swift.Equatable {}
+extension FlybitsSDK.RegistrationError : Swift.Hashable {}
+extension FlybitsSDK.LocalizationError : Swift.Equatable {}
+extension FlybitsSDK.LocalizationError : Swift.Hashable {}
+extension FlybitsSDK.JWTError : Swift.Equatable {}
+extension FlybitsSDK.JWTError : Swift.Hashable {}
+extension FlybitsSDK.QueryExpressionError : Swift.Equatable {}
+extension FlybitsSDK.QueryExpressionError : Swift.Hashable {}
+extension FlybitsSDK.ErrorList : Swift.Equatable {}
+extension FlybitsSDK.ErrorList : Swift.Hashable {}
+extension FlybitsSDK.ToDictionaryError : Swift.Equatable {}
+extension FlybitsSDK.ToDictionaryError : Swift.Hashable {}
+extension FlybitsSDK.CustomerStatus : Swift.Equatable {}
+extension FlybitsSDK.CustomerStatus : Swift.Hashable {}
+extension FlybitsSDK.CustomerStatus : Swift.RawRepresentable {}

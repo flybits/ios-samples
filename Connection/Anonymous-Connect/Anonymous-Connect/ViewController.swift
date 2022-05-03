@@ -11,6 +11,7 @@ import FlybitsSDK
 
 class ViewController: UIViewController {
     @IBOutlet private var projectIdTextfield: UITextField!
+    @IBOutlet private var gatewayURLTextfield: UITextField!
     @IBOutlet private var connectButton: UIButton!
     @IBOutlet private var discconnectButton: UIButton!
 
@@ -27,6 +28,7 @@ class ViewController: UIViewController {
                 self.connectButton.isHidden = true
                 self.discconnectButton.isHidden = false
                 self.projectIdTextfield.isEnabled = false
+                self.gatewayURLTextfield.isEnabled = false
             }
         }
     }
@@ -37,9 +39,21 @@ class ViewController: UIViewController {
             return
         }
 
+        guard let gatewayUrl = self.gatewayURLTextfield.text else {
+            print("Unable to get the Gateway URL information from screen")
+            return
+        }
+
+        /// Use the screen values to build the necessary configuration
+        let config = FlybitsConfiguration.Builder().setProjectId(projectId).setGateWayUrl(gatewayUrl).build()
+        /// Set the configuration in `FlybitsManager`
+        FlybitsManager.configure(configuration: config)
+
+        /// Initiate the default anonymous IDP
         let anonIDP = AnonymousIDP()
 
-        FlybitsManager.connect(anonIDP, projectId: projectId) { (user, error) in
+        /// Do connect using the `anonIDP`
+        FlybitsManager.connect(anonIDP) { (user, error) in
             guard let user = user else {
                 let errorNonNil: Error
 
@@ -61,13 +75,14 @@ class ViewController: UIViewController {
                     self.connectButton.isHidden = true
                     self.discconnectButton.isHidden = false
                     self.projectIdTextfield.isEnabled = false
+                    self.gatewayURLTextfield.isEnabled = false
                 }
             }
         }
     }
 
     @IBAction func disconnectTouchUpInside(_ button: UIButton) {
-        FlybitsManager.disconnect { (_, error) in
+        FlybitsManager.disconnect { (error) in
             guard error == nil else {
                 self.errorScenario(with: error!)
                 return
@@ -85,6 +100,7 @@ class ViewController: UIViewController {
                     self.connectButton.isHidden = false
                     self.discconnectButton.isHidden = true
                     self.projectIdTextfield.isEnabled = true
+                    self.gatewayURLTextfield.isEnabled = true
                 }
             }
         }

@@ -1,0 +1,151 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name FlybitsContextSDK
+import CoreTelephony
+@_exported import FlybitsContextSDK
+import FlybitsSDK
+import Foundation
+import Swift
+@objc public protocol ContextDelegate : ObjectiveC.NSObjectProtocol {
+  @objc func generatedValue(by plugin: FlybitsContextSDK.ContextPlugin, context data: [FlybitsContextSDK.ContextData], completion: ((Swift.Error?) -> Swift.Void)?)
+}
+@objc public protocol ContextPlugin : ObjectiveC.NSObjectProtocol {
+  @objc var pluginId: Swift.String { get }
+  @objc var bundleName: Swift.String { get }
+  @objc var keyInfoPlist: [Swift.String]? { get }
+  @objc var delegate: FlybitsContextSDK.ContextDelegate? { get set }
+  @objc var isRunning: Swift.Bool { get }
+  @objc init()
+  @objc func start(launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]?) -> Swift.Bool
+  @objc func stop() -> Swift.Bool
+  @objc func refreshData() -> UIKit.UIBackgroundFetchResult
+}
+extension ContextPlugin {
+  public var className: Swift.String {
+    get
+  }
+}
+@objc @objcMembers public class ContextData : ObjectiveC.NSObject {
+  @objc public var pluginId: Swift.String {
+    get
+  }
+  @objc public var values: [Swift.String : Any] {
+    get
+  }
+  @objc public var timestamp: Swift.Int {
+    get
+  }
+  @objc public init(pluginId: Swift.String, values: [Swift.String : Any])
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_inheritsConvenienceInitializers @objc public class ContextScope : ObjectiveC.NSObject, FlybitsSDK.FlybitsScope {
+  @objc public var identifier: Swift.String {
+    get
+  }
+  @objc public func onStart(currentActiveUserIsOptedIn: Swift.Bool)
+  @objc public func onStop()
+  @objc public func onConnected(user: FlybitsSDK.User)
+  @objc public func onDisconnected()
+  @objc public func onOptIn()
+  @objc public func onOptOut()
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc required public init?(coder aDecoder: Foundation.NSCoder)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc final public class CarrierContextPlugin : ObjectiveC.NSObject, FlybitsContextSDK.ContextPlugin {
+  @objc final public var pluginId: Swift.String {
+    @objc get
+  }
+  @objc final public var bundleName: Swift.String
+  @objc final public var keyInfoPlist: [Swift.String]?
+  @objc weak final public var delegate: FlybitsContextSDK.ContextDelegate?
+  @objc final public var isRunning: Swift.Bool
+  @objc final public func start(launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]?) -> Swift.Bool
+  @objc final public func stop() -> Swift.Bool
+  @objc final public func refreshData() -> UIKit.UIBackgroundFetchResult
+  @objc deinit
+  @objc override dynamic public init()
+}
+public struct PluginOperationResult {
+  public var success: Swift.Bool {
+    get
+  }
+  public var failReason: Swift.String {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class ContextManager : ObjectiveC.NSObject {
+  public enum PluginItem {
+    case location, battery, carrier
+    case custom(Swift.String)
+    public var className: Swift.String {
+      get
+    }
+  }
+  public static let shared: FlybitsContextSDK.ContextManager
+  public static let debugNotificationName: Foundation.NSNotification.Name
+  public var runningPlugins: [Swift.String] {
+    get
+  }
+  @discardableResult
+  public func register(_ plugins: [FlybitsContextSDK.ContextManager.PluginItem], launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]? = nil) -> [Swift.String : FlybitsContextSDK.PluginOperationResult]
+  @discardableResult
+  public func register(_ plugins: [FlybitsContextSDK.ContextPlugin], launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]? = nil) -> [Swift.String : FlybitsContextSDK.PluginOperationResult]
+  @discardableResult
+  public func deregister(_ plugins: [FlybitsContextSDK.ContextPlugin]) -> [Swift.String : FlybitsContextSDK.PluginOperationResult]
+  @discardableResult
+  public func deregister(_ pluginsClassNames: [Swift.String]) -> [Swift.String : FlybitsContextSDK.PluginOperationResult]
+  @discardableResult
+  public func startPlugins() -> [Swift.String : FlybitsContextSDK.PluginOperationResult]
+  @discardableResult
+  public func stopPlugins() -> [Swift.String : FlybitsContextSDK.PluginOperationResult]
+  @discardableResult
+  @objc public static func evaluateContextRules(allDevices: Swift.Bool = true, completion: ((Swift.Error?) -> Swift.Void)?) -> FlybitsSDK.FlybitsRequest
+  @discardableResult
+  @objc public static func sendContextData(_ contextData: [FlybitsContextSDK.ContextData], completion: ((Swift.Error?) -> Swift.Void)?) -> FlybitsSDK.FlybitsRequest
+  public func refreshData() -> [Swift.String : UIKit.UIBackgroundFetchResult]
+  @objc deinit
+}
+extension ContextManager : FlybitsContextSDK.ContextDelegate {
+  public func generatedValue(by plugin: FlybitsContextSDK.ContextPlugin, data: [Swift.AnyObject])
+  @objc dynamic public func generatedValue(by plugin: FlybitsContextSDK.ContextPlugin, context data: [FlybitsContextSDK.ContextData], completion: ((Swift.Error?) -> Swift.Void)?)
+}
+public enum FlybitsLocationAuthorizationStatus : Swift.Int32 {
+  case none
+  case notDetermined
+  case restricted
+  case denied
+  @available(iOS 8.0, *)
+  case authorizedAlways
+  @available(iOS 8.0, *)
+  case authorizedWhenInUse
+  public typealias RawValue = Swift.Int32
+  public init?(rawValue: Swift.Int32)
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+public protocol FlybitsLocationAuthorization {
+  var authorizationStatus: FlybitsContextSDK.FlybitsLocationAuthorizationStatus { get }
+  func forceFetchAuthorizationStatus(completion: @escaping (FlybitsContextSDK.FlybitsLocationAuthorizationStatus) -> Swift.Void)
+  init()
+}
+@_inheritsConvenienceInitializers @objc final public class BatteryContextPlugin : ObjectiveC.NSObject, FlybitsContextSDK.ContextPlugin {
+  @objc final public var pluginId: Swift.String {
+    @objc get
+  }
+  @objc final public var bundleName: Swift.String
+  @objc final public var keyInfoPlist: [Swift.String]?
+  @objc final public var isRunning: Swift.Bool
+  @objc weak final public var delegate: FlybitsContextSDK.ContextDelegate?
+  @objc final public func start(launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]?) -> Swift.Bool
+  @objc final public func stop() -> Swift.Bool
+  @objc final public func refreshData() -> UIKit.UIBackgroundFetchResult
+  @objc deinit
+  @objc override dynamic public init()
+}
+extension FlybitsContextSDK.FlybitsLocationAuthorizationStatus : Swift.Equatable {}
+extension FlybitsContextSDK.FlybitsLocationAuthorizationStatus : Swift.Hashable {}
+extension FlybitsContextSDK.FlybitsLocationAuthorizationStatus : Swift.RawRepresentable {}

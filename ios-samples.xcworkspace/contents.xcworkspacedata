@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Concierge/Expose-Bank/Expose-Bank.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Connection/Anonymous-Connect/Anonymous-Connect.xcodeproj">
    </FileRef>
    <FileRef
