@@ -17,6 +17,8 @@ class MainViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = "Bank ABC"
+
         tableView.register(ExposeCell.self, forCellReuseIdentifier: ExposeCell.identifier)
         addChild(discoverabilityCell.vc)
         discoverabilityCell.vc.didMove(toParent: self)
@@ -26,8 +28,54 @@ class MainViewController: UITableViewController {
         return 5
     }
 
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "Accounts"
+        default:
+            return nil
+        }
+    }
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // CAIO
+        if indexPath.row == 4 {
+            if Concierge.isConnected {
+                Concierge.disconnect { error in
+                    guard error == nil else {
+                        print("Error: \(error!.localizedDescription)")
+                        return
+                    }
+
+                    print("Flybits disconnect succeed.")
+
+                    DispatchQueue.main.async {
+                        guard let cell = tableView.cellForRow(at: indexPath) else { return }
+                        var content = cell.defaultContentConfiguration()
+                        content.text = "Touch here to Connect"
+                        cell.contentConfiguration = content
+
+                        tableView.deselectRow(at: indexPath, animated: true)
+                    }
+                }
+            } else {
+                Concierge.connect(with: AnonymousConciergeIDP()) { error in
+                    guard error == nil else {
+                        print("Error: failed to connect due to \(error!.localizedDescription)")
+                        return
+                    }
+
+                    print("Flybits connection succeed.")
+                    DispatchQueue.main.async {
+                        guard let cell = tableView.cellForRow(at: indexPath) else { return }
+                        var content = cell.defaultContentConfiguration()
+                        content.text = "Touch here to Disconnect"
+                        cell.contentConfiguration = content
+
+                        tableView.deselectRow(at: indexPath, animated: true)
+                    }
+                }
+            }
+        }
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -37,18 +85,22 @@ class MainViewController: UITableViewController {
 
         switch indexPath.row {
         case 0:
-            return discoverabilityCell
+            content.text = "Chequing"
+            content.secondaryText = "$200.00"
         case 1:
-            content.text = "Your account has $1,234,567.89"
+            content.text = "Savings"
+            content.secondaryText = "$12.00"
         case 2:
-            content.text = "Be more green"
-            content.secondaryText = "Do you want to receive eStatments instead of papers?"
+            content.text = "Credit"
+            content.secondaryText = "$12,000.00"
         case 3:
-            content.text = "How is the weather today?"
-            content.secondaryText = "Today is very hot in your city with 36º C in the forecast."
+            return discoverabilityCell
         case 4:
-            content.text = "Test"
-            content.secondaryText = "Test"
+            if Concierge.isConnected {
+                content.text = "Touch here to Disconnect"
+            } else {
+                content.text = "Touch here to Connect"
+            }
         default:
             print("Error: This scenario should not happen. Row value: \(indexPath.row)")
         }
@@ -56,6 +108,15 @@ class MainViewController: UITableViewController {
         cell.contentConfiguration = content
 
         return cell
+    }
+
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header = view as? UITableViewHeaderFooterView
+        header?.textLabel?.font = UIFont.boldSystemFont(ofSize: 25)
+    }
+
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 45
     }
 }
 
