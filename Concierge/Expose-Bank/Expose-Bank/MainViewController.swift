@@ -12,16 +12,25 @@ import FlybitsConcierge
 
 class MainViewController: UITableViewController {
 
-    let discoverabilityCell = ExposeCell(style: .default, reuseIdentifier: ExposeCell.identifier)
+    private lazy var resizeHandler = ResizeHandler(tableView: tableView)
+
+    private lazy var discoverableViewController: UIViewController = {
+        let result = Concierge.viewController(.expose, params: [], options: [])
+        if let resizeVc = result as? ConciergeAutoResizeViewController {
+            resizeVc.addResizedListeners { [weak self] viewController, size in
+                guard let self = self else { return }
+                self.resizeHandler.updateSize(viewControlleIdentifier: viewController.hashValue, size: size)
+            }
+        }
+        return result
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = "Bank ABC"
 
-        tableView.register(ExposeCell.self, forCellReuseIdentifier: ExposeCell.identifier)
-        addChild(discoverabilityCell.vc)
-        discoverabilityCell.vc.didMove(toParent: self)
+        tableView.register(ConciergeContainerCell.self, forCellReuseIdentifier: ConciergeContainerCell.identifier)
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -94,7 +103,18 @@ class MainViewController: UITableViewController {
             content.text = "Credit"
             content.secondaryText = "$12,000.00"
         case 3:
-            return discoverabilityCell
+            let newCell = tableView.dequeueReusableCell(withIdentifier: ConciergeContainerCell.identifier)
+            guard let containerCell = newCell as? ConciergeContainerCell else {
+                return cell
+            }
+
+            containerCell.installConcierge(viewController: discoverableViewController)
+            if discoverableViewController.parent == nil {
+                addChild(discoverableViewController)
+                discoverableViewController.didMove(toParent: self)
+            }
+
+            return containerCell
         case 4:
             if Concierge.isConnected {
                 content.text = "Touch here to Disconnect"
@@ -120,51 +140,70 @@ class MainViewController: UITableViewController {
     }
 }
 
-class ExposeCell: UITableViewCell {
+// Support Classes
 
-    static let identifier = "ExposeCell"
+class ConciergeContainerCell: UITableViewCell {
 
-    let vc = Concierge.viewController(.expose,
-                                      params: [],
-                                      options: [.customViewables(["concierge-card-buttons": AnyViewable(viewable: DiscoverableButtonsCardConciergeViewable()),
-                                                                  "concierge-card-link": AnyViewable(viewable: DiscoverableLinkCardConciergeViewable())])
-                                      ])
+    static let identifier = "ConciergeContainerCell"
+
+    weak var conciergeViewController: UIViewController?
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        vc.view.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(vc.view)
-        NSLayoutConstraint.activate([
-            vc.view.topAnchor.constraint(equalTo: contentView.topAnchor),
-            vc.view.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            vc.view.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            vc.view.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
-        ])
-        if let resizeVc = vc as? ConciergeAutoResizeViewController {
-            resizeVc.addResizedListeners { [weak self] _, _ in
-                self?.reload()
-            }
-        }
     }
 
-    private func reload() {
-        if let tableview = superview as? UITableView, let indexPath = tableview.indexPath(for: self) {
-            tableview.reloadRows(at: [indexPath], with: UITableView.RowAnimation.none)
+    func installConcierge(viewController: UIViewController) {
+        if conciergeViewController == viewController, viewController.view.superview == contentView {
+            return
         }
+        conciergeViewController = viewController
+        viewController.view.removeFromSuperview()
+        viewController.view.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(viewController.view)
+        NSLayoutConstraint.activate([
+            viewController.view.topAnchor.constraint(equalTo: contentView.topAnchor),
+            viewController.view.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            viewController.view.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            viewController.view.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        ])
     }
 
-    private func initialConstraint() {
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            contentView.topAnchor.constraint(equalTo: topAnchor),
-            contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            contentView.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        if let conciergeViewController = conciergeViewController,
+           conciergeViewController.view.superview == contentView {
+            conciergeViewController.view.removeFromSuperview()
+            conciergeViewController.removeFromParent()
+        }
+        conciergeViewController = nil
     }
 
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+}
+
+class ResizeHandler {
+
+    weak var tableView: UITableView?
+
+    var sizeMapping: [Int: CGSize] = [:]
+
+    init(tableView: UITableView) {
+        self.tableView = tableView
+    }
+
+    func updateSize(viewControlleIdentifier: Int, size: CGSize) {
+        guard let foundSize = sizeMapping[viewControlleIdentifier] else {
+            sizeMapping[viewControlleIdentifier] = size
+            tableView?.reloadData()
+            return
+        }
+        if foundSize.height != size.height {
+            sizeMapping[viewControlleIdentifier] = size
+            tableView?.reloadData()
+        }
     }
 }
