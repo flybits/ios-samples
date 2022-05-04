@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		196A99112F5ECE4BB548928B /* Pods_Expose_Bank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A567FE867237D537B3D6B055 /* Pods_Expose_Bank.framework */; };
 		25EA00122820655A004F982B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EA00112820655A004F982B /* AppDelegate.swift */; };
-		25EA00142820655A004F982B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EA00132820655A004F982B /* SceneDelegate.swift */; };
 		25EA00192820655A004F982B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25EA00172820655A004F982B /* Main.storyboard */; };
 		25EA001B2820655C004F982B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25EA001A2820655C004F982B /* Assets.xcassets */; };
 		25EA001E2820655C004F982B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25EA001C2820655C004F982B /* LaunchScreen.storyboard */; };
@@ -17,9 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2563FEA32822FE7F00FF53F3 /* Expose-Bank.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Expose-Bank.entitlements"; sourceTree = "<group>"; };
 		25EA000E2820655A004F982B /* Expose-Bank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Expose-Bank.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25EA00112820655A004F982B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		25EA00132820655A004F982B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		25EA00182820655A004F982B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		25EA001A2820655C004F982B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		25EA001D2820655C004F982B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -71,10 +70,10 @@
 		25EA00102820655A004F982B /* Expose-Bank */ = {
 			isa = PBXGroup;
 			children = (
+				2563FEA32822FE7F00FF53F3 /* Expose-Bank.entitlements */,
 				25EA001F2820655C004F982B /* Info.plist */,
 				25EA00112820655A004F982B /* AppDelegate.swift */,
 				25EA002628206E3F004F982B /* MainViewController.swift */,
-				25EA00132820655A004F982B /* SceneDelegate.swift */,
 				25EA001A2820655C004F982B /* Assets.xcassets */,
 				25EA001C2820655C004F982B /* LaunchScreen.storyboard */,
 				25EA00172820655A004F982B /* Main.storyboard */,
@@ -208,7 +207,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				25EA00122820655A004F982B /* AppDelegate.swift in Sources */,
-				25EA00142820655A004F982B /* SceneDelegate.swift in Sources */,
 				25EA002728206E3F004F982B /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,7 +283,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -339,7 +337,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -355,6 +353,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Expose-Bank/Expose-Bank.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CH9YG7X49H;
@@ -371,7 +370,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.flybits.Expose-Bank";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.flybits.expose-bank";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -385,6 +384,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Expose-Bank/Expose-Bank.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CH9YG7X49H;
@@ -401,7 +401,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.flybits.Expose-Bank";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.flybits.expose-bank";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

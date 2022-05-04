@@ -5,9 +5,9 @@
       location = "group:Concierge/Expose-Bank/Expose-Bank.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Connection/Anonymous-Connect/Anonymous-Connect.xcodeproj">
+      location = "group:Pods/Pods.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Pods/Pods.xcodeproj">
+      location = "group:Connection/Anonymous-Connect/Anonymous-Connect.xcodeproj">
    </FileRef>
 </Workspace>

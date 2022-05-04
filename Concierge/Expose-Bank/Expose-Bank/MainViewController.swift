@@ -59,9 +59,7 @@ class MainViewController: UITableViewController {
 
                     DispatchQueue.main.async {
                         guard let cell = tableView.cellForRow(at: indexPath) else { return }
-                        var content = cell.defaultContentConfiguration()
-                        content.text = "Touch here to Connect"
-                        cell.contentConfiguration = content
+                        cell.textLabel?.text = "Touch here to Connect"
 
                         tableView.deselectRow(at: indexPath, animated: true)
                     }
@@ -76,9 +74,7 @@ class MainViewController: UITableViewController {
                     print("Flybits connection succeed.")
                     DispatchQueue.main.async {
                         guard let cell = tableView.cellForRow(at: indexPath) else { return }
-                        var content = cell.defaultContentConfiguration()
-                        content.text = "Touch here to Disconnect"
-                        cell.contentConfiguration = content
+                        cell.textLabel?.text = "Touch here to Disconnect"
 
                         tableView.deselectRow(at: indexPath, animated: true)
                     }
@@ -90,18 +86,17 @@ class MainViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "defaultCell", for: indexPath)
-        var content = cell.defaultContentConfiguration()
 
         switch indexPath.row {
         case 0:
-            content.text = "Chequing"
-            content.secondaryText = "$200.00"
+            cell.textLabel?.text = "Chequing"
+            cell.detailTextLabel?.text = "$200.00"
         case 1:
-            content.text = "Savings"
-            content.secondaryText = "$12.00"
+            cell.textLabel?.text = "Savings"
+            cell.detailTextLabel?.text = "$12.00"
         case 2:
-            content.text = "Credit"
-            content.secondaryText = "$12,000.00"
+            cell.textLabel?.text = "Credit"
+            cell.detailTextLabel?.text = "$12,000.00"
         case 3:
             // Get the ConciergeContainerCell from tableView
             let newCell = tableView.dequeueReusableCell(withIdentifier: ConciergeContainerCell.identifier)
@@ -120,15 +115,15 @@ class MainViewController: UITableViewController {
             return containerCell
         case 4:
             if Concierge.isConnected {
-                content.text = "Touch here to Disconnect"
+                cell.textLabel?.text = "Touch here to Disconnect"
             } else {
-                content.text = "Touch here to Connect"
+                cell.textLabel?.text = "Touch here to Connect"
             }
+
+            cell.detailTextLabel?.text = ""
         default:
             print("Error: This scenario should not happen. Row value: \(indexPath.row)")
         }
-
-        cell.contentConfiguration = content
 
         return cell
     }
