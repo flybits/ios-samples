@@ -12,16 +12,8 @@ import FlybitsConcierge
 
 class MainViewController: UITableViewController {
 
-    private lazy var resizeHandler = ResizeHandler(tableView: tableView)
-
     private lazy var exposeConciergeViewController: UIViewController = {
         let result = Concierge.viewController(.expose, params: [], options: [])
-        if let resizeVc = result as? ConciergeAutoResizeViewController {
-            resizeVc.addResizedListeners { [weak self] viewController, size in
-                guard let self = self else { return }
-                self.resizeHandler.updateSize(viewControlleIdentifier: viewController.hashValue, size: size)
-            }
-        }
         return result
     }()
 
@@ -31,6 +23,9 @@ class MainViewController: UITableViewController {
         self.title = "Bank ABC"
 
         tableView.register(ConciergeContainerCell.self, forCellReuseIdentifier: ConciergeContainerCell.identifier)
+
+        addChild(exposeConciergeViewController)
+        exposeConciergeViewController.didMove(toParent: self)
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -84,36 +79,35 @@ class MainViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        let cell = tableView.dequeueReusableCell(withIdentifier: "defaultCell", for: indexPath)
-
         switch indexPath.row {
         case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "defaultCell", for: indexPath)
             cell.textLabel?.text = "Chequing"
             cell.detailTextLabel?.text = "$200.00"
+            return cell
         case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "defaultCell", for: indexPath)
             cell.textLabel?.text = "Savings"
             cell.detailTextLabel?.text = "$12.00"
+            return cell
         case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "defaultCell", for: indexPath)
             cell.textLabel?.text = "Credit"
             cell.detailTextLabel?.text = "$12,000.00"
+            return cell
         case 3:
             // Get the ConciergeContainerCell from tableView
             let newCell = tableView.dequeueReusableCell(withIdentifier: ConciergeContainerCell.identifier)
             guard let containerCell = newCell as? ConciergeContainerCell else {
-                return cell
+                return UITableViewCell()
             }
 
             // Attach the Expose Concierge into the custom cell
             containerCell.installConcierge(viewController: exposeConciergeViewController)
-            if exposeConciergeViewController.parent == nil {
-                // trigger the proper events to make Concierge do its life cycle
-                addChild(exposeConciergeViewController)
-                exposeConciergeViewController.didMove(toParent: self)
-            }
 
             return containerCell
         case 4:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "defaultCell", for: indexPath)
             if Concierge.isConnected {
                 cell.textLabel?.text = "Touch here to Disconnect"
             } else {
@@ -121,11 +115,12 @@ class MainViewController: UITableViewController {
             }
 
             cell.detailTextLabel?.text = ""
+            return cell
         default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "defaultCell", for: indexPath)
             print("Error: This scenario should not happen. Row value: \(indexPath.row)")
+            return cell
         }
-
-        return cell
     }
 
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -135,6 +130,15 @@ class MainViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 45
+    }
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.row {
+        case 3:
+            return 412
+        default:
+            return 44
+        }
     }
 }
 
@@ -180,31 +184,5 @@ class ConciergeContainerCell: UITableViewCell {
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-
-}
-
-/// This class will guarantee the tableView will resize the cell properly to acomodate Expose Concierge dynamically based on its content.
-class ResizeHandler {
-
-    weak var tableView: UITableView?
-
-    var sizeMapping: [Int: CGSize] = [:]
-
-    init(tableView: UITableView) {
-        self.tableView = tableView
-    }
-
-    /// To set the height dynamically
-    func updateSize(viewControlleIdentifier: Int, size: CGSize) {
-        guard let foundSize = sizeMapping[viewControlleIdentifier] else {
-            sizeMapping[viewControlleIdentifier] = size
-            tableView?.reloadData()
-            return
-        }
-        if foundSize.height != size.height {
-            sizeMapping[viewControlleIdentifier] = size
-            tableView?.reloadData()
-        }
     }
 }
