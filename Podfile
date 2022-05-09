@@ -7,14 +7,6 @@ use_frameworks!
 
 $flybitsSDKVersion = '~> 4.1'
 
-target 'Anonymous-Connect' do
-    project 'Connection/Anonymous-Connect/Anonymous-Connect.xcodeproj'
-    inherit! :search_paths
-
-    # Pods
-    pod 'FlybitsSDK', $flybitsSDKVersion
-end
-
 target 'Expose-Bank' do
   project 'Concierge/Expose-Bank/Expose-Bank.xcodeproj'
   inherit! :search_paths
