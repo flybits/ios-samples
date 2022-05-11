@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		196A99112F5ECE4BB548928B /* Pods_Expose_Bank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A567FE867237D537B3D6B055 /* Pods_Expose_Bank.framework */; };
 		2572B73628241FB9000499D2 /* Expose_BankUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2572B73528241FB9000499D2 /* Expose_BankUITests.swift */; };
 		2572B73828241FB9000499D2 /* Expose_BankUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2572B73728241FB9000499D2 /* Expose_BankUITestsLaunchTests.swift */; };
 		25EA00122820655A004F982B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EA00112820655A004F982B /* AppDelegate.swift */; };
@@ -15,6 +14,19 @@
 		25EA001B2820655C004F982B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25EA001A2820655C004F982B /* Assets.xcassets */; };
 		25EA001E2820655C004F982B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25EA001C2820655C004F982B /* LaunchScreen.storyboard */; };
 		25EA002728206E3F004F982B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EA002628206E3F004F982B /* MainViewController.swift */; };
+		9D446F3C703873888978B665 /* Pods_Expose_Bank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC334CA781E3827EEC8CAA2B /* Pods_Expose_Bank.framework */; };
+		E5697048282C43880009DBA5 /* FlybitsCoreConcierge.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5697042282C43880009DBA5 /* FlybitsCoreConcierge.xcframework */; };
+		E5697049282C43880009DBA5 /* FlybitsCoreConcierge.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E5697042282C43880009DBA5 /* FlybitsCoreConcierge.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E569704A282C43880009DBA5 /* FlybitsSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5697043282C43880009DBA5 /* FlybitsSDK.xcframework */; };
+		E569704B282C43880009DBA5 /* FlybitsSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E5697043282C43880009DBA5 /* FlybitsSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E569704C282C43880009DBA5 /* FlybitsConcierge.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5697044282C43880009DBA5 /* FlybitsConcierge.xcframework */; };
+		E569704D282C43880009DBA5 /* FlybitsConcierge.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E5697044282C43880009DBA5 /* FlybitsConcierge.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E569704E282C43880009DBA5 /* FlybitsContextSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5697045282C43880009DBA5 /* FlybitsContextSDK.xcframework */; };
+		E569704F282C43880009DBA5 /* FlybitsContextSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E5697045282C43880009DBA5 /* FlybitsContextSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E5697050282C43880009DBA5 /* FlybitsKernelSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5697046282C43880009DBA5 /* FlybitsKernelSDK.xcframework */; };
+		E5697051282C43880009DBA5 /* FlybitsKernelSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E5697046282C43880009DBA5 /* FlybitsKernelSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E5697052282C43880009DBA5 /* FlybitsPushSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5697047282C43880009DBA5 /* FlybitsPushSDK.xcframework */; };
+		E5697053282C43880009DBA5 /* FlybitsPushSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E5697047282C43880009DBA5 /* FlybitsPushSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +38,25 @@
 			remoteInfo = "Expose-Bank";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E5BF233D282C414B00C69B06 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E5697053282C43880009DBA5 /* FlybitsPushSDK.xcframework in Embed Frameworks */,
+				E569704F282C43880009DBA5 /* FlybitsContextSDK.xcframework in Embed Frameworks */,
+				E569704B282C43880009DBA5 /* FlybitsSDK.xcframework in Embed Frameworks */,
+				E5697049282C43880009DBA5 /* FlybitsCoreConcierge.xcframework in Embed Frameworks */,
+				E5697051282C43880009DBA5 /* FlybitsKernelSDK.xcframework in Embed Frameworks */,
+				E569704D282C43880009DBA5 /* FlybitsConcierge.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2563FEA32822FE7F00FF53F3 /* Expose-Bank.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Expose-Bank.entitlements"; sourceTree = "<group>"; };
@@ -40,8 +71,14 @@
 		25EA001F2820655C004F982B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25EA002628206E3F004F982B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		436F727C380F902EA10847C3 /* Pods-Expose-Bank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Expose-Bank.debug.xcconfig"; path = "Target Support Files/Pods-Expose-Bank/Pods-Expose-Bank.debug.xcconfig"; sourceTree = "<group>"; };
-		A567FE867237D537B3D6B055 /* Pods_Expose_Bank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Expose_Bank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A75CAC46C5349CD7EC7E0DB5 /* Pods-Expose-Bank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Expose-Bank.release.xcconfig"; path = "Target Support Files/Pods-Expose-Bank/Pods-Expose-Bank.release.xcconfig"; sourceTree = "<group>"; };
+		CC334CA781E3827EEC8CAA2B /* Pods_Expose_Bank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Expose_Bank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5697042282C43880009DBA5 /* FlybitsCoreConcierge.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FlybitsCoreConcierge.xcframework; path = "Expose-Bank/frameworks/FlybitsCoreConcierge.xcframework"; sourceTree = "<group>"; };
+		E5697043282C43880009DBA5 /* FlybitsSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FlybitsSDK.xcframework; path = "Expose-Bank/frameworks/FlybitsSDK.xcframework"; sourceTree = "<group>"; };
+		E5697044282C43880009DBA5 /* FlybitsConcierge.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FlybitsConcierge.xcframework; path = "Expose-Bank/frameworks/FlybitsConcierge.xcframework"; sourceTree = "<group>"; };
+		E5697045282C43880009DBA5 /* FlybitsContextSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FlybitsContextSDK.xcframework; path = "Expose-Bank/frameworks/FlybitsContextSDK.xcframework"; sourceTree = "<group>"; };
+		E5697046282C43880009DBA5 /* FlybitsKernelSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FlybitsKernelSDK.xcframework; path = "Expose-Bank/frameworks/FlybitsKernelSDK.xcframework"; sourceTree = "<group>"; };
+		E5697047282C43880009DBA5 /* FlybitsPushSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FlybitsPushSDK.xcframework; path = "Expose-Bank/frameworks/FlybitsPushSDK.xcframework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +93,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				196A99112F5ECE4BB548928B /* Pods_Expose_Bank.framework in Frameworks */,
+				E5697048282C43880009DBA5 /* FlybitsCoreConcierge.xcframework in Frameworks */,
+				9D446F3C703873888978B665 /* Pods_Expose_Bank.framework in Frameworks */,
+				E569704E282C43880009DBA5 /* FlybitsContextSDK.xcframework in Frameworks */,
+				E5697050282C43880009DBA5 /* FlybitsKernelSDK.xcframework in Frameworks */,
+				E569704A282C43880009DBA5 /* FlybitsSDK.xcframework in Frameworks */,
+				E569704C282C43880009DBA5 /* FlybitsConcierge.xcframework in Frameworks */,
+				E5697052282C43880009DBA5 /* FlybitsPushSDK.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,7 +109,13 @@
 		14438011C5946C63B2E0C055 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A567FE867237D537B3D6B055 /* Pods_Expose_Bank.framework */,
+				E5697044282C43880009DBA5 /* FlybitsConcierge.xcframework */,
+				E5697045282C43880009DBA5 /* FlybitsContextSDK.xcframework */,
+				E5697042282C43880009DBA5 /* FlybitsCoreConcierge.xcframework */,
+				E5697046282C43880009DBA5 /* FlybitsKernelSDK.xcframework */,
+				E5697047282C43880009DBA5 /* FlybitsPushSDK.xcframework */,
+				E5697043282C43880009DBA5 /* FlybitsSDK.xcframework */,
+				CC334CA781E3827EEC8CAA2B /* Pods_Expose_Bank.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -153,7 +202,7 @@
 				25EA000A2820655A004F982B /* Sources */,
 				25EA000B2820655A004F982B /* Frameworks */,
 				25EA000C2820655A004F982B /* Resources */,
-				5AE6A21575ABBDF7E3AB8709 /* [CP] Embed Pods Frameworks */,
+				E5BF233D282C414B00C69B06 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -223,23 +272,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5AE6A21575ABBDF7E3AB8709 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Expose-Bank/Pods-Expose-Bank-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Expose-Bank/Pods-Expose-Bank-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Expose-Bank/Pods-Expose-Bank-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		DE6CA5C31A59BCB2881C6DC2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

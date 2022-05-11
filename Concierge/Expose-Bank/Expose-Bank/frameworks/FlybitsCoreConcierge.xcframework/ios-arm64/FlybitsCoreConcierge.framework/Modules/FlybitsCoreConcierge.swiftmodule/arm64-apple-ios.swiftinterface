@@ -1,0 +1,161 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)
+// swift-module-flags: -target arm64-apple-ios11.4 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name FlybitsCoreConcierge
+@_exported import FlybitsCoreConcierge
+import FlybitsKernelSDK
+import FlybitsPushSDK
+import FlybitsSDK
+import Foundation
+import Swift
+import UIKit
+import _Concurrency
+@_hasMissingDesignatedInitializers public class ContentDataConvertable : FlybitsCoreConcierge.FlybitsContentDataConvertable {
+  public func convertToContentData() -> [FlybitsKernelSDK.ContentData]
+  public func templateType() -> Swift.String?
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class RelevantContentAPIStrategy : FlybitsCoreConcierge.APIStrategy {
+  public typealias Output = FlybitsCoreConcierge.ContentDataConvertable
+  public var query: FlybitsKernelSDK.ContentQuery?
+  public var contentSource: FlybitsCoreConcierge.CoreConciergeParams?
+  public func loadData(completion: @escaping ([FlybitsCoreConcierge.ContentDataConvertable]) -> Swift.Void)
+  public init(types: [Swift.String : FlybitsKernelSDK.ContentData.Type])
+  @objc deinit
+}
+public protocol FlybitsContentDataConvertable {
+  func convertToContentData() -> [FlybitsKernelSDK.ContentData]
+  func templateType() -> Swift.String?
+}
+@_Concurrency.MainActor(unsafe) open class InheritedConciergeViewController<ViewableData, Data, Api> : UIKit.UIViewController where Data : FlybitsCoreConcierge.DataStrategy, Api : FlybitsCoreConcierge.APIStrategy, Data.Input == Api.Output {
+  @_Concurrency.MainActor(unsafe) public var viewables: [Swift.String : FlybitsCoreConcierge.AnyViewable<ViewableData>]
+  @_Concurrency.MainActor(unsafe) final public let viewModel: FlybitsCoreConcierge.ConciergeViewModel<Data.Position, Data, Api>
+  @_Concurrency.MainActor(unsafe) public init(viewModel: FlybitsCoreConcierge.ConciergeViewModel<Data.Position, Data, Api>)
+  @available(*, unavailable)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class PushContentAPIStrategy : FlybitsCoreConcierge.APIStrategy {
+  public typealias Output = FlybitsCoreConcierge.ContentDataConvertable
+  public var query: FlybitsKernelSDK.ContentQuery?
+  public var pushQuery: FlybitsPushSDK.PushQuery?
+  public var contentSource: FlybitsCoreConcierge.CoreConciergeParams?
+  public func loadData(completion: @escaping ([FlybitsCoreConcierge.ContentDataConvertable]) -> Swift.Void)
+  public init(types: [Swift.String : FlybitsKernelSDK.ContentData.Type]? = nil, pushQuery: FlybitsPushSDK.PushQuery? = nil)
+  @objc deinit
+}
+public struct TemplatedOutput<Value> {
+  public let value: Value
+  public let templateName: Swift.String?
+  public init(value: Value, templateName: Swift.String?)
+}
+public protocol DataStrategy {
+  associatedtype Input
+  associatedtype Output
+  associatedtype Position
+  var templates: [FlybitsCoreConcierge.TemplatedOutput<Self.Output>] { get }
+  func setData(_ data: [FlybitsCoreConcierge.TemplatedOutput<Self.Output>])
+  func addData(_ newData: [FlybitsCoreConcierge.TemplatedOutput<Self.Output>])
+  func toTemplatedOutput(_ input: [Self.Input]) -> [FlybitsCoreConcierge.TemplatedOutput<Self.Output>]
+  func value(for position: Self.Position) -> FlybitsCoreConcierge.TemplatedOutput<Self.Output>
+  func total() -> Swift.Int
+}
+public struct AnyViewable<Data> : FlybitsCoreConcierge.ConciergeViewable, Swift.Hashable {
+  public init<Viewable>(viewable: Viewable) where Data == Viewable.Data, Viewable : FlybitsCoreConcierge.ConciergeViewable
+  public func type() -> Data.Type
+  public func tileViewController(for contentData: Data) -> UIKit.UIViewController?
+  public func detailViewController(for contentData: Data) -> UIKit.UIViewController?
+  public func secondaryCallToAction(for contentData: Data, index: Swift.Int) -> FlybitsCoreConcierge.ConciergeCallToActionResult
+  public func primaryCallToAction(for contentData: Data) -> FlybitsCoreConcierge.ConciergeCallToActionResult
+  public var tileViewControllerLayout: Foundation.URL? {
+    get
+  }
+  public static func == (lhs: FlybitsCoreConcierge.AnyViewable<Data>, rhs: FlybitsCoreConcierge.AnyViewable<Data>) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum CoreConciergeParams {
+}
+public class ConciergeViewModel<Position, Data, API> : ObjectiveC.NSObject where Position == Data.Position, Data : FlybitsCoreConcierge.DataStrategy, API : FlybitsCoreConcierge.APIStrategy, Data.Input == API.Output {
+  final public let viewModelData: Data
+  final public let viewModelAPI: API
+  @objc dynamic public var fetchingContent: Swift.Bool {
+    get
+  }
+  public init(data: Data, api: API)
+  public func fetchData()
+  @objc deinit
+}
+public class ListContentDataStrategy<Convertable> : FlybitsCoreConcierge.DataStrategy where Convertable : FlybitsCoreConcierge.FlybitsContentDataConvertable {
+  public typealias Output = FlybitsKernelSDK.ContentData
+  public typealias Input = Convertable
+  public typealias Position = Swift.Int
+  public var templates: [FlybitsCoreConcierge.TemplatedOutput<FlybitsKernelSDK.ContentData>] {
+    get
+  }
+  public init()
+  public func setData(_ data: [FlybitsCoreConcierge.TemplatedOutput<FlybitsKernelSDK.ContentData>])
+  public func addData(_ newData: [FlybitsCoreConcierge.TemplatedOutput<FlybitsKernelSDK.ContentData>])
+  public func toTemplatedOutput(_ input: [FlybitsCoreConcierge.ListContentDataStrategy<Convertable>.Input]) -> [FlybitsCoreConcierge.TemplatedOutput<FlybitsKernelSDK.ContentData>]
+  public func value(for position: Swift.Int) -> FlybitsCoreConcierge.TemplatedOutput<FlybitsKernelSDK.ContentData>
+  public func total() -> Swift.Int
+  @objc deinit
+}
+public protocol APIStrategy {
+  associatedtype Output
+  var query: FlybitsKernelSDK.ContentQuery? { get set }
+  var contentSource: FlybitsCoreConcierge.CoreConciergeParams? { get set }
+  func loadData(completion: @escaping ([Self.Output]) -> Swift.Void)
+}
+public enum ConciergeTransition : Swift.Int {
+  case unknown
+  case none
+  case showFeed
+  case showDetail
+  case showNotifications
+  case showNotificationAndDetail
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum ConciergeCallToActionResult {
+  case show(UIKit.UIViewController)
+  case dismiss
+  case doNothing
+}
+public protocol ConciergeViewable {
+  associatedtype Data
+  func type() -> Self.Data.Type
+  func tileViewController(for contentData: Self.Data) -> UIKit.UIViewController?
+  func detailViewController(for contentData: Self.Data) -> UIKit.UIViewController?
+  var deepLinkTransition: FlybitsCoreConcierge.ConciergeTransition { get }
+  func primaryCallToAction(for contentData: Self.Data) -> FlybitsCoreConcierge.ConciergeCallToActionResult
+  func secondaryCallToAction(for contentData: Self.Data, index: Swift.Int) -> FlybitsCoreConcierge.ConciergeCallToActionResult
+  var tileViewControllerLayout: Foundation.URL? { get }
+}
+extension FlybitsCoreConcierge.ConciergeViewable {
+  public var deepLinkTransition: FlybitsCoreConcierge.ConciergeTransition {
+    get
+  }
+  public func primaryCallToAction(for contentData: Self.Data) -> FlybitsCoreConcierge.ConciergeCallToActionResult
+  public func secondaryCallToAction(for contentData: Self.Data, index: Swift.Int) -> FlybitsCoreConcierge.ConciergeCallToActionResult
+  public var tileViewControllerLayout: Foundation.URL? {
+    get
+  }
+}
+public class SingleContentAPIStrategy : FlybitsCoreConcierge.APIStrategy {
+  public typealias Output = FlybitsCoreConcierge.ContentDataConvertable
+  public var query: FlybitsKernelSDK.ContentQuery?
+  public var contentSource: FlybitsCoreConcierge.CoreConciergeParams?
+  final public let contentId: Swift.String
+  final public let pushRequestId: Swift.String?
+  public init(contentId: Swift.String, pushRequestId: Swift.String? = nil, types: [Swift.String : FlybitsKernelSDK.ContentData.Type])
+  public func loadData(completion: @escaping ([FlybitsCoreConcierge.ContentDataConvertable]) -> Swift.Void)
+  @objc deinit
+}
+extension FlybitsCoreConcierge.ConciergeTransition : Swift.Equatable {}
+extension FlybitsCoreConcierge.ConciergeTransition : Swift.Hashable {}
+extension FlybitsCoreConcierge.ConciergeTransition : Swift.RawRepresentable {}

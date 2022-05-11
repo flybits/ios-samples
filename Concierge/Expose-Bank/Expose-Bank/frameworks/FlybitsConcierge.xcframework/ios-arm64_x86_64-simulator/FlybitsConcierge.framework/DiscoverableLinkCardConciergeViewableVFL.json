@@ -1,0 +1,23 @@
+{
+    "layout": [
+        "V:|[mediaView]",
+        "H:|[titleLabel]|",
+        "H:|[linkLabel]|",
+        "H:|[mediaView]|",
+        "V:[mediaView]-padding-[titleLabel]",
+        "V:[titleLabel][linkLabel]",
+        "V:[linkLabel]-(>=0)-|"
+    ],
+    "imageViewAspect": 1.7777778,
+    "views":[
+        "mediaView",
+        "titleLabel",
+        "linkLabel"
+    ],
+    "metrics": {
+        "padding": 16.0
+    },
+    "mediaHiddenOptions": [
+        "vertical"
+    ]
+}

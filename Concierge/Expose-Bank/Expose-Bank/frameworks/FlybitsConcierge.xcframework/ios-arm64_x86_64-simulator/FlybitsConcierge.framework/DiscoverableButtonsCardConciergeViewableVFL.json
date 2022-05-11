@@ -1,0 +1,23 @@
+{
+    "layout": [
+        "V:|[mediaView]",
+        "H:|[titleLabel]|",
+        "H:|[buttons]|",
+        "H:|[mediaView]|",
+        "V:[mediaView]-padding-[titleLabel]",
+        "V:[titleLabel][buttons]",
+        "V:[buttons]-(>=0)-|"
+    ],
+    "imageViewAspect": 1.7777778,
+    "views":[
+        "mediaView",
+        "titleLabel",
+        "buttons"
+    ],
+    "metrics": {
+        "padding": 16.0
+    },
+    "mediaHiddenOptions": [
+        "vertical"
+    ]
+}

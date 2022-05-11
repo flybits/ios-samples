@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <style>
+        body { margin: 0; width:100%%; height:100%%;  background-color:#000000; }
+        html { width:100%%; height:100%%; background-color:#000000; }
+
+        .vidyard-player-embed iframe,
+        .vidyard-player-embed object,
+        .vidyard-player-embed embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%% !important;
+            height: 100%% !important;
+        }
+        </style>
+    </head>
+<body>
+
+
+<!-- The script tag should live in the head of your page if at all possible -->
+<!--<script type="text/javascript" async src="https://play.vidyard.com/embed/v4.js"></script>-->
+
+<script type="text/javascript">
+    var hasSetup = false
+    window.onVidyardAPI = (vidyardEmbed) => {
+        vidyardEmbed.api.addReadyListener((_, player) => {
+            console.log('player ready:', player.ready());
+            console.log(player.uuid);
+
+            var data = {
+                "event": "ready",
+            };
+
+            window.webkit.messageHandlers.eventHandler.postMessage(data)
+
+            if (!hasSetup) {
+
+                player.on('play', function (eventTime) {
+
+                    var data = {
+                        "event": "play",
+                        "playbackTime": eventTime,
+                    };
+
+                    window.webkit.messageHandlers.eventHandler.postMessage(data)
+                    player.seek(VidyardV4.api.getPlayersByUUID("<uuid>")[0].currentTime() + 0.001);
+                });
+
+                player.on('metadata', function (eventTime) {
+                    const metadata = args[0];
+                    window.webkit.messageHandlers.eventHandler.postMessage(metadata);
+                });
+
+                player.on('pause', function () {
+
+                    var data = {
+                        "event": "pause",
+                        "playbackTime": VidyardV4.api.getPlayersByUUID("<uuid>")[0].currentTime()
+                    };
+
+                    window.webkit.messageHandlers.eventHandler.postMessage(data)
+                });
+
+                player.on('playerComplete', function () {
+                    var data = {
+                        "event": "complete"
+                    };
+                    window.webkit.messageHandlers.eventHandler.postMessage(data)
+                });
+
+                hasSetup = true;
+            }
+
+        },)
+ }
+
+function pauseVideo() {
+    var players = VidyardV4.api.getPlayersByUUID("<uuid>");
+    players[0].pause();
+}
+
+function getMetaData() {
+    var players = VidyardV4.api.getPlayersByUUID("<uuid>");
+    window.webkit.messageHandlers.eventHandler.postMessage(players[0].metadata);
+}
+
+function toggleFullscreen() {
+    var players = VidyardV4.api.getPlayersByUUID("<uuid>");
+    players[0].play();
+    players[0].toggleFullscreen();
+    var data = {
+        "event": "fullscreen",
+    };
+    window.webkit.messageHandlers.eventHandler.postMessage(data);
+}
+
+</script>
+
+<script type="text/javascript">
+
+    let script = document.createElement('script');
+
+    // can load any script, from any domain
+    script.src = "https://play.vidyard.com/embed/v4.js"
+    script.async = true
+    document.head.append(script);
+
+    script.onerror = function() {
+      var data = {
+          "event": "error"
+      };
+      window.webkit.messageHandlers.eventHandler.postMessage(data)
+    };
+
+</script>
+
+<div class="vidyard-player-embed" data-uuid="<uuid>" data-v="4" data-type="inline" data-quality="360"/>
+
+
+</body>
+</html>

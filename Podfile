@@ -12,5 +12,5 @@ target 'Expose-Bank' do
   inherit! :search_paths
 
   # Pods
-  pod 'FlybitsConcierge', $flybitsSDKVersion
+#  pod 'FlybitsConcierge', $flybitsSDKVersion
 end
