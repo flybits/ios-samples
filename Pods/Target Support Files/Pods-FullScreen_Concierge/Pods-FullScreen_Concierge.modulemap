@@ -1,0 +1,6 @@
+framework module Pods_FullScreen_Concierge {
+  umbrella header "Pods-FullScreen_Concierge-umbrella.h"
+
+  export *
+  module * { export * }
+}

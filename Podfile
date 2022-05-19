@@ -14,3 +14,11 @@ target 'Expose-Bank' do
   # Pods
   pod 'FlybitsConcierge', $flybitsSDKVersion
 end
+
+target 'FullScreen_Concierge' do
+  project 'Concierge/Expose-Bank/Expose-Bank.xcodeproj'
+  inherit! :search_paths
+
+  # Pods
+  pod 'FlybitsConcierge', $flybitsSDKVersion
+end

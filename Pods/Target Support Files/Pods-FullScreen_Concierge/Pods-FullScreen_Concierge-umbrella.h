@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_Anonymous_ConnectVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_Anonymous_ConnectVersionString[];
+FOUNDATION_EXPORT double Pods_FullScreen_ConciergeVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_FullScreen_ConciergeVersionString[];
 

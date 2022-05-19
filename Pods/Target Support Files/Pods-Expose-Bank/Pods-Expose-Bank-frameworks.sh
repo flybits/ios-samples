@@ -176,20 +176,20 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/FlybitsSDK/FlybitsSDK.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/FlybitsConcierge/FlybitsConcierge.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/FlybitsContextSDK/FlybitsContextSDK.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/FlybitsCoreConcierge/FlybitsCoreConcierge.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/FlybitsKernelSDK/FlybitsKernelSDK.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/FlybitsPushSDK/FlybitsPushSDK.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/FlybitsSDK/FlybitsSDK.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/FlybitsSDK/FlybitsSDK.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/FlybitsConcierge/FlybitsConcierge.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/FlybitsContextSDK/FlybitsContextSDK.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/FlybitsCoreConcierge/FlybitsCoreConcierge.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/FlybitsKernelSDK/FlybitsKernelSDK.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/FlybitsPushSDK/FlybitsPushSDK.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/FlybitsSDK/FlybitsSDK.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

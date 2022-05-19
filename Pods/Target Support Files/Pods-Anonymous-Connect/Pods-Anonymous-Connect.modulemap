@@ -1,6 +1,0 @@
-framework module Pods_Anonymous_Connect {
-  umbrella header "Pods-Anonymous-Connect-umbrella.h"
-
-  export *
-  module * { export * }
-}
