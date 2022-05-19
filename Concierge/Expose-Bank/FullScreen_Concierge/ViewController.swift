@@ -27,6 +27,8 @@ class ViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Login/Logout", image: nil, primaryAction: UIAction(handler: { action in
             if !Concierge.isConnected {
                 Concierge.connect(with: AnonymousConciergeIDP()) { error in
+                    guard let error = error else { return }
+                    print("\(error)")
                 }
             } else {
                 Concierge.disconnect { error in
