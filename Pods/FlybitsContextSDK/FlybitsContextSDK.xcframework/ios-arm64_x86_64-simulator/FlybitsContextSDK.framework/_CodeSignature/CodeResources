@@ -10,11 +10,11 @@
 		</data>
 		<key>Headers/FlybitsContextSDK.h</key>
 		<data>
-		6GzFEhOgrMVf7WJhzXLoeQBwybE=
+		MuLcldGH4uHN10Xi3RDIrD3Lkzg=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		GgWF6K3LQ1U30bTDIQEpMF8qb/0=
+		aRLcn7Vrbe4vGdxMOFsb+ady5lc=
 		</data>
 		<key>Modules/FlybitsContextSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -22,11 +22,11 @@
 		</data>
 		<key>Modules/FlybitsContextSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		7YEuppHjgYl9tC121DTd3XaX5Ok=
+		WNoBQc5fNiBZk2M35yVGhGQQjhA=
 		</data>
 		<key>Modules/FlybitsContextSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		dzFUK0jzY7KBGwgKrt8Gzq1JpOE=
+		RO1x+IIyz2HbuQ7nng0efjkg33k=
 		</data>
 		<key>Modules/FlybitsContextSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -34,11 +34,11 @@
 		</data>
 		<key>Modules/FlybitsContextSDK.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		7YEuppHjgYl9tC121DTd3XaX5Ok=
+		WNoBQc5fNiBZk2M35yVGhGQQjhA=
 		</data>
 		<key>Modules/FlybitsContextSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		dzFUK0jzY7KBGwgKrt8Gzq1JpOE=
+		RO1x+IIyz2HbuQ7nng0efjkg33k=
 		</data>
 		<key>Modules/FlybitsContextSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -46,11 +46,11 @@
 		</data>
 		<key>Modules/FlybitsContextSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		b9bGsUopV57v1rx936ZC98fQ+mM=
+		Bda00WzJB2c5IzBBfR7CxLYlGHI=
 		</data>
 		<key>Modules/FlybitsContextSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		OLqbotKrgC4C/7s7s6M82py/r2U=
+		SCi6WLw5dsJTgs3GwkfRmc4XCjM=
 		</data>
 		<key>Modules/FlybitsContextSDK.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -58,11 +58,11 @@
 		</data>
 		<key>Modules/FlybitsContextSDK.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		b9bGsUopV57v1rx936ZC98fQ+mM=
+		Bda00WzJB2c5IzBBfR7CxLYlGHI=
 		</data>
 		<key>Modules/FlybitsContextSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		OLqbotKrgC4C/7s7s6M82py/r2U=
+		SCi6WLw5dsJTgs3GwkfRmc4XCjM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -82,7 +82,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			akKN29vidRN2pRNzylgBaExazE8cEtkTnjdV3d6x+VY=
+			Wi6Li4IR4wBqWrMowIIzOxKC/w947PNY5w7dvfR8J3g=
 			</data>
 		</dict>
 		<key>Modules/FlybitsContextSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -96,14 +96,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9q1j+LI9cLukEMRlu6b2OAiLk6OvV/L1rCstD7IDXv4=
+			biArH3bpeyZzmilDgqaRbXNu/ltZNkv05fvIHTZHgo0=
 			</data>
 		</dict>
 		<key>Modules/FlybitsContextSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			AB0QHFjgLBAPJoztjyjYC4mHMMrQ36pN8CT/LOmnCpI=
+			E3DHcl/jo8X4g2HowJGwOwD5RTHRqRGhebsa/rOouc4=
 			</data>
 		</dict>
 		<key>Modules/FlybitsContextSDK.swiftmodule/arm64.swiftdoc</key>
@@ -117,14 +117,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9q1j+LI9cLukEMRlu6b2OAiLk6OvV/L1rCstD7IDXv4=
+			biArH3bpeyZzmilDgqaRbXNu/ltZNkv05fvIHTZHgo0=
 			</data>
 		</dict>
 		<key>Modules/FlybitsContextSDK.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			AB0QHFjgLBAPJoztjyjYC4mHMMrQ36pN8CT/LOmnCpI=
+			E3DHcl/jo8X4g2HowJGwOwD5RTHRqRGhebsa/rOouc4=
 			</data>
 		</dict>
 		<key>Modules/FlybitsContextSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -138,14 +138,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+ZiRgDAQJ48sUXDkEx1zP4yFYlRqiUebx3Y+Ze/bGz0=
+			qKHqrBEaVx42ymU++9ss3hpzxQi9tZsI+9p4zNmE2oM=
 			</data>
 		</dict>
 		<key>Modules/FlybitsContextSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			d9Pe9mFNPyDFkXgXePcQjYGlolquxZ0JdlcuT8JftpA=
+			FvcY8OxVUKwdTaUC5lYL5GjBwhpACc2WR1BphdIpCYk=
 			</data>
 		</dict>
 		<key>Modules/FlybitsContextSDK.swiftmodule/x86_64.swiftdoc</key>
@@ -159,14 +159,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+ZiRgDAQJ48sUXDkEx1zP4yFYlRqiUebx3Y+Ze/bGz0=
+			qKHqrBEaVx42ymU++9ss3hpzxQi9tZsI+9p4zNmE2oM=
 			</data>
 		</dict>
 		<key>Modules/FlybitsContextSDK.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			d9Pe9mFNPyDFkXgXePcQjYGlolquxZ0JdlcuT8JftpA=
+			FvcY8OxVUKwdTaUC5lYL5GjBwhpACc2WR1BphdIpCYk=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

@@ -314,6 +314,7 @@ SWIFT_CLASS("_TtC16FlybitsConcierge38StreamlinedContentPushAnalyticsContext")
 
 
 
+
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
 #endif
@@ -618,6 +619,7 @@ SWIFT_CLASS("_TtC16FlybitsConcierge38StreamlinedContentPushAnalyticsContext")
 @interface UICollectionViewFlowLayout (SWIFT_EXTENSION(FlybitsConcierge))
 @property (nonatomic, readonly) BOOL flipsHorizontallyInOppositeLayoutDirection;
 @end
+
 
 
 

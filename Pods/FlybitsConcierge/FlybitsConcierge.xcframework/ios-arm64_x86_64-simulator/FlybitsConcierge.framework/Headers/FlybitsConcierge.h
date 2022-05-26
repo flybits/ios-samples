@@ -6,11 +6,7 @@
 //  Copyright © 2018 Flybits. All rights reserved.
 //
 
-@import UIKit;
-@import FlybitsSDK;
-@import FlybitsContextSDK;
-@import FlybitsKernelSDK;
-@import FlybitsPushSDK;
+#import <Foundation/Foundation.h>
 
 //! Project version number for FlybitsConciergeSDK.
 FOUNDATION_EXPORT double FlybitsConciergeSDKVersionNumber;

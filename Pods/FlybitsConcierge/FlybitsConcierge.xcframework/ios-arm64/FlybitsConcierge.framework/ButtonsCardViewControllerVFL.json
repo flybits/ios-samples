@@ -22,5 +22,8 @@
     ],
     "metrics": {
         "padding": 16.0
-    }
+    },
+    "mediaHiddenOptions": [
+        "vertical"
+    ]
 }

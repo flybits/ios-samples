@@ -10,11 +10,11 @@
 		</data>
 		<key>Headers/FlybitsSDK.h</key>
 		<data>
-		92ELffqZvK+m00cJJANvuLi+sWI=
+		wla31DGlImciu2sDjoxB9ivn9xo=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		C+Guta0pKOiubQnipUCb4H3IAS8=
+		RUR3ZtUBuO1PAtqOqa234igfDMI=
 		</data>
 		<key>LICENSE</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Modules/FlybitsSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		KS8CvJSrLbVTF6LLs8EQ80k5xwo=
+		eNLtUVIO/gSNv83P4pUdLpntS+w=
 		</data>
 		<key>Modules/FlybitsSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>Modules/FlybitsSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		KS8CvJSrLbVTF6LLs8EQ80k5xwo=
+		eNLtUVIO/gSNv83P4pUdLpntS+w=
 		</data>
 		<key>Modules/FlybitsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Modules/FlybitsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		6tRyN1HOskQXf/ccxSwZCjsv77E=
+		iQFaFOd8PunOHMfsZvSh25GIbUU=
 		</data>
 		<key>Modules/FlybitsSDK.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Modules/FlybitsSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		6tRyN1HOskQXf/ccxSwZCjsv77E=
+		iQFaFOd8PunOHMfsZvSh25GIbUU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -86,7 +86,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			33YB3MD44ztdAnDrL7zr61VCTxyZXoQ5KcIIWGMewj0=
+			vKQVG+NEmVRs5sZ+RPmnXVp/C92UPKOY/ei9Qh39a5o=
 			</data>
 		</dict>
 		<key>LICENSE</key>
@@ -114,7 +114,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zSYHjTJgImfUAM46duPkZUgo4f328IOBKWnkidtZAOk=
+			8nNBGT8cJAWqljZLvuWTJkOAJVlH67tAzaOdGhBUijk=
 			</data>
 		</dict>
 		<key>Modules/FlybitsSDK.swiftmodule/arm64.swiftdoc</key>
@@ -135,7 +135,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zSYHjTJgImfUAM46duPkZUgo4f328IOBKWnkidtZAOk=
+			8nNBGT8cJAWqljZLvuWTJkOAJVlH67tAzaOdGhBUijk=
 			</data>
 		</dict>
 		<key>Modules/FlybitsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -156,7 +156,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7wCxqlAl7vCJvzj14xQiCv0wvj/0lUmHnj58y6b4OCo=
+			s/9qpLWU431CVGf/NyfL9eDc78dVs8RyTII0f1iPJCc=
 			</data>
 		</dict>
 		<key>Modules/FlybitsSDK.swiftmodule/x86_64.swiftdoc</key>
@@ -177,7 +177,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7wCxqlAl7vCJvzj14xQiCv0wvj/0lUmHnj58y6b4OCo=
+			s/9qpLWU431CVGf/NyfL9eDc78dVs8RyTII0f1iPJCc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

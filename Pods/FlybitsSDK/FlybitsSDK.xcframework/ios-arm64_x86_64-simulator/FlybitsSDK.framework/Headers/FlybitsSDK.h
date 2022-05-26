@@ -10,9 +10,7 @@
 // Built: :BUILD_DATE:
 //
 
-@import UIKit;
-
-
+#import <Foundation/Foundation.h>
 
 //! Project version number for FlybitsSDK.
 FOUNDATION_EXPORT double FlybitsSDKVersionNumber;

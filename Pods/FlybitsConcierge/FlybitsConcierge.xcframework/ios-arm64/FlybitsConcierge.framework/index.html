@@ -50,6 +50,10 @@
                     player.seek(VidyardV4.api.getPlayersByUUID("<uuid>")[0].currentTime() + 0.001);
                 });
 
+                player.on('metadata', function (eventTime) {
+                    const metadata = args[0];
+                    window.webkit.messageHandlers.eventHandler.postMessage(metadata);
+                });
 
                 player.on('pause', function () {
 
@@ -68,7 +72,7 @@
                     window.webkit.messageHandlers.eventHandler.postMessage(data)
                 });
 
-                hasSetup = true
+                hasSetup = true;
             }
 
         },)
@@ -76,7 +80,22 @@
 
 function pauseVideo() {
     var players = VidyardV4.api.getPlayersByUUID("<uuid>");
-    players[0].pause()
+    players[0].pause();
+}
+
+function getMetaData() {
+    var players = VidyardV4.api.getPlayersByUUID("<uuid>");
+    window.webkit.messageHandlers.eventHandler.postMessage(players[0].metadata);
+}
+
+function toggleFullscreen() {
+    var players = VidyardV4.api.getPlayersByUUID("<uuid>");
+    players[0].play();
+    players[0].toggleFullscreen();
+    var data = {
+        "event": "fullscreen",
+    };
+    window.webkit.messageHandlers.eventHandler.postMessage(data);
 }
 
 </script>

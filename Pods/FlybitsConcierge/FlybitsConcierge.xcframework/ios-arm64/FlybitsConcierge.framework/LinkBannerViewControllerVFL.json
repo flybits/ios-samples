@@ -1,0 +1,27 @@
+{
+    "layout": [
+        "V:|-padding-[headerLabel][titleLabel][descriptionLabel][linkLabel]-(>=padding)-|",
+        "V:|[mediaView]|",
+        "H:[mediaView(114@750)]|",
+        "H:|-labelMargin-[titleLabel]-labelMargin-[mediaView]",
+        "H:|-labelMargin-[headerLabel]-labelMargin-[mediaView]",
+        "H:|-labelMargin-[descriptionLabel]-labelMargin-[mediaView]",
+        "H:|-labelMargin-[linkLabel]-(>=labelMargin)-[mediaView]"
+    ],
+    "views": [
+        "mediaView",
+        "titleLabel",
+        "headerLabel",
+        "descriptionLabel",
+        "linkLabel"
+    ],
+    "metrics": {
+        "padding": 16.0,
+        "labelMargin": 14.0
+    },
+    "mediaHiddenOptions": [
+        "horizontal"
+    ],
+    "height": 140.0
+}
+
