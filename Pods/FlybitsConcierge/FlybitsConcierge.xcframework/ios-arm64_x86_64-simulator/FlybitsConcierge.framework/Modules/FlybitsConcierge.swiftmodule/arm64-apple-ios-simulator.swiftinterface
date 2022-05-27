@@ -7,6 +7,7 @@ import AVKit
 import FlybitsContextSDK
 import FlybitsCoreConcierge
 import FlybitsKernelSDK
+import FlybitsPushSDK
 import FlybitsSDK
 import Foundation
 import SafariServices
@@ -48,6 +49,7 @@ final public class ButtonsCardContentData : FlybitsKernelSDK.ContentData {
   final public let links: [FlybitsConcierge.Link]
   final public let detail: FlybitsConcierge.DetailContentData?
   final public let mediaContentData: FlybitsConcierge.MediaContentData?
+  final public let cardBackgroundColor: FlybitsConcierge.ColorVariants?
   required public init(from decoder: Swift.Decoder) throws
   @objc deinit
   @objc override dynamic public init()
@@ -63,6 +65,7 @@ final public class LinkCardContentData : FlybitsKernelSDK.ContentData {
   final public let link: FlybitsConcierge.Link?
   final public let detail: FlybitsConcierge.DetailContentData?
   final public let mediaContentData: FlybitsConcierge.MediaContentData?
+  final public let cardBackgroundColor: FlybitsConcierge.ColorVariants?
   required public init(from decoder: Swift.Decoder) throws
   @objc deinit
   @objc override dynamic public init()
@@ -142,6 +145,12 @@ public protocol ConciergeStyle {
   var guidedOptInLocationServiceBenefits: FlybitsConcierge.ConciergeAppearence.GuidedOptIn.LocationServiceBenefits { get }
   var guidedOptOut: FlybitsConcierge.ConciergeAppearence.GuidedOptIn.OptOut { get }
   var horizontalLayout: FlybitsConcierge.ConciergeAppearence.HorizontalLayout { get }
+  var bannerPaginationActiveColor: UIKit.UIColor { get }
+  var bannerPaginationInActiveColor: UIKit.UIColor { get }
+  var contentBanner: FlybitsConcierge.ConciergeAppearence.Banners.ContentBanner { get }
+  var exposeContainerBackgroundColor: UIKit.UIColor { get }
+  var exposeSectionTitleFont: FlybitsConcierge.ConciergeAppearence.Font { get }
+  var exposeCallToActionTitleFont: FlybitsConcierge.ConciergeAppearence.Font { get }
 }
 extension ConciergeAppearence {
   public struct NavigationBar {
@@ -162,6 +171,10 @@ extension ConciergeAppearence {
   }
   public struct InAppWebView {
   }
+  public struct Banners {
+    public struct ContentBanner {
+    }
+  }
   public struct GuidedOptIn {
     public struct ConciergeBenefits {
     }
@@ -170,6 +183,10 @@ extension ConciergeAppearence {
     public struct LocationServiceBenefits {
     }
     public struct OptOut {
+    }
+  }
+  public struct Expose {
+    public struct Container {
     }
   }
 }
@@ -267,6 +284,13 @@ extension UICollectionViewFlowLayout {
   @objc override dynamic open var flipsHorizontallyInOppositeLayoutDirection: Swift.Bool {
     @objc get
   }
+}
+public struct ColorVariants : Swift.Codable {
+  public let light: Swift.String?
+  public let dark: Swift.String?
+  public init(light: Swift.String?, dark: Swift.String?)
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 @objc final public class DetailContentData : ObjectiveC.NSObject, Swift.Decodable {
   final public let body: FlybitsSDK.LocalizedObject<Swift.String>?
@@ -369,6 +393,15 @@ extension ConciergeNavigationController : FlybitsSDK.FlybitsScope {
   @objc dynamic public func onOptIn()
   @objc dynamic public func onOptOut()
 }
+@_inheritsConvenienceInitializers open class ButtonBannerConciergeViewable : FlybitsConcierge.ButtonsCardConciergeViewable {
+  public typealias Data = FlybitsKernelSDK.ContentData
+  override public init()
+  override public func tileViewController(for contentData: FlybitsKernelSDK.ContentData) -> UIKit.UIViewController?
+  override open var tileViewControllerLayout: Foundation.URL? {
+    get
+  }
+  @objc deinit
+}
 @_inheritsConvenienceInitializers open class DiscoverableButtonsCardConciergeViewable : FlybitsConcierge.ButtonsCardConciergeViewable {
   override open var tileViewControllerLayout: Foundation.URL? {
     get
@@ -415,6 +448,14 @@ open class ButtonsCardConciergeViewable : FlybitsCoreConcierge.ConciergeViewable
   open func secondaryCallToAction(for contentData: FlybitsKernelSDK.ContentData, index: Swift.Int) -> FlybitsCoreConcierge.ConciergeCallToActionResult
   @objc deinit
 }
+@_inheritsConvenienceInitializers open class LinkBannerConciergeViewable : FlybitsConcierge.LinkCardConciergeViewable {
+  override public init()
+  override public func tileViewController(for contentData: FlybitsKernelSDK.ContentData) -> UIKit.UIViewController?
+  override open var tileViewControllerLayout: Foundation.URL? {
+    get
+  }
+  @objc deinit
+}
 public struct OpenConciergeIDP : FlybitsConcierge.ConciergeIDPConvertable {
   public init(identifierToken: Swift.String)
   public func toFlybitsIDP() -> FlybitsSDK.IDP
@@ -448,6 +489,15 @@ public enum OptInChoice : Swift.Int {
     get
   }
 }
+public enum ContentStyle {
+  case card
+  case banner
+  public static func == (a: FlybitsConcierge.ContentStyle, b: FlybitsConcierge.ContentStyle) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
 public struct ConciergeOptInInfo {
   public let customerId: Swift.String
   public let customPhysicalDeviceId: Swift.String?
@@ -455,12 +505,16 @@ public struct ConciergeOptInInfo {
   public init(customerId: Swift.String, customPhysicalDeviceId: Swift.String? = nil, callback: FlybitsConcierge.Concierge.ConciergeOptInStatus? = nil)
 }
 public enum ConciergeOptions : Swift.Hashable {
-  case displayNavigation
+  case displayNavigation(title: Swift.String? = nil)
   case settings
   case notifications
   case showNotifications
   case customViewables([Swift.String : FlybitsCoreConcierge.AnyViewable<FlybitsKernelSDK.ContentData>])
   case horizontal
+  case style(_: FlybitsConcierge.ContentStyle = .card)
+  case exposeTitle(_: Swift.String? = nil)
+  case exposeCallToAction(title: Swift.String? = nil)
+  case categoryDefaultTab(title: Swift.String? = nil)
   public var hashValue: Swift.Int {
     get
   }
@@ -611,6 +665,8 @@ extension FlybitsConcierge.Container : Swift.Hashable {}
 extension FlybitsConcierge.OptInChoice : Swift.Equatable {}
 extension FlybitsConcierge.OptInChoice : Swift.Hashable {}
 extension FlybitsConcierge.OptInChoice : Swift.RawRepresentable {}
+extension FlybitsConcierge.ContentStyle : Swift.Equatable {}
+extension FlybitsConcierge.ContentStyle : Swift.Hashable {}
 extension FlybitsConcierge.ConciergeCustomerStatus : Swift.Equatable {}
 extension FlybitsConcierge.ConciergeCustomerStatus : Swift.Hashable {}
 extension FlybitsConcierge.ConciergeCustomerStatus : Swift.RawRepresentable {}

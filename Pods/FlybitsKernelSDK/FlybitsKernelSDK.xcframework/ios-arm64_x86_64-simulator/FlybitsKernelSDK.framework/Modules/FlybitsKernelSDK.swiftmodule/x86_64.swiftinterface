@@ -225,6 +225,10 @@ import Swift
     get
     set
   }
+  public var categoryName: FlybitsSDK.LocalizedObject<Swift.String>? {
+    get
+    set
+  }
   required public init(from decoder: Swift.Decoder) throws
   public static func getAllRelevant(with query: FlybitsKernelSDK.ContentQuery? = nil, includeRTF: Swift.Bool = false, completion: @escaping (FlybitsSDK.Paged<FlybitsKernelSDK.Content>?, Swift.Error?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest?
   public static func getAllInstances(with query: FlybitsKernelSDK.ContentQuery? = nil, includeRTF: Swift.Bool = false, completion: @escaping (FlybitsSDK.Paged<FlybitsKernelSDK.Content>?, Swift.Error?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest?
@@ -264,6 +268,7 @@ public class ExperienceQuery : FlybitsSDK.Query {
     public let experienceId: Swift.String?
     public let pushRequestId: Swift.String?
     public let templateType: Swift.String?
+    public let localizedCategory: FlybitsSDK.LocalizedObject<Swift.String>?
   }
   public class LocationContentData : Swift.Decodable {
     required public init(from decoder: Swift.Decoder) throws

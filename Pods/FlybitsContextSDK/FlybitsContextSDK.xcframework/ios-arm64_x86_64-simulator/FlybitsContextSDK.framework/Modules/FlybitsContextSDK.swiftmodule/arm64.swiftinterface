@@ -6,6 +6,7 @@ import CoreTelephony
 import FlybitsSDK
 import Foundation
 import Swift
+import UIKit
 @objc public protocol ContextDelegate : ObjectiveC.NSObjectProtocol {
   @objc func generatedValue(by plugin: FlybitsContextSDK.ContextPlugin, context data: [FlybitsContextSDK.ContextData], completion: ((Swift.Error?) -> Swift.Void)?)
 }

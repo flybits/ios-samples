@@ -4,6 +4,7 @@
 @_exported import FlybitsCoreConcierge
 import FlybitsKernelSDK
 import FlybitsPushSDK
+import FlybitsSDK
 import Foundation
 import Swift
 import UIKit
@@ -57,6 +58,7 @@ public protocol DataStrategy {
   func toTemplatedOutput(_ input: [Self.Input]) -> [FlybitsCoreConcierge.TemplatedOutput<Self.Output>]
   func value(for position: Self.Position) -> FlybitsCoreConcierge.TemplatedOutput<Self.Output>
   func total() -> Swift.Int
+  func clean()
 }
 public struct AnyViewable<Data> : FlybitsCoreConcierge.ConciergeViewable, Swift.Hashable {
   public init<Viewable>(viewable: Viewable) where Data == Viewable.Data, Viewable : FlybitsCoreConcierge.ConciergeViewable
@@ -84,6 +86,7 @@ public class ConciergeViewModel<Position, Data, API> : ObjectiveC.NSObject where
   }
   public init(data: Data, api: API)
   public func fetchData()
+  public func cleanData()
   @objc deinit
   @objc override dynamic public init()
 }
@@ -100,6 +103,7 @@ public class ListContentDataStrategy<Convertable> : FlybitsCoreConcierge.DataStr
   public func toTemplatedOutput(_ input: [FlybitsCoreConcierge.ListContentDataStrategy<Convertable>.Input]) -> [FlybitsCoreConcierge.TemplatedOutput<FlybitsKernelSDK.ContentData>]
   public func value(for position: Swift.Int) -> FlybitsCoreConcierge.TemplatedOutput<FlybitsKernelSDK.ContentData>
   public func total() -> Swift.Int
+  public func clean()
   @objc deinit
 }
 public protocol APIStrategy {

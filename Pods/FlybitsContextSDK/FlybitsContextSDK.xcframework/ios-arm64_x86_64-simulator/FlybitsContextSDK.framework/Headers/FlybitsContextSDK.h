@@ -6,8 +6,7 @@
 //  Copyright © 2019 Flybits. All rights reserved.
 //
 
-@import UIKit;
-@import FlybitsSDK;
+#import <Foundation/Foundation.h>
 
 //! Project version number for FlybitsContextSDK.
 FOUNDATION_EXPORT double FlybitsContextSDKVersionNumber;

@@ -5,7 +5,7 @@ source 'https://github.com/flybits/Spec-XCFramework.git'
 
 use_frameworks!
 
-$flybitsSDKVersion = '~> 4.1'
+$flybitsSDKVersion = '~> 4.2'
 
 target 'Expose-Bank' do
   project 'Concierge/Expose-Bank/Expose-Bank.xcodeproj'
@@ -16,6 +16,14 @@ target 'Expose-Bank' do
 end
 
 target 'FullScreen_Concierge' do
+  project 'Concierge/Expose-Bank/Expose-Bank.xcodeproj'
+  inherit! :search_paths
+
+  # Pods
+  pod 'FlybitsConcierge', $flybitsSDKVersion
+end
+
+target 'Banner-Bank' do
   project 'Concierge/Expose-Bank/Expose-Bank.xcodeproj'
   inherit! :search_paths
 

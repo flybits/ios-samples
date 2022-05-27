@@ -10,11 +10,11 @@
 		</data>
 		<key>Headers/FlybitsPushSDK.h</key>
 		<data>
-		RF12kZEdJLLd17IT9x3eNbEZhfQ=
+		ijljz1xxQ0+mpW7LVt+IJ+h5ghc=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		9vRT3/gdckpQ6+ZF5oe7kQPAT0E=
+		mSAD39rcSRZpyN7uSrzvTvMvOJU=
 		</data>
 		<key>LICENSE</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Modules/FlybitsPushSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		zvDAEXByt6hFpCZuhL82D/fz2XM=
+		6hx8gadI21e9UmX7zbWHGk+tN2o=
 		</data>
 		<key>Modules/FlybitsPushSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>Modules/FlybitsPushSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		zvDAEXByt6hFpCZuhL82D/fz2XM=
+		6hx8gadI21e9UmX7zbWHGk+tN2o=
 		</data>
 		<key>Modules/FlybitsPushSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Modules/FlybitsPushSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		yVr0OrDrmjV+xy+Ll9NKH6s4fx0=
+		vz3gcD9YBKVvA0sB2zjNGWTjQsw=
 		</data>
 		<key>Modules/FlybitsPushSDK.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Modules/FlybitsPushSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		yVr0OrDrmjV+xy+Ll9NKH6s4fx0=
+		vz3gcD9YBKVvA0sB2zjNGWTjQsw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -86,7 +86,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			aqArPg0EYrpDj3fpEM+O0kptiy7V2LW1gNUAqulUtjs=
+			ainXXd3cg8LzL0TVYDCnMfZMNdPXLjJMnTeeSvCykfA=
 			</data>
 		</dict>
 		<key>LICENSE</key>
@@ -114,7 +114,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			gVzYXnKjQybQvDHF5ymb058YNf628W/e8YOL/cXh57k=
+			yu4RNMkBdWSlzrprbqHVCQqFGUW9KHSCQ2zZg/zVx2E=
 			</data>
 		</dict>
 		<key>Modules/FlybitsPushSDK.swiftmodule/arm64.swiftdoc</key>
@@ -135,7 +135,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			gVzYXnKjQybQvDHF5ymb058YNf628W/e8YOL/cXh57k=
+			yu4RNMkBdWSlzrprbqHVCQqFGUW9KHSCQ2zZg/zVx2E=
 			</data>
 		</dict>
 		<key>Modules/FlybitsPushSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -156,7 +156,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			fhjjaTOaYh+T0lgcLfgTq59QzkC0bxpM34r9LNAznSU=
+			NgxOm1rcX3u8t/0a6lauvJvW/rx9E4itAep/kDCvx7Y=
 			</data>
 		</dict>
 		<key>Modules/FlybitsPushSDK.swiftmodule/x86_64.swiftdoc</key>
@@ -177,7 +177,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			fhjjaTOaYh+T0lgcLfgTq59QzkC0bxpM34r9LNAznSU=
+			NgxOm1rcX3u8t/0a6lauvJvW/rx9E4itAep/kDCvx7Y=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
