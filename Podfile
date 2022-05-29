@@ -30,3 +30,11 @@ target 'Banner-Bank' do
   # Pods
   pod 'FlybitsConcierge', $flybitsSDKVersion
 end
+
+target 'Modify-Existing-Style' do
+    project 'Concierge/Expose-Bank/Expose-Bank.xcodeproj'
+    inherit! :search_paths
+
+    # Pods
+    pod 'FlybitsConcierge', $flybitsSDKVersion
+end
