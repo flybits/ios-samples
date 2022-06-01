@@ -18,7 +18,7 @@ DEPENDENCIES:
   - FlybitsConcierge (~> 4.2)
 
 SPEC REPOS:
-  https://github.com/flybits/Spec-XCFramework:
+  https://github.com/flybits/Spec-XCFramework.git:
     - FlybitsConcierge
     - FlybitsContextSDK
     - FlybitsCoreConcierge
@@ -34,6 +34,6 @@ SPEC CHECKSUMS:
   FlybitsPushSDK: 6136fcc27319e36070e59f5f256b1308fcba1e30
   FlybitsSDK: 5842acdfd19cc4d4c540a30a271f616461477d69
 
-PODFILE CHECKSUM: ab2c56141ceac0d497be5a4d8797639bfc8af7bd
+PODFILE CHECKSUM: 930b91b995c3e9e6f6cb9f52dbc4abe7266453e8
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.11.2

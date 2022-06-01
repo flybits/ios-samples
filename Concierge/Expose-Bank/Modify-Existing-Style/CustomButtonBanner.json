@@ -1,0 +1,25 @@
+{
+    "layout": [
+        "V:|-padding-[headerLabel][titleLabel][descriptionLabel][primaryButton]-(>=8)-|",
+        "V:|[mediaView]|",
+        "H:|[mediaView(114@750)]",
+        "H:[mediaView]-14-[headerLabel]|",
+        "H:[mediaView]-14-[titleLabel]|",
+        "H:[mediaView]-14-[descriptionLabel]|",
+        "H:[primaryButton]-8-|",
+    ],
+    "views":[
+        "mediaView",
+        "headerLabel",
+        "descriptionLabel",
+        "titleLabel",
+        "primaryButton"
+    ],
+    "metrics": {
+        "padding": 16.0
+    },
+    "mediaHiddenOptions": [
+        "horizontal"
+    ],
+    "height": 140.0
+}
