@@ -3,6 +3,7 @@
 // swift-module-flags: -target arm64-apple-ios11.4-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name FlybitsConcierge
 import AVFoundation
 import AVKit
+import CoreGraphics
 @_exported import FlybitsConcierge
 import FlybitsContextSDK
 import FlybitsCoreConcierge

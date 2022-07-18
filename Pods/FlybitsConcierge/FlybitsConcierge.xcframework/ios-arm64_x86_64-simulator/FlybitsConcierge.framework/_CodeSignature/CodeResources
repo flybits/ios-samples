@@ -6,15 +6,15 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		7SnpD9DC2s/YoFCXqI55Z8YvHTc=
+		/7X7J84uMpBlcEzIkXQKq3h006s=
 		</data>
 		<key>Base.lproj/Concierge.storyboardc/DetailViewController.nib</key>
 		<data>
-		jeK8WoOT+4aAUh5m67XhEhys284=
+		sU0gbMmK8agz9b87ShgXU3EKOI0=
 		</data>
 		<key>Base.lproj/Concierge.storyboardc/FSV-xu-PVh-view-lkX-jY-RB5.nib</key>
 		<data>
-		C4EMrJmHO3CVW1ql31ra2GOOoPQ=
+		DUoBSaAV8lGVu/cY0OI+hEN0MGY=
 		</data>
 		<key>Base.lproj/Concierge.storyboardc/Info.plist</key>
 		<data>
@@ -22,23 +22,23 @@
 		</data>
 		<key>Base.lproj/Concierge.storyboardc/LoadingViewController.nib</key>
 		<data>
-		WAe/jcK33ioP7/1H6cxstGtQdxk=
+		N1+Fnv2Db8yq092OOMl2Ohk1kns=
 		</data>
 		<key>Base.lproj/Concierge.storyboardc/SettingsViewController.nib</key>
 		<data>
-		xdMtsaS9nx5Y6JUfsDJOqw2Kv+8=
+		m1TqMJ4XkJ+PUEiJ10I6f3oR+6U=
 		</data>
 		<key>Base.lproj/Concierge.storyboardc/lPW-cT-K3U-view-haN-do-svb.nib</key>
 		<data>
-		FSBpyKx8f7LUQaRcl4WKzHIDfx8=
+		aS5Ma5Ez96zKUBMUUMznuIQjUoU=
 		</data>
 		<key>Base.lproj/Concierge.storyboardc/moU-ab-joW-view-lkM-vZ-nbL.nib</key>
 		<data>
-		ykfBpcA+DXhEg3olDL/TRelKw1k=
+		P0rYLUOuOualCrzAcAruMf7NwQk=
 		</data>
 		<key>Base.lproj/InitialLoadingView.nib</key>
 		<data>
-		SfF4oCmqxreH8snBtK5SBaEicVQ=
+		lmZNjA7dyNztwaKxlTdZa5Jwpbc=
 		</data>
 		<key>Base.lproj/Localizable.strings</key>
 		<data>
@@ -54,23 +54,23 @@
 		</data>
 		<key>ConciergeBenefitBottomView.nib</key>
 		<data>
-		2MCQdozwkpm2QGRgmB8RC1t/TJI=
+		AgalSVATh108384+D0Pzvd5HvJA=
 		</data>
 		<key>ConciergeBenefitCarousel.nib</key>
 		<data>
-		wgSC3dTb9nrtBiLLTf5U84T1J6A=
+		o69AM9vlTRwidapJBOqWULy6pIA=
 		</data>
 		<key>ConciergeBenefitCarouselItem.nib</key>
 		<data>
-		pvljper6Q8BS4HFm7EK4IlmP/DA=
+		qCD1sChi6AibzP+wyccoeMRlD9U=
 		</data>
 		<key>ConciergeBenefitDisclaimerView.nib</key>
 		<data>
-		MuqEOz5sI2WCe6J2wet2565L2O4=
+		oxyyPvQ07f5xaDrye/ZUSHJwL8k=
 		</data>
 		<key>ConciergeLoadingView.nib</key>
 		<data>
-		McISpflE6RzNSl4q0cWK6XSSw48=
+		pbB2TSy9gE4d02cntJqKXMOiAFw=
 		</data>
 		<key>DiscoverableButtonsCardConciergeViewableVFL.json</key>
 		<data>
@@ -82,47 +82,47 @@
 		</data>
 		<key>GuidedOptInButtonView.nib</key>
 		<data>
-		Oiy755iRsbKurgT5gri1DNVLp2M=
+		yt4cS+m3MWQgLkVJloZhK9G2H68=
 		</data>
 		<key>GuidedOptInContentView.nib</key>
 		<data>
-		sG3/yRU8m5XRS9VOMxTl4DAISK8=
+		COcACixQf5myE/1TlO64wTKtPoU=
 		</data>
 		<key>GuidedOptInFlow.storyboardc/0Ul-tg-cwc-view-gJ7-GZ-Me7.nib</key>
 		<data>
-		mB6qtIbpNghkiHgmlmPMFoOZ5zc=
+		SvEhM0rs4YbaN+1jPpBDA3F6QnY=
 		</data>
 		<key>GuidedOptInFlow.storyboardc/GuidedOptInBenefitViewController.nib</key>
 		<data>
-		huxvu4LPHpYWO0xbitSGUmDsjiw=
+		E241bSg4j0581X6s9c420ulyQ9k=
 		</data>
 		<key>GuidedOptInFlow.storyboardc/GuidedOptInLocationViewController.nib</key>
 		<data>
-		RYAfb4PXxBGnrWefBIcwmiWavpk=
+		KBWt1BuXphPj/+x4WzEtB+0Rax0=
 		</data>
 		<key>GuidedOptInFlow.storyboardc/GuidedOptInNotificationsViewController.nib</key>
 		<data>
-		RwD/ZCzF8ckVH35X/ivFyywjXcY=
+		AECtVgbRQs7AM3MUKRTQCxbLNVo=
 		</data>
 		<key>GuidedOptInFlow.storyboardc/GuidedOptOutViewController.nib</key>
 		<data>
-		gKSUKCSbzl18w/4hHTFh9TrF4wA=
+		qv6r6L2UUh3lUypYAoNv/l8TKe4=
 		</data>
 		<key>GuidedOptInFlow.storyboardc/Info.plist</key>
 		<data>
-		J5W2VIXUSQVnzBDcX+n5EzIIj2c=
+		KNeWEu0N/CWx1VZGxoSIqwzX2QA=
 		</data>
 		<key>GuidedOptInFlow.storyboardc/SYi-Yn-0bU-view-JIt-l1-JPd.nib</key>
 		<data>
-		PvtdFwEqAf19aY02kGJX8DVQCTc=
+		ZEyC+vjmhpBfJ1s8maXI+zent6A=
 		</data>
 		<key>GuidedOptInFlow.storyboardc/ZDl-7d-WUL-view-Jw6-11-mgo.nib</key>
 		<data>
-		S5hoyQ4c/0+4M8zRqBWYk8kCczs=
+		5IMzSEE4Ao1FJpfXDjnv0Dp+Wb0=
 		</data>
 		<key>GuidedOptInFlow.storyboardc/mhp-Ko-Tlf-view-Uy3-Jb-EEG.nib</key>
 		<data>
-		J4n65hhMTeChAaOdceXVaaue/UE=
+		QcVDrgHENjWXQYHFgr0Ob1cZg18=
 		</data>
 		<key>Headers/FlybitsConcierge-Swift.h</key>
 		<data>
@@ -134,7 +134,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		n9oo5OMfnSuto2fRn7RpC+W1TzA=
+		QyeyoCn/4rI6qNtejsAhGnNVLYY=
 		</data>
 		<key>LinkBannerViewControllerVFL.json</key>
 		<data>
@@ -146,51 +146,51 @@
 		</data>
 		<key>Modules/FlybitsConcierge.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		rfsALI7Ccz2zLM343hY3iqZpSM0=
+		jYbP9XTYPjulTxTtGiC3HABYAG0=
 		</data>
 		<key>Modules/FlybitsConcierge.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		FmqqwXph4L7CHMAZP3pheoLxiP0=
+		Q9RYxeko0jXYKnwgTzcixNgK6hc=
 		</data>
 		<key>Modules/FlybitsConcierge.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		VpNIMGZu9LNDMlHG1tkZbT2LqmE=
+		yYXTgioJ/JWJX4EpJGUlruHAMuc=
 		</data>
 		<key>Modules/FlybitsConcierge.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		rfsALI7Ccz2zLM343hY3iqZpSM0=
+		jYbP9XTYPjulTxTtGiC3HABYAG0=
 		</data>
 		<key>Modules/FlybitsConcierge.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		FmqqwXph4L7CHMAZP3pheoLxiP0=
+		Q9RYxeko0jXYKnwgTzcixNgK6hc=
 		</data>
 		<key>Modules/FlybitsConcierge.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		VpNIMGZu9LNDMlHG1tkZbT2LqmE=
+		yYXTgioJ/JWJX4EpJGUlruHAMuc=
 		</data>
 		<key>Modules/FlybitsConcierge.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		dbPNWNU5A55atBaGfiqVEm6lS1c=
+		Uq2MmvkIjXmU3t03yRyWtR1njq4=
 		</data>
 		<key>Modules/FlybitsConcierge.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		+Eb6CLr/0RV9dclsm0lF76RAKPM=
+		xQ4RmOiXZHhRZUrydByI3NgNOkY=
 		</data>
 		<key>Modules/FlybitsConcierge.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Kzv/Bx+I5Vy/RV17KirLauZtehg=
+		Pm4HX6GjIe9jm2uayrKiEClSgAA=
 		</data>
 		<key>Modules/FlybitsConcierge.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		dbPNWNU5A55atBaGfiqVEm6lS1c=
+		Uq2MmvkIjXmU3t03yRyWtR1njq4=
 		</data>
 		<key>Modules/FlybitsConcierge.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		+Eb6CLr/0RV9dclsm0lF76RAKPM=
+		xQ4RmOiXZHhRZUrydByI3NgNOkY=
 		</data>
 		<key>Modules/FlybitsConcierge.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		Kzv/Bx+I5Vy/RV17KirLauZtehg=
+		Pm4HX6GjIe9jm2uayrKiEClSgAA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -198,11 +198,11 @@
 		</data>
 		<key>RefreshView.nib</key>
 		<data>
-		t4qmmPxKtUQy2HyfToYSkmOHORU=
+		Qd4OsoD5d6BMmlCkJQNtRCepHz0=
 		</data>
 		<key>UserFeedbackView.nib</key>
 		<data>
-		0AsHFxeu3MW2WVz1mQbXQ0QBJEU=
+		LzRBv8UaCn2Gesc2+KQsd+41ARM=
 		</data>
 		<key>ar.lproj/Concierge.strings</key>
 		<dict>
@@ -323,21 +323,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YOrj/dryczbQFkYLuP/gL5durVbDvVrm01JzW6rIoYo=
+			kKnstvgIp3+gG/P4w+5IaLdLdgsOoCS4kKcKtuwzjzA=
 			</data>
 		</dict>
 		<key>Base.lproj/Concierge.storyboardc/DetailViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			IpSN+/StTbiG8JctnaGMMFDzCoxHP3BfQsrwW+31gA0=
+			N8c5lg8/eoKTe8bxWWXOfGzKp3qHaSUvaU9Gvm9nBjo=
 			</data>
 		</dict>
 		<key>Base.lproj/Concierge.storyboardc/FSV-xu-PVh-view-lkX-jY-RB5.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			UpGUGDFB29NvuwBjTB2hiiU9AC0vC2KVh6L5ZCoa62E=
+			j8RXmv4aTl7TZOZXfvDZ9u4UFDbqtXKl7+3h3ErcOkI=
 			</data>
 		</dict>
 		<key>Base.lproj/Concierge.storyboardc/Info.plist</key>
@@ -351,35 +351,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			JWkGHDn9WBPrw/oShFAPullsttX7TYrGeHpdSSZfhq0=
+			/rvmawR2nwE6YHDDG+pnPILiq8bQuTsYGW1uQ54i9uY=
 			</data>
 		</dict>
 		<key>Base.lproj/Concierge.storyboardc/SettingsViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			QbElYhgRGvaDaZHxFv3Hgw7fkktSntsRyfrBE7S+CfA=
+			BNA9kazcyqqcY7CJSJwwKscoqrDACAB3JUxy6c2NzWw=
 			</data>
 		</dict>
 		<key>Base.lproj/Concierge.storyboardc/lPW-cT-K3U-view-haN-do-svb.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ParhqCIuXAqo94EOe24+kwkG3WoJIV5M9czctniOezU=
+			8i9bjT0gmwF35ku4uanZUfIRflKaRhKXUGnoy7356m0=
 			</data>
 		</dict>
 		<key>Base.lproj/Concierge.storyboardc/moU-ab-joW-view-lkM-vZ-nbL.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			c+E1l62NCAYSJ2/rIk81hU9AvBra3iVhGaZtn9VLRe8=
+			6mEOlHr1ktwmNTW0GDfeTNpH2OP/Z9QUOVNzx/mQxIY=
 			</data>
 		</dict>
 		<key>Base.lproj/InitialLoadingView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5f6EbtM41UXv4M+BnrrvomEx3s+skZYqcc8fMejVe4A=
+			oDCTxVnwXEONX85OvTvofzohTFr6Jh2wIy2MpJlZtZA=
 			</data>
 		</dict>
 		<key>Base.lproj/Localizable.strings</key>
@@ -407,35 +407,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0CpRRgLcC3V9lkX+nw2COnoNUQuNrOk0EU8fgPgFYJw=
+			LSs3ZH+jNheyZOTFaxmCJLr1LlnK9+ybrnJGCQDYyA4=
 			</data>
 		</dict>
 		<key>ConciergeBenefitCarousel.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qVNjox6gpdUsl0GAWXBL2A7Cp5Sr07DJi25JXv751ps=
+			OBdBBtbhftxHm9dV7fh4/gc7M+KsdqXi60lv9bXrb8c=
 			</data>
 		</dict>
 		<key>ConciergeBenefitCarouselItem.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			WcSwfQxwvjpN7rgUNlDnmiiFhkYiaAC1JnlAwI+LQlE=
+			xdrfhiP159+LlxUryivLTdx5TgY5RhObaDvTZ00/9C8=
 			</data>
 		</dict>
 		<key>ConciergeBenefitDisclaimerView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			sVNnIGDxtYvUkhv1R4nl0svpB8i72AZUhuAl95Zj50g=
+			rKy3Ld9BBAc0H9Y2R4ywz4EPkifcaMDljjJCedt8oWM=
 			</data>
 		</dict>
 		<key>ConciergeLoadingView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			uSZIMKRuTQ54mlELWo8JIPRWM772UD/rof25o2nXhdo=
+			98t4okHCkeQNUQHcH5xejSwP1UbwpKxR2AfoQsNwxFc=
 			</data>
 		</dict>
 		<key>DiscoverableButtonsCardConciergeViewableVFL.json</key>
@@ -456,77 +456,77 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			RIR67PI/hK4k2Qjc6u4VDjZZmaA9qNkzOvy6A9KFXiA=
+			4Js6SvvFzIl3ubAnWPR4DqUhZaB9TZdfdU8dV9GuYOQ=
 			</data>
 		</dict>
 		<key>GuidedOptInContentView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0MrfENp8lvmr+r/nTF0HvADv8WlhoVUYBnyjyvVi/B0=
+			59zjk1/jwoNaMhGie6q6EbnOm1PwDajnrEuWGImISRM=
 			</data>
 		</dict>
 		<key>GuidedOptInFlow.storyboardc/0Ul-tg-cwc-view-gJ7-GZ-Me7.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			CB/4958337CtRQWSACZQqaPE8Laacmcunrcec6pyUfo=
+			h0YQ7dcLVrTCtcbicTAA/3HkFaPuYRhmrSVE6vhD30M=
 			</data>
 		</dict>
 		<key>GuidedOptInFlow.storyboardc/GuidedOptInBenefitViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nj9TZBErmd3V3lwpoTZ9QF1/Av0kMXk/43b3J/BlPSc=
+			VKMCJLweKN3ISoOdVeBRpToM2rF0kIENb0FqZMQNR3E=
 			</data>
 		</dict>
 		<key>GuidedOptInFlow.storyboardc/GuidedOptInLocationViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OtghcSaAIAHV9494mNNIV+To6Omg1/ZAKPScWGpHpTM=
+			rUaFo1Fivu7NksXxSVo6KNtdOfJFL9SniCdPdJdueVw=
 			</data>
 		</dict>
 		<key>GuidedOptInFlow.storyboardc/GuidedOptInNotificationsViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Y/tTDcDa+GP+rCQQyXI74q0tXdoRz0yZwlN9NRKKZrw=
+			YASc1R2uacSwFzN7uK1Et/O1aFmZ2s9P0kcM+YX/Ax4=
 			</data>
 		</dict>
 		<key>GuidedOptInFlow.storyboardc/GuidedOptOutViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			oOx9+A7YG4SIVl22ORAufNiV4Cg0hc1uoIh5qOvnyEM=
+			rH/vMZ1PrFGaoHWO0HvnWqxCuRE3PYHeYMIjLQ9HSu0=
 			</data>
 		</dict>
 		<key>GuidedOptInFlow.storyboardc/Info.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rS4jmKW5e2oHGRh6KREYQGwRd30MQSEj852rhepRm/Y=
+			fh54Qgx2qE5aabr+R//niE8sM4PXoeD95S9/ZhcOJmI=
 			</data>
 		</dict>
 		<key>GuidedOptInFlow.storyboardc/SYi-Yn-0bU-view-JIt-l1-JPd.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YNGLmqfS6b/GADLkq+unXNp/cgGYTJWyjbptFxu+oDQ=
+			7B1YZzNUbBPCnlki1WK3Ti5ZxLOGNC8rT45lFvhsQNM=
 			</data>
 		</dict>
 		<key>GuidedOptInFlow.storyboardc/ZDl-7d-WUL-view-Jw6-11-mgo.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/xvR08C+Z2DAVsujQ7TYwNe28yQyXKSfTV5jaHLpP6I=
+			Ly99QRfmbLo1/rav0L/12dGY1WsgAwcOX5IcyqbVhQo=
 			</data>
 		</dict>
 		<key>GuidedOptInFlow.storyboardc/mhp-Ko-Tlf-view-Uy3-Jb-EEG.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ASnAtFQvBPeZu8lwnUwEuYroFByyy2R7/yoGVxqRz7Q=
+			HchKqZpZfntCAYBuDjxd0MnUo57FzAxHFdbNVCzQ1Fg=
 			</data>
 		</dict>
 		<key>Headers/FlybitsConcierge-Swift.h</key>
@@ -561,84 +561,84 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7+uqrMkUGB7hnju6beT+N+JkwJH3oLnDuXBe9+91++E=
+			ipqVEOzx2mGzG3V3nzDqAdvZg9bbF7EUiJs5G3i7gkM=
 			</data>
 		</dict>
 		<key>Modules/FlybitsConcierge.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			x6q/DQQO/ne8uJFWwK37wdmcgh5ekiRH4En18ep7Gxs=
+			vy6zTWYAEt+plWrr1Co2JsHwiqq0jYFZZjUaWf2oa5I=
 			</data>
 		</dict>
 		<key>Modules/FlybitsConcierge.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OR7W+Q7cD7mxas5gwyTLtBn8+gzmC/hrgmyAvofDlxs=
+			JQCyZ1WxS1830TL4TRGMe5a5QRvnBVNFIXp5paExPvs=
 			</data>
 		</dict>
 		<key>Modules/FlybitsConcierge.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			7+uqrMkUGB7hnju6beT+N+JkwJH3oLnDuXBe9+91++E=
+			ipqVEOzx2mGzG3V3nzDqAdvZg9bbF7EUiJs5G3i7gkM=
 			</data>
 		</dict>
 		<key>Modules/FlybitsConcierge.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			x6q/DQQO/ne8uJFWwK37wdmcgh5ekiRH4En18ep7Gxs=
+			vy6zTWYAEt+plWrr1Co2JsHwiqq0jYFZZjUaWf2oa5I=
 			</data>
 		</dict>
 		<key>Modules/FlybitsConcierge.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OR7W+Q7cD7mxas5gwyTLtBn8+gzmC/hrgmyAvofDlxs=
+			JQCyZ1WxS1830TL4TRGMe5a5QRvnBVNFIXp5paExPvs=
 			</data>
 		</dict>
 		<key>Modules/FlybitsConcierge.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			EwxbIi2ia5/gCmRGbHoQxJoouT8c/2LJN7VEidYc9F4=
+			uykiEkZz9hyWUIgjJol4RIZ5ajKOZkHe4ZZ71MdMbFY=
 			</data>
 		</dict>
 		<key>Modules/FlybitsConcierge.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rgPoSo84mjfgo5N4roslVt/COGMOfxPSma1Ze4AmtkQ=
+			rp4eZpP6faBLyIn6pftEzyJThOHsSuue+p7Xv3okVtY=
 			</data>
 		</dict>
 		<key>Modules/FlybitsConcierge.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KTP5FgWRLhKjTmD4bwlVrG4tECMkl3kZML2sfe49UT4=
+			9umIVY0VoR7fK/KSSgjmlIJvRygYhMYbUaMsyVlboVg=
 			</data>
 		</dict>
 		<key>Modules/FlybitsConcierge.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			EwxbIi2ia5/gCmRGbHoQxJoouT8c/2LJN7VEidYc9F4=
+			uykiEkZz9hyWUIgjJol4RIZ5ajKOZkHe4ZZ71MdMbFY=
 			</data>
 		</dict>
 		<key>Modules/FlybitsConcierge.swiftmodule/x86_64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rgPoSo84mjfgo5N4roslVt/COGMOfxPSma1Ze4AmtkQ=
+			rp4eZpP6faBLyIn6pftEzyJThOHsSuue+p7Xv3okVtY=
 			</data>
 		</dict>
 		<key>Modules/FlybitsConcierge.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KTP5FgWRLhKjTmD4bwlVrG4tECMkl3kZML2sfe49UT4=
+			9umIVY0VoR7fK/KSSgjmlIJvRygYhMYbUaMsyVlboVg=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -652,14 +652,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			vhqRzW/qoXATTEe/l/pIGrzaDAQ3gJ+4FljYxMQnjic=
+			apeafZA+ZAPCn+K4vvDrCyFDHrcwSX108ToOpQJNwRI=
 			</data>
 		</dict>
 		<key>UserFeedbackView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			G9Gk1fSomfjbB2MKhh7+d1gunmzlCbU6x5Wxc84pOBI=
+			5+fiidb0bxrZ6QghcW4FXu8wzH8VWtg/4EnSyAbtyDo=
 			</data>
 		</dict>
 		<key>ar.lproj/Concierge.strings</key>

@@ -861,6 +861,7 @@ SWIFT_CLASS("_TtC10FlybitsSDK14SharedElements")
 
 
 
+
 /// The <code>SignedIDP</code> class is responsible for creating a specific Identity Provider (IDP) that
 /// can be logged into using the SAML protocol.
 SWIFT_CLASS("_TtC10FlybitsSDK9SignedIDP")

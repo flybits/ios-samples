@@ -26,7 +26,13 @@ extension ContextPlugin {
     get
   }
 }
-@objc @objcMembers public class ContextData : ObjectiveC.NSObject {
+@objc @objcMembers public class ContextData : ObjectiveC.NSObject, FlybitsSDK.UploadContextChannelConvertable {
+  @objc public var attributes: [Swift.String : Any] {
+    @objc get
+  }
+  @objc public var dataTypeId: Swift.String {
+    @objc get
+  }
   @objc public var pluginId: Swift.String {
     get
   }

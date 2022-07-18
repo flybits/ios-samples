@@ -1031,6 +1031,7 @@ extension Pager {
   @objc override dynamic public init()
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class FlybitsAnalytics : ObjectiveC.NSObject {
+  public static func emptyCache()
   public static func track(_ analytic: FlybitsSDK.AnalyticsEvent, sendImmediately: Swift.Bool = false)
   @discardableResult
   @objc public static func sendAnalytics(completion: ((Swift.Error?) -> Swift.Void)?) -> FlybitsSDK.FlybitsRequest?
@@ -1048,6 +1049,26 @@ extension FlybitsAnalytics : FlybitsSDK.FlybitsScope {
   @objc dynamic public func onDisconnected()
   @objc dynamic public func onOptIn()
   @objc dynamic public func onOptOut()
+}
+extension Dictionary : FlybitsSDK.UploadContextChannelConvertable where Key == Swift.String {
+  public var dataTypeId: Swift.String {
+    get
+  }
+  public var timestamp: Swift.Int {
+    get
+  }
+  public var attributes: [Swift.String : Any] {
+    get
+  }
+}
+public protocol UploadContextChannelConvertable {
+  var dataTypeId: Swift.String { get }
+  var timestamp: Swift.Int { get }
+  var attributes: [Swift.String : Any] { get }
+}
+@_hasMissingDesignatedInitializers public class UploadContextChannel {
+  public static func upload(_ upload: [FlybitsSDK.UploadContextChannelConvertable], completion: ((Swift.Error?) -> Swift.Void)? = nil)
+  @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers public class PushSubscription : ObjectiveC.NSObject {
   final public let id: Swift.String
