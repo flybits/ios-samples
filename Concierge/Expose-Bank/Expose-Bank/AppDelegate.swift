@@ -46,14 +46,11 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         if let conciergePush = Concierge.handlePush(response.notification.request.content.userInfo) {
             // It is Push message that Concierge can handle
-            let vc = Concierge.deepLink(conciergePush: conciergePush)
-
-            // Present
-            if vc is SFSafariViewController {
-                self.window?.rootViewController?.present(vc, animated: true, completion: nil)
-            } else {
+            if let vc = Concierge.deepLink(conciergePush: conciergePush) {
                 vc.title = "Notification Detail"
                 self.window?.rootViewController?.show(vc, sender: nil)
+            } else {
+                // Nothing to be done because Concierge will act on it automatically.
             }
         } else {
             // It is the kind of push message that Concierge SDK won't handle. please use FlybitsPushSDK to handle it. or handle it in your own logic
