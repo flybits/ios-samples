@@ -1,0 +1,36 @@
+{
+    "expose": {
+        "container": {
+            "backgroundColor": {
+                "light": "#B615EF",
+                "dark": "#36EF15"
+            },
+            "sectionTitleFont": {
+                "fontFamily": "Copperplate",
+                "fontSize": 15,
+                "fontWeight": "light",
+                "fontColor": {
+                    "light": "#F61005",
+                    "dark": "#F6EB05"
+                },
+                "lineSpacing": 1.0
+            },
+            "callToActionTitleFont": {
+                "fontFamily": "Copperplate",
+                "fontSize": 20,
+                "fontWeight": "light",
+                "fontColor": {
+                    "light": "#F605B4",
+                    "dark": "#3FF605"
+                },
+                "lineSpacing": 1.0,
+            }
+        }
+    },
+    "dynamicContentFeed": {
+        "backgroundColor": {
+            "light": "#B615EF",
+            "dark": "#36EF15"
+        }
+    }
+}
