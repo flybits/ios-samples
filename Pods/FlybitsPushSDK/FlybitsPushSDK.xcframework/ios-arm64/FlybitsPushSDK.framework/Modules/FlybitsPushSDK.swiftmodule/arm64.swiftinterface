@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
 // swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name FlybitsPushSDK
 @_exported import FlybitsPushSDK
 import FlybitsSDK
@@ -24,21 +24,22 @@ import UserNotifications
   @objc public func encode(with aCoder: Foundation.NSCoder)
   public func onCachedDataRetrieved(data: Swift.AnyObject)
   public static func trackNotificationStatus(granted: Swift.Bool)
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class PushContentAnalyticsContext : ObjectiveC.NSObject {
   public static func trackViewed(contentId: Swift.String, pushId: Swift.String, value: Swift.Bool = true, timestamp: Swift.Double? = nil, sendImmediately: Swift.Bool = false)
+  public static func trackDetailViewed(contentId: Swift.String, pushId: Swift.String, value: Swift.Bool = true, timestamp: Swift.Double? = nil, sendImmediately: Swift.Bool = false)
   public static func trackFulfilled(contentId: Swift.String, pushId: Swift.String, value: Swift.Bool = true, timestamp: Swift.Double? = nil, sendImmediately: Swift.Bool = false)
   public static func trackEngaged(contentId: Swift.String, pushId: Swift.String, value: Swift.Bool = true, timestamp: Swift.Double? = nil, sendImmediately: Swift.Bool = false)
   public static func trackComponentFulfilled(contentId: Swift.String, pushId: Swift.String, componentId: Swift.String, value: Swift.Bool = true, timestamp: Swift.Double? = nil, sendImmediately: Swift.Bool = false)
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class PushAuthorizationAnalyticsContext : ObjectiveC.NSObject {
   public static func trackPushAuthorization(optInState: Swift.Bool, timestamp: Swift.Double? = nil, immediately: Swift.Bool = false)
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class APNSPreferences : ObjectiveC.NSObject, Swift.Decodable, FlybitsSDK.DictionaryConvertible {
   public var requiresSave: Swift.Bool {
@@ -70,8 +71,8 @@ import UserNotifications
 public enum PushError : Swift.Int, FlybitsSDK.ErrorConformable {
   case apnsTokenLength
   public static let Domain: Swift.String
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -79,8 +80,8 @@ public enum PushError : Swift.Int, FlybitsSDK.ErrorConformable {
 public enum APNSPreferenceError : Swift.Int, FlybitsSDK.ErrorConformable {
   case parseError
   public static let Domain: Swift.String
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -104,8 +105,8 @@ public enum APNSPreferenceError : Swift.Int, FlybitsSDK.ErrorConformable {
   public static var TokenRegistration: Swift.String {
     get
   }
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class PushManagerConstants : ObjectiveC.NSObject {
   public static var PushFetchError: Swift.String {
@@ -147,8 +148,8 @@ public enum APNSPreferenceError : Swift.Int, FlybitsSDK.ErrorConformable {
   public static var UnderlyingErrors: Swift.String {
     get
   }
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc public protocol PushConfigurable {
   @objc var identifier: Swift.String { get }
@@ -168,8 +169,8 @@ public enum APNSPreferenceError : Swift.Int, FlybitsSDK.ErrorConformable {
   public init(autoFetchData: Swift.Bool = true, autoReconnect: Swift.Bool = true, deviceRegistrationData: [Swift.String : Any]? = nil)
   public static func configuration() -> FlybitsPushSDK.PushConfiguration
   public func clearDeviceRegistrationData()
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc public class PushManager : ObjectiveC.NSObject {
   public static let shared: FlybitsPushSDK.PushManager
@@ -216,6 +217,10 @@ public enum PushRequest : FlybitsSDK.Requestable {
   }
   public func execute() -> FlybitsSDK.FlybitsRequest
 }
+@_hasMissingDesignatedInitializers public class PushContentDeviceAnalyticsContext {
+  public static func trackDetailViewed(contentId: Swift.String, pushId: Swift.String, value: Swift.Bool = true, timestamp: Swift.Double? = nil, sendImmediately: Swift.Bool = false)
+  @objc deinit
+}
 @_hasMissingDesignatedInitializers public class PushAnalyticsContext {
   public static func trackViewed(pushId: Swift.String, value: Swift.Bool = true, timestamp: Swift.Double? = nil, sendImmediately: Swift.Bool = false)
   public static func trackEngaged(pushId: Swift.String, value: Swift.Bool = true, timestamp: Swift.Double? = nil, sendImmediately: Swift.Bool = false)
@@ -233,15 +238,15 @@ public enum PushRequest : FlybitsSDK.Requestable {
     get
   }
   public init(max: Swift.Int, delay: Swift.Int, cooldown: Swift.Int)
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc public enum RuleResult : Swift.Int {
   case `true` = 1
   case `false` = 2
   case trueOrFalse = 3
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -265,15 +270,15 @@ public enum PushRequest : FlybitsSDK.Requestable {
   convenience public init?(responseData: Any)
   public init(name: Swift.String, title: Swift.String, message: Swift.String)
   final public func toDictionary() throws -> [Swift.String : Any]
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers public class Push : ObjectiveC.NSObject {
   final public let id: Swift.String
   final public let timestamp: Swift.UInt64
   final public let pushRequestId: Swift.String
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class BasicPush : FlybitsPushSDK.Push {
   @objc deinit
@@ -289,6 +294,10 @@ public enum PushRequest : FlybitsSDK.Requestable {
   public var url: Swift.String
   @objc deinit
 }
+@objc @_hasMissingDesignatedInitializers public class UniversalActionPush : FlybitsPushSDK.Push {
+  public var actionScheme: Swift.String
+  @objc deinit
+}
 @objc public class PushData : ObjectiveC.NSObject, Swift.Decodable {
   @objc public class PushContent : ObjectiveC.NSObject, Swift.Decodable {
     final public let entity: Swift.String
@@ -301,6 +310,7 @@ public enum PushRequest : FlybitsSDK.Requestable {
     public let pushPayloadTypeId: Swift.String?
     public let content: FlybitsPushSDK.PushData.PushContent?
     public let url: Swift.String?
+    public let actionScheme: Swift.String?
     public init(from decoder: Swift.Decoder) throws
   }
   final public let id: Swift.String
@@ -317,8 +327,8 @@ public enum PushRequest : FlybitsSDK.Requestable {
   public var end: Foundation.NSDate?
   public var sortOrder: FlybitsSDK.Utilities.SortOrder
   public func toDictionary() throws -> [Swift.String : Any]
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 extension FlybitsPushSDK.PushError : Swift.Equatable {}
 extension FlybitsPushSDK.PushError : Swift.Hashable {}

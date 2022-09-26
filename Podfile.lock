@@ -1,21 +1,21 @@
 PODS:
-  - FlybitsConcierge (4.3):
-    - FlybitsCoreConcierge (= 4.3)
-  - FlybitsContextSDK (4.3):
-    - FlybitsSDK (= 4.3)
-  - FlybitsCoreConcierge (4.3):
-    - FlybitsContextSDK (= 4.3)
-    - FlybitsKernelSDK (= 4.3)
-    - FlybitsPushSDK (= 4.3)
-    - FlybitsSDK (= 4.3)
-  - FlybitsKernelSDK (4.3):
-    - FlybitsSDK (= 4.3)
-  - FlybitsPushSDK (4.3):
-    - FlybitsSDK (= 4.3)
-  - FlybitsSDK (4.3)
+  - FlybitsConcierge (4.4):
+    - FlybitsCoreConcierge (= 4.4)
+  - FlybitsContextSDK (4.4):
+    - FlybitsSDK (= 4.4)
+  - FlybitsCoreConcierge (4.4):
+    - FlybitsContextSDK (= 4.4)
+    - FlybitsKernelSDK (= 4.4)
+    - FlybitsPushSDK (= 4.4)
+    - FlybitsSDK (= 4.4)
+  - FlybitsKernelSDK (4.4):
+    - FlybitsSDK (= 4.4)
+  - FlybitsPushSDK (4.4):
+    - FlybitsSDK (= 4.4)
+  - FlybitsSDK (4.4)
 
 DEPENDENCIES:
-  - FlybitsConcierge (~> 4.3)
+  - FlybitsConcierge (~> 4.4)
 
 SPEC REPOS:
   https://github.com/flybits/Spec-XCFramework.git:
@@ -27,13 +27,13 @@ SPEC REPOS:
     - FlybitsSDK
 
 SPEC CHECKSUMS:
-  FlybitsConcierge: ad7f7556d35554e19887681160b49d40d07d097b
-  FlybitsContextSDK: d4c491eff4ed6c9177195f06b66f297d5c4ea028
-  FlybitsCoreConcierge: f5809c202695096cacac0df0b2c196bad45c7005
-  FlybitsKernelSDK: c4b8f07477cf19fc72824e9a2386bce936fa01d7
-  FlybitsPushSDK: 68e73a2bcc121fb28e2a04274e63b974e4fe85f5
-  FlybitsSDK: 132cee6ff0f3c233b0cd5bef3984ae93c3de19db
+  FlybitsConcierge: a5b6cf86d42571bed90a40373c6fb4eeb9b2720a
+  FlybitsContextSDK: 9be7333e3795e6e5bc81618cdc5dbb6fcaea2a05
+  FlybitsCoreConcierge: 0b44bf754f02788eb84b93be6d225c39856e7f0b
+  FlybitsKernelSDK: 98744d22cf7c7162c28626d520e96cf6d4fa3ef5
+  FlybitsPushSDK: d255e09ead0b9da0c665ceb0c83f1ecbdace4abd
+  FlybitsSDK: 1b002a5306c6394d4056027c9b839c2e3cdac72b
 
-PODFILE CHECKSUM: 085fa1148b166ec7f60b0d57605e4ddd17c84107
+PODFILE CHECKSUM: ed9f89fad7c62ee39af3afedaaa23ea47fcb749f
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3
