@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
 // swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name FlybitsKernelSDK
 import CoreLocation
 @_exported import FlybitsKernelSDK
@@ -40,14 +40,14 @@ import Swift
   public static func update(_ group: FlybitsKernelSDK.Group, completion: @escaping (FlybitsKernelSDK.Group?, Swift.Error?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest?
   public static func delete(id: Swift.String, completion: @escaping (Swift.Error?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest?
   public func toDictionary() throws -> [Swift.String : Any]
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @_inheritsConvenienceInitializers public class GroupQuery : FlybitsSDK.Query {
   override public func toDictionary() throws -> [Swift.String : Any]
-  @objc deinit
   required public init(_ pager: FlybitsSDK.Pager? = super)
   @objc override dynamic public init()
+  @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class KernelScope : ObjectiveC.NSObject, FlybitsSDK.FlybitsScope {
   @objc public var identifier: Swift.String {
@@ -61,15 +61,15 @@ import Swift
   @objc public func onOptOut()
   @objc required convenience public init?(coder aDecoder: Foundation.NSCoder)
   @objc public func encode(with aCoder: Foundation.NSCoder)
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc @objcMembers public class LabelsCompoundQuery : FlybitsKernelSDK.LabelsQuery {
   @objc public var queries: [FlybitsKernelSDK.LabelsQuery]
   @objc public init(queries: [FlybitsKernelSDK.LabelsQuery], booleanOperator: FlybitsKernelSDK.BooleanOperator)
   @objc public func toString() -> Swift.String
-  @objc deinit
   @objc override public init(predicates: [FlybitsKernelSDK.LabelsPredicate], booleanOperator: FlybitsKernelSDK.BooleanOperator)
+  @objc deinit
 }
 @objc public class ContentQuery : ObjectiveC.NSObject, FlybitsSDK.FlybitsQuery {
   public var pager: FlybitsSDK.Pager?
@@ -82,8 +82,8 @@ import Swift
   @objc convenience public init(contentTypes: [Swift.String : FlybitsKernelSDK.ContentData.Type]?, labelsQuery: FlybitsKernelSDK.LabelsQuery?, pager: FlybitsSDK.Pager?)
   required public init(_ pager: FlybitsSDK.Pager?)
   public func toDictionary() throws -> [Swift.String : Any]
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc public class Experience : ObjectiveC.NSObject, Swift.Decodable, FlybitsSDK.DictionaryConvertible {
   public var identifier: Swift.String {
@@ -136,8 +136,8 @@ import Swift
   public static func update(_ experience: FlybitsKernelSDK.Experience, completion: @escaping (FlybitsKernelSDK.Experience?, Swift.Error?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest?
   public static func delete(id: Swift.String, completion: @escaping (Swift.Error?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest?
   public func toDictionary() throws -> [Swift.String : Any]
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class KernelAPIManager : ObjectiveC.NSObject {
   public typealias GroupsCompletion = ([FlybitsKernelSDK.Group]?, FlybitsSDK.Pager?, Swift.Error?) -> Swift.Void
@@ -156,8 +156,8 @@ import Swift
   public static func getAllContentData(with query: FlybitsKernelSDK.ContentDataQuery, completion: @escaping FlybitsKernelSDK.KernelAPIManager.ContentDataCompletion) -> FlybitsSDK.FlybitsRequest?
   @discardableResult
   public static func getNextContentData(contentData: FlybitsKernelSDK.ContentData, query: FlybitsKernelSDK.ContentDataQuery, completion: @escaping (FlybitsKernelSDK.ContentData?, Swift.Error?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest?
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc public class LocationQuery : ObjectiveC.NSObject, FlybitsSDK.DictionaryConvertible {
   public var key: Swift.String
@@ -166,8 +166,8 @@ import Swift
   public var templateId: Swift.String?
   public init(key: Swift.String, location: CoreLocation.CLLocationCoordinate2D, radius: Swift.Double, templateId: Swift.String? = nil)
   public func toDictionary() throws -> [Swift.String : Any]
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc public class Content : ObjectiveC.NSObject, Swift.Decodable, FlybitsSDK.DictionaryConvertible {
   public static var favorites: [Swift.String] {
@@ -251,16 +251,16 @@ import Swift
   public func removeFavorite(completion: ((Foundation.NSError?) -> Swift.Void)?) -> FlybitsSDK.FlybitsRequest?
   public init(templateId: Swift.String, name: FlybitsSDK.LocalizedObject<Swift.String>, description: FlybitsSDK.LocalizedObject<Swift.String>)
   public func toDictionary() throws -> [Swift.String : Any]
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 public class ExperienceQuery : FlybitsSDK.Query {
   public var labels: [Swift.String]?
   convenience public init(labels: [Swift.String]?, pager: FlybitsSDK.Pager? = nil)
   required public init(_ pager: FlybitsSDK.Pager?)
   override public func toDictionary() throws -> [Swift.String : Any]
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc open class ContentData : ObjectiveC.NSObject, Swift.Decodable, FlybitsSDK.DictionaryConvertible {
   public struct ContentInfo {
@@ -290,8 +290,8 @@ public class ExperienceQuery : FlybitsSDK.Query {
   required public init(from decoder: Swift.Decoder) throws
   open func toDictionary() throws -> [Swift.String : Any]
   public static func getNext<T>(contentData: T, query: FlybitsKernelSDK.ContentDataQuery, completion: @escaping (T?, Swift.Error?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest? where T : FlybitsKernelSDK.ContentData
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class ContentAnalyticsContext : ObjectiveC.NSObject {
   public static func trackContentViewed(contentId: Swift.String, timestamp: Swift.Double? = nil, sendImmediately: Swift.Bool = false)
@@ -299,8 +299,8 @@ public class ExperienceQuery : FlybitsSDK.Query {
   public static func trackContentFulfilled(contentId: Swift.String, timestamp: Swift.Double? = nil, sendImmediately: Swift.Bool = false)
   public static func trackContentComponentEngaged(contentId: Swift.String, componentId: Swift.String, timestamp: Swift.Double? = nil, sendImmediately: Swift.Bool = false)
   public static func trackContentComponentFulfilled(contentId: Swift.String, componentId: Swift.String, timestamp: Swift.Double? = nil, sendImmediately: Swift.Bool = false)
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc public class LabelsQuery : ObjectiveC.NSObject {
   public var predicates: [FlybitsKernelSDK.LabelsPredicate] {
@@ -316,15 +316,15 @@ public class ExperienceQuery : FlybitsSDK.Query {
 @objc public class LabelsPredicate : ObjectiveC.NSObject {
   @objc public var labels: [Swift.String]
   @objc public init(labels: [Swift.String], booleanOperator: FlybitsKernelSDK.BooleanOperator)
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc public enum BooleanOperator : Swift.Int {
   case and
   case or
   case none
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -335,8 +335,8 @@ public class ContentDataQuery : FlybitsSDK.Query {
   convenience public init(instanceIdentifier: Swift.String, key: Swift.String?, pager: FlybitsSDK.Pager? = nil)
   required public init(_ pager: FlybitsSDK.Pager?)
   override public func toDictionary() throws -> [Swift.String : Any]
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 extension Group {
   public func groupName() -> Swift.String?
@@ -364,8 +364,8 @@ extension Content {
   public static func trackFulfilled(contentId: Swift.String, experienceId: Swift.String, value: Swift.Bool = true, timestamp: Swift.Double? = nil, sendImmediately: Swift.Bool = false)
   public static func trackEngaged(contentId: Swift.String, experienceId: Swift.String, value: Swift.Bool = true, timestamp: Swift.Double? = nil, sendImmediately: Swift.Bool = false)
   public static func trackComponentFulfilled(contentId: Swift.String, experienceId: Swift.String, componentId: Swift.String, value: Swift.Bool = true, timestamp: Swift.Double? = nil, sendImmediately: Swift.Bool = false)
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 extension FlybitsKernelSDK.BooleanOperator : Swift.Equatable {}
 extension FlybitsKernelSDK.BooleanOperator : Swift.Hashable {}

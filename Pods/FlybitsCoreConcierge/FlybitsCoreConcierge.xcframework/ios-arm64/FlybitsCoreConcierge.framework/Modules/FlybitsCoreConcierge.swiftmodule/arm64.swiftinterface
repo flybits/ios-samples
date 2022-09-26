@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
 // swift-module-flags: -target arm64-apple-ios11.4 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name FlybitsCoreConcierge
 @_exported import FlybitsCoreConcierge
 import FlybitsKernelSDK
@@ -8,6 +8,8 @@ import FlybitsSDK
 import Foundation
 import Swift
 import UIKit
+extension UIColor {
+}
 @_hasMissingDesignatedInitializers public class ContentDataConvertable : FlybitsCoreConcierge.FlybitsContentDataConvertable {
   public func convertToContentData() -> [FlybitsKernelSDK.ContentData]
   public func templateType() -> Swift.String?
@@ -21,6 +23,26 @@ import UIKit
   public init(types: [Swift.String : FlybitsKernelSDK.ContentData.Type])
   @objc deinit
 }
+public enum ActionTypeIntent : Swift.Equatable {
+  case unknown
+  case concierge
+  case web
+  case browser
+  case universalLink
+  case mail
+  case phone
+  case app
+  case custom(Swift.String)
+  public static func == (a: FlybitsCoreConcierge.ActionTypeIntent, b: FlybitsCoreConcierge.ActionTypeIntent) -> Swift.Bool
+}
+public struct ActionTypeScheme {
+  public let intent: FlybitsCoreConcierge.ActionTypeIntent
+  public let data: [Swift.String : Swift.String]
+  public init(intent: FlybitsCoreConcierge.ActionTypeIntent, data: [Swift.String : Swift.String])
+}
+public struct ActionTypeSchemeParser {
+  public static func parse(_ urlString: Swift.String) -> FlybitsCoreConcierge.ActionTypeScheme
+}
 public protocol FlybitsContentDataConvertable {
   func convertToContentData() -> [FlybitsKernelSDK.ContentData]
   func templateType() -> Swift.String?
@@ -31,8 +53,11 @@ open class InheritedConciergeViewController<ViewableData, Data, Api> : UIKit.UIV
   public init(viewModel: FlybitsCoreConcierge.ConciergeViewModel<Data.Position, Data, Api>)
   @available(*, unavailable)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @objc deinit
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc deinit
+}
+public protocol ContextualViewController {
+  var context: FlybitsCoreConcierge.ConciergeContext { get }
 }
 @_hasMissingDesignatedInitializers public class PushContentAPIStrategy : FlybitsCoreConcierge.APIStrategy {
   public typealias Output = FlybitsCoreConcierge.ContentDataConvertable
@@ -64,9 +89,13 @@ public struct AnyViewable<Data> : FlybitsCoreConcierge.ConciergeViewable, Swift.
   public init<Viewable>(viewable: Viewable) where Data == Viewable.Data, Viewable : FlybitsCoreConcierge.ConciergeViewable
   public func type() -> Data.Type
   public func tileViewController(for contentData: Data) -> UIKit.UIViewController?
+  public func tileViewController(for contentData: Data, with context: FlybitsCoreConcierge.ConciergeContext) -> UIKit.UIViewController?
   public func detailViewController(for contentData: Data) -> UIKit.UIViewController?
+  public func detailViewController(for contentData: Data, with context: FlybitsCoreConcierge.ConciergeContext) -> UIKit.UIViewController?
   public func secondaryCallToAction(for contentData: Data, index: Swift.Int) -> FlybitsCoreConcierge.ConciergeCallToActionResult
   public func primaryCallToAction(for contentData: Data) -> FlybitsCoreConcierge.ConciergeCallToActionResult
+  public func primaryCallToAction(for contentData: Data, context: FlybitsCoreConcierge.ConciergeContext) -> FlybitsCoreConcierge.ConciergeCallToActionResult
+  public func secondaryCallToAction(for contentData: Data, index: Swift.Int, context: FlybitsCoreConcierge.ConciergeContext) -> FlybitsCoreConcierge.ConciergeCallToActionResult
   public var tileViewControllerLayout: Foundation.URL? {
     get
   }
@@ -87,8 +116,8 @@ public class ConciergeViewModel<Position, Data, API> : ObjectiveC.NSObject where
   public init(data: Data, api: API)
   public func fetchData()
   public func cleanData()
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 public class ListContentDataStrategy<Convertable> : FlybitsCoreConcierge.DataStrategy where Convertable : FlybitsCoreConcierge.FlybitsContentDataConvertable {
   public typealias Output = FlybitsKernelSDK.ContentData
@@ -106,11 +135,222 @@ public class ListContentDataStrategy<Convertable> : FlybitsCoreConcierge.DataStr
   public func clean()
   @objc deinit
 }
+public class ConciergeContext {
+  final public let style: FlybitsCoreConcierge.ConciergeStyle
+  public init(_ style: FlybitsCoreConcierge.ConciergeStyle)
+  @objc deinit
+}
 public protocol APIStrategy {
   associatedtype Output
   var query: FlybitsKernelSDK.ContentQuery? { get set }
   var contentSource: FlybitsCoreConcierge.CoreConciergeParams? { get set }
   func loadData(completion: @escaping ([Self.Output]) -> Swift.Void)
+}
+public protocol ConciergeStyle {
+  var navigationBarFeedBackgroundColor: UIKit.UIColor { get }
+  var navigationBarFeedTitleFont: FlybitsCoreConcierge.ConciergeAppearance.Font { get }
+  var navigationBarFeedNavigationBarIconColor: UIKit.UIColor { get }
+  var contentCategoryFilterCategoryBackgroundColor: UIKit.UIColor { get }
+  var contentCategoryFilterHorizontalSpaceBetweenCategoryLabels: CoreGraphics.CGFloat { get }
+  var contentCategoryFilterSeparatorBetweenSettingsAndCategory: FlybitsCoreConcierge.ConciergeAppearance.Separator { get }
+  var contentCategoryFilterCategorySelectedTextFont: FlybitsCoreConcierge.ConciergeAppearance.Font { get }
+  var contentCategoryFilterCategoryUnselectedTextFont: FlybitsCoreConcierge.ConciergeAppearance.Font { get }
+  var contentCategoryCategorySelected: FlybitsCoreConcierge.ConciergeAppearance.CategorySelectionConfig { get }
+  var contentCategoryCategoryUnselected: FlybitsCoreConcierge.ConciergeAppearance.CategorySelectionConfig { get }
+  var dynamicContentFeedBackgroundColor: UIKit.UIColor { get }
+  var dynamicContentFeedVerticalSpaceBetweenCards: CoreGraphics.CGFloat { get }
+  var dynamicContentFeedErrorEmptyStatePrimaryButton: FlybitsCoreConcierge.ConciergeAppearance.ButtonConfig { get }
+  var dynamicContentFeedLoadingSpinnerContentFeedColor: UIKit.UIColor { get }
+  var dynamicContentFeedLoadingSpinnerPullToRefreshColor: UIKit.UIColor { get }
+  var dynamicContentFeedEmptyStateImageColor: UIKit.UIColor { get }
+  var dynamicContentFeedErrorStateImageColor: UIKit.UIColor { get }
+  var dynamicContentFeedErrorEmptyLoadingStateMessageTitleFont: FlybitsCoreConcierge.ConciergeAppearance.Font { get }
+  var dynamicContentFeedErrorEmptyLoadingStateMessageDescriptionFont: FlybitsCoreConcierge.ConciergeAppearance.Font { get }
+  var contentCardBackgroundColor: UIKit.UIColor { get }
+  var contentCardMarginSide: CoreGraphics.CGFloat { get }
+  var contentCardBorderColor: UIKit.UIColor { get }
+  var contentCardBorderWidth: CoreGraphics.CGFloat { get }
+  var contentCardBorderRadius: CoreGraphics.CGFloat { get }
+  var contentCardShadow: FlybitsCoreConcierge.ConciergeAppearance.ShadowConfig { get }
+  var contentCardImageViewPadding: FlybitsCoreConcierge.ConciergeAppearance.Padding { get }
+  var contentCardHeaderPadding: FlybitsCoreConcierge.ConciergeAppearance.Padding { get }
+  var contentCardTitlePadding: FlybitsCoreConcierge.ConciergeAppearance.Padding { get }
+  var contentCardDescriptionPadding: FlybitsCoreConcierge.ConciergeAppearance.Padding { get }
+  var contentCardHeaderFont: FlybitsCoreConcierge.ConciergeAppearance.Font { get }
+  var contentCardTitleFont: FlybitsCoreConcierge.ConciergeAppearance.Font { get }
+  var contentCardDescriptionFont: FlybitsCoreConcierge.ConciergeAppearance.Font { get }
+  var contentCardLink: FlybitsCoreConcierge.ConciergeAppearance.Font { get }
+  var contentCardLinkPadding: FlybitsCoreConcierge.ConciergeAppearance.Padding { get }
+  var contentCardButtonStackPadding: FlybitsCoreConcierge.ConciergeAppearance.Padding { get }
+  var contentCardPrimaryButton: FlybitsCoreConcierge.ConciergeAppearance.ButtonConfig { get }
+  var contentCardSecondaryButton: FlybitsCoreConcierge.ConciergeAppearance.ButtonConfig { get }
+  var contentCardTruncationLinkColor: UIKit.UIColor { get }
+  var contentCardContainerPadding: FlybitsCoreConcierge.ConciergeAppearance.Padding { get }
+  var detailedViewBackgroundColor: UIKit.UIColor { get }
+  var detailedViewTextBlockSidePadding: CoreGraphics.CGFloat { get }
+  var detailedViewHeaderFont: FlybitsCoreConcierge.ConciergeAppearance.Font { get }
+  var detailedViewTitleFont: FlybitsCoreConcierge.ConciergeAppearance.Font { get }
+  var detailedViewDescriptionFont: FlybitsCoreConcierge.ConciergeAppearance.Font { get }
+  var detailedViewBodyFont: FlybitsCoreConcierge.ConciergeAppearance.Font { get }
+  var detailedViewNavigationBar: FlybitsCoreConcierge.ConciergeAppearance.ScreenNavigationBar { get }
+  var detailedViewCTAContainerBackgroundColor: UIKit.UIColor { get }
+  var inAppWebViewPreferredBarTintColor: UIKit.UIColor { get }
+  var inAppWebViewPreferredControlTintColor: UIKit.UIColor { get }
+  var notificationsCentreBackgroundColor: UIKit.UIColor { get }
+  var notificationsCentreNavigationBar: FlybitsCoreConcierge.ConciergeAppearance.ScreenNavigationBar { get }
+  var settingsBackgroundColor: UIKit.UIColor { get }
+  var settingsSettingsMenuGroupLabelFont: FlybitsCoreConcierge.ConciergeAppearance.Font { get }
+  var settingsSettingsMenuItemFont: FlybitsCoreConcierge.ConciergeAppearance.Font { get }
+  var settingsMenuBackgroundColor: UIKit.UIColor { get }
+  var settingsNavigationBar: FlybitsCoreConcierge.ConciergeAppearance.ScreenNavigationBar { get }
+  var guidedOptInNavigationBackgroundColor: UIKit.UIColor { get }
+  var guidedOptInNavigationTitleFont: FlybitsCoreConcierge.ConciergeAppearance.Font { get }
+  var guidedOptInNavigationLinkFont: FlybitsCoreConcierge.ConciergeAppearance.Font { get }
+  var guidedOptInBackgroundColor: UIKit.UIColor { get }
+  var guidedOptInLoadingSpinnerColor: UIKit.UIColor { get }
+  var guidedOptInConciergeBenefits: FlybitsCoreConcierge.ConciergeAppearance.GuidedOptIn.ConciergeBenefits { get }
+  var guidedOptInNotificationBenefits: FlybitsCoreConcierge.ConciergeAppearance.GuidedOptIn.NotificationBenefits { get }
+  var guidedOptInLocationServiceBenefits: FlybitsCoreConcierge.ConciergeAppearance.GuidedOptIn.LocationServiceBenefits { get }
+  var guidedOptOut: FlybitsCoreConcierge.ConciergeAppearance.GuidedOptIn.OptOut { get }
+  var horizontalLayout: FlybitsCoreConcierge.ConciergeAppearance.HorizontalLayout { get }
+  var bannerPaginationActiveColor: UIKit.UIColor { get }
+  var bannerPaginationInActiveColor: UIKit.UIColor { get }
+  var contentBanner: FlybitsCoreConcierge.ConciergeAppearance.Banners.ContentBanner { get }
+  var exposeContainerBackgroundColor: UIKit.UIColor { get }
+  var exposeSectionTitleFont: FlybitsCoreConcierge.ConciergeAppearance.Font { get }
+  var exposeCallToActionTitleFont: FlybitsCoreConcierge.ConciergeAppearance.Font { get }
+}
+extension ConciergeAppearance {
+  public struct NavigationBar {
+  }
+  public struct ScreenNavigationBar {
+    public let backgroundColor: UIKit.UIColor
+    public let titleFont: FlybitsCoreConcierge.ConciergeAppearance.Font
+    public let navigationBarIconColor: UIKit.UIColor
+  }
+  public struct ContentCategoryFilter {
+  }
+  public struct Separator {
+  }
+  public struct DynamicContentFeed {
+  }
+  public struct ContentCards {
+  }
+  public struct DetailedView {
+  }
+  public struct NotificationsCentre {
+  }
+  public struct Settings {
+  }
+  public struct InAppWebView {
+  }
+  public struct Banners {
+    public let paginationActiveState: UIKit.UIColor
+    public let paginationInactiveState: UIKit.UIColor
+    public let contentBanner: FlybitsCoreConcierge.ConciergeAppearance.Banners.ContentBanner
+    public struct ContentBanner {
+      public let backgroundColor: UIKit.UIColor
+      public let marginSide: CoreGraphics.CGFloat
+      public let borderColor: UIKit.UIColor
+      public let borderWidth: CoreGraphics.CGFloat
+      public let borderRadius: CoreGraphics.CGFloat
+      public let shadow: FlybitsCoreConcierge.ConciergeAppearance.ShadowConfig
+      public let contentHeaderFont: FlybitsCoreConcierge.ConciergeAppearance.Font
+      public let contentTitleFont: FlybitsCoreConcierge.ConciergeAppearance.Font
+      public let contentDescriptionFont: FlybitsCoreConcierge.ConciergeAppearance.Font
+      public let link: FlybitsCoreConcierge.ConciergeAppearance.Font
+      public let primaryButton: FlybitsCoreConcierge.ConciergeAppearance.ButtonConfig
+      public let containerPadding: FlybitsCoreConcierge.ConciergeAppearance.Padding
+    }
+  }
+  public struct GuidedOptIn {
+    public struct ConciergeBenefits {
+      public let optInTitleFont: FlybitsCoreConcierge.ConciergeAppearance.Font
+      public let optInBodyFont: FlybitsCoreConcierge.ConciergeAppearance.Font
+      public let paginationActiveState: UIKit.UIColor
+      public let paginationInactiveState: UIKit.UIColor
+      public let primaryButtonEnabledState: FlybitsCoreConcierge.ConciergeAppearance.ButtonConfig
+      public let primaryButtonDisabledState: FlybitsCoreConcierge.ConciergeAppearance.ButtonConfig
+      public let optInCheckboxSelectedStateBackgroundColor: UIKit.UIColor
+      public let optInCheckboxUnselectedStateBackgroundColor: UIKit.UIColor
+      public let optInDisclaimerFont: FlybitsCoreConcierge.ConciergeAppearance.Font
+    }
+    public struct NotificationBenefits {
+      public let optInTitleFont: FlybitsCoreConcierge.ConciergeAppearance.Font
+      public let optInBodyFont: FlybitsCoreConcierge.ConciergeAppearance.Font
+      public let primaryButton: FlybitsCoreConcierge.ConciergeAppearance.ButtonConfig
+      public let secondaryButton: FlybitsCoreConcierge.ConciergeAppearance.ButtonConfig
+    }
+    public struct LocationServiceBenefits {
+      public let optInTitleFont: FlybitsCoreConcierge.ConciergeAppearance.Font
+      public let optInBodyFont: FlybitsCoreConcierge.ConciergeAppearance.Font
+      public let primaryButton: FlybitsCoreConcierge.ConciergeAppearance.ButtonConfig
+      public let secondaryButton: FlybitsCoreConcierge.ConciergeAppearance.ButtonConfig
+    }
+    public struct OptOut {
+      public let optOutTitleFont: FlybitsCoreConcierge.ConciergeAppearance.Font
+      public let optOutBodyFont: FlybitsCoreConcierge.ConciergeAppearance.Font
+      public let primaryButton: FlybitsCoreConcierge.ConciergeAppearance.ButtonConfig
+      public let secondaryButton: FlybitsCoreConcierge.ConciergeAppearance.ButtonConfig
+    }
+    public let navigationBackgroundColor: UIKit.UIColor
+    public let navigationTitleFont: FlybitsCoreConcierge.ConciergeAppearance.Font
+    public let navigationLinkFont: FlybitsCoreConcierge.ConciergeAppearance.Font
+    public let backgroundColor: UIKit.UIColor
+    public let loadingSpinnerOptInColor: UIKit.UIColor
+    public let conciergeBenefits: FlybitsCoreConcierge.ConciergeAppearance.GuidedOptIn.ConciergeBenefits
+    public let notificationBenefits: FlybitsCoreConcierge.ConciergeAppearance.GuidedOptIn.NotificationBenefits
+    public let locationServiceBenefits: FlybitsCoreConcierge.ConciergeAppearance.GuidedOptIn.LocationServiceBenefits
+    public let optOut: FlybitsCoreConcierge.ConciergeAppearance.GuidedOptIn.OptOut
+  }
+  public struct Expose {
+    public struct Container {
+    }
+  }
+}
+extension ConciergeAppearance {
+  public struct Padding {
+    public let top: CoreGraphics.CGFloat
+    public let left: CoreGraphics.CGFloat
+    public let bottom: CoreGraphics.CGFloat
+    public let right: CoreGraphics.CGFloat
+    public init(top: CoreGraphics.CGFloat, left: CoreGraphics.CGFloat, bottom: CoreGraphics.CGFloat, right: CoreGraphics.CGFloat)
+  }
+  public struct Font {
+    public let font: UIKit.UIFont
+    public let color: UIKit.UIColor
+    public let lineSpacing: CoreGraphics.CGFloat
+  }
+  public struct ShadowConfig {
+    public let color: UIKit.UIColor
+    public let offset: CoreGraphics.CGSize
+    public let opacity: CoreGraphics.CGFloat
+    public let radius: CoreGraphics.CGFloat
+  }
+  public struct ButtonConfig {
+    public let buttonTextFont: FlybitsCoreConcierge.ConciergeAppearance.Font
+    public let buttonBackgroundColor: UIKit.UIColor
+    public let buttonBorderColor: UIKit.UIColor
+    public let buttonBorderRadius: CoreGraphics.CGFloat
+    public let buttonBorderWidth: CoreGraphics.CGFloat
+    public let buttonBorderShadow: FlybitsCoreConcierge.ConciergeAppearance.ShadowConfig
+    public let buttonContentPadding: FlybitsCoreConcierge.ConciergeAppearance.Padding
+  }
+  public struct CategorySelectionConfig {
+    public let backgroundColor: UIKit.UIColor
+    public let borderColor: UIKit.UIColor
+    public let borderRadius: CoreGraphics.CGFloat
+    public let borderWidth: CoreGraphics.CGFloat
+  }
+  public struct HorizontalLayout {
+    public let containerHeight: CoreGraphics.CGFloat
+    public let contentCardHeight: CoreGraphics.CGFloat
+  }
+}
+@_hasMissingDesignatedInitializers public class ConciergeAppearance {
+  public static func generateConciegeStyle(from fileName: Swift.String? = nil, bundle: Foundation.Bundle = Bundle.main) -> FlybitsCoreConcierge.ConciergeStyle
+  public static func generateConciegeStyle(from data: Foundation.Data?, fallbackBundle: Foundation.Bundle = Bundle.main) -> FlybitsCoreConcierge.ConciergeStyle
+  @objc deinit
 }
 public enum ConciergeTransition : Swift.Int {
   case unknown
@@ -119,8 +359,8 @@ public enum ConciergeTransition : Swift.Int {
   case showDetail
   case showNotifications
   case showNotificationAndDetail
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -133,11 +373,19 @@ public enum ConciergeCallToActionResult {
 public protocol ConciergeViewable {
   associatedtype Data
   func type() -> Self.Data.Type
+  @available(*, deprecated, message: "Please implement the `tileViewController(for contentData: Data, context: ConciergeContext)` function instead")
   func tileViewController(for contentData: Self.Data) -> UIKit.UIViewController?
+  func tileViewController(for contentData: Self.Data, context: FlybitsCoreConcierge.ConciergeContext) -> UIKit.UIViewController?
+  @available(*, deprecated, message: "Please implement the `detailViewController(for contentData: Data, context: ConciergeContext)` function instead")
   func detailViewController(for contentData: Self.Data) -> UIKit.UIViewController?
+  func detailViewController(for contentData: Self.Data, context: FlybitsCoreConcierge.ConciergeContext) -> UIKit.UIViewController?
   var deepLinkTransition: FlybitsCoreConcierge.ConciergeTransition { get }
+  @available(*, deprecated, message: "Please implement the `primaryCallToAction(for contentData: Data, context: ConciergeContext)` function instead")
   func primaryCallToAction(for contentData: Self.Data) -> FlybitsCoreConcierge.ConciergeCallToActionResult
+  func primaryCallToAction(for contentData: Self.Data, context: FlybitsCoreConcierge.ConciergeContext) -> FlybitsCoreConcierge.ConciergeCallToActionResult
+  @available(*, deprecated, message: "Please implement the `secondaryCallToAction(for contentData: Data, index: Int, context: ConciergeContext)` function instead")
   func secondaryCallToAction(for contentData: Self.Data, index: Swift.Int) -> FlybitsCoreConcierge.ConciergeCallToActionResult
+  func secondaryCallToAction(for contentData: Self.Data, index: Swift.Int, context: FlybitsCoreConcierge.ConciergeContext) -> FlybitsCoreConcierge.ConciergeCallToActionResult
   var tileViewControllerLayout: Foundation.URL? { get }
 }
 extension ConciergeViewable {
@@ -149,6 +397,10 @@ extension ConciergeViewable {
   public var tileViewControllerLayout: Foundation.URL? {
     get
   }
+  public func tileViewController(for contentData: Self.Data, context: FlybitsCoreConcierge.ConciergeContext) -> UIKit.UIViewController?
+  public func detailViewController(for contentData: Self.Data, context: FlybitsCoreConcierge.ConciergeContext) -> UIKit.UIViewController?
+  public func primaryCallToAction(for contentData: Self.Data, context: FlybitsCoreConcierge.ConciergeContext) -> FlybitsCoreConcierge.ConciergeCallToActionResult
+  public func secondaryCallToAction(for contentData: Self.Data, index: Swift.Int, context: FlybitsCoreConcierge.ConciergeContext) -> FlybitsCoreConcierge.ConciergeCallToActionResult
 }
 public class SingleContentAPIStrategy : FlybitsCoreConcierge.APIStrategy {
   public typealias Output = FlybitsCoreConcierge.ContentDataConvertable

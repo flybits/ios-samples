@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
 // swift-module-flags: -target arm64-apple-ios11.4-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name FlybitsConcierge
 import AVFoundation
 import AVKit
@@ -24,10 +24,10 @@ public enum VideoPlayerState {
   case error
   case complete
   public static func == (a: FlybitsConcierge.VideoPlayerState, b: FlybitsConcierge.VideoPlayerState) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 public protocol VideoPlayer : AnyObject {
   var delegate: FlybitsConcierge.PlaybackDelegate? { get }
@@ -52,8 +52,8 @@ final public class ButtonsCardContentData : FlybitsKernelSDK.ContentData {
   final public let mediaContentData: FlybitsConcierge.MediaContentData?
   final public let cardBackgroundColor: FlybitsConcierge.ColorVariants?
   required public init(from decoder: Swift.Decoder) throws
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 public protocol ConciergeIDPConvertable {
   func toFlybitsIDP() -> FlybitsSDK.IDP
@@ -68,8 +68,8 @@ final public class LinkCardContentData : FlybitsKernelSDK.ContentData {
   final public let mediaContentData: FlybitsConcierge.MediaContentData?
   final public let cardBackgroundColor: FlybitsConcierge.ColorVariants?
   required public init(from decoder: Swift.Decoder) throws
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 public struct ConciergePush {
 }
@@ -78,138 +78,16 @@ public protocol StreamlinedContentComponent {
   var id: Swift.String { get }
   var name: Swift.String { get }
 }
+public protocol DeepLinkHandlerProtocol {
+  static var identifier: Swift.String { get }
+  static func viewController(contentData: FlybitsKernelSDK.ContentData?) -> UIKit.UIViewController?
+  static func customPresent(presentingController: UIKit.UIViewController) -> FlybitsCoreConcierge.ConciergeCallToActionResult
+}
 public struct APIKeyConciergeIDP : FlybitsConcierge.ConciergeIDPConvertable {
   public let apiKey: Swift.String
   public let email: Swift.String
   public init(email: Swift.String, apiKey: Swift.String)
   public func toFlybitsIDP() -> FlybitsSDK.IDP
-}
-public protocol ConciergeStyle {
-  var navigationBarFeedBackgroundColor: UIKit.UIColor { get }
-  var navigationBarFeedTitleFont: FlybitsConcierge.ConciergeAppearence.Font { get }
-  var navigationBarFeedNavigationBarIconColor: UIKit.UIColor { get }
-  var contentCategoryFilterCategoryBackgroundColor: UIKit.UIColor { get }
-  var contentCategoryFilterHorizontalSpaceBetweenCategoryLabels: CoreGraphics.CGFloat { get }
-  var contentCategoryFilterSeparatorBetweenSettingsAndCategory: FlybitsConcierge.ConciergeAppearence.Separator { get }
-  var contentCategoryFilterCategorySelectedTextFont: FlybitsConcierge.ConciergeAppearence.Font { get }
-  var contentCategoryFilterCategoryUnselectedTextFont: FlybitsConcierge.ConciergeAppearence.Font { get }
-  var contentCategoryCategorySelected: FlybitsConcierge.ConciergeAppearence.CategorySelectionConfig { get }
-  var contentCategoryCategoryUnselected: FlybitsConcierge.ConciergeAppearence.CategorySelectionConfig { get }
-  var dynamicContentFeedBackgroundColor: UIKit.UIColor { get }
-  var dynamicContentFeedVerticalSpaceBetweenCards: CoreGraphics.CGFloat { get }
-  var dynamicContentFeedErrorEmptyStatePrimaryButton: FlybitsConcierge.ConciergeAppearence.ButtonConfig { get }
-  var dynamicContentFeedLoadingSpinnerContentFeedColor: UIKit.UIColor { get }
-  var dynamicContentFeedLoadingSpinnerPullToRefreshColor: UIKit.UIColor { get }
-  var dynamicContentFeedEmptyStateImageColor: UIKit.UIColor { get }
-  var dynamicContentFeedErrorStateImageColor: UIKit.UIColor { get }
-  var dynamicContentFeedErrorEmptyLoadingStateMessageTitleFont: FlybitsConcierge.ConciergeAppearence.Font { get }
-  var dynamicContentFeedErrorEmptyLoadingStateMessageDescriptionFont: FlybitsConcierge.ConciergeAppearence.Font { get }
-  var contentCardBackgroundColor: UIKit.UIColor { get }
-  var contentCardMarginSide: CoreGraphics.CGFloat { get }
-  var contentCardBorderColor: UIKit.UIColor { get }
-  var contentCardBorderWidth: CoreGraphics.CGFloat { get }
-  var contentCardBorderRadius: CoreGraphics.CGFloat { get }
-  var contentCardShadow: FlybitsConcierge.ConciergeAppearence.ShadowConfig { get }
-  var contentCardImageViewPadding: FlybitsConcierge.ConciergeAppearence.Padding { get }
-  var contentCardHeaderPadding: FlybitsConcierge.ConciergeAppearence.Padding { get }
-  var contentCardTitlePadding: FlybitsConcierge.ConciergeAppearence.Padding { get }
-  var contentCardDescriptionPadding: FlybitsConcierge.ConciergeAppearence.Padding { get }
-  var contentCardHeaderFont: FlybitsConcierge.ConciergeAppearence.Font { get }
-  var contentCardTitleFont: FlybitsConcierge.ConciergeAppearence.Font { get }
-  var contentCardDescriptionFont: FlybitsConcierge.ConciergeAppearence.Font { get }
-  var contentCardLink: FlybitsConcierge.ConciergeAppearence.Font { get }
-  var contentCardLinkPadding: FlybitsConcierge.ConciergeAppearence.Padding { get }
-  var contentCardButtonStackPadding: FlybitsConcierge.ConciergeAppearence.Padding { get }
-  var contentCardPrimaryButton: FlybitsConcierge.ConciergeAppearence.ButtonConfig { get }
-  var contentCardSecondaryButton: FlybitsConcierge.ConciergeAppearence.ButtonConfig { get }
-  var contentCardTruncationLinkColor: UIKit.UIColor { get }
-  var detailedViewBackgroundColor: UIKit.UIColor { get }
-  var detailedViewTextBlockSidePadding: CoreGraphics.CGFloat { get }
-  var detailedViewHeaderFont: FlybitsConcierge.ConciergeAppearence.Font { get }
-  var detailedViewTitleFont: FlybitsConcierge.ConciergeAppearence.Font { get }
-  var detailedViewDescriptionFont: FlybitsConcierge.ConciergeAppearence.Font { get }
-  var detailedViewBodyFont: FlybitsConcierge.ConciergeAppearence.Font { get }
-  var inAppWebViewPreferredBarTintColor: UIKit.UIColor { get }
-  var inAppWebViewPreferredControlTintColor: UIKit.UIColor { get }
-  var notificationsCentreBackgroundColor: UIKit.UIColor { get }
-  var settingsBackgroundColor: UIKit.UIColor { get }
-  var settingsSettingsMenuGroupLabelFont: FlybitsConcierge.ConciergeAppearence.Font { get }
-  var settingsSettingsMenuItemFont: FlybitsConcierge.ConciergeAppearence.Font { get }
-  var settingsMenuBackgroundColor: UIKit.UIColor { get }
-  var guidedOptInNavigationBackgroundColor: UIKit.UIColor { get }
-  var guidedOptInNavigationTitleFont: FlybitsConcierge.ConciergeAppearence.Font { get }
-  var guidedOptInNavigationLinkFont: FlybitsConcierge.ConciergeAppearence.Font { get }
-  var guidedOptInBackgroundColor: UIKit.UIColor { get }
-  var guidedOptInLoadingSpinnerColor: UIKit.UIColor { get }
-  var guidedOptInConciergeBenefits: FlybitsConcierge.ConciergeAppearence.GuidedOptIn.ConciergeBenefits { get }
-  var guidedOptInNotificationBenefits: FlybitsConcierge.ConciergeAppearence.GuidedOptIn.NotificationBenefits { get }
-  var guidedOptInLocationServiceBenefits: FlybitsConcierge.ConciergeAppearence.GuidedOptIn.LocationServiceBenefits { get }
-  var guidedOptOut: FlybitsConcierge.ConciergeAppearence.GuidedOptIn.OptOut { get }
-  var horizontalLayout: FlybitsConcierge.ConciergeAppearence.HorizontalLayout { get }
-  var bannerPaginationActiveColor: UIKit.UIColor { get }
-  var bannerPaginationInActiveColor: UIKit.UIColor { get }
-  var contentBanner: FlybitsConcierge.ConciergeAppearence.Banners.ContentBanner { get }
-  var exposeContainerBackgroundColor: UIKit.UIColor { get }
-  var exposeSectionTitleFont: FlybitsConcierge.ConciergeAppearence.Font { get }
-  var exposeCallToActionTitleFont: FlybitsConcierge.ConciergeAppearence.Font { get }
-}
-extension ConciergeAppearence {
-  public struct NavigationBar {
-  }
-  public struct ContentCategoryFilter {
-  }
-  public struct Separator {
-  }
-  public struct DynamicContentFeed {
-  }
-  public struct ContentCards {
-  }
-  public struct DetailedView {
-  }
-  public struct NotificationsCentre {
-  }
-  public struct Settings {
-  }
-  public struct InAppWebView {
-  }
-  public struct Banners {
-    public struct ContentBanner {
-    }
-  }
-  public struct GuidedOptIn {
-    public struct ConciergeBenefits {
-    }
-    public struct NotificationBenefits {
-    }
-    public struct LocationServiceBenefits {
-    }
-    public struct OptOut {
-    }
-  }
-  public struct Expose {
-    public struct Container {
-    }
-  }
-}
-extension ConciergeAppearence {
-  public struct Padding {
-  }
-  public struct Font {
-  }
-  public struct ShadowConfig {
-  }
-  public struct ButtonConfig {
-  }
-  public struct CategorySelectionConfig {
-  }
-  public struct HorizontalLayout {
-  }
-}
-@_hasMissingDesignatedInitializers public class ConciergeAppearence {
-  public static var conciergeStyle: FlybitsConcierge.ConciergeStyle {
-    get
-  }
-  @objc deinit
 }
 public struct SignedConciergeIDP : FlybitsConcierge.ConciergeIDPConvertable {
   public let accessToken: Swift.String
@@ -251,10 +129,10 @@ public enum ConciergeBooleanOperator {
     get
   }
   public static func == (a: FlybitsConcierge.ConciergeBooleanOperator, b: FlybitsConcierge.ConciergeBooleanOperator) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 public struct ConciergeContextData {
   public var pluginId: Swift.String {
@@ -270,16 +148,21 @@ public protocol ConciergeAutoResizeViewController : UIKit.UIViewController {
   var resizedListeners: [Self.ConciergeViewControllerResized] { get }
   func addResizedListeners(listener: @escaping Self.ConciergeViewControllerResized)
 }
-@objc @_inheritsConvenienceInitializers public class ConciergeSafariViewController : SafariServices.SFSafariViewController {
+@objc public class ConciergeSafariViewController : SafariServices.SFSafariViewController, FlybitsCoreConcierge.ContextualViewController {
+  public var context: FlybitsCoreConcierge.ConciergeContext
+  public init(url: Foundation.URL, context: FlybitsCoreConcierge.ConciergeContext? = nil)
   @objc override dynamic public func viewDidLoad()
   @objc override dynamic public var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
     @objc get
   }
-  @objc deinit
   @available(iOS 11.0, *)
   @objc override dynamic public init(url URL: Foundation.URL, configuration: SafariServices.SFSafariViewController.Configuration)
   @available(iOS, introduced: 9.0, deprecated: 11.0)
   @objc override dynamic public init(url URL: Foundation.URL, entersReaderIfAvailable: Swift.Bool)
+  @objc deinit
+}
+extension UIView {
+  public func applyShadow(shadow: FlybitsCoreConcierge.ConciergeAppearance.ShadowConfig)
 }
 extension UICollectionViewFlowLayout {
   @objc override dynamic open var flipsHorizontallyInOppositeLayoutDirection: Swift.Bool {
@@ -290,26 +173,44 @@ public struct ColorVariants : Swift.Codable {
   public let light: Swift.String?
   public let dark: Swift.String?
   public init(light: Swift.String?, dark: Swift.String?)
-  public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct WebCardDetails : Swift.Decodable {
+  public var stringUrl: FlybitsSDK.LocalizedObject<Swift.String>? {
+    get
+  }
+  public init(from decoder: Swift.Decoder) throws
+}
+final public class WebCardContentData : FlybitsKernelSDK.ContentData {
+  final public let html: FlybitsSDK.LocalizedObject<Swift.String>?
+  final public let url: FlybitsSDK.LocalizedObject<Swift.String>?
+  final public let links: [FlybitsConcierge.WebCardDetails]?
+  final public var forwardedLink: Foundation.URL? {
+    get
+  }
+  required public init(from decoder: Swift.Decoder) throws
+  @objc override dynamic public init()
+  @objc deinit
 }
 @objc final public class DetailContentData : ObjectiveC.NSObject, Swift.Decodable {
   final public let body: FlybitsSDK.LocalizedObject<Swift.String>?
+  final public let links: [FlybitsConcierge.Link]?
   public init(from decoder: Swift.Decoder) throws
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class StreamlinedContentPushAnalyticsContext : ObjectiveC.NSObject {
   public static func trackComponentEngaged(contentId: Swift.String, pushRequestId: Swift.String, component: FlybitsConcierge.StreamlinedContentComponent, timestamp: Swift.Double? = nil, sendImmediately: Swift.Bool = false)
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @_hasMissingDesignatedInitializers public class Concierge {
   public typealias ConciergeConnect = (FlybitsConcierge.ConciergeIDPConvertable?, Swift.Error?) -> Swift.Void
   public typealias ConciergeOptInStatus = (FlybitsConcierge.OptInChoice, @escaping FlybitsConcierge.Concierge.ConciergeConnect) -> Swift.Void
-  public static func configure(configuration: FlybitsConcierge.FlybitsConciergeConfiguration? = nil, contextPlugins: [FlybitsContextSDK.ContextManager.PluginItem], launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]? = nil)
-  public static func presentGuidedOptIn(on viewController: UIKit.UIViewController)
-  public static func presentGuidedOptOut(on viewController: UIKit.UIViewController)
+  public static func configure(configuration: FlybitsConcierge.FlybitsConciergeConfiguration? = nil, contextPlugins: [FlybitsContextSDK.ContextManager.PluginItem], deepLinkHandlers: [FlybitsConcierge.DeepLinkHandlerProtocol.Type] = [], launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]? = nil)
+  public static func presentGuidedOptIn(on viewController: UIKit.UIViewController, using conciergeTheme: FlybitsConcierge.ConciergeTheme? = nil)
+  public static func presentGuidedOptOut(on viewController: UIKit.UIViewController, using conciergeTheme: FlybitsConcierge.ConciergeTheme? = nil)
   public static func optIn(completion: @escaping ((Swift.Error?) -> Swift.Void))
   public static func optOut(completion: @escaping ((Swift.Error?) -> Swift.Void))
   public static func connect(with idp: FlybitsConcierge.ConciergeIDPConvertable, customerId: Swift.String? = nil, physicalDeviceId: Swift.String? = nil, completion: @escaping (Foundation.NSError?) -> Swift.Void)
@@ -319,7 +220,7 @@ public struct ColorVariants : Swift.Codable {
   }
   public static func guidedOptInViewController(optInInfo: FlybitsConcierge.ConciergeOptInInfo, conciergeType: FlybitsConcierge.Container, params: [FlybitsConcierge.ConciergeParams], options: [FlybitsConcierge.ConciergeOptions]) -> UIKit.UIViewController
   public static func viewController(_ conciergeType: FlybitsConcierge.Container, params: [FlybitsConcierge.ConciergeParams], options: [FlybitsConcierge.ConciergeOptions]) -> UIKit.UIViewController
-  public static func settingsViewController(with configuration: FlybitsConcierge.FlybitsSettingsConfiguration = FlybitsSettingsConfiguration.Builder().build()) -> UIKit.UIViewController
+  public static func settingsViewController(with configuration: FlybitsConcierge.FlybitsSettingsConfiguration = FlybitsSettingsConfiguration.Builder().build(), conciergeTheme: FlybitsConcierge.ConciergeTheme? = nil) -> UIKit.UIViewController
   public static func enableLogging(forLevel level: FlybitsConcierge.ConciergeLoggerLevel = .verbose)
   @objc deinit
 }
@@ -328,7 +229,7 @@ extension Concierge {
 }
 extension Concierge {
   public static func registerForPushNotifications(completion: (() -> Swift.Void)? = nil)
-  public static func deepLink(conciergePush: FlybitsConcierge.ConciergePush) -> UIKit.UIViewController
+  public static func deepLink(conciergePush: FlybitsConcierge.ConciergePush, conciergeTheme: FlybitsConcierge.ConciergeTheme? = nil) -> UIKit.UIViewController?
   public static func handlePush(_ userInfo: [Swift.AnyHashable : Any]) -> FlybitsConcierge.ConciergePush?
   public static func sendPush(token: Foundation.Data, with parameters: [Swift.String : Any]? = nil)
   public static func sendContextData(_ contextData: [FlybitsConcierge.ConciergeContextData])
@@ -337,16 +238,18 @@ public struct JwtLoginConciergeIDP : FlybitsConcierge.ConciergeIDPConvertable {
   public init(jwtLoginToken: Swift.String)
   public func toFlybitsIDP() -> FlybitsSDK.IDP
 }
-extension UIViewController {
-  public var conciergeStyle: FlybitsConcierge.ConciergeStyle {
+open class WebCardConciergeViewable : FlybitsCoreConcierge.ConciergeViewable {
+  public typealias Data = FlybitsKernelSDK.ContentData
+  public init()
+  public func type() -> FlybitsKernelSDK.ContentData.Type
+  public func tileViewController(for contentData: FlybitsKernelSDK.ContentData) -> UIKit.UIViewController?
+  public func detailViewController(for contentData: FlybitsKernelSDK.ContentData) -> UIKit.UIViewController?
+  open var tileViewControllerLayout: Foundation.URL? {
     get
   }
-}
-extension UIView {
-  public var conciergeStyle: FlybitsConcierge.ConciergeStyle {
-    get
-  }
-  public func applyShadow(shadow: FlybitsConcierge.ConciergeAppearence.ShadowConfig)
+  open func primaryCallToAction(for contentData: FlybitsKernelSDK.ContentData) -> FlybitsCoreConcierge.ConciergeCallToActionResult
+  open func secondaryCallToAction(for contentData: FlybitsKernelSDK.ContentData, index: Swift.Int) -> FlybitsCoreConcierge.ConciergeCallToActionResult
+  @objc deinit
 }
 public struct OAuthConciergeIDP : FlybitsConcierge.ConciergeIDPConvertable {
   public enum ConciergeSupportedOAuthIDP : Swift.Int, Swift.CaseIterable {
@@ -356,13 +259,13 @@ public struct OAuthConciergeIDP : FlybitsConcierge.ConciergeIDPConvertable {
     public var providerName: Swift.String {
       get
     }
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
-    public var rawValue: Swift.Int {
+    public typealias AllCases = [FlybitsConcierge.OAuthConciergeIDP.ConciergeSupportedOAuthIDP]
+    public typealias RawValue = Swift.Int
+    public static var allCases: [FlybitsConcierge.OAuthConciergeIDP.ConciergeSupportedOAuthIDP] {
       get
     }
-    public typealias AllCases = [FlybitsConcierge.OAuthConciergeIDP.ConciergeSupportedOAuthIDP]
-    public static var allCases: [FlybitsConcierge.OAuthConciergeIDP.ConciergeSupportedOAuthIDP] {
+    public var rawValue: Swift.Int {
       get
     }
   }
@@ -370,16 +273,19 @@ public struct OAuthConciergeIDP : FlybitsConcierge.ConciergeIDPConvertable {
   public init(supportedIDP: FlybitsConcierge.OAuthConciergeIDP.ConciergeSupportedOAuthIDP, accessToken: Swift.String, clientID: Swift.String? = nil)
   public func toFlybitsIDP() -> FlybitsSDK.IDP
 }
-extension UIColor {
-}
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class ConciergeNavigationController : UIKit.UINavigationController {
+@objc @_hasMissingDesignatedInitializers public class ConciergeNavigationController : UIKit.UINavigationController, FlybitsCoreConcierge.ContextualViewController {
   @objc final public let identifier: Swift.String
-  @objc override dynamic public init(rootViewController: UIKit.UIViewController)
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @objc override dynamic public init(navigationBarClass: Swift.AnyClass?, toolbarClass: Swift.AnyClass?)
+  final public let context: FlybitsCoreConcierge.ConciergeContext
+  public init(rootViewController: UIKit.UIViewController, context: FlybitsCoreConcierge.ConciergeContext)
+  public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?, context: FlybitsCoreConcierge.ConciergeContext)
+  public init(navigationBarClass: Swift.AnyClass?, toolbarClass: Swift.AnyClass?, context: FlybitsCoreConcierge.ConciergeContext)
   @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
   @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
   @objc override dynamic public func viewDidLoad()
+  @available(iOS 5.0, *)
+  @objc override dynamic public init(navigationBarClass: Swift.AnyClass?, toolbarClass: Swift.AnyClass?)
+  @objc override dynamic public init(rootViewController: UIKit.UIViewController)
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @objc deinit
 }
 extension ConciergeNavigationController : UIKit.UINavigationControllerDelegate {
@@ -396,25 +302,27 @@ extension ConciergeNavigationController : FlybitsSDK.FlybitsScope {
 }
 @_inheritsConvenienceInitializers open class ButtonBannerConciergeViewable : FlybitsConcierge.ButtonsCardConciergeViewable {
   public typealias Data = FlybitsKernelSDK.ContentData
-  override public init()
-  override public func tileViewController(for contentData: FlybitsKernelSDK.ContentData) -> UIKit.UIViewController?
   override open var tileViewControllerLayout: Foundation.URL? {
     get
   }
+  override public init()
+  @available(*, deprecated, message: "Please override the `tileViewController(for contentData: Data, context: ConciergeContext)` function")
+  override public func tileViewController(for contentData: FlybitsKernelSDK.ContentData) -> UIKit.UIViewController?
+  override public func tileViewController(for contentData: FlybitsKernelSDK.ContentData, context: FlybitsCoreConcierge.ConciergeContext) -> UIKit.UIViewController?
   @objc deinit
 }
 @_inheritsConvenienceInitializers open class DiscoverableButtonsCardConciergeViewable : FlybitsConcierge.ButtonsCardConciergeViewable {
   override open var tileViewControllerLayout: Foundation.URL? {
     get
   }
-  @objc deinit
   override public init()
+  @objc deinit
 }
 @objc final public class MediaContentData : ObjectiveC.NSObject, Swift.Decodable {
   public enum MediaContentDataType : Swift.String {
     case image, video
-    public typealias RawValue = Swift.String
     public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
     }
@@ -425,8 +333,8 @@ extension ConciergeNavigationController : FlybitsSDK.FlybitsScope {
   final public let label: FlybitsSDK.LocalizedObject<Swift.String>?
   final public let previewURL: FlybitsSDK.LocalizedObject<Swift.String>?
   public init(from decoder: Swift.Decoder) throws
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 public struct AnonymousConciergeIDP : FlybitsConcierge.ConciergeIDPConvertable {
   public init()
@@ -438,23 +346,33 @@ public struct AnonymousConciergeIDP : FlybitsConcierge.ConciergeIDPConvertable {
 }
 open class ButtonsCardConciergeViewable : FlybitsCoreConcierge.ConciergeViewable {
   public typealias Data = FlybitsKernelSDK.ContentData
-  public init()
-  public func type() -> FlybitsKernelSDK.ContentData.Type
-  public func tileViewController(for contentData: FlybitsKernelSDK.ContentData) -> UIKit.UIViewController?
   open var tileViewControllerLayout: Foundation.URL? {
     get
   }
+  public init()
+  public func type() -> FlybitsKernelSDK.ContentData.Type
+  @available(*, deprecated, message: "Please override the `tileViewController(for contentData: Data, context: ConciergeContext)` function")
+  public func tileViewController(for contentData: FlybitsKernelSDK.ContentData) -> UIKit.UIViewController?
+  public func tileViewController(for contentData: FlybitsKernelSDK.ContentData, context: FlybitsCoreConcierge.ConciergeContext) -> UIKit.UIViewController?
+  @available(*, deprecated, message: "Please use the `detailViewController(for contentData: Data, context: ConciergeContext)` function")
   public func detailViewController(for contentData: FlybitsKernelSDK.ContentData) -> UIKit.UIViewController?
+  public func detailViewController(for contentData: FlybitsKernelSDK.ContentData, context: FlybitsCoreConcierge.ConciergeContext) -> UIKit.UIViewController?
+  @available(*, deprecated, message: "Please override the `primaryCallToAction(for contentData: Data, context: ConciergeContext)` function")
   open func primaryCallToAction(for contentData: FlybitsKernelSDK.ContentData) -> FlybitsCoreConcierge.ConciergeCallToActionResult
+  @available(*, deprecated, message: "Please override the `secondaryCallToAction(for contentData: Data, index: Int, context: ConciergeContext)` function")
   open func secondaryCallToAction(for contentData: FlybitsKernelSDK.ContentData, index: Swift.Int) -> FlybitsCoreConcierge.ConciergeCallToActionResult
+  open func primaryCallToAction(for contentData: FlybitsKernelSDK.ContentData, context: FlybitsCoreConcierge.ConciergeContext) -> FlybitsCoreConcierge.ConciergeCallToActionResult
+  open func secondaryCallToAction(for contentData: FlybitsKernelSDK.ContentData, index: Swift.Int, context: FlybitsCoreConcierge.ConciergeContext) -> FlybitsCoreConcierge.ConciergeCallToActionResult
   @objc deinit
 }
 @_inheritsConvenienceInitializers open class LinkBannerConciergeViewable : FlybitsConcierge.LinkCardConciergeViewable {
-  override public init()
-  override public func tileViewController(for contentData: FlybitsKernelSDK.ContentData) -> UIKit.UIViewController?
   override open var tileViewControllerLayout: Foundation.URL? {
     get
   }
+  override public init()
+  @available(*, deprecated, message: "Please override the `tileViewController(for contentData: Data, context: ConciergeContext)` function")
+  override public func tileViewController(for contentData: FlybitsKernelSDK.ContentData) -> UIKit.UIViewController?
+  override public func tileViewController(for contentData: FlybitsKernelSDK.ContentData, context: FlybitsCoreConcierge.ConciergeContext) -> UIKit.UIViewController?
   @objc deinit
 }
 public struct OpenConciergeIDP : FlybitsConcierge.ConciergeIDPConvertable {
@@ -466,38 +384,38 @@ public enum Container {
   case categories
   case expose
   public static func == (a: FlybitsConcierge.Container, b: FlybitsConcierge.Container) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 public enum ConciergeParams : Swift.Hashable {
   case labels([Swift.String])
   case labelsExpression(FlybitsConcierge.ConciergeLabelsExpression)
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: FlybitsConcierge.ConciergeParams, b: FlybitsConcierge.ConciergeParams) -> Swift.Bool
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
-  public static func == (a: FlybitsConcierge.ConciergeParams, b: FlybitsConcierge.ConciergeParams) -> Swift.Bool
 }
 public enum OptInChoice : Swift.Int {
   case yes
   case no
   case none
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
 }
-public enum ContentStyle {
+public enum ContentStyle : Swift.String {
   case card
   case banner
-  public static func == (a: FlybitsConcierge.ContentStyle, b: FlybitsConcierge.ContentStyle) -> Swift.Bool
-  public var hashValue: Swift.Int {
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 public struct ConciergeOptInInfo {
   public let customerId: Swift.String
@@ -514,13 +432,23 @@ public enum ConciergeOptions : Swift.Hashable {
   case horizontal
   case style(_: FlybitsConcierge.ContentStyle = .card)
   case exposeTitle(_: Swift.String? = nil)
-  case exposeCallToAction(title: Swift.String? = nil)
+  case exposeCallToAction(title: Swift.String? = nil, actionUrl: Swift.String? = nil)
   case categoryDefaultTab(title: Swift.String? = nil)
+  case customTheme(FlybitsConcierge.ConciergeTheme)
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: FlybitsConcierge.ConciergeOptions, b: FlybitsConcierge.ConciergeOptions) -> Swift.Bool
   public var hashValue: Swift.Int {
     get
   }
+}
+public enum ConciergeTheme : Swift.Hashable {
+  case filename(Swift.String)
+  case json(Swift.String)
   public func hash(into hasher: inout Swift.Hasher)
-  public static func == (a: FlybitsConcierge.ConciergeOptions, b: FlybitsConcierge.ConciergeOptions) -> Swift.Bool
+  public static func == (a: FlybitsConcierge.ConciergeTheme, b: FlybitsConcierge.ConciergeTheme) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
 }
 public enum ConciergeCustomerStatus : Swift.Int {
   case unknown
@@ -530,8 +458,8 @@ public enum ConciergeCustomerStatus : Swift.Int {
   case activeOptedOut
   case notActiveOptedIn
   case notActiveOptedOut
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -544,30 +472,36 @@ public enum ConciergeLoggerLevel {
   case error
   case fault
   public static func == (a: FlybitsConcierge.ConciergeLoggerLevel, b: FlybitsConcierge.ConciergeLoggerLevel) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 open class LinkCardConciergeViewable : FlybitsCoreConcierge.ConciergeViewable {
   public typealias Data = FlybitsKernelSDK.ContentData
-  public init()
-  public func type() -> FlybitsKernelSDK.ContentData.Type
-  public func tileViewController(for contentData: FlybitsKernelSDK.ContentData) -> UIKit.UIViewController?
-  public func detailViewController(for contentData: FlybitsKernelSDK.ContentData) -> UIKit.UIViewController?
   open var tileViewControllerLayout: Foundation.URL? {
     get
   }
+  public init()
+  public func type() -> FlybitsKernelSDK.ContentData.Type
+  @available(*, deprecated, message: "Please use the `tileViewController(for contentData: Data, context: ConciergeContext)` function instead")
+  public func tileViewController(for contentData: FlybitsKernelSDK.ContentData) -> UIKit.UIViewController?
+  public func tileViewController(for contentData: FlybitsKernelSDK.ContentData, context: FlybitsCoreConcierge.ConciergeContext) -> UIKit.UIViewController?
+  @available(*, deprecated, message: "Please use the `detailViewController(for contentData: Data, context: ConciergeContext)` function instead")
+  public func detailViewController(for contentData: FlybitsKernelSDK.ContentData) -> UIKit.UIViewController?
+  public func detailViewController(for contentData: FlybitsKernelSDK.ContentData, context: FlybitsCoreConcierge.ConciergeContext) -> UIKit.UIViewController?
+  @available(*, deprecated, message: "Please use the `primaryCallToAction(for contentData: Data, context: ConciergeContext)` function instead")
   open func primaryCallToAction(for contentData: FlybitsKernelSDK.ContentData) -> FlybitsCoreConcierge.ConciergeCallToActionResult
+  open func primaryCallToAction(for contentData: FlybitsKernelSDK.ContentData, context: FlybitsCoreConcierge.ConciergeContext) -> FlybitsCoreConcierge.ConciergeCallToActionResult
   @objc deinit
 }
-public func safariViewController(for url: Foundation.URL, withPresentationStyle presentationStyle: UIKit.UIModalPresentationStyle? = .fullScreen) -> FlybitsConcierge.ConciergeSafariViewController?
+public func safariViewController(for url: Foundation.URL, withPresentationStyle presentationStyle: UIKit.UIModalPresentationStyle? = .fullScreen, context: FlybitsCoreConcierge.ConciergeContext? = nil) -> FlybitsConcierge.ConciergeSafariViewController?
 public func performOnMainThread(closure: @escaping () -> Swift.Void)
 @objc @_inheritsConvenienceInitializers public class StreamlinedContentAnalyticsContext : ObjectiveC.NSObject {
   public static func trackEngaged(contentId: Swift.String, timestamp: Swift.Double? = nil, sendImmediately: Swift.Bool = false)
   public static func trackComponentEngaged(contentId: Swift.String, component: FlybitsConcierge.StreamlinedContentComponent, timestamp: Swift.Double? = nil, sendImmediately: Swift.Bool = false)
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 public struct JwtConciergeIDP : FlybitsConcierge.ConciergeIDPConvertable {
   public init(token: Swift.String)
@@ -578,14 +512,15 @@ public enum ActionType : Swift.String, Swift.Decodable, Swift.CaseIterable {
   case link
   case app
   case content
+  case universalAction
   public init(from decoder: Swift.Decoder) throws
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
-  public var rawValue: Swift.String {
+  public typealias AllCases = [FlybitsConcierge.ActionType]
+  public typealias RawValue = Swift.String
+  public static var allCases: [FlybitsConcierge.ActionType] {
     get
   }
-  public typealias AllCases = [FlybitsConcierge.ActionType]
-  public static var allCases: [FlybitsConcierge.ActionType] {
+  public var rawValue: Swift.String {
     get
   }
 }
@@ -621,8 +556,8 @@ public struct FlybitsSettingsConfiguration {
   override open var tileViewControllerLayout: Foundation.URL? {
     get
   }
-  @objc deinit
   override public init()
+  @objc deinit
 }
 @_hasMissingDesignatedInitializers public class FlybitsConciergeConfiguration {
   public var settingsConfiguration: FlybitsConcierge.FlybitsSettingsConfiguration {
@@ -668,6 +603,7 @@ extension FlybitsConcierge.OptInChoice : Swift.Hashable {}
 extension FlybitsConcierge.OptInChoice : Swift.RawRepresentable {}
 extension FlybitsConcierge.ContentStyle : Swift.Equatable {}
 extension FlybitsConcierge.ContentStyle : Swift.Hashable {}
+extension FlybitsConcierge.ContentStyle : Swift.RawRepresentable {}
 extension FlybitsConcierge.ConciergeCustomerStatus : Swift.Equatable {}
 extension FlybitsConcierge.ConciergeCustomerStatus : Swift.Hashable {}
 extension FlybitsConcierge.ConciergeCustomerStatus : Swift.RawRepresentable {}
