@@ -46,3 +46,11 @@ target 'Customize-Expose-Button' do
   # Pods
   pod 'FlybitsConcierge', $flybitsSDKVersion
 end
+
+target 'Contextual_Theming' do
+  project 'Concierge/Expose-Bank/Expose-Bank.xcodeproj'
+  inherit! :search_paths
+
+  # Pods
+  pod 'FlybitsConcierge', $flybitsSDKVersion
+end

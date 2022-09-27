@@ -1,0 +1,26 @@
+{
+    "expose": {
+        "container": {
+            "backgroundColor": {
+                "light": "#6ee557",
+                "dark": "#162d11"
+            },
+            "sectionTitleFont": {
+                "fontFamily": "Copperplate",
+                "fontSize": 15,
+                "fontWeight": "light",
+                "fontColor": {
+                    "light": "#000000",
+                    "dark": "#F6EB05"
+                },
+                "lineSpacing": 1.0
+            }
+        }
+    },
+    "dynamicContentFeed": {
+        "backgroundColor": {
+            "light": "#6ee557",
+            "dark": "#162d11"
+        }
+    }
+}

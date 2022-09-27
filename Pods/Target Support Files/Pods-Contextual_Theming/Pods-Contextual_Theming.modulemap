@@ -1,0 +1,6 @@
+framework module Pods_Contextual_Theming {
+  umbrella header "Pods-Contextual_Theming-umbrella.h"
+
+  export *
+  module * { export * }
+}
