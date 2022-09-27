@@ -10,6 +10,12 @@
 		196A99112F5ECE4BB548928B /* Pods_Expose_Bank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A567FE867237D537B3D6B055 /* Pods_Expose_Bank.framework */; };
 		2572B73628241FB9000499D2 /* Expose_BankUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2572B73528241FB9000499D2 /* Expose_BankUITests.swift */; };
 		2572B73828241FB9000499D2 /* Expose_BankUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2572B73728241FB9000499D2 /* Expose_BankUITestsLaunchTests.swift */; };
+		25B2F7D528E219EE0086F403 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B2F7D428E219EE0086F403 /* AppDelegate.swift */; };
+		25B2F7D728E219EE0086F403 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B2F7D628E219EE0086F403 /* SceneDelegate.swift */; };
+		25B2F7D928E219EE0086F403 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B2F7D828E219EE0086F403 /* ViewController.swift */; };
+		25B2F7DC28E219EE0086F403 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25B2F7DA28E219EE0086F403 /* Main.storyboard */; };
+		25B2F7DE28E219F00086F403 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25B2F7DD28E219F00086F403 /* Assets.xcassets */; };
+		25B2F7E128E219F00086F403 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25B2F7DF28E219F00086F403 /* LaunchScreen.storyboard */; };
 		25EA00122820655A004F982B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EA00112820655A004F982B /* AppDelegate.swift */; };
 		25EA00192820655A004F982B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25EA00172820655A004F982B /* Main.storyboard */; };
 		25EA001B2820655C004F982B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25EA001A2820655C004F982B /* Assets.xcassets */; };
@@ -30,6 +36,7 @@
 		57E55DE72842A90600A9BE59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57E55DE52842A90600A9BE59 /* LaunchScreen.storyboard */; };
 		57E55DED2842B06200A9BE59 /* CustomButtonBanner.json in Resources */ = {isa = PBXBuildFile; fileRef = 57E55DEC2842B06200A9BE59 /* CustomButtonBanner.json */; };
 		58609A398FC5BA73979A9DDB /* Pods_FullScreen_Concierge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8599DF1B0ECE3A72569720D2 /* Pods_FullScreen_Concierge.framework */; };
+		8C39381BFACE21E8BAA1BD73 /* Pods_Customize_Expose_Button.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C215A5ECC0CA17D74D2A4321 /* Pods_Customize_Expose_Button.framework */; };
 		E41D4EE1283FD6B100D24A0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41D4EE0283FD6B100D24A0C /* AppDelegate.swift */; };
 		E41D4EE5283FD6B100D24A0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41D4EE4283FD6B100D24A0C /* ViewController.swift */; };
 		E41D4EE8283FD6B100D24A0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E41D4EE6283FD6B100D24A0C /* Main.storyboard */; };
@@ -58,6 +65,14 @@
 		2572B73528241FB9000499D2 /* Expose_BankUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expose_BankUITests.swift; sourceTree = "<group>"; };
 		2572B73728241FB9000499D2 /* Expose_BankUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expose_BankUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		258FE55646B1A02D8EDAC877 /* Pods-Modify-Existing-Style.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Modify-Existing-Style.release.xcconfig"; path = "Target Support Files/Pods-Modify-Existing-Style/Pods-Modify-Existing-Style.release.xcconfig"; sourceTree = "<group>"; };
+		25B2F7D228E219EE0086F403 /* Customize-Expose-Button.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Customize-Expose-Button.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		25B2F7D428E219EE0086F403 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		25B2F7D628E219EE0086F403 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		25B2F7D828E219EE0086F403 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		25B2F7DB28E219EE0086F403 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		25B2F7DD28E219F00086F403 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		25B2F7E028E219F00086F403 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		25B2F7E228E219F00086F403 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25EA000E2820655A004F982B /* Expose-Bank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Expose-Bank.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25EA00112820655A004F982B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25EA00182820655A004F982B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -87,6 +102,8 @@
 		8599DF1B0ECE3A72569720D2 /* Pods_FullScreen_Concierge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FullScreen_Concierge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A567FE867237D537B3D6B055 /* Pods_Expose_Bank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Expose_Bank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A75CAC46C5349CD7EC7E0DB5 /* Pods-Expose-Bank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Expose-Bank.release.xcconfig"; path = "Target Support Files/Pods-Expose-Bank/Pods-Expose-Bank.release.xcconfig"; sourceTree = "<group>"; };
+		C20CED54147A5A390BA65CDF /* Pods-Customize-Expose-Button.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Customize-Expose-Button.debug.xcconfig"; path = "Target Support Files/Pods-Customize-Expose-Button/Pods-Customize-Expose-Button.debug.xcconfig"; sourceTree = "<group>"; };
+		C215A5ECC0CA17D74D2A4321 /* Pods_Customize_Expose_Button.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Customize_Expose_Button.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C407E452A6CA30D008186555 /* Pods-Banner-Bank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Banner-Bank.release.xcconfig"; path = "Target Support Files/Pods-Banner-Bank/Pods-Banner-Bank.release.xcconfig"; sourceTree = "<group>"; };
 		E41D4EDE283FD6B100D24A0C /* Banner-Bank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Banner-Bank.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E41D4EE0283FD6B100D24A0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +114,7 @@
 		E41D4EEE283FD6B200D24A0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E41D4EF628400E2100D24A0C /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E8016CAACB5CF7B96FE68E8B /* Pods_Banner_Bank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Banner_Bank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2612FC88B152FE4F7C1B68F /* Pods-Customize-Expose-Button.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Customize-Expose-Button.release.xcconfig"; path = "Target Support Files/Pods-Customize-Expose-Button/Pods-Customize-Expose-Button.release.xcconfig"; sourceTree = "<group>"; };
 		F5EFE8BEC30DD8D05CDAB0A2 /* Pods-Banner-Bank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Banner-Bank.debug.xcconfig"; path = "Target Support Files/Pods-Banner-Bank/Pods-Banner-Bank.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +123,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25B2F7CF28E219EE0086F403 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C39381BFACE21E8BAA1BD73 /* Pods_Customize_Expose_Button.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +176,7 @@
 				8599DF1B0ECE3A72569720D2 /* Pods_FullScreen_Concierge.framework */,
 				E8016CAACB5CF7B96FE68E8B /* Pods_Banner_Bank.framework */,
 				0344B8009B06BB46E1EA89C5 /* Pods_Modify_Existing_Style.framework */,
+				C215A5ECC0CA17D74D2A4321 /* Pods_Customize_Expose_Button.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -163,6 +190,20 @@
 			path = "Expose-BankUITests";
 			sourceTree = "<group>";
 		};
+		25B2F7D328E219EE0086F403 /* Customize-Expose-Button */ = {
+			isa = PBXGroup;
+			children = (
+				25B2F7D428E219EE0086F403 /* AppDelegate.swift */,
+				25B2F7D628E219EE0086F403 /* SceneDelegate.swift */,
+				25B2F7D828E219EE0086F403 /* ViewController.swift */,
+				25B2F7DA28E219EE0086F403 /* Main.storyboard */,
+				25B2F7DD28E219F00086F403 /* Assets.xcassets */,
+				25B2F7DF28E219F00086F403 /* LaunchScreen.storyboard */,
+				25B2F7E228E219F00086F403 /* Info.plist */,
+			);
+			path = "Customize-Expose-Button";
+			sourceTree = "<group>";
+		};
 		25EA00052820655A004F982B = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +212,7 @@
 				576A4AA42836917500498C70 /* FullScreen_Concierge */,
 				E41D4EDF283FD6B100D24A0C /* Banner-Bank */,
 				57E55DD92842A90400A9BE59 /* Modify-Existing-Style */,
+				25B2F7D328E219EE0086F403 /* Customize-Expose-Button */,
 				25EA000F2820655A004F982B /* Products */,
 				C1AA5A0ED9EAB99CB4D15007 /* Pods */,
 				14438011C5946C63B2E0C055 /* Frameworks */,
@@ -185,6 +227,7 @@
 				576A4AA32836917500498C70 /* FullScreen_Concierge.app */,
 				E41D4EDE283FD6B100D24A0C /* Banner-Bank.app */,
 				57E55DD82842A90400A9BE59 /* Modify-Existing-Style.app */,
+				25B2F7D228E219EE0086F403 /* Customize-Expose-Button.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -243,6 +286,8 @@
 				C407E452A6CA30D008186555 /* Pods-Banner-Bank.release.xcconfig */,
 				2559EADF0C6E2F5A457278C9 /* Pods-Modify-Existing-Style.debug.xcconfig */,
 				258FE55646B1A02D8EDAC877 /* Pods-Modify-Existing-Style.release.xcconfig */,
+				C20CED54147A5A390BA65CDF /* Pods-Customize-Expose-Button.debug.xcconfig */,
+				F2612FC88B152FE4F7C1B68F /* Pods-Customize-Expose-Button.release.xcconfig */,
 			);
 			name = Pods;
 			path = ../../Pods;
@@ -282,6 +327,25 @@
 			productName = "Expose-BankUITests";
 			productReference = 2572B73328241FB9000499D2 /* Expose-BankUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		25B2F7D128E219EE0086F403 /* Customize-Expose-Button */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 25B2F7E528E219F00086F403 /* Build configuration list for PBXNativeTarget "Customize-Expose-Button" */;
+			buildPhases = (
+				DA742FE9E41591F744E1AABA /* [CP] Check Pods Manifest.lock */,
+				25B2F7CE28E219EE0086F403 /* Sources */,
+				25B2F7CF28E219EE0086F403 /* Frameworks */,
+				25B2F7D028E219EE0086F403 /* Resources */,
+				C829BFBE8FC1780FCBE1FC9B /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Customize-Expose-Button";
+			productName = "Customize-Expose-Button";
+			productReference = 25B2F7D228E219EE0086F403 /* Customize-Expose-Button.app */;
+			productType = "com.apple.product-type.application";
 		};
 		25EA000D2820655A004F982B /* Expose-Bank */ = {
 			isa = PBXNativeTarget;
@@ -366,12 +430,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1340;
+				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
 					2572B73228241FB9000499D2 = {
 						CreatedOnToolsVersion = 13.3.1;
 						TestTargetID = 25EA000D2820655A004F982B;
+					};
+					25B2F7D128E219EE0086F403 = {
+						CreatedOnToolsVersion = 14.0;
 					};
 					25EA000D2820655A004F982B = {
 						CreatedOnToolsVersion = 13.3.1;
@@ -405,6 +472,7 @@
 				576A4AA22836917500498C70 /* FullScreen_Concierge */,
 				E41D4EDD283FD6B100D24A0C /* Banner-Bank */,
 				57E55DD72842A90400A9BE59 /* Modify-Existing-Style */,
+				25B2F7D128E219EE0086F403 /* Customize-Expose-Button */,
 			);
 		};
 /* End PBXProject section */
@@ -414,6 +482,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25B2F7D028E219EE0086F403 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25B2F7E128E219F00086F403 /* LaunchScreen.storyboard in Resources */,
+				25B2F7DE28E219F00086F403 /* Assets.xcassets in Resources */,
+				25B2F7DC28E219EE0086F403 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,6 +656,45 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Modify-Existing-Style/Pods-Modify-Existing-Style-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C829BFBE8FC1780FCBE1FC9B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Customize-Expose-Button/Pods-Customize-Expose-Button-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Customize-Expose-Button/Pods-Customize-Expose-Button-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Customize-Expose-Button/Pods-Customize-Expose-Button-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA742FE9E41591F744E1AABA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Customize-Expose-Button-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		DE6CA5C31A59BCB2881C6DC2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -626,6 +743,16 @@
 			files = (
 				2572B73828241FB9000499D2 /* Expose_BankUITestsLaunchTests.swift in Sources */,
 				2572B73628241FB9000499D2 /* Expose_BankUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25B2F7CE28E219EE0086F403 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25B2F7D928E219EE0086F403 /* ViewController.swift in Sources */,
+				25B2F7D528E219EE0086F403 /* AppDelegate.swift in Sources */,
+				25B2F7D728E219EE0086F403 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -679,6 +806,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		25B2F7DA28E219EE0086F403 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				25B2F7DB28E219EE0086F403 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		25B2F7DF28E219F00086F403 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				25B2F7E028E219F00086F403 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		25EA00172820655A004F982B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -779,6 +922,68 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "Expose-Bank";
+			};
+			name = Release;
+		};
+		25B2F7E328E219F00086F403 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C20CED54147A5A390BA65CDF /* Pods-Customize-Expose-Button.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CH9YG7X49H;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Customize-Expose-Button/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.flybits.Customize-Expose-Button";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		25B2F7E428E219F00086F403 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2612FC88B152FE4F7C1B68F /* Pods-Customize-Expose-Button.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CH9YG7X49H;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Customize-Expose-Button/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.flybits.Customize-Expose-Button";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1150,6 +1355,15 @@
 			buildConfigurations = (
 				2572B73B28241FB9000499D2 /* Debug */,
 				2572B73C28241FB9000499D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		25B2F7E528E219F00086F403 /* Build configuration list for PBXNativeTarget "Customize-Expose-Button" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25B2F7E328E219F00086F403 /* Debug */,
+				25B2F7E428E219F00086F403 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

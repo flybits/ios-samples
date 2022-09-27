@@ -38,3 +38,11 @@ target 'Modify-Existing-Style' do
     # Pods
     pod 'FlybitsConcierge', $flybitsSDKVersion
 end
+
+target 'Customize-Expose-Button' do
+  project 'Concierge/Expose-Bank/Expose-Bank.xcodeproj'
+  inherit! :search_paths
+
+  # Pods
+  pod 'FlybitsConcierge', $flybitsSDKVersion
+end

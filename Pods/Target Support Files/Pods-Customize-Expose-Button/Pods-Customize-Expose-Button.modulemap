@@ -1,0 +1,6 @@
+framework module Pods_Customize_Expose_Button {
+  umbrella header "Pods-Customize-Expose-Button-umbrella.h"
+
+  export *
+  module * { export * }
+}
