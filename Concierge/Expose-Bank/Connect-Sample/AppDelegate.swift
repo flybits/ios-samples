@@ -11,14 +11,11 @@ import FlybitsConcierge
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let config = FlybitsConciergeConfiguration.Builder()
             .setGatewayUrl("https://api.demo.flybits.com")
             .setProjectId("2CE41988-B1D3-4116-98DD-42FFB8754384")
             .build()
-
 
         Concierge.enableLogging()
 
