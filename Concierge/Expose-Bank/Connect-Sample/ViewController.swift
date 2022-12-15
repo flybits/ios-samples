@@ -27,8 +27,18 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        self.connectButton.isHidden = Concierge.isConnected
-        self.disconnectButton.isHidden = !Concierge.isConnected
+        updateButtons()
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard
+            let vc = segue.destination as? CustomerStatusViewController,
+            let customerIdentifier = customIdentifierTextField.text
+        else {
+            return
+        }
+
+        vc.customerIdentifier = customerIdentifier
     }
 
     @IBAction func connectOnTouchUpInside(sender: UIButton) {
@@ -36,20 +46,36 @@ class ViewController: UIViewController {
         let customIdentifier = self.customIdentifierTextField.text
 
         Concierge.connect(with: AnonymousConciergeIDP(), customerId: customIdentifier, physicalDeviceId: physicalIdentifier) { error in
-            if let error = error{
+            if let error = error {
                 print("Failed to connect. Reason \(error.localizedDescription)")
+                self.updateButtons()
             } else {
                 print("Connected with success")
+                self.updateButtons()
             }
         }
     }
 
     @IBAction func disconnectOnTouchUpInside(sender: UIButton) {
         Concierge.disconnect { error in
-            if let error = error{
+            if let error = error {
                 print("Failed to disconnect. Reason \(error.localizedDescription)")
+                self.updateButtons()
             } else {
                 print("Disconnected with success")
+                self.updateButtons()
+            }
+        }
+    }
+
+    private func updateButtons() {
+        if Thread.isMainThread {
+            self.connectButton.isHidden = Concierge.isConnected
+            self.disconnectButton.isHidden = !Concierge.isConnected
+        } else {
+            DispatchQueue.main.async {
+                self.connectButton.isHidden = Concierge.isConnected
+                self.disconnectButton.isHidden = !Concierge.isConnected
             }
         }
     }
