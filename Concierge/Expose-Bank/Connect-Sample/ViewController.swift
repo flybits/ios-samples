@@ -42,7 +42,9 @@ class ViewController: UIViewController {
     }
 
     @IBAction func connectOnTouchUpInside(sender: UIButton) {
+        // The physicalDeviceId provides Flybits' rule engine to include / exclude a user based on their device's current context. By using a custom value, the responsibility of providing a ubiquitous experience between connects and app installs will reside with the app developer.
         let physicalIdentifier = self.physicalDeviceIdentifierTextField.text
+        // The Custom Identifier is used to identify the Flybits user in multiple Concierge APIs. Such as Concierge.Status. The identifier value must match to obtain the correct CustomerStatus value for the identifier.
         let customIdentifier = self.customIdentifierTextField.text
 
         Concierge.connect(with: AnonymousConciergeIDP(), customerId: customIdentifier, physicalDeviceId: physicalIdentifier) { error in

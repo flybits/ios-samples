@@ -29,6 +29,7 @@ class CustomerStatusViewController: UIViewController {
     }
 
     @IBAction func checkOnTouchUpInside(sender: UIButton) {
+        // The Custom Identifier must match the same value used during Concierge.Connect API call. If multiple users are connecting, the identifier must be unique per user.
         guard let customIdentifier = self.customerIdentifierTextField.text else {
             print("Not able to get customer identifier value")
             return
