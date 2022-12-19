@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Sal-Z0-h6I">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Connect_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="EG2-J2-8s9" userLabel="Main Stack">
+                                <rect key="frame" x="8" y="315.66666666666669" width="377" height="290.00000000000006"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check the network via Xcode console due to SDK logging or a network sniffer app like Charles." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZY2-Ef-3Z7">
+                                        <rect key="frame" x="0.0" y="0.0" width="377" height="40.666666666666664"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Physical Device Identifier" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ms-CM-AzF">
+                                        <rect key="frame" x="0.0" y="52.666666666666629" width="377" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UIDevice.current.identifierForVendor?.uuidString" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uAO-PD-cU4">
+                                        <rect key="frame" x="0.0" y="85" width="377" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom Identifier" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6mG-Vh-1MK">
+                                        <rect key="frame" x="0.0" y="131" width="377" height="20.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="String Value" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gFY-uV-Fzn">
+                                        <rect key="frame" x="0.0" y="163.33333333333331" width="377" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rC0-I4-IXR">
+                                        <rect key="frame" x="0.0" y="209.33333333333331" width="377" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Connect"/>
+                                        <connections>
+                                            <action selector="connectOnTouchUpInsideSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rGi-hd-4oy"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o43-Cq-i2z">
+                                        <rect key="frame" x="0.0" y="249.66666666666669" width="377" height="0.0"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Disconnect"/>
+                                        <connections>
+                                            <action selector="disconnectOnTouchUpInsideSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rdb-J7-4Qm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1M-WM-mxy">
+                                        <rect key="frame" x="0.0" y="255.66666666666671" width="377" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Check Customer Identifier"/>
+                                        <connections>
+                                            <segue destination="AQF-CS-aqq" kind="show" id="qhX-Kx-Z8R"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="EG2-J2-8s9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="5nc-iC-x3a"/>
+                            <constraint firstItem="EG2-J2-8s9" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Ooa-pL-YQw"/>
+                            <constraint firstItem="EG2-J2-8s9" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Qhf-Yv-c6e"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EG2-J2-8s9" secondAttribute="trailing" constant="8" id="viK-Hn-gsq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="haL-wd-BXp"/>
+                    <connections>
+                        <outlet property="connectButton" destination="rC0-I4-IXR" id="ZIK-5U-p3g"/>
+                        <outlet property="customIdentifierTextField" destination="gFY-uV-Fzn" id="lke-Xc-0gD"/>
+                        <outlet property="disconnectButton" destination="o43-Cq-i2z" id="2ZB-UX-7RX"/>
+                        <outlet property="physicalDeviceIdentifierTextField" destination="uAO-PD-cU4" id="88J-ge-S8c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1064.885496183206" y="-2.1126760563380285"/>
+        </scene>
+        <!--Customer Status View Controller-->
+        <scene sceneID="kd3-2n-mps">
+            <objects>
+                <viewController id="AQF-CS-aqq" customClass="CustomerStatusViewController" customModule="Connect_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x1s-dq-tAr">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xaN-WA-Qh8" userLabel="Main Stack">
+                                <rect key="frame" x="8" y="111" width="377" height="104.66666666666669"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check CustmerStatus by Custmer Identifier" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8UO-gb-c1I">
+                                        <rect key="frame" x="0.0" y="0.0" width="377" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Use same Customer Identifier from previous screen" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JEl-ES-VhB">
+                                        <rect key="frame" x="0.0" y="28.333333333333343" width="377" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P6S-C0-8cB">
+                                        <rect key="frame" x="0.0" y="70.333333333333343" width="377" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Check"/>
+                                        <connections>
+                                            <action selector="checkOnTouchUpInsideSender:" destination="AQF-CS-aqq" eventType="touchUpInside" id="dWg-R7-gII"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jgi-lU-0zm">
+                                <rect key="frame" x="8" y="215.66666666666669" width="377" height="594.33333333333326"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="B4T-vW-zSe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="B4T-vW-zSe" firstAttribute="trailing" secondItem="Jgi-lU-0zm" secondAttribute="trailing" constant="8" id="48z-8W-JbJ"/>
+                            <constraint firstItem="B4T-vW-zSe" firstAttribute="trailing" secondItem="xaN-WA-Qh8" secondAttribute="trailing" constant="8" id="MKi-yB-CGy"/>
+                            <constraint firstItem="xaN-WA-Qh8" firstAttribute="leading" secondItem="B4T-vW-zSe" secondAttribute="leading" constant="8" id="NKC-tG-7JO"/>
+                            <constraint firstItem="B4T-vW-zSe" firstAttribute="bottom" secondItem="Jgi-lU-0zm" secondAttribute="bottom" constant="8" id="Z8d-Io-w10"/>
+                            <constraint firstItem="Jgi-lU-0zm" firstAttribute="leading" secondItem="B4T-vW-zSe" secondAttribute="leading" constant="8" id="a6Q-WV-Pob"/>
+                            <constraint firstItem="xaN-WA-Qh8" firstAttribute="top" secondItem="B4T-vW-zSe" secondAttribute="top" constant="8" id="dgb-b1-gQg"/>
+                            <constraint firstItem="Jgi-lU-0zm" firstAttribute="top" secondItem="xaN-WA-Qh8" secondAttribute="bottom" id="uQ6-hw-bCv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="mLy-Cb-Aac"/>
+                    <connections>
+                        <outlet property="checkButton" destination="P6S-C0-8cB" id="sTa-OD-z0i"/>
+                        <outlet property="customerIdentifierTextField" destination="JEl-ES-VhB" id="RlY-Vk-y0B"/>
+                        <outlet property="resultLabel" destination="Jgi-lU-0zm" id="LDJ-Ek-vfk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bMv-Ne-rOr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1970" y="-2"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Fb1-3f-xcW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Sal-Z0-h6I" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eY0-1I-tZH">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="5mQ-sz-rNA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HaF-tX-dQD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.1679389312977" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
