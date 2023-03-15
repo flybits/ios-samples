@@ -1,11 +1,11 @@
-platform :ios, '12.0'
+platform :ios, '12.4'
 workspace 'ios-samples'
 
 source 'https://github.com/flybits/Spec-XCFramework.git'
 
 use_frameworks!
 
-$flybitsSDKVersion = '~> 4.4'
+$flybitsSDKVersion = '~> 5.0.0-alpha11'
 
 target 'Expose-Bank' do
   project 'Concierge/Expose-Bank/Expose-Bank.xcodeproj'
@@ -56,6 +56,14 @@ target 'Contextual_Theming' do
 end
 
 target 'Connect-Sample' do
+  project 'Concierge/Expose-Bank/Expose-Bank.xcodeproj'
+  inherit! :search_paths
+
+  # Pods
+  pod 'FlybitsConcierge', $flybitsSDKVersion
+end
+
+target 'FourLakes' do
   project 'Concierge/Expose-Bank/Expose-Bank.xcodeproj'
   inherit! :search_paths
 

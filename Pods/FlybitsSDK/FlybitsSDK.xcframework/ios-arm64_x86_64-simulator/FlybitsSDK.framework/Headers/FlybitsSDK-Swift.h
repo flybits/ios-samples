@@ -274,7 +274,6 @@ SWIFT_CLASS("_TtC10FlybitsSDK12AnonymousIDP")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-
 /// Defines all the error that can be return by FlybitsSDK when the cache layer
 /// fails or throws exception
 typedef SWIFT_ENUM(NSInteger, CacheError, open) {
@@ -463,6 +462,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL currentActiveUs
 /// returns:
 /// The enum <code>CustomerStatus</code> case based on the provided customer identification provided.
 + (enum CustomerStatus)statusFor:(NSString * _Nonnull)customerId SWIFT_WARN_UNUSED_RESULT;
+/// Verify the <code>CustomerStatus</code> of the active user
+/// note:
+/// If no current active user this API will return <code>.unknown</code>
+///
+/// returns:
+/// The enum <code>CustomerStatus</code> case based the active user.
++ (enum CustomerStatus)activeUserStatus SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
@@ -1259,7 +1265,6 @@ SWIFT_CLASS("_TtC10FlybitsSDK12AnonymousIDP")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-
 /// Defines all the error that can be return by FlybitsSDK when the cache layer
 /// fails or throws exception
 typedef SWIFT_ENUM(NSInteger, CacheError, open) {
@@ -1448,6 +1453,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL currentActiveUs
 /// returns:
 /// The enum <code>CustomerStatus</code> case based on the provided customer identification provided.
 + (enum CustomerStatus)statusFor:(NSString * _Nonnull)customerId SWIFT_WARN_UNUSED_RESULT;
+/// Verify the <code>CustomerStatus</code> of the active user
+/// note:
+/// If no current active user this API will return <code>.unknown</code>
+///
+/// returns:
+/// The enum <code>CustomerStatus</code> case based the active user.
++ (enum CustomerStatus)activeUserStatus SWIFT_WARN_UNUSED_RESULT;
 @end
 
 

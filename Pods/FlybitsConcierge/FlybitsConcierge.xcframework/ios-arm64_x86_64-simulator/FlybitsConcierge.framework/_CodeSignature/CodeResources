@@ -6,11 +6,11 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		r3QD+pgD85AWcjxGCLPKvf8zf8c=
+		3XFg4Y7zNhXGfNCHEOMPwppO4H0=
 		</data>
 		<key>Base.lproj/Localizable.strings</key>
 		<data>
-		CUprAv+UC8Mjpucm1xuVBuQUpmY=
+		JY/pagNQiEFLdk0G3zzeC0/hk+M=
 		</data>
 		<key>ButtonBannerViewControllerVFL.json</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Headers/FlybitsConcierge-Swift.h</key>
 		<data>
-		l74EwWdU6FvPxVKMt0m/UYR4qNM=
+		BvsCw5kY4ItdvUQP8vzszl3CNt4=
 		</data>
 		<key>Headers/FlybitsConcierge.h</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		QcKcLKaIjIrTL4WZUxHsW/+KXu8=
+		kh7/YBoeAnnYJ9tLIhOww3Kgac4=
 		</data>
 		<key>LinkBannerViewControllerVFL.json</key>
 		<data>
@@ -50,51 +50,51 @@
 		</data>
 		<key>Modules/FlybitsConcierge.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		K/hMjtVaZdphvmpPUksKA0/AOrU=
+		/xRak3ZdaXRPiFig5ITdiRu7oEQ=
 		</data>
 		<key>Modules/FlybitsConcierge.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		/xwlj7Fn2ArJkJao1IcqcU4zqw8=
+		CLmdmcb82ha65rXmUAzeoOfQlIM=
 		</data>
 		<key>Modules/FlybitsConcierge.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		K7bnc7Cn7XuHCUCn8zRq2LXuUqs=
+		9feKv+AypiTGp0r7sPYerN0WZoA=
 		</data>
 		<key>Modules/FlybitsConcierge.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		K/hMjtVaZdphvmpPUksKA0/AOrU=
+		/xRak3ZdaXRPiFig5ITdiRu7oEQ=
 		</data>
 		<key>Modules/FlybitsConcierge.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		/xwlj7Fn2ArJkJao1IcqcU4zqw8=
+		CLmdmcb82ha65rXmUAzeoOfQlIM=
 		</data>
 		<key>Modules/FlybitsConcierge.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		K7bnc7Cn7XuHCUCn8zRq2LXuUqs=
+		9feKv+AypiTGp0r7sPYerN0WZoA=
 		</data>
 		<key>Modules/FlybitsConcierge.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		HsreljGEE1HS33Xf2JiT6Fv8Jo8=
+		ybO8iZ4O/y6/BYtF3SHlcDNUXno=
 		</data>
 		<key>Modules/FlybitsConcierge.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		zmQU9Tcoocb/ARFgICAckWNh7LA=
+		LJMHxJ8ctvkMsJtFoRAhcpIHom8=
 		</data>
 		<key>Modules/FlybitsConcierge.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		hebCh8sm7o7kglS0LWdeZfmBMfk=
+		QThNleJ9so4bWM2RW9pT0YVbFDQ=
 		</data>
 		<key>Modules/FlybitsConcierge.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		HsreljGEE1HS33Xf2JiT6Fv8Jo8=
+		ybO8iZ4O/y6/BYtF3SHlcDNUXno=
 		</data>
 		<key>Modules/FlybitsConcierge.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		zmQU9Tcoocb/ARFgICAckWNh7LA=
+		LJMHxJ8ctvkMsJtFoRAhcpIHom8=
 		</data>
 		<key>Modules/FlybitsConcierge.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		hebCh8sm7o7kglS0LWdeZfmBMfk=
+		QThNleJ9so4bWM2RW9pT0YVbFDQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -117,7 +117,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			dtsWzPl3xx7Y0kRgf+qTVPeuVqw=
+			wgkQP/qpGAaZEUvqXzcaJuQIQ6A=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -160,14 +160,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			cgIZT5NzKPBVie4G6RPhQhIArQGayI3ym/CTCJgwrqc=
+			n6a8N0O6PGxJ78if0C0QGQOTM/+TdTpvkKVJb6kDJuw=
 			</data>
 		</dict>
 		<key>Base.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			UavXNH+1Jnz2WDbKA4Qr09WiAkpyAgL6+QKrl/TSWUo=
+			srr9xBUWoaUsdrc5+XXl1cRUDuVpcd6YYnwv7+g0ipA=
 			</data>
 		</dict>
 		<key>ButtonBannerViewControllerVFL.json</key>
@@ -202,7 +202,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			JAzC6uugEhuGhHtWNf6uzjucH/rf8IKK6ftEz4hkzW0=
+			uzvJYbGhSWKIV7j8OhVmDpGK8ZYgjC6vB+tBFWpASqk=
 			</data>
 		</dict>
 		<key>Headers/FlybitsConcierge.h</key>
@@ -230,84 +230,84 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6FHLcwudNB/Wjjt7849m7qF9Mjx0HR2+eAOt3If4cf4=
+			FGTnLgD3O+J2Fjtb+3kgoY+4+AzyM5iZ1wRu9s3Ol3I=
 			</data>
 		</dict>
 		<key>Modules/FlybitsConcierge.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DZZs0eGzMddVm8yO94/Z5Giw1X6dbGK5Rh+fALCxn3k=
+			dRKENIDNkPePL04+dpoyGb0SnzDG8FxypwsA0Z9gEXA=
 			</data>
 		</dict>
 		<key>Modules/FlybitsConcierge.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OEd2IXkOUQOSPoGkj4wGflSZiGL22VQVqzGxcDpekxU=
+			l0YgMnVHsqtfy5bduGFaZVCjAR4iit7hY4QkWp7qzus=
 			</data>
 		</dict>
 		<key>Modules/FlybitsConcierge.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6FHLcwudNB/Wjjt7849m7qF9Mjx0HR2+eAOt3If4cf4=
+			FGTnLgD3O+J2Fjtb+3kgoY+4+AzyM5iZ1wRu9s3Ol3I=
 			</data>
 		</dict>
 		<key>Modules/FlybitsConcierge.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DZZs0eGzMddVm8yO94/Z5Giw1X6dbGK5Rh+fALCxn3k=
+			dRKENIDNkPePL04+dpoyGb0SnzDG8FxypwsA0Z9gEXA=
 			</data>
 		</dict>
 		<key>Modules/FlybitsConcierge.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OEd2IXkOUQOSPoGkj4wGflSZiGL22VQVqzGxcDpekxU=
+			l0YgMnVHsqtfy5bduGFaZVCjAR4iit7hY4QkWp7qzus=
 			</data>
 		</dict>
 		<key>Modules/FlybitsConcierge.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			HX0IYA8cWKABVS/cQntDPQGt3HvagV2m2w2ICAXEm64=
+			nETMahoCuLxVzZzzsYK5noTjmbuLNXCmcFfGyPV2sJ0=
 			</data>
 		</dict>
 		<key>Modules/FlybitsConcierge.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DFTmO5+2d31lTr8ylb0e9WQtmDLi7+CIhKWN6hWVLaU=
+			awWiaryIAr7yegXUZcDXlXl5CA+j2wwuHTBimUC7e1g=
 			</data>
 		</dict>
 		<key>Modules/FlybitsConcierge.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qynl/vcMsn1mzrXirdZNOKmMqiBrArD0umvnxax2ygY=
+			riI3GxB31E06R6PfmGx4H+gMozW1j0SyTcV2Nj5rzFE=
 			</data>
 		</dict>
 		<key>Modules/FlybitsConcierge.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			HX0IYA8cWKABVS/cQntDPQGt3HvagV2m2w2ICAXEm64=
+			nETMahoCuLxVzZzzsYK5noTjmbuLNXCmcFfGyPV2sJ0=
 			</data>
 		</dict>
 		<key>Modules/FlybitsConcierge.swiftmodule/x86_64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DFTmO5+2d31lTr8ylb0e9WQtmDLi7+CIhKWN6hWVLaU=
+			awWiaryIAr7yegXUZcDXlXl5CA+j2wwuHTBimUC7e1g=
 			</data>
 		</dict>
 		<key>Modules/FlybitsConcierge.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qynl/vcMsn1mzrXirdZNOKmMqiBrArD0umvnxax2ygY=
+			riI3GxB31E06R6PfmGx4H+gMozW1j0SyTcV2Nj5rzFE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -337,7 +337,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			f4AwyjM2USz4T796Vq0hZS3hAyFmLjbfz/AAT+kWlF4=
+			pldHlZ7ebu8MUe6jx72q1ewgrArbMR2jFlFKycHi0FM=
 			</data>
 			<key>optional</key>
 			<true/>

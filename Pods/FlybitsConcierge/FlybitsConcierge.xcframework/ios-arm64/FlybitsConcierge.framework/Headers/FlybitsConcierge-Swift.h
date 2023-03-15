@@ -266,6 +266,7 @@ SWIFT_CLASS("_TtC16FlybitsConcierge17DetailContentData")
 @end
 
 
+
 SWIFT_CLASS("_TtC16FlybitsConcierge16MediaContentData")
 @interface MediaContentData : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -274,21 +275,6 @@ SWIFT_CLASS("_TtC16FlybitsConcierge16MediaContentData")
 
 
 
-
-
-/// class <code>StreamlinedContentAnalyticsContext</code> is used to track streamlined content analytics
-SWIFT_CLASS("_TtC16FlybitsConcierge34StreamlinedContentAnalyticsContext")
-@interface StreamlinedContentAnalyticsContext : NSObject
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-/// Class <code>StreamlinedContentPushAnalyticsContext</code> is used to track if user has engaged in a component in content
-/// that comes from a push notification
-SWIFT_CLASS("_TtC16FlybitsConcierge38StreamlinedContentPushAnalyticsContext")
-@interface StreamlinedContentPushAnalyticsContext : NSObject
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
 
 
 

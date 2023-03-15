@@ -64,6 +64,11 @@ import Swift
   @objc override dynamic public init()
   @objc deinit
 }
+@objc @_inheritsConvenienceInitializers @objcMembers final public class EmbeddedContentData : FlybitsKernelSDK.ContentData, Swift.Encodable {
+  required public init(from decoder: Swift.Decoder) throws
+  final public func encode(to encoder: Swift.Encoder) throws
+  @objc deinit
+}
 @objc @objcMembers public class LabelsCompoundQuery : FlybitsKernelSDK.LabelsQuery {
   @objc public var queries: [FlybitsKernelSDK.LabelsQuery]
   @objc public init(queries: [FlybitsKernelSDK.LabelsQuery], booleanOperator: FlybitsKernelSDK.BooleanOperator)
@@ -78,7 +83,8 @@ import Swift
   public var templateType: Swift.String?
   public var locationQuery: FlybitsKernelSDK.LocationQuery?
   public var groupId: Swift.String?
-  convenience public init(types: [Swift.String : FlybitsKernelSDK.ContentData.Type]?, labelsQuery: FlybitsKernelSDK.LabelsQuery? = nil, groupId: Swift.String? = nil, pager: FlybitsSDK.Pager? = nil)
+  public var renderType: FlybitsKernelSDK.ContentRenderType
+  convenience public init(types: [Swift.String : FlybitsKernelSDK.ContentData.Type]?, labelsQuery: FlybitsKernelSDK.LabelsQuery? = nil, groupId: Swift.String? = nil, pager: FlybitsSDK.Pager? = nil, renderType: FlybitsKernelSDK.ContentRenderType? = nil)
   @objc convenience public init(contentTypes: [Swift.String : FlybitsKernelSDK.ContentData.Type]?, labelsQuery: FlybitsKernelSDK.LabelsQuery?, pager: FlybitsSDK.Pager?)
   required public init(_ pager: FlybitsSDK.Pager?)
   public func toDictionary() throws -> [Swift.String : Any]
@@ -169,9 +175,34 @@ import Swift
   @objc override dynamic public init()
   @objc deinit
 }
+@objc public enum ContentRenderType : Swift.Int {
+  case `default`
+  case html
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 @objc public class Content : ObjectiveC.NSObject, Swift.Decodable, FlybitsSDK.DictionaryConvertible {
   public static var favorites: [Swift.String] {
     get
+  }
+  public enum ContentKey : Swift.String, Swift.CodingKey {
+    case data, pagination
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
   }
   public var identifier: Swift.String {
     get
@@ -209,10 +240,10 @@ import Swift
   public var metadata: [Swift.String : Any]? {
     get
   }
-  public var surveyMetadata: [Swift.String : Any]? {
+  public var pagedContentData: FlybitsSDK.Paged<FlybitsKernelSDK.ContentData>? {
     get
   }
-  public var pagedContentData: FlybitsSDK.Paged<FlybitsKernelSDK.ContentData>? {
+  public var keyedContentDataContainer: Swift.KeyedDecodingContainer<FlybitsKernelSDK.Content.ContentKey>? {
     get
   }
   public var isFavorite: Swift.Bool {
@@ -229,8 +260,20 @@ import Swift
     get
     set
   }
+  public var defaultUIConfig: FlybitsKernelSDK.UIConfiguration? {
+    get
+  }
+  public var detailsUIConfig: FlybitsKernelSDK.UIConfiguration? {
+    get
+  }
+  public var renderType: FlybitsKernelSDK.ContentRenderType {
+    get
+  }
   required public init(from decoder: Swift.Decoder) throws
+  @discardableResult
   public static func getAllRelevant(with query: FlybitsKernelSDK.ContentQuery? = nil, includeRTF: Swift.Bool = false, completion: @escaping (FlybitsSDK.Paged<FlybitsKernelSDK.Content>?, Swift.Error?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest?
+  @discardableResult
+  public static func getConfiguredAllRelevant(with query: FlybitsKernelSDK.ContentQuery? = nil, includeRTF: Swift.Bool = false, completion: @escaping (FlybitsSDK.Paged<FlybitsKernelSDK.Content>?, Swift.Error?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest?
   public static func getAllInstances(with query: FlybitsKernelSDK.ContentQuery? = nil, includeRTF: Swift.Bool = false, completion: @escaping (FlybitsSDK.Paged<FlybitsKernelSDK.Content>?, Swift.Error?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest?
   public static func getInstances(withIds instanceIdentifiers: [Swift.String], query: FlybitsKernelSDK.ContentQuery? = nil, includeRTF: Swift.Bool = false, completion: @escaping (FlybitsSDK.Paged<FlybitsKernelSDK.Content>?, Swift.Error?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest?
   public static func getInstance(identifier: Swift.String, query: FlybitsKernelSDK.ContentQuery? = nil, includeRTF: Swift.Bool = false, completion: @escaping (FlybitsKernelSDK.Content?, Swift.Error?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest?
@@ -249,6 +292,7 @@ import Swift
   public func addFavorite(completion: ((Foundation.NSError?) -> Swift.Void)?) -> FlybitsSDK.FlybitsRequest?
   @discardableResult
   public func removeFavorite(completion: ((Foundation.NSError?) -> Swift.Void)?) -> FlybitsSDK.FlybitsRequest?
+  public static func initializeEmbeddedContentPagedContent(keyedContainer: Swift.KeyedDecodingContainer<FlybitsKernelSDK.Content.ContentKey>?, using contentObj: FlybitsKernelSDK.Content) throws
   public init(templateId: Swift.String, name: FlybitsSDK.LocalizedObject<Swift.String>, description: FlybitsSDK.LocalizedObject<Swift.String>)
   public func toDictionary() throws -> [Swift.String : Any]
   @objc override dynamic public init()
@@ -263,15 +307,20 @@ public class ExperienceQuery : FlybitsSDK.Query {
   @objc deinit
 }
 @objc open class ContentData : ObjectiveC.NSObject, Swift.Decodable, FlybitsSDK.DictionaryConvertible {
-  public struct ContentInfo {
+  public struct ContentInfo : Swift.Equatable {
     public let contentId: Swift.String
     public let experienceId: Swift.String?
     public let pushRequestId: Swift.String?
     public let templateType: Swift.String?
     public let localizedCategory: FlybitsSDK.LocalizedObject<Swift.String>?
+    public let defaultUIConfig: FlybitsKernelSDK.UIConfiguration?
+    public let detailsUIConfig: FlybitsKernelSDK.UIConfiguration?
+    public let renderType: FlybitsKernelSDK.ContentRenderType
+    public static func == (lhs: FlybitsKernelSDK.ContentData.ContentInfo, rhs: FlybitsKernelSDK.ContentData.ContentInfo) -> Swift.Bool
   }
-  public class LocationContentData : Swift.Decodable {
+  public class LocationContentData : Swift.Decodable, Swift.Equatable {
     required public init(from decoder: Swift.Decoder) throws
+    public static func == (lhs: FlybitsKernelSDK.ContentData.LocationContentData, rhs: FlybitsKernelSDK.ContentData.LocationContentData) -> Swift.Bool
     @objc deinit
   }
   public var identifier: Swift.String? {
@@ -359,6 +408,15 @@ extension Content {
   public func pagedContentDataList() -> [FlybitsKernelSDK.ContentData]?
   public func pagedContentDataPager() -> FlybitsSDK.Pager?
 }
+public struct UIConfiguration : Swift.Decodable, Swift.Equatable {
+  public let layout: Swift.String
+  public let layoutHTML: Swift.String
+  public let styleCSSURL: Swift.String
+  public let styleCSS: Swift.String
+  public init(layout: Swift.String = "", layoutHTML: Swift.String = "", styleCSSURL: Swift.String = "", styleCSS: Swift.String = "")
+  public static func == (lhs: FlybitsKernelSDK.UIConfiguration, rhs: FlybitsKernelSDK.UIConfiguration) -> Swift.Bool
+  public init(from decoder: Swift.Decoder) throws
+}
 @objc @_inheritsConvenienceInitializers public class ExperienceContentAnalyticsContext : ObjectiveC.NSObject {
   public static func trackViewed(contentId: Swift.String, experienceId: Swift.String, value: Swift.Bool = true, timestamp: Swift.Double? = nil, sendImmediately: Swift.Bool = false)
   public static func trackFulfilled(contentId: Swift.String, experienceId: Swift.String, value: Swift.Bool = true, timestamp: Swift.Double? = nil, sendImmediately: Swift.Bool = false)
@@ -367,6 +425,12 @@ extension Content {
   @objc override dynamic public init()
   @objc deinit
 }
+extension FlybitsKernelSDK.ContentRenderType : Swift.Equatable {}
+extension FlybitsKernelSDK.ContentRenderType : Swift.Hashable {}
+extension FlybitsKernelSDK.ContentRenderType : Swift.RawRepresentable {}
+extension FlybitsKernelSDK.Content.ContentKey : Swift.Equatable {}
+extension FlybitsKernelSDK.Content.ContentKey : Swift.Hashable {}
+extension FlybitsKernelSDK.Content.ContentKey : Swift.RawRepresentable {}
 extension FlybitsKernelSDK.BooleanOperator : Swift.Equatable {}
 extension FlybitsKernelSDK.BooleanOperator : Swift.Hashable {}
 extension FlybitsKernelSDK.BooleanOperator : Swift.RawRepresentable {}

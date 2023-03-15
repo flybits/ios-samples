@@ -259,6 +259,21 @@ SWIFT_CLASS("_TtC16FlybitsKernelSDK12ContentQuery")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+/// Possible render types for Flybits Content.
+/// note:
+/// Render Type is required for v5 Concierge.
+typedef SWIFT_ENUM(NSInteger, ContentRenderType, open) {
+  ContentRenderTypeDefault = 0,
+  ContentRenderTypeHtml = 1,
+};
+
+
+/// The <code>EmbeddedContentData</code> class is responsible for defining embedded model
+/// for parsing content data for configured Concierge usage.
+SWIFT_CLASS("_TtC16FlybitsKernelSDK19EmbeddedContentData")
+@interface EmbeddedContentData : ContentData
+@end
+
 
 /// The <code>Experience</code> class is a container for <code>Content</code> instances.
 SWIFT_CLASS("_TtC16FlybitsKernelSDK10Experience")

@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12EF011D29C0BBBA00C019C2 /* FourLakesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EF011C29C0BBBA00C019C2 /* FourLakesApp.swift */; };
+		12EF011F29C0BBBA00C019C2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EF011E29C0BBBA00C019C2 /* ContentView.swift */; };
+		12EF012129C0BBBD00C019C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12EF012029C0BBBD00C019C2 /* Assets.xcassets */; };
+		12EF012429C0BBBD00C019C2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12EF012329C0BBBD00C019C2 /* Preview Assets.xcassets */; };
+		12EF012E29C0BBBE00C019C2 /* FourLakesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EF012D29C0BBBE00C019C2 /* FourLakesTests.swift */; };
+		12EF013829C0BBBE00C019C2 /* FourLakesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EF013729C0BBBE00C019C2 /* FourLakesUITests.swift */; };
+		12EF013A29C0BBBE00C019C2 /* FourLakesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EF013929C0BBBE00C019C2 /* FourLakesUITestsLaunchTests.swift */; };
+		12EF014529C0C2EC00C019C2 /* AuthenticationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EF014429C0C2EC00C019C2 /* AuthenticationScreen.swift */; };
+		12EF014729C0D74900C019C2 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EF014629C0D74900C019C2 /* LoadingView.swift */; };
+		12EF014929C0E9A700C019C2 /* FourLakesConcierge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EF014829C0E9A700C019C2 /* FourLakesConcierge.swift */; };
+		12EF014B29C0F08700C019C2 /* AccountsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EF014A29C0F08700C019C2 /* AccountsView.swift */; };
 		196A99112F5ECE4BB548928B /* Pods_Expose_Bank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A567FE867237D537B3D6B055 /* Pods_Expose_Bank.framework */; };
 		1DF109BEDDCCA76601914A56 /* Pods_Contextual_Theming.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B14336B81CACEA6843A67135 /* Pods_Contextual_Theming.framework */; };
 		2572B73628241FB9000499D2 /* Expose_BankUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2572B73528241FB9000499D2 /* Expose_BankUITests.swift */; };
@@ -60,10 +71,25 @@
 		E41D4EEA283FD6B200D24A0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E41D4EE9283FD6B200D24A0C /* Assets.xcassets */; };
 		E41D4EED283FD6B200D24A0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E41D4EEB283FD6B200D24A0C /* LaunchScreen.storyboard */; };
 		E41D4EF728400E2100D24A0C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41D4EF628400E2100D24A0C /* SceneDelegate.swift */; };
+		EF914390C3A0ADF26E5BB73B /* Pods_FourLakes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDDD3B22A44C4A52F85CF71F /* Pods_FourLakes.framework */; };
 		F3EDA3BA252498ACA326B123 /* Pods_Modify_Existing_Style.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0344B8009B06BB46E1EA89C5 /* Pods_Modify_Existing_Style.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		12EF012A29C0BBBD00C019C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 25EA00062820655A004F982B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 12EF011929C0BBBA00C019C2;
+			remoteInfo = FourLakes;
+		};
+		12EF013429C0BBBE00C019C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 25EA00062820655A004F982B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 12EF011929C0BBBA00C019C2;
+			remoteInfo = FourLakes;
+		};
 		2572B73928241FB9000499D2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 25EA00062820655A004F982B /* Project object */;
@@ -76,6 +102,20 @@
 /* Begin PBXFileReference section */
 		0344B8009B06BB46E1EA89C5 /* Pods_Modify_Existing_Style.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Modify_Existing_Style.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		05D8D5668C543ED06D8CD7FA /* Pods-Contextual_Theming.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Contextual_Theming.release.xcconfig"; path = "Target Support Files/Pods-Contextual_Theming/Pods-Contextual_Theming.release.xcconfig"; sourceTree = "<group>"; };
+		12EF011A29C0BBBA00C019C2 /* FourLakes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FourLakes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		12EF011C29C0BBBA00C019C2 /* FourLakesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourLakesApp.swift; sourceTree = "<group>"; };
+		12EF011E29C0BBBA00C019C2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		12EF012029C0BBBD00C019C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		12EF012329C0BBBD00C019C2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		12EF012929C0BBBD00C019C2 /* FourLakesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FourLakesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		12EF012D29C0BBBE00C019C2 /* FourLakesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourLakesTests.swift; sourceTree = "<group>"; };
+		12EF013329C0BBBE00C019C2 /* FourLakesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FourLakesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		12EF013729C0BBBE00C019C2 /* FourLakesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourLakesUITests.swift; sourceTree = "<group>"; };
+		12EF013929C0BBBE00C019C2 /* FourLakesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourLakesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		12EF014429C0C2EC00C019C2 /* AuthenticationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationScreen.swift; sourceTree = "<group>"; };
+		12EF014629C0D74900C019C2 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		12EF014829C0E9A700C019C2 /* FourLakesConcierge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourLakesConcierge.swift; sourceTree = "<group>"; };
+		12EF014A29C0F08700C019C2 /* AccountsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsView.swift; sourceTree = "<group>"; };
 		1A139ED8A73E0EE82A93A9F4 /* Pods-FullScreen_Concierge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FullScreen_Concierge.release.xcconfig"; path = "Target Support Files/Pods-FullScreen_Concierge/Pods-FullScreen_Concierge.release.xcconfig"; sourceTree = "<group>"; };
 		1DA9D779E84A4DE279961B06 /* Pods_Connect_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Connect_Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2559EADF0C6E2F5A457278C9 /* Pods-Modify-Existing-Style.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Modify-Existing-Style.debug.xcconfig"; path = "Target Support Files/Pods-Modify-Existing-Style/Pods-Modify-Existing-Style.debug.xcconfig"; sourceTree = "<group>"; };
@@ -121,6 +161,7 @@
 		435F58348F0C48ED3E41DA40 /* Pods-FullScreen_Concierge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FullScreen_Concierge.debug.xcconfig"; path = "Target Support Files/Pods-FullScreen_Concierge/Pods-FullScreen_Concierge.debug.xcconfig"; sourceTree = "<group>"; };
 		436F727C380F902EA10847C3 /* Pods-Expose-Bank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Expose-Bank.debug.xcconfig"; path = "Target Support Files/Pods-Expose-Bank/Pods-Expose-Bank.debug.xcconfig"; sourceTree = "<group>"; };
 		4C0A07C5C3102018D330A82F /* Pods-Contextual_Theming.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Contextual_Theming.debug.xcconfig"; path = "Target Support Files/Pods-Contextual_Theming/Pods-Contextual_Theming.debug.xcconfig"; sourceTree = "<group>"; };
+		4C40C32F3B061FE3D27D9854 /* Pods-FourLakes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FourLakes.release.xcconfig"; path = "Target Support Files/Pods-FourLakes/Pods-FourLakes.release.xcconfig"; sourceTree = "<group>"; };
 		576A4AA32836917500498C70 /* FullScreen_Concierge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FullScreen_Concierge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		576A4AA52836917500498C70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		576A4AA72836917500498C70 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -142,11 +183,13 @@
 		A567FE867237D537B3D6B055 /* Pods_Expose_Bank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Expose_Bank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A75CAC46C5349CD7EC7E0DB5 /* Pods-Expose-Bank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Expose-Bank.release.xcconfig"; path = "Target Support Files/Pods-Expose-Bank/Pods-Expose-Bank.release.xcconfig"; sourceTree = "<group>"; };
 		B14336B81CACEA6843A67135 /* Pods_Contextual_Theming.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Contextual_Theming.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8D8216DC42413AE1D0AE7F2 /* Pods-FourLakes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FourLakes.debug.xcconfig"; path = "Target Support Files/Pods-FourLakes/Pods-FourLakes.debug.xcconfig"; sourceTree = "<group>"; };
 		C20CED54147A5A390BA65CDF /* Pods-Customize-Expose-Button.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Customize-Expose-Button.debug.xcconfig"; path = "Target Support Files/Pods-Customize-Expose-Button/Pods-Customize-Expose-Button.debug.xcconfig"; sourceTree = "<group>"; };
 		C215A5ECC0CA17D74D2A4321 /* Pods_Customize_Expose_Button.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Customize_Expose_Button.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C407E452A6CA30D008186555 /* Pods-Banner-Bank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Banner-Bank.release.xcconfig"; path = "Target Support Files/Pods-Banner-Bank/Pods-Banner-Bank.release.xcconfig"; sourceTree = "<group>"; };
 		D429B39E0CB89A7C9BBDB2D2 /* Pods-Connect-Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connect-Sample.debug.xcconfig"; path = "Target Support Files/Pods-Connect-Sample/Pods-Connect-Sample.debug.xcconfig"; sourceTree = "<group>"; };
 		DACB4D79D0ABCB6638144C1A /* Pods-Connect-Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connect-Sample.release.xcconfig"; path = "Target Support Files/Pods-Connect-Sample/Pods-Connect-Sample.release.xcconfig"; sourceTree = "<group>"; };
+		DDDD3B22A44C4A52F85CF71F /* Pods_FourLakes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FourLakes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E41D4EDE283FD6B100D24A0C /* Banner-Bank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Banner-Bank.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E41D4EE0283FD6B100D24A0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E41D4EE4283FD6B100D24A0C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +204,28 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		12EF011729C0BBBA00C019C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF914390C3A0ADF26E5BB73B /* Pods_FourLakes.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12EF012629C0BBBD00C019C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12EF013029C0BBBE00C019C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2572B73028241FB9000499D2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -227,6 +292,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12EF011B29C0BBBA00C019C2 /* FourLakes */ = {
+			isa = PBXGroup;
+			children = (
+				12EF011C29C0BBBA00C019C2 /* FourLakesApp.swift */,
+				12EF011E29C0BBBA00C019C2 /* ContentView.swift */,
+				12EF012029C0BBBD00C019C2 /* Assets.xcassets */,
+				12EF012229C0BBBD00C019C2 /* Preview Content */,
+				12EF014429C0C2EC00C019C2 /* AuthenticationScreen.swift */,
+				12EF014629C0D74900C019C2 /* LoadingView.swift */,
+				12EF014829C0E9A700C019C2 /* FourLakesConcierge.swift */,
+				12EF014A29C0F08700C019C2 /* AccountsView.swift */,
+			);
+			path = FourLakes;
+			sourceTree = "<group>";
+		};
+		12EF012229C0BBBD00C019C2 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				12EF012329C0BBBD00C019C2 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		12EF012C29C0BBBD00C019C2 /* FourLakesTests */ = {
+			isa = PBXGroup;
+			children = (
+				12EF012D29C0BBBE00C019C2 /* FourLakesTests.swift */,
+			);
+			path = FourLakesTests;
+			sourceTree = "<group>";
+		};
+		12EF013629C0BBBE00C019C2 /* FourLakesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				12EF013729C0BBBE00C019C2 /* FourLakesUITests.swift */,
+				12EF013929C0BBBE00C019C2 /* FourLakesUITestsLaunchTests.swift */,
+			);
+			path = FourLakesUITests;
+			sourceTree = "<group>";
+		};
 		14438011C5946C63B2E0C055 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +342,7 @@
 				C215A5ECC0CA17D74D2A4321 /* Pods_Customize_Expose_Button.framework */,
 				B14336B81CACEA6843A67135 /* Pods_Contextual_Theming.framework */,
 				1DA9D779E84A4DE279961B06 /* Pods_Connect_Sample.framework */,
+				DDDD3B22A44C4A52F85CF71F /* Pods_FourLakes.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -291,6 +397,9 @@
 				25B2F7D328E219EE0086F403 /* Customize-Expose-Button */,
 				25B2F7EB28E234440086F403 /* Contextual_Theming */,
 				25F8D286294137EF001E6C15 /* Connect-Sample */,
+				12EF011B29C0BBBA00C019C2 /* FourLakes */,
+				12EF012C29C0BBBD00C019C2 /* FourLakesTests */,
+				12EF013629C0BBBE00C019C2 /* FourLakesUITests */,
 				25EA000F2820655A004F982B /* Products */,
 				C1AA5A0ED9EAB99CB4D15007 /* Pods */,
 				14438011C5946C63B2E0C055 /* Frameworks */,
@@ -308,6 +417,9 @@
 				25B2F7D228E219EE0086F403 /* Customize-Expose-Button.app */,
 				25B2F7EA28E234440086F403 /* Contextual_Theming.app */,
 				25F8D285294137EF001E6C15 /* Connect-Sample.app */,
+				12EF011A29C0BBBA00C019C2 /* FourLakes.app */,
+				12EF012929C0BBBD00C019C2 /* FourLakesTests.xctest */,
+				12EF013329C0BBBE00C019C2 /* FourLakesUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -387,6 +499,8 @@
 				05D8D5668C543ED06D8CD7FA /* Pods-Contextual_Theming.release.xcconfig */,
 				D429B39E0CB89A7C9BBDB2D2 /* Pods-Connect-Sample.debug.xcconfig */,
 				DACB4D79D0ABCB6638144C1A /* Pods-Connect-Sample.release.xcconfig */,
+				B8D8216DC42413AE1D0AE7F2 /* Pods-FourLakes.debug.xcconfig */,
+				4C40C32F3B061FE3D27D9854 /* Pods-FourLakes.release.xcconfig */,
 			);
 			name = Pods;
 			path = ../../Pods;
@@ -409,6 +523,61 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		12EF011929C0BBBA00C019C2 /* FourLakes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12EF014129C0BBBE00C019C2 /* Build configuration list for PBXNativeTarget "FourLakes" */;
+			buildPhases = (
+				7B8EB68CDBD5DA86B541F0A1 /* [CP] Check Pods Manifest.lock */,
+				12EF011629C0BBBA00C019C2 /* Sources */,
+				12EF011729C0BBBA00C019C2 /* Frameworks */,
+				12EF011829C0BBBA00C019C2 /* Resources */,
+				3701D0CE10BC9952DC5DFFC6 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FourLakes;
+			productName = FourLakes;
+			productReference = 12EF011A29C0BBBA00C019C2 /* FourLakes.app */;
+			productType = "com.apple.product-type.application";
+		};
+		12EF012829C0BBBD00C019C2 /* FourLakesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12EF014229C0BBBE00C019C2 /* Build configuration list for PBXNativeTarget "FourLakesTests" */;
+			buildPhases = (
+				12EF012529C0BBBD00C019C2 /* Sources */,
+				12EF012629C0BBBD00C019C2 /* Frameworks */,
+				12EF012729C0BBBD00C019C2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				12EF012B29C0BBBD00C019C2 /* PBXTargetDependency */,
+			);
+			name = FourLakesTests;
+			productName = FourLakesTests;
+			productReference = 12EF012929C0BBBD00C019C2 /* FourLakesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		12EF013229C0BBBE00C019C2 /* FourLakesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12EF014329C0BBBE00C019C2 /* Build configuration list for PBXNativeTarget "FourLakesUITests" */;
+			buildPhases = (
+				12EF012F29C0BBBE00C019C2 /* Sources */,
+				12EF013029C0BBBE00C019C2 /* Frameworks */,
+				12EF013129C0BBBE00C019C2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				12EF013529C0BBBE00C019C2 /* PBXTargetDependency */,
+			);
+			name = FourLakesUITests;
+			productName = FourLakesUITests;
+			productReference = 12EF013329C0BBBE00C019C2 /* FourLakesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		2572B73228241FB9000499D2 /* Expose-BankUITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2572B73D28241FB9000499D2 /* Build configuration list for PBXNativeTarget "Expose-BankUITests" */;
@@ -567,9 +736,20 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1410;
+				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
+					12EF011929C0BBBA00C019C2 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					12EF012829C0BBBD00C019C2 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 12EF011929C0BBBA00C019C2;
+					};
+					12EF013229C0BBBE00C019C2 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 12EF011929C0BBBA00C019C2;
+					};
 					2572B73228241FB9000499D2 = {
 						CreatedOnToolsVersion = 13.3.1;
 						TestTargetID = 25EA000D2820655A004F982B;
@@ -618,11 +798,37 @@
 				25B2F7D128E219EE0086F403 /* Customize-Expose-Button */,
 				25B2F7E928E234440086F403 /* Contextual_Theming */,
 				25F8D284294137EF001E6C15 /* Connect-Sample */,
+				12EF011929C0BBBA00C019C2 /* FourLakes */,
+				12EF012829C0BBBD00C019C2 /* FourLakesTests */,
+				12EF013229C0BBBE00C019C2 /* FourLakesUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		12EF011829C0BBBA00C019C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12EF012429C0BBBD00C019C2 /* Preview Assets.xcassets in Resources */,
+				12EF012129C0BBBD00C019C2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12EF012729C0BBBD00C019C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12EF013129C0BBBE00C019C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2572B73128241FB9000499D2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -806,6 +1012,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3701D0CE10BC9952DC5DFFC6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FourLakes/Pods-FourLakes-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FourLakes/Pods-FourLakes-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FourLakes/Pods-FourLakes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5AE6A21575ABBDF7E3AB8709 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -839,6 +1062,28 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Banner-Bank-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B8EB68CDBD5DA86B541F0A1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FourLakes-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -982,6 +1227,36 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		12EF011629C0BBBA00C019C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12EF011F29C0BBBA00C019C2 /* ContentView.swift in Sources */,
+				12EF014929C0E9A700C019C2 /* FourLakesConcierge.swift in Sources */,
+				12EF014B29C0F08700C019C2 /* AccountsView.swift in Sources */,
+				12EF014729C0D74900C019C2 /* LoadingView.swift in Sources */,
+				12EF014529C0C2EC00C019C2 /* AuthenticationScreen.swift in Sources */,
+				12EF011D29C0BBBA00C019C2 /* FourLakesApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12EF012529C0BBBD00C019C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12EF012E29C0BBBE00C019C2 /* FourLakesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12EF012F29C0BBBE00C019C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12EF013829C0BBBE00C019C2 /* FourLakesUITests.swift in Sources */,
+				12EF013A29C0BBBE00C019C2 /* FourLakesUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2572B72F28241FB9000499D2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1064,6 +1339,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		12EF012B29C0BBBD00C019C2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 12EF011929C0BBBA00C019C2 /* FourLakes */;
+			targetProxy = 12EF012A29C0BBBD00C019C2 /* PBXContainerItemProxy */;
+		};
+		12EF013529C0BBBE00C019C2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 12EF011929C0BBBA00C019C2 /* FourLakes */;
+			targetProxy = 12EF013429C0BBBE00C019C2 /* PBXContainerItemProxy */;
+		};
 		2572B73A28241FB9000499D2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 25EA000D2820655A004F982B /* Expose-Bank */;
@@ -1187,6 +1472,146 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		12EF013B29C0BBBE00C019C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8D8216DC42413AE1D0AE7F2 /* Pods-FourLakes.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FourLakes/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flybits.FourLakes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		12EF013C29C0BBBE00C019C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C40C32F3B061FE3D27D9854 /* Pods-FourLakes.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FourLakes/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flybits.FourLakes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		12EF013D29C0BBBE00C019C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flybits.FourLakesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FourLakes.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FourLakes";
+			};
+			name = Debug;
+		};
+		12EF013E29C0BBBE00C019C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flybits.FourLakesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FourLakes.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FourLakes";
+			};
+			name = Release;
+		};
+		12EF013F29C0BBBE00C019C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flybits.FourLakesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FourLakes;
+			};
+			name = Debug;
+		};
+		12EF014029C0BBBE00C019C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flybits.FourLakesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FourLakes;
+			};
+			name = Release;
+		};
 		2572B73B28241FB9000499D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1772,6 +2197,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		12EF014129C0BBBE00C019C2 /* Build configuration list for PBXNativeTarget "FourLakes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12EF013B29C0BBBE00C019C2 /* Debug */,
+				12EF013C29C0BBBE00C019C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		12EF014229C0BBBE00C019C2 /* Build configuration list for PBXNativeTarget "FourLakesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12EF013D29C0BBBE00C019C2 /* Debug */,
+				12EF013E29C0BBBE00C019C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		12EF014329C0BBBE00C019C2 /* Build configuration list for PBXNativeTarget "FourLakesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12EF013F29C0BBBE00C019C2 /* Debug */,
+				12EF014029C0BBBE00C019C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2572B73D28241FB9000499D2 /* Build configuration list for PBXNativeTarget "Expose-BankUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

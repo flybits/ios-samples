@@ -1,8 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
 // swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name FlybitsSDK
-import CoreData
-import CoreLocation
 @_exported import FlybitsSDK
 import Foundation
 import Swift
@@ -515,7 +513,7 @@ public struct MediaUpload {
   public func debug(_ closure: @autoclosure @escaping () -> Any?, file: Swift.String = #file, line: Swift.Int = #line)
   public func debugExec(_ block: () -> Swift.Void)
   public func warning(_ closure: @autoclosure @escaping () -> Any?, file: Swift.String = #file, line: Swift.Int = #line)
-  public func wariningExec(_ block: () -> Swift.Void)
+  public func warniningExec(_ block: () -> Swift.Void)
   public func error(_ closure: @autoclosure @escaping () -> Any?, file: Swift.String = #file, line: Swift.Int = #line)
   public func errorExec(_ block: () -> Swift.Void)
   public func info(_ closure: @autoclosure @escaping () -> Any?, file: Swift.String = #file, line: Swift.Int = #line)
@@ -834,6 +832,7 @@ public let log: FlybitsSDK.FlybitsLogger
 }
 extension FlybitsManager {
   @objc public static func status(for customerId: Swift.String) -> FlybitsSDK.CustomerStatus
+  @objc public static func activeUserStatus() -> FlybitsSDK.CustomerStatus
 }
 @_inheritsConvenienceInitializers @objc public class DeviceManager : ObjectiveC.NSObject {
   @discardableResult
@@ -1089,12 +1088,6 @@ public protocol UploadContextChannelConvertable {
   public static func add(values: [Swift.String]?, forKey key: Swift.String, to dictionary: inout [Swift.String : Any])
   public static func add(value: Swift.String?, forKey key: Swift.String, to dictionary: inout [Swift.String : Any])
   @objc deinit
-}
-extension CLLocation : FlybitsSDK.DictionaryConvertible {
-  public func toDictionary() throws -> [Swift.String : Any]
-}
-extension CLLocationCoordinate2D : FlybitsSDK.DictionaryConvertible {
-  public func toDictionary() throws -> [Swift.String : Any]
 }
 @objcMembers public class UserInfo : Swift.Codable, Swift.Equatable {
   public static func == (lhs: FlybitsSDK.UserInfo, rhs: FlybitsSDK.UserInfo) -> Swift.Bool
