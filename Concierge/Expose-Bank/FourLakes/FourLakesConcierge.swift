@@ -25,30 +25,64 @@ final class FourLakesConcierge {
             .setWebService("http://localhost:3000").build()
         Concierge.configure(configuration: config, contextPlugins: [])
     }
+
+    static func willNavigate(_ actionURL: URL) -> Bool {
+        guard let components = URLComponents(url: actionURL, resolvingAgainstBaseURL: false) else {
+            return false
+        }
+
+        print(["concierge"].contains(components.scheme!))
+
+        if let scheme = components.scheme, ["concierge"].contains(scheme) {
+            return true
+        } else {
+            return false
+        }
+    }
+
+    static func handleNonNavigationActionLink(_ actionableLink: URL) {
+        _ = Concierge.handleActionableLink(actionableLink)
+    }
 }
 
 struct FourLakesConciergeView: View {
 
     let zoneReferences: [String]
-    let events: (() -> ())?
+    let events: ((URL) -> ())?
+    let actionLinkURL: URL?
 
     private class internalDelegate: ConciergeEventsDelegate {
         var identifier: String = "\(#function)"
 
+        let events: ((URL) -> ())?
+
         func event(_ actionlink: URL, identifier: String) {
-            print("HERE")
-            Concierge.handleActionableLink(actionlink)
+            events?(actionlink)
+        }
+
+        init(_ events: ((URL) -> ())?) {
+            self.events = events
         }
     }
 
 
-    init(_ references: [String], events: (() -> ())?) {
+    init(_ references: [String], events: ((URL) -> ())?) {
         self.zoneReferences = references
         self.events = events
+        self.actionLinkURL = nil
+    }
+
+    init(_ actionLink: URL?, events: ((URL) -> ())?) {
+        self.zoneReferences = []
+        self.events = events
+        self.actionLinkURL = actionLink
     }
 
     var body: some View {
-        FourLakeConcierge(Concierge.zoneConfigurations(for: zoneReferences), Concierge.delegate(from: internalDelegate()))
+        guard let actionLinkURL = self.actionLinkURL else {
+            return FourLakeConcierge(Concierge.zoneConfigurations(for: zoneReferences), Concierge.delegate(from: internalDelegate(events)))
+        }
+        return FourLakeConcierge(actionLinkURL, Concierge.delegate(from: internalDelegate(events)))
     }
 }
 
@@ -69,15 +103,31 @@ extension FourLakesConciergeView {
 struct FourLakeConcierge: UIViewControllerRepresentable {
 
     let delegate: AnyConciergeEventsDelegate<ConciergeEventsDelegate>
-    let zoneConfig: ZonesConfig
+    let zoneConfig: ZonesConfig?
+    let actionableLink: URL?
 
     init(_ zm: ZonesConfig, _ delegate: AnyConciergeEventsDelegate<ConciergeEventsDelegate>) {
         self.zoneConfig = zm
         self.delegate = delegate
+        self.actionableLink = nil
+    }
+
+    init(_ actionLink: URL, _ delegate: AnyConciergeEventsDelegate<ConciergeEventsDelegate>) {
+        self.zoneConfig = nil
+        self.delegate = delegate
+        self.actionableLink = actionLink
     }
 
     func makeUIViewController(context: Context) -> UIViewController {
-        return Concierge.viewController(.configured, params: [.requestEvents(self.delegate), .zonesfilter(zoneConfig)], options: [])
+        
+        if let actionableLink = self.actionableLink {
+            return Concierge.handleActionableLink(actionableLink) ?? UIViewController()
+        } else {
+            guard let zm = zoneConfig else {
+                return Concierge.viewController(.configured, params: [.requestEvents(self.delegate)], options: [])
+            }
+            return Concierge.viewController(.configured, params: [.requestEvents(self.delegate), .zonesfilter(zm)], options: [])
+        }
     }
 
     func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
@@ -86,3 +136,9 @@ struct FourLakeConcierge: UIViewControllerRepresentable {
     typealias UIViewControllerType = UIViewController
 }
 
+
+struct Previews_FourLakesConcierge_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+    }
+}
