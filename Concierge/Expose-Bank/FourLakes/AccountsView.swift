@@ -24,6 +24,18 @@ struct AccountsView: View {
         NavigationView(content: {
             ScrollView(content: {
                 let _ = Self._printChanges()
+                ZStack {
+                   HStack {
+                       ForEach(["Accounts","Transfers","Deposits", "Send Money", "Pay A Bill"], id:\.self, content: { name in
+                           VStack {
+                               Image(name.lowercased()).resizable().frame(width: 44, height: 44)
+                               Text(name).dynamicTypeSize(.xSmall).foregroundColor(Color.white)
+                           }
+                           Spacer()
+                       })
+                   }
+                }.background(Color(red:5.0/255.0,green: 84.0/255.0,blue:52.0/255.0)).padding()
+                Image("ad").resizable().aspectRatio(contentMode: .fit)
                 FourLakesConciergeView(["Zone1"], events: { conciergeEvent in
                     if FourLakesConcierge.willNavigate(conciergeEvent) {
                         cEvent = conciergeEvent
@@ -33,7 +45,7 @@ struct AccountsView: View {
                     }
                 }).applyHeight()
 
-                ForEach(["Accounts", "Manage Transfers", "Savings"], id: \.self) { name in
+                ForEach(["Accounts","Transfers","Deposits", "Send Money", "Pay A Bill"], id: \.self) { name in
                     HStack {
                         Text(name)
                     }.frame(maxWidth: .infinity, minHeight: 60).background(content: {
@@ -41,17 +53,15 @@ struct AccountsView: View {
                     })
                 }
                 .padding([.leading, .trailing], 5).padding([.bottom], 5)
-                .background(Color(red: 211.0/255.0, green: 211.0/255.0, blue: 211.0/255.0))
+                .background(Color(red:5.0/255.0,green: 84.0/255.0,blue:52.0/255.0))
                 NavigationLink(destination:FourLakesConciergeView(cEvent, events: { conciergeEvent in
                     print(conciergeEvent)
                 }), tag: "4", selection: $selection) {
                     EmptyView()
                 }
             })
-            .background(.green)
-            .navigationTitle("Hello World")
+            .background(Color(red:5.0/255.0,green: 84.0/255.0,blue:52.0/255.0))
             .navigationBarTitleDisplayMode(.inline)
-
         })
     }
 }
