@@ -11,7 +11,9 @@ import SwiftUI
 
 final class FourLakesConcierge {
     static func authenticate(_ email: String, apiKey key: String, completion: @escaping () -> ()) {
-        let apiKey = APIKeyConciergeIDP(email: email, apiKey: key)
+        //let apiKey = APIKeyConciergeIDP(email: email, apiKey: key)
+
+        let apiKey = AnonymousConciergeIDP()
 
         Concierge.connect(with: apiKey, completion: { error in
             completion()
@@ -20,7 +22,7 @@ final class FourLakesConcierge {
 
     static func configure() {
         let config = FlybitsConciergeConfiguration.Builder()
-            .setProjectId("2CE41988-B1D3-4116-98DD-42FFB8754384")
+            .setProjectId("08A0D8CA-2173-4756-B70C-96A0984D8C68")
             .setGatewayUrl("https://api.demo.flybits.com")
             .setWebService("http://localhost:3000").build()
         Concierge.configure(configuration: config, contextPlugins: [])

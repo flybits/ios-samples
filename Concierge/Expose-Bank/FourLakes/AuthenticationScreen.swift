@@ -27,9 +27,6 @@ struct AuthenticationScreen: View {
                                 FourLakesConcierge.authenticate("user@td.com", apiKey: "27A3D5C8-B58C-47C1-ACFB-8B4506017AEC", completion: {
                                     DispatchQueue.main.sync {
                                         //UIApplication.shared.registerForRemoteNotifications()
-                                        UNUserNotificationCenter.current().requestAuthorization { result, error in
-                                            print(result, error)
-                                        }
                                         self.coordinator.screen = .account
                                     }
 

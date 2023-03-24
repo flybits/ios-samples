@@ -41,7 +41,7 @@ struct AccountsView: View {
                    }
                 }.background(Color(red:5.0/255.0,green: 84.0/255.0,blue:52.0/255.0)).padding()
                 Image("ad").resizable().aspectRatio(contentMode: .fit)
-                FourLakesConciergeView(["Zone1"], events: { conciergeEvent in
+                FourLakesConciergeView(["Home Page"], events: { conciergeEvent in
                     if FourLakesConcierge.willNavigate(conciergeEvent) {
                         cEvent = conciergeEvent
                         selection = "4"
