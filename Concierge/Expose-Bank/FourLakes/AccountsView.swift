@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct AccountsView: View {
-
+    @EnvironmentObject var coordinator: AppCoordinator
+    
     init() {
             //Use this if NavigationBarTitle is with Large Font
             UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.red]
@@ -24,6 +25,10 @@ struct AccountsView: View {
         NavigationView(content: {
             ScrollView(content: {
                 let _ = Self._printChanges()
+                Button("Disconnect", action: {
+                    FourLakesConcierge.disconnect()
+                    self.coordinator.screen = .authentication
+                })
                 ZStack {
                    HStack {
                        ForEach(["Accounts","Transfers","Deposits", "Send Money", "Pay A Bill"], id:\.self, content: { name in

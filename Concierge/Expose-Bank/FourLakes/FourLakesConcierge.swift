@@ -43,6 +43,16 @@ final class FourLakesConcierge {
     static func handleNonNavigationActionLink(_ actionableLink: URL) {
         _ = Concierge.handleActionableLink(actionableLink)
     }
+
+    static func uploadPush(token: Data) {
+        Concierge.sendPush(token: token)
+    }
+
+    static func disconnect() {
+        Concierge.disconnect() { error in
+            print(error)
+        }
+    }
 }
 
 struct FourLakesConciergeView: View {
