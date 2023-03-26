@@ -201,7 +201,7 @@ public class ListContentDataStrategy<Convertable> : FlybitsCoreConcierge.DataStr
   public func clean()
   @objc deinit
 }
-public class OnlyContentDataStrategy : FlybitsCoreConcierge.DataStrategy {
+public class ContentDataStrategy : FlybitsCoreConcierge.DataStrategy {
   public typealias Output = FlybitsKernelSDK.Content
   public typealias Input = FlybitsKernelSDK.Content
   public typealias Position = Swift.Int
@@ -211,7 +211,7 @@ public class OnlyContentDataStrategy : FlybitsCoreConcierge.DataStrategy {
   public init()
   public func setData(_ data: [FlybitsCoreConcierge.TemplatedOutput<FlybitsKernelSDK.Content>])
   public func addData(_ newData: [FlybitsCoreConcierge.TemplatedOutput<FlybitsKernelSDK.Content>])
-  public func toTemplatedOutput(_ input: [FlybitsCoreConcierge.OnlyContentDataStrategy.Input]) -> [FlybitsCoreConcierge.TemplatedOutput<FlybitsKernelSDK.Content>]
+  public func toTemplatedOutput(_ input: [FlybitsCoreConcierge.ContentDataStrategy.Input]) -> [FlybitsCoreConcierge.TemplatedOutput<FlybitsKernelSDK.Content>]
   public func value(for position: Swift.Int) -> FlybitsCoreConcierge.TemplatedOutput<FlybitsKernelSDK.Content>
   public func total() -> Swift.Int
   public func clean()
@@ -490,7 +490,7 @@ extension ConciergeViewable {
   public func primaryCallToAction(for contentData: Self.Data, context: FlybitsCoreConcierge.ConciergeContext) -> FlybitsCoreConcierge.ConciergeCallToActionResult
   public func secondaryCallToAction(for contentData: Self.Data, index: Swift.Int, context: FlybitsCoreConcierge.ConciergeContext) -> FlybitsCoreConcierge.ConciergeCallToActionResult
 }
-public class RealSingleContentAPIStrategy : FlybitsCoreConcierge.APIStrategy {
+public class SingleContentAPIStrategy : FlybitsCoreConcierge.APIStrategy {
   public typealias Output = FlybitsKernelSDK.Content
   public var query: FlybitsKernelSDK.ContentQuery?
   public var contentSource: FlybitsCoreConcierge.CoreConciergeParams?
@@ -498,16 +498,6 @@ public class RealSingleContentAPIStrategy : FlybitsCoreConcierge.APIStrategy {
   final public let pushRequestId: Swift.String?
   public init(contentId: Swift.String, pushRequestId: Swift.String? = nil, types: [Swift.String : FlybitsKernelSDK.ContentData.Type])
   public func loadData(completion: @escaping ([FlybitsKernelSDK.Content]) -> Swift.Void)
-  @objc deinit
-}
-public class SingleContentAPIStrategy : FlybitsCoreConcierge.APIStrategy {
-  public typealias Output = FlybitsCoreConcierge.ContentDataConvertable
-  public var query: FlybitsKernelSDK.ContentQuery?
-  public var contentSource: FlybitsCoreConcierge.CoreConciergeParams?
-  final public let contentId: Swift.String
-  final public let pushRequestId: Swift.String?
-  public init(contentId: Swift.String, pushRequestId: Swift.String? = nil, types: [Swift.String : FlybitsKernelSDK.ContentData.Type])
-  public func loadData(completion: @escaping ([FlybitsCoreConcierge.ContentDataConvertable]) -> Swift.Void)
   @objc deinit
 }
 final public class LocalZonesAPIStrategy : FlybitsCoreConcierge.APIStrategy {

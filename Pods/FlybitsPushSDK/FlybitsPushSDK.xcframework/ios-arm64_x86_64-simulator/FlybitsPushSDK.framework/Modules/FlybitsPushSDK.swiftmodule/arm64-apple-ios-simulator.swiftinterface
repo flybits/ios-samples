@@ -316,6 +316,7 @@ public enum PushRequest : FlybitsSDK.Requestable {
   final public let id: Swift.String
   final public let timestamp: Swift.UInt64
   final public let body: FlybitsPushSDK.PushData.Body
+  final public let provider: Swift.String
   public func toPush() -> FlybitsPushSDK.Push
   @objc deinit
   required public init(from decoder: Swift.Decoder) throws

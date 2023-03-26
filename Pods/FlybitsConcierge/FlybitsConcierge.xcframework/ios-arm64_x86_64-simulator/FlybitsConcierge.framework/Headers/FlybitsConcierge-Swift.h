@@ -268,12 +268,12 @@ SWIFT_CLASS("_TtC16FlybitsConcierge17DetailContentData")
 @end
 
 
-
 SWIFT_CLASS("_TtC16FlybitsConcierge16MediaContentData")
 @interface MediaContentData : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 
@@ -578,12 +578,12 @@ SWIFT_CLASS("_TtC16FlybitsConcierge17DetailContentData")
 @end
 
 
-
 SWIFT_CLASS("_TtC16FlybitsConcierge16MediaContentData")
 @interface MediaContentData : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 

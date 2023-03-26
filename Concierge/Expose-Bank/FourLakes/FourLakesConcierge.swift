@@ -11,9 +11,7 @@ import SwiftUI
 
 final class FourLakesConcierge {
     static func authenticate(_ email: String, apiKey key: String, completion: @escaping () -> ()) {
-        //let apiKey = APIKeyConciergeIDP(email: email, apiKey: key)
-
-        let apiKey = AnonymousConciergeIDP()
+        let apiKey = APIKeyConciergeIDP(email: email, apiKey: key)
 
         Concierge.connect(with: apiKey, completion: { error in
             completion()
@@ -33,9 +31,9 @@ final class FourLakesConcierge {
             return false
         }
 
-        print(["concierge"].contains(components.scheme!))
+        print(["concierge", "details"].contains(components.scheme!))
 
-        if let scheme = components.scheme, ["concierge"].contains(scheme) {
+        if let scheme = components.scheme, ["concierge", "details"].contains(scheme) {
             return true
         } else {
             return false
@@ -54,6 +52,13 @@ final class FourLakesConcierge {
         Concierge.disconnect() { error in
             print(error)
         }
+    }
+
+    static func isFlybitsActionableLink(_ response: UNNotificationResponse) -> URL? {
+        guard let conciergePush = Concierge.handlePush(response.notification.request.content.userInfo) else {
+            return nil
+        }
+        return Concierge.actionableLink(from: conciergePush)
     }
 }
 

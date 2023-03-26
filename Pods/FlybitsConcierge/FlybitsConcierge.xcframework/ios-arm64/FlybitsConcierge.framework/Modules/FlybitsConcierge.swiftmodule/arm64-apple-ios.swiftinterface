@@ -235,9 +235,10 @@ extension Concierge {
 }
 extension Concierge {
   public static func deepLink(conciergePush: FlybitsConcierge.ConciergePush, conciergeTheme: FlybitsConcierge.ConciergeTheme? = nil) -> UIKit.UIViewController?
+  public static func deepLink(conciergePush: FlybitsConcierge.ConciergePush, conciergeTheme: FlybitsConcierge.ConciergeTheme? = nil, requestEvents delegate: FlybitsConcierge.AnyConciergeEventsDelegate<FlybitsConcierge.ConciergeEventsDelegate>? = nil) -> UIKit.UIViewController?
   public static func handlePush(_ userInfo: [Swift.AnyHashable : Any]) -> FlybitsConcierge.ConciergePush?
   public static func actionableLink(from push: FlybitsConcierge.ConciergePush) -> Foundation.URL
-  public static func handleActionableLink(_ link: Foundation.URL, with theme: FlybitsConcierge.ConciergeTheme? = nil) -> UIKit.UIViewController?
+  public static func handleActionableLink(_ link: Foundation.URL, with theme: FlybitsConcierge.ConciergeTheme? = nil, requestEvents delegate: FlybitsConcierge.AnyConciergeEventsDelegate<FlybitsConcierge.ConciergeEventsDelegate>? = nil) -> UIKit.UIViewController?
   public static func sendPush(token: Foundation.Data, with parameters: [Swift.String : Any]? = nil)
   public static func deletePushToken(completion: ((Foundation.NSError?) -> Swift.Void)? = nil)
   public static func sendContextData(_ contextData: [FlybitsConcierge.ConciergeContextData])
@@ -398,29 +399,6 @@ public enum Container : Swift.String {
     get
   }
 }
-public protocol ConciergePrefetch {
-  func fetch(completion: @escaping (FlybitsConcierge.ConciergePrefetchResult) -> Swift.Void)
-  var identifier: Swift.String { get }
-  var prefetchResult: FlybitsConcierge.ConciergePrefetchResult? { get }
-}
-public protocol ConciergeEventsDelegate : AnyObject {
-  var identifier: Swift.String { get }
-  func event(_ actionlink: Foundation.URL, identifier: Swift.String)
-}
-public struct ConciergePrefetchResult : Swift.Error {
-  public let authStatus: FlybitsConcierge.ConciergeCustomerStatus
-  public let hasContent: Swift.Bool
-  public let identifier: Swift.String
-}
-public enum PrefetchContainer {
-  case configured
-  case pushcontent
-  public static func == (a: FlybitsConcierge.PrefetchContainer, b: FlybitsConcierge.PrefetchContainer) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
 public enum ConciergeParams : Swift.Hashable {
   case labels([Swift.String])
   case labelsExpression(FlybitsConcierge.ConciergeLabelsExpression)
@@ -470,6 +448,8 @@ public enum ConciergeOptions : Swift.Hashable {
   case exposeCallToAction(title: Swift.String? = nil, actionUrl: Swift.String? = nil)
   case categoryDefaultTab(title: Swift.String? = nil)
   case customTheme(FlybitsConcierge.ConciergeTheme)
+  case customErrorScreen(FlybitsConcierge.AnyErrorViewable<FlybitsConcierge.ErrorViewable>)
+  case customLoadingScreen(FlybitsConcierge.AnyLoadingViewable<FlybitsConcierge.LoadingViewable>)
   public func hash(into hasher: inout Swift.Hasher)
   public static func == (a: FlybitsConcierge.ConciergeOptions, b: FlybitsConcierge.ConciergeOptions) -> Swift.Bool
   public var hashValue: Swift.Int {
@@ -515,6 +495,25 @@ public enum ConciergeLoggerLevel {
     get
   }
 }
+public struct ConciergePrefetchResult : Swift.Error {
+  public let authStatus: FlybitsConcierge.ConciergeCustomerStatus
+  public let hasContent: Swift.Bool
+  public let identifier: Swift.String
+}
+public enum PrefetchContainer {
+  case configured
+  case pushcontent
+  public static func == (a: FlybitsConcierge.PrefetchContainer, b: FlybitsConcierge.PrefetchContainer) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol ConciergePrefetch {
+  func fetch(completion: @escaping (FlybitsConcierge.ConciergePrefetchResult) -> Swift.Void)
+  var identifier: Swift.String { get }
+  var prefetchResult: FlybitsConcierge.ConciergePrefetchResult? { get }
+}
 @_hasMissingDesignatedInitializers public class AnyConciergePrefetch<PrefetchType> : FlybitsConcierge.ConciergePrefetch, Swift.Hashable {
   public static func == (lhs: FlybitsConcierge.AnyConciergePrefetch<PrefetchType>, rhs: FlybitsConcierge.AnyConciergePrefetch<PrefetchType>) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
@@ -528,12 +527,44 @@ public enum ConciergeLoggerLevel {
     get
   }
 }
+public protocol ConciergeEventsDelegate : AnyObject {
+  var identifier: Swift.String { get }
+  func event(_ actionlink: Foundation.URL, identifier: Swift.String)
+}
 @_hasMissingDesignatedInitializers public class AnyConciergeEventsDelegate<ConciergeEventType> : FlybitsConcierge.ConciergeEventsDelegate, Swift.Hashable {
   final public let identifier: Swift.String
   public func event(_ actionlink: Foundation.URL, identifier: Swift.String)
   public static func == (lhs: FlybitsConcierge.AnyConciergeEventsDelegate<ConciergeEventType>, rhs: FlybitsConcierge.AnyConciergeEventsDelegate<ConciergeEventType>) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   @objc deinit
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol ErrorViewable {
+  func view(_ hasContent: Swift.Bool, _ conciergeCustomerStatus: FlybitsConcierge.ConciergeCustomerStatus) -> UIKit.UIView
+}
+public struct AnyErrorViewable<ViewableType> : FlybitsConcierge.ErrorViewable, Swift.Hashable {
+  public static func == (lhs: FlybitsConcierge.AnyErrorViewable<ViewableType>, rhs: FlybitsConcierge.AnyErrorViewable<ViewableType>) -> Swift.Bool
+  public func view(_ hasContent: Swift.Bool, _ conciergeCustomerStatus: FlybitsConcierge.ConciergeCustomerStatus) -> UIKit.UIView
+  public init<ViewableType>(_ viewable: ViewableType) where ViewableType : FlybitsConcierge.ErrorViewable
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol LoadingViewable {
+  func view(_ hasContent: Swift.Bool, _ conciergeCustomerStatus: FlybitsConcierge.ConciergeCustomerStatus) -> UIKit.UIView
+  func start()
+  func stop()
+}
+public struct AnyLoadingViewable<ViewableType> : FlybitsConcierge.LoadingViewable, Swift.Hashable {
+  public static func == (lhs: FlybitsConcierge.AnyLoadingViewable<ViewableType>, rhs: FlybitsConcierge.AnyLoadingViewable<ViewableType>) -> Swift.Bool
+  public func view(_ hasContent: Swift.Bool, _ conciergeCustomerStatus: FlybitsConcierge.ConciergeCustomerStatus) -> UIKit.UIView
+  public func start()
+  public func stop()
+  public init<ViewableType>(_ viewable: ViewableType) where ViewableType : FlybitsConcierge.LoadingViewable
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
@@ -654,8 +685,6 @@ extension FlybitsConcierge.MediaContentData.MediaContentDataType : Swift.RawRepr
 extension FlybitsConcierge.Container : Swift.Equatable {}
 extension FlybitsConcierge.Container : Swift.Hashable {}
 extension FlybitsConcierge.Container : Swift.RawRepresentable {}
-extension FlybitsConcierge.PrefetchContainer : Swift.Equatable {}
-extension FlybitsConcierge.PrefetchContainer : Swift.Hashable {}
 extension FlybitsConcierge.OptInChoice : Swift.Equatable {}
 extension FlybitsConcierge.OptInChoice : Swift.Hashable {}
 extension FlybitsConcierge.OptInChoice : Swift.RawRepresentable {}
@@ -667,6 +696,8 @@ extension FlybitsConcierge.ConciergeCustomerStatus : Swift.Hashable {}
 extension FlybitsConcierge.ConciergeCustomerStatus : Swift.RawRepresentable {}
 extension FlybitsConcierge.ConciergeLoggerLevel : Swift.Equatable {}
 extension FlybitsConcierge.ConciergeLoggerLevel : Swift.Hashable {}
+extension FlybitsConcierge.PrefetchContainer : Swift.Equatable {}
+extension FlybitsConcierge.PrefetchContainer : Swift.Hashable {}
 extension FlybitsConcierge.ActionType : Swift.Equatable {}
 extension FlybitsConcierge.ActionType : Swift.Hashable {}
 extension FlybitsConcierge.ActionType : Swift.RawRepresentable {}

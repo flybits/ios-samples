@@ -24,9 +24,9 @@ struct AuthenticationScreen: View {
                             self.authenticate = true
                             //Simulate authenticating with your system
                             DispatchQueue.global().asyncAfter(deadline: .now() + 3, execute: {
-                                FourLakesConcierge.authenticate("user@td.com", apiKey: "27A3D5C8-B58C-47C1-ACFB-8B4506017AEC", completion: {
+                                FourLakesConcierge.authenticate("user@td.com", apiKey: "952C0793-3F52-449F-8612-3D2BE7DE0AC1", completion: {
                                     DispatchQueue.main.sync {
-                                        //UIApplication.shared.registerForRemoteNotifications()
+                                        UIApplication.shared.registerForRemoteNotifications()
                                         self.coordinator.screen = .account
                                     }
 

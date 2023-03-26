@@ -256,20 +256,24 @@ import Swift
     get
     set
   }
+  public var detailsData: [Swift.String : Any] {
+    get
+  }
   public var categoryName: FlybitsSDK.LocalizedObject<Swift.String>? {
     get
     set
   }
-  public var defaultUIConfig: FlybitsKernelSDK.UIConfiguration? {
+  public var defaultUIConfig: FlybitsKernelSDK.UIConfiguration {
     get
   }
-  public var detailsUIConfig: FlybitsKernelSDK.UIConfiguration? {
+  public var detailsUIConfig: FlybitsKernelSDK.UIConfiguration {
     get
   }
   public var renderType: FlybitsKernelSDK.ContentRenderType {
     get
   }
   required public init(from decoder: Swift.Decoder) throws
+  public init(with webContent: FlybitsKernelSDK.WebContent)
   @discardableResult
   public static func getAllRelevant(with query: FlybitsKernelSDK.ContentQuery? = nil, includeRTF: Swift.Bool = false, completion: @escaping (FlybitsSDK.Paged<FlybitsKernelSDK.Content>?, Swift.Error?) -> Swift.Void) -> FlybitsSDK.FlybitsRequest?
   @discardableResult
@@ -298,6 +302,12 @@ import Swift
   @objc override dynamic public init()
   @objc deinit
 }
+public struct WebContent : Swift.Codable {
+  public let data: [Swift.String : Any]
+  public let contentInfo: FlybitsKernelSDK.ContentData.ContentInfo
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
 public class ExperienceQuery : FlybitsSDK.Query {
   public var labels: [Swift.String]?
   convenience public init(labels: [Swift.String]?, pager: FlybitsSDK.Pager? = nil)
@@ -307,15 +317,18 @@ public class ExperienceQuery : FlybitsSDK.Query {
   @objc deinit
 }
 @objc open class ContentData : ObjectiveC.NSObject, Swift.Decodable, FlybitsSDK.DictionaryConvertible {
-  public struct ContentInfo : Swift.Equatable {
+  public struct ContentInfo : Swift.Codable, Swift.Equatable {
     public let contentId: Swift.String
     public let experienceId: Swift.String?
     public let pushRequestId: Swift.String?
     public let templateType: Swift.String?
     public let localizedCategory: FlybitsSDK.LocalizedObject<Swift.String>?
-    public let defaultUIConfig: FlybitsKernelSDK.UIConfiguration?
-    public let detailsUIConfig: FlybitsKernelSDK.UIConfiguration?
+    public var defaultUIConfig: FlybitsKernelSDK.UIConfiguration
+    public var detailsUIConfig: FlybitsKernelSDK.UIConfiguration
     public let renderType: FlybitsKernelSDK.ContentRenderType
+    public init(contentId: Swift.String, experienceId: Swift.String? = nil, pushRequestId: Swift.String? = nil, templateType: Swift.String? = nil, localizedCategory: FlybitsSDK.LocalizedObject<Swift.String>? = nil, defaultUIConfig: FlybitsKernelSDK.UIConfiguration = UIConfiguration(), detailsUIConfig: FlybitsKernelSDK.UIConfiguration = UIConfiguration(), renderType: FlybitsKernelSDK.ContentRenderType)
+    public func encode(to encoder: Swift.Encoder) throws
+    public init(from decoder: Swift.Decoder) throws
     public static func == (lhs: FlybitsKernelSDK.ContentData.ContentInfo, rhs: FlybitsKernelSDK.ContentData.ContentInfo) -> Swift.Bool
   }
   public class LocationContentData : Swift.Decodable, Swift.Equatable {
@@ -408,7 +421,7 @@ extension Content {
   public func pagedContentDataList() -> [FlybitsKernelSDK.ContentData]?
   public func pagedContentDataPager() -> FlybitsSDK.Pager?
 }
-public struct UIConfiguration : Swift.Decodable, Swift.Equatable {
+public struct UIConfiguration : Swift.Codable, Swift.Equatable {
   public let layout: Swift.String
   public let layoutHTML: Swift.String
   public let styleCSSURL: Swift.String
@@ -416,6 +429,7 @@ public struct UIConfiguration : Swift.Decodable, Swift.Equatable {
   public init(layout: Swift.String = "", layoutHTML: Swift.String = "", styleCSSURL: Swift.String = "", styleCSS: Swift.String = "")
   public static func == (lhs: FlybitsKernelSDK.UIConfiguration, rhs: FlybitsKernelSDK.UIConfiguration) -> Swift.Bool
   public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 @objc @_inheritsConvenienceInitializers public class ExperienceContentAnalyticsContext : ObjectiveC.NSObject {
   public static func trackViewed(contentId: Swift.String, experienceId: Swift.String, value: Swift.Bool = true, timestamp: Swift.Double? = nil, sendImmediately: Swift.Bool = false)

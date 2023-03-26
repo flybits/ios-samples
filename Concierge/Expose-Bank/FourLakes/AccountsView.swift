@@ -20,6 +20,7 @@ struct AccountsView: View {
 
     @State private var cEvent: URL?
     @State private var selection: String? = nil
+    @State private var displayNotifications: Bool = false
 
     var body: some View {
         NavigationView(content: {
@@ -41,12 +42,10 @@ struct AccountsView: View {
                    }
                 }.background(Color(red:5.0/255.0,green: 84.0/255.0,blue:52.0/255.0)).padding()
                 Image("ad").resizable().aspectRatio(contentMode: .fit)
-                FourLakesConciergeView(["Home Page"], events: { conciergeEvent in
+                FourLakesConciergeView(["homepage"], events: { conciergeEvent in
                     if FourLakesConcierge.willNavigate(conciergeEvent) {
                         cEvent = conciergeEvent
                         selection = "4"
-                    } else {
-                        FourLakesConcierge.handleNonNavigationActionLink(conciergeEvent)
                     }
                 }).applyHeight()
 
@@ -61,16 +60,28 @@ struct AccountsView: View {
                 .background(Color(red:5.0/255.0,green: 84.0/255.0,blue:52.0/255.0))
                 NavigationLink(destination:FourLakesConciergeView(cEvent, events: { conciergeEvent in
                     print(conciergeEvent)
-                }), tag: "4", selection: $selection) {
+                }).background(Color(red:5.0/255.0,green: 84.0/255.0,blue:52.0/255.0)), tag: "4", selection: $selection) {
                     EmptyView()
                 }
             })
             .background(Color(red:5.0/255.0,green: 84.0/255.0,blue:52.0/255.0))
             .navigationBarTitleDisplayMode(.inline)
+            .onReceive(coordinator.$notifications) { output in
+                guard let output = output else {return}
+                self.cEvent = output
+                self.displayNotifications = true
+            }
+            .sheet(isPresented: self.$displayNotifications, content: {
+                FourLakesConciergeView(self.cEvent, events: { conciergeEvent in
+                    if FourLakesConcierge.willNavigate(conciergeEvent) {
+                        cEvent = conciergeEvent
+                        selection = "4"
+                    }
+                })
+            })
         })
     }
 }
-
 
 
 

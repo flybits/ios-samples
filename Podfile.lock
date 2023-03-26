@@ -1,21 +1,21 @@
 PODS:
-  - FlybitsConcierge (5.0.0-alpha11):
-    - FlybitsCoreConcierge (= 5.0.0-alpha11)
-  - FlybitsContextSDK (5.0.0-alpha11):
-    - FlybitsSDK (= 5.0.0-alpha11)
-  - FlybitsCoreConcierge (5.0.0-alpha11):
-    - FlybitsContextSDK (= 5.0.0-alpha11)
-    - FlybitsKernelSDK (= 5.0.0-alpha11)
-    - FlybitsPushSDK (= 5.0.0-alpha11)
-    - FlybitsSDK (= 5.0.0-alpha11)
-  - FlybitsKernelSDK (5.0.0-alpha11):
-    - FlybitsSDK (= 5.0.0-alpha11)
-  - FlybitsPushSDK (5.0.0-alpha11):
-    - FlybitsSDK (= 5.0.0-alpha11)
-  - FlybitsSDK (5.0.0-alpha11)
+  - FlybitsConcierge (5.0.0-alpha12):
+    - FlybitsCoreConcierge (= 5.0.0-alpha12)
+  - FlybitsContextSDK (5.0.0-alpha12):
+    - FlybitsSDK (= 5.0.0-alpha12)
+  - FlybitsCoreConcierge (5.0.0-alpha12):
+    - FlybitsContextSDK (= 5.0.0-alpha12)
+    - FlybitsKernelSDK (= 5.0.0-alpha12)
+    - FlybitsPushSDK (= 5.0.0-alpha12)
+    - FlybitsSDK (= 5.0.0-alpha12)
+  - FlybitsKernelSDK (5.0.0-alpha12):
+    - FlybitsSDK (= 5.0.0-alpha12)
+  - FlybitsPushSDK (5.0.0-alpha12):
+    - FlybitsSDK (= 5.0.0-alpha12)
+  - FlybitsSDK (5.0.0-alpha12)
 
 DEPENDENCIES:
-  - FlybitsConcierge (~> 5.0.0-alpha11)
+  - FlybitsConcierge (~> 5.0.0-alpha12)
 
 SPEC REPOS:
   https://github.com/flybits/Spec-XCFramework.git:
@@ -27,13 +27,13 @@ SPEC REPOS:
     - FlybitsSDK
 
 SPEC CHECKSUMS:
-  FlybitsConcierge: 416d4ad21339660169b6081ff5f9ffa56cc48159
-  FlybitsContextSDK: 58671242e129ebe6751d83fcf6f74bd1f115c193
-  FlybitsCoreConcierge: 47ef9f9e602c07d74db33eff426cbff2211c68fa
-  FlybitsKernelSDK: 4b35ae0ae1d7d4e007912b71458a68d05f5b423e
-  FlybitsPushSDK: a1ea21111e5750581493d918329dad6c85eba478
-  FlybitsSDK: 69aec9e193d80a1954ba6d24a8b6d8c85da917b2
+  FlybitsConcierge: e0eba9993fbcc86ca2846fc652a13bd25a6ff7c9
+  FlybitsContextSDK: d2683039e2f03f53655ccdde0f0d29d565ae47e5
+  FlybitsCoreConcierge: 8745675ba755efcc0e935d7d94d64101fe51c607
+  FlybitsKernelSDK: 8c4cad9d1a08556ae26bf2005ba22cfc4a2279d5
+  FlybitsPushSDK: 3dd582c8b832cd8178b6415bd3402eebfcadfae4
+  FlybitsSDK: 56a81788e7c96108f0844ec834db552faa2c849d
 
-PODFILE CHECKSUM: fc05906c8d6dd55d98ea884fb21752e19d938ec0
+PODFILE CHECKSUM: b1e2dd3748bbfd88b8746b48b9338f616784d9d0
 
 COCOAPODS: 1.11.3
