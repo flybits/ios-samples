@@ -19,8 +19,10 @@ struct AccountsView: View {
         }
 
     @State private var cEvent: URL?
+    @State private var menuEvent: URL?
     @State private var selection: String? = nil
     @State private var displayNotifications: Bool = false
+    @State private var displayLanderPage: String? = nil
 
     var body: some View {
         NavigationView(content: {
@@ -63,6 +65,14 @@ struct AccountsView: View {
                 }).background(Color(red:5.0/255.0,green: 84.0/255.0,blue:52.0/255.0)), tag: "4", selection: $selection) {
                     EmptyView()
                 }
+                NavigationLink(destination:FourLakesConciergeView(["landerpage"], events: { conciergeEvent in
+                    if FourLakesConcierge.willNavigate(conciergeEvent) {
+                        cEvent = conciergeEvent
+                        selection = "4"
+                    }
+                }).background(Color(red:5.0/255.0,green: 84.0/255.0,blue:52.0/255.0)), tag: "5", selection: $selection) {
+                    EmptyView()
+                }
             })
             .background(Color(red:5.0/255.0,green: 84.0/255.0,blue:52.0/255.0))
             .navigationBarTitleDisplayMode(.inline)
@@ -75,7 +85,16 @@ struct AccountsView: View {
                 FourLakesConciergeView(self.cEvent, events: { conciergeEvent in
                     if FourLakesConcierge.willNavigate(conciergeEvent) {
                         cEvent = conciergeEvent
-                        selection = "4"
+                    }
+                })
+            })
+            .toolbar(content: {
+                ToolbarItem(placement: .navigationBarLeading, content: {
+                    Button(action: {
+                        selection = "5"
+                    }) {
+                        Image(systemName: "menubar.rectangle")
+                        .renderingMode(Image.TemplateRenderingMode?.init(Image.TemplateRenderingMode.original))
                     }
                 })
             })
