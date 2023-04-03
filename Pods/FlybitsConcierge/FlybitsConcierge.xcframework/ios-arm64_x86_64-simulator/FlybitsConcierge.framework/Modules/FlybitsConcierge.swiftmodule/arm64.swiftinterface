@@ -235,10 +235,10 @@ extension Concierge {
 }
 extension Concierge {
   public static func deepLink(conciergePush: FlybitsConcierge.ConciergePush, conciergeTheme: FlybitsConcierge.ConciergeTheme? = nil) -> UIKit.UIViewController?
-  public static func deepLink(conciergePush: FlybitsConcierge.ConciergePush, conciergeTheme: FlybitsConcierge.ConciergeTheme? = nil, requestEvents delegate: FlybitsConcierge.AnyConciergeEventsDelegate<FlybitsConcierge.ConciergeEventsDelegate>? = nil) -> UIKit.UIViewController?
+  public static func deepLink(conciergePush: FlybitsConcierge.ConciergePush, with options: [FlybitsConcierge.ConciergeOptions] = [], requestEvents delegate: FlybitsConcierge.AnyConciergeEventsDelegate<FlybitsConcierge.ConciergeEventsDelegate>? = nil) -> UIKit.UIViewController?
   public static func handlePush(_ userInfo: [Swift.AnyHashable : Any]) -> FlybitsConcierge.ConciergePush?
   public static func actionableLink(from push: FlybitsConcierge.ConciergePush) -> Foundation.URL
-  public static func handleActionableLink(_ link: Foundation.URL, with theme: FlybitsConcierge.ConciergeTheme? = nil, requestEvents delegate: FlybitsConcierge.AnyConciergeEventsDelegate<FlybitsConcierge.ConciergeEventsDelegate>? = nil) -> UIKit.UIViewController?
+  public static func handleActionableLink(_ link: Foundation.URL, with options: [FlybitsConcierge.ConciergeOptions] = [], requestEvents delegate: FlybitsConcierge.AnyConciergeEventsDelegate<FlybitsConcierge.ConciergeEventsDelegate>? = nil) -> UIKit.UIViewController?
   public static func sendPush(token: Foundation.Data, with parameters: [Swift.String : Any]? = nil)
   public static func deletePushToken(completion: ((Foundation.NSError?) -> Swift.Void)? = nil)
   public static func sendContextData(_ contextData: [FlybitsConcierge.ConciergeContextData])
@@ -388,6 +388,9 @@ public struct OpenConciergeIDP : FlybitsConcierge.ConciergeIDPConvertable {
   public init(identifierToken: Swift.String)
   public func toFlybitsIDP() -> FlybitsSDK.IDP
 }
+public protocol ConciergeActionDelegate : AnyObject {
+  func action(_ url: Foundation.URL)
+}
 public enum Container : Swift.String {
   case none
   case categories
@@ -403,7 +406,7 @@ public enum ConciergeParams : Swift.Hashable {
   case labels([Swift.String])
   case labelsExpression(FlybitsConcierge.ConciergeLabelsExpression)
   case zonesfilter(FlybitsConcierge.ZonesConfig)
-  case requestEvents(FlybitsConcierge.AnyConciergeEventsDelegate<FlybitsConcierge.ConciergeEventsDelegate>)
+  case delegate(FlybitsConcierge.AnyConciergeEventsDelegate<FlybitsConcierge.ConciergeEventsDelegate>)
   case prefetch(FlybitsConcierge.AnyConciergePrefetch<FlybitsConcierge.ConciergePrefetch>)
   public func hash(into hasher: inout Swift.Hasher)
   public static func == (a: FlybitsConcierge.ConciergeParams, b: FlybitsConcierge.ConciergeParams) -> Swift.Bool
@@ -437,6 +440,7 @@ public struct ConciergeOptInInfo {
   public init(customerId: Swift.String, customPhysicalDeviceId: Swift.String? = nil, callback: FlybitsConcierge.Concierge.ConciergeOptInStatus? = nil)
 }
 public enum ConciergeOptions : Swift.Hashable {
+  case identifier(Swift.String)
   case displayNavigation(title: Swift.String? = nil)
   case settings
   case notifications
@@ -448,8 +452,8 @@ public enum ConciergeOptions : Swift.Hashable {
   case exposeCallToAction(title: Swift.String? = nil, actionUrl: Swift.String? = nil)
   case categoryDefaultTab(title: Swift.String? = nil)
   case customTheme(FlybitsConcierge.ConciergeTheme)
-  case customErrorScreen(FlybitsConcierge.AnyErrorViewable<FlybitsConcierge.ErrorViewable>)
-  case customLoadingScreen(FlybitsConcierge.AnyLoadingViewable<FlybitsConcierge.LoadingViewable>)
+  case customNoContentView(FlybitsConcierge.AnyNoContentViewable<FlybitsConcierge.NoContentViewable>)
+  case customLoadingView(FlybitsConcierge.AnyLoadingViewable<FlybitsConcierge.LoadingViewable>)
   public func hash(into hasher: inout Swift.Hasher)
   public static func == (a: FlybitsConcierge.ConciergeOptions, b: FlybitsConcierge.ConciergeOptions) -> Swift.Bool
   public var hashValue: Swift.Int {
@@ -528,11 +532,9 @@ public protocol ConciergePrefetch {
   }
 }
 public protocol ConciergeEventsDelegate : AnyObject {
-  var identifier: Swift.String { get }
   func event(_ actionlink: Foundation.URL, identifier: Swift.String)
 }
 @_hasMissingDesignatedInitializers public class AnyConciergeEventsDelegate<ConciergeEventType> : FlybitsConcierge.ConciergeEventsDelegate, Swift.Hashable {
-  final public let identifier: Swift.String
   public func event(_ actionlink: Foundation.URL, identifier: Swift.String)
   public static func == (lhs: FlybitsConcierge.AnyConciergeEventsDelegate<ConciergeEventType>, rhs: FlybitsConcierge.AnyConciergeEventsDelegate<ConciergeEventType>) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
@@ -541,28 +543,24 @@ public protocol ConciergeEventsDelegate : AnyObject {
     get
   }
 }
-public protocol ErrorViewable {
-  func view(_ hasContent: Swift.Bool, _ conciergeCustomerStatus: FlybitsConcierge.ConciergeCustomerStatus) -> UIKit.UIView
+public protocol NoContentViewable {
+  func view(_ conciergeCustomerStatus: FlybitsConcierge.ConciergeCustomerStatus, _ actionDelegate: FlybitsConcierge.ConciergeActionDelegate) -> UIKit.UIViewController
 }
-public struct AnyErrorViewable<ViewableType> : FlybitsConcierge.ErrorViewable, Swift.Hashable {
-  public static func == (lhs: FlybitsConcierge.AnyErrorViewable<ViewableType>, rhs: FlybitsConcierge.AnyErrorViewable<ViewableType>) -> Swift.Bool
-  public func view(_ hasContent: Swift.Bool, _ conciergeCustomerStatus: FlybitsConcierge.ConciergeCustomerStatus) -> UIKit.UIView
-  public init<ViewableType>(_ viewable: ViewableType) where ViewableType : FlybitsConcierge.ErrorViewable
+public struct AnyNoContentViewable<ViewableType> : FlybitsConcierge.NoContentViewable, Swift.Hashable {
+  public static func == (lhs: FlybitsConcierge.AnyNoContentViewable<ViewableType>, rhs: FlybitsConcierge.AnyNoContentViewable<ViewableType>) -> Swift.Bool
+  public func view(_ conciergeCustomerStatus: FlybitsConcierge.ConciergeCustomerStatus, _ actionDelegate: FlybitsConcierge.ConciergeActionDelegate) -> UIKit.UIViewController
+  public init<ViewableType>(_ viewable: ViewableType) where ViewableType : FlybitsConcierge.NoContentViewable
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
 }
 public protocol LoadingViewable {
-  func view(_ hasContent: Swift.Bool, _ conciergeCustomerStatus: FlybitsConcierge.ConciergeCustomerStatus) -> UIKit.UIView
-  func start()
-  func stop()
+  func view() -> UIKit.UIViewController
 }
 public struct AnyLoadingViewable<ViewableType> : FlybitsConcierge.LoadingViewable, Swift.Hashable {
   public static func == (lhs: FlybitsConcierge.AnyLoadingViewable<ViewableType>, rhs: FlybitsConcierge.AnyLoadingViewable<ViewableType>) -> Swift.Bool
-  public func view(_ hasContent: Swift.Bool, _ conciergeCustomerStatus: FlybitsConcierge.ConciergeCustomerStatus) -> UIKit.UIView
-  public func start()
-  public func stop()
+  public func view() -> UIKit.UIViewController
   public init<ViewableType>(_ viewable: ViewableType) where ViewableType : FlybitsConcierge.LoadingViewable
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
