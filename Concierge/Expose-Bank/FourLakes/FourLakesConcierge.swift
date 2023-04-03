@@ -22,7 +22,7 @@ final class FourLakesConcierge {
         let config = FlybitsConciergeConfiguration.Builder()
             .setProjectId("08A0D8CA-2173-4756-B70C-96A0984D8C68")
             .setGatewayUrl("https://api.demo.flybits.com")
-            .setWebService("http://localhost:3000").build()
+            .setWebService("https://fb-mobile-apps.s3.amazonaws.com/public").build()
         Concierge.configure(configuration: config, contextPlugins: [])
     }
 

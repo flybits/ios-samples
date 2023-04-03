@@ -65,12 +65,7 @@ struct AccountsView: View {
                 }).background(Color(red:5.0/255.0,green: 84.0/255.0,blue:52.0/255.0)), tag: "4", selection: $selection) {
                     EmptyView()
                 }
-                NavigationLink(destination:FourLakesConciergeView(["landerpage"], events: { conciergeEvent in
-                    if FourLakesConcierge.willNavigate(conciergeEvent) {
-                        cEvent = conciergeEvent
-                        selection = "4"
-                    }
-                }).background(Color(red:5.0/255.0,green: 84.0/255.0,blue:52.0/255.0)), tag: "5", selection: $selection) {
+                NavigationLink(destination: LanderConciergeView().background(Color(red:5.0/255.0,green: 84.0/255.0,blue:52.0/255.0)), tag: "5", selection: $selection) {
                     EmptyView()
                 }
             })
@@ -102,7 +97,26 @@ struct AccountsView: View {
     }
 }
 
+struct LanderConciergeView: View {
 
+    @State private var cEvent: URL?
+    @State private var menuEvent: URL?
+    @State private var selection: String? = nil
+
+    var body: some View {
+        FourLakesConciergeView(["landerpage"], events: { conciergeEvent in
+            if FourLakesConcierge.willNavigate(conciergeEvent) {
+                cEvent = conciergeEvent
+                selection = "4"
+            }
+        }).background(Color(red:5.0/255.0,green: 84.0/255.0,blue:52.0/255.0))
+        NavigationLink(destination:FourLakesConciergeView(cEvent, events: { conciergeEvent in
+            print(conciergeEvent)
+        }).background(Color(red:5.0/255.0,green: 84.0/255.0,blue:52.0/255.0)), tag: "4", selection: $selection) {
+            EmptyView()
+        }
+    }
+}
 
 struct AccountsView_Previews: PreviewProvider {
     static var previews: some View {

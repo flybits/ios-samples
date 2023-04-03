@@ -29,7 +29,7 @@ class ViewController: UIViewController {
 
 
 
-            let b = APIKeyIDP(email: "m@h.com", apiKey: "27A3D5C8-B58C-47C1-ACFB-8B4506017AEC")
+            let  = APIKeyIDP(email: "tduser@tdbank.com", apiKey: "27A3D5C8-B58C-47C1-ACFB-8B4506017AEC")
 //            FlybitsManager.connect(b, projectId: "2CE41988-B1D3-4116-98DD-42FFB8754384") { user, error in
 //            }
 
