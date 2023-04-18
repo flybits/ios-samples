@@ -141,9 +141,9 @@ struct FourLakeConcierge: UIViewControllerRepresentable {
             return Concierge.handleActionableLink(actionableLink) ?? UIViewController()
         } else {
             guard let zm = zoneConfig else {
-                return Concierge.viewController(.configured, params: [.requestEvents(self.delegate)], options: [.customLoadingScreen(AnyLoadingViewable(MyLoadingViewable()))])
+                return Concierge.viewController(.configured, params: [.delegate(self.delegate)], options: [])
             }
-            return Concierge.viewController(.configured, params: [.requestEvents(self.delegate), .zonesfilter(zm)], options: [.customLoadingScreen(AnyLoadingViewable(MyLoadingViewable()))])
+            return Concierge.viewController(.configured, params: [.delegate(self.delegate), .zonesFilter(zm)], options: [])
         }
     }
 
@@ -154,22 +154,22 @@ struct FourLakeConcierge: UIViewControllerRepresentable {
 }
 
 
-class MyLoadingViewable: LoadingViewable {
-
-    func view(_ hasContent: Bool, _ conciergeCustomerStatus: FlybitsConcierge.ConciergeCustomerStatus) -> UIView {
-        let retView = UIView()
-        retView.backgroundColor = .red
-        return retView
-    }
-
-    func start() {
-
-    }
-
-    func stop() {
-
-    }
-}
+//class MyLoadingViewable: LoadingViewable {
+//
+//    func view() -> UIViewController {
+//        let retView = UIView()
+//        retView.backgroundColor = .red
+//        return retView
+//    }
+//
+//    func start() {
+//
+//    }
+//
+//    func stop() {
+//
+//    }
+//}
 
 struct Previews_FourLakesConcierge_Previews: PreviewProvider {
     static var previews: some View {

@@ -42,6 +42,21 @@ public protocol VideoPlayer : AnyObject {
 public protocol PlaybackDelegate : AnyObject {
   func stateChanged(player: FlybitsConcierge.VideoPlayer, from: FlybitsConcierge.VideoPlayerState, to: FlybitsConcierge.VideoPlayerState)
 }
+open class BenefitCardConciergeViewable : FlybitsCoreConcierge.ConciergeViewable {
+  public typealias Data = FlybitsKernelSDK.ContentData
+  public init()
+  open var tileViewControllerLayout: Foundation.URL? {
+    get
+  }
+  public func tileViewController(for contentData: FlybitsKernelSDK.ContentData, context: FlybitsCoreConcierge.ConciergeContext) -> UIKit.UIViewController?
+  public func type() -> FlybitsKernelSDK.ContentData.Type
+  open func primaryCallToAction(for contentData: FlybitsKernelSDK.ContentData, context: FlybitsCoreConcierge.ConciergeContext) -> FlybitsCoreConcierge.ConciergeCallToActionResult
+  @available(*, deprecated, message: "Please use the `detailViewController(for contentData: Data, context: ConciergeContext)` function instead")
+  public func detailViewController(for contentData: FlybitsKernelSDK.ContentData) -> UIKit.UIViewController?
+  @available(*, deprecated, message: "Please use the `tileViewController(for contentData: Data, context: ConciergeContext)` function instead")
+  public func tileViewController(for contentData: FlybitsKernelSDK.ContentData) -> UIKit.UIViewController?
+  @objc deinit
+}
 final public class ButtonsCardContentData : FlybitsKernelSDK.ContentData {
   final public let title: FlybitsSDK.LocalizedObject<Swift.String>
   final public let header: FlybitsSDK.LocalizedObject<Swift.String>?
@@ -73,15 +88,28 @@ final public class LinkCardContentData : FlybitsKernelSDK.ContentData {
 }
 public struct ConciergePush {
 }
-public protocol ConciergeContentComponent {
-  var type: Swift.String { get }
-  var id: Swift.String { get }
-  var name: Swift.String { get }
+open class WebCardConciergeViewable : FlybitsCoreConcierge.ConciergeViewable {
+  public typealias Data = FlybitsKernelSDK.ContentData
+  public init()
+  public func type() -> FlybitsKernelSDK.ContentData.Type
+  public func tileViewController(for contentData: FlybitsKernelSDK.ContentData) -> UIKit.UIViewController?
+  public func detailViewController(for contentData: FlybitsKernelSDK.ContentData) -> UIKit.UIViewController?
+  open var tileViewControllerLayout: Foundation.URL? {
+    get
+  }
+  open func primaryCallToAction(for contentData: FlybitsKernelSDK.ContentData) -> FlybitsCoreConcierge.ConciergeCallToActionResult
+  open func secondaryCallToAction(for contentData: FlybitsKernelSDK.ContentData, index: Swift.Int) -> FlybitsCoreConcierge.ConciergeCallToActionResult
+  @objc deinit
 }
 public protocol DeepLinkHandlerProtocol {
   static var identifier: Swift.String { get }
   static func viewController(contentData: FlybitsKernelSDK.ContentData?) -> UIKit.UIViewController?
   static func customPresent(presentingController: UIKit.UIViewController) -> FlybitsCoreConcierge.ConciergeCallToActionResult
+}
+public protocol ConciergeContentComponent {
+  var type: Swift.String { get }
+  var id: Swift.String { get }
+  var name: Swift.String { get }
 }
 public struct APIKeyConciergeIDP : FlybitsConcierge.ConciergeIDPConvertable {
   public let apiKey: Swift.String
@@ -185,21 +213,12 @@ public struct ColorVariants : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
-public struct WebCardDetails : Swift.Decodable {
-  public var stringUrl: FlybitsSDK.LocalizedObject<Swift.String>? {
+@_inheritsConvenienceInitializers open class BenefitBannerConciergeViewable : FlybitsConcierge.BenefitCardConciergeViewable {
+  override open var tileViewControllerLayout: Foundation.URL? {
     get
   }
-  public init(from decoder: Swift.Decoder) throws
-}
-final public class WebCardContentData : FlybitsKernelSDK.ContentData {
-  final public let html: FlybitsSDK.LocalizedObject<Swift.String>?
-  final public let url: FlybitsSDK.LocalizedObject<Swift.String>?
-  final public let links: [FlybitsConcierge.WebCardDetails]?
-  final public var forwardedLink: Foundation.URL? {
-    get
-  }
-  required public init(from decoder: Swift.Decoder) throws
-  @objc override dynamic public init()
+  override public init()
+  override public func tileViewController(for contentData: FlybitsKernelSDK.ContentData, context: FlybitsCoreConcierge.ConciergeContext) -> UIKit.UIViewController?
   @objc deinit
 }
 @objc final public class DetailContentData : ObjectiveC.NSObject, Swift.Decodable {
@@ -247,22 +266,61 @@ extension Concierge {
 extension Concierge {
   public static func prefetch(_ content: FlybitsConcierge.PrefetchContainer, params: [FlybitsConcierge.ConciergeParams], identifier: Swift.String) -> FlybitsConcierge.AnyConciergePrefetch<FlybitsConcierge.ConciergePrefetch>
 }
+final public class BenefitCardContentData : FlybitsKernelSDK.ContentData {
+  final public var source: Swift.String {
+    get
+  }
+  final public var sourceImage: Swift.String {
+    get
+  }
+  final public var actionButton: FlybitsConcierge.ActionableBenefitCard? {
+    get
+  }
+  final public var backgroundColor: Swift.String? {
+    get
+  }
+  final public var header: Swift.String? {
+    get
+  }
+  final public var explanation: FlybitsSDK.LocalizedObject<Swift.String>? {
+    get
+  }
+  final public var title: FlybitsSDK.LocalizedObject<Swift.String> {
+    get
+  }
+  final public var gradientRange: [UIKit.UIColor]? {
+    get
+  }
+  final public var bannerImage: FlybitsSDK.LocalizedObject<Swift.String>? {
+    get
+  }
+  required public init(from decoder: Swift.Decoder) throws
+  @objc override dynamic public init()
+  @objc deinit
+}
+final public class ActionableBenefitCard : Swift.Decodable {
+  final public let label: FlybitsSDK.LocalizedObject<Swift.String>?
+  final public let color: UIKit.UIColor?
+  final public let url: Swift.String?
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public class BenefitContent : Swift.Decodable {
+  final public let backgroundColor: Swift.String?
+  final public let header: Swift.String?
+  final public let explanation: FlybitsSDK.LocalizedObject<Swift.String>?
+  final public let title: FlybitsSDK.LocalizedObject<Swift.String>
+  final public let source: Swift.String?
+  final public let sourceImage: Swift.String?
+  final public let bannerImage: FlybitsSDK.LocalizedObject<Swift.String>?
+  final public let actionButton: FlybitsConcierge.ActionableBenefitCard?
+  public var gradientRange: [UIKit.UIColor]?
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
 public struct JwtLoginConciergeIDP : FlybitsConcierge.ConciergeIDPConvertable {
   public init(jwtLoginToken: Swift.String)
   public func toFlybitsIDP() -> FlybitsSDK.IDP
-}
-open class WebCardConciergeViewable : FlybitsCoreConcierge.ConciergeViewable {
-  public typealias Data = FlybitsKernelSDK.ContentData
-  public init()
-  public func type() -> FlybitsKernelSDK.ContentData.Type
-  public func tileViewController(for contentData: FlybitsKernelSDK.ContentData) -> UIKit.UIViewController?
-  public func detailViewController(for contentData: FlybitsKernelSDK.ContentData) -> UIKit.UIViewController?
-  open var tileViewControllerLayout: Foundation.URL? {
-    get
-  }
-  open func primaryCallToAction(for contentData: FlybitsKernelSDK.ContentData) -> FlybitsCoreConcierge.ConciergeCallToActionResult
-  open func secondaryCallToAction(for contentData: FlybitsKernelSDK.ContentData, index: Swift.Int) -> FlybitsCoreConcierge.ConciergeCallToActionResult
-  @objc deinit
 }
 public struct OAuthConciergeIDP : FlybitsConcierge.ConciergeIDPConvertable {
   public enum ConciergeSupportedOAuthIDP : Swift.Int, Swift.CaseIterable {
@@ -405,7 +463,7 @@ public enum Container : Swift.String {
 public enum ConciergeParams : Swift.Hashable {
   case labels([Swift.String])
   case labelsExpression(FlybitsConcierge.ConciergeLabelsExpression)
-  case zonesfilter(FlybitsConcierge.ZonesConfig)
+  case zonesFilter(FlybitsConcierge.ZonesConfig)
   case delegate(FlybitsConcierge.AnyConciergeEventsDelegate<FlybitsConcierge.ConciergeEventsDelegate>)
   case prefetch(FlybitsConcierge.AnyConciergePrefetch<FlybitsConcierge.ConciergePrefetch>)
   public func hash(into hasher: inout Swift.Hasher)
@@ -585,6 +643,13 @@ open class LinkCardConciergeViewable : FlybitsCoreConcierge.ConciergeViewable {
   open func primaryCallToAction(for contentData: FlybitsKernelSDK.ContentData, context: FlybitsCoreConcierge.ConciergeContext) -> FlybitsCoreConcierge.ConciergeCallToActionResult
   @objc deinit
 }
+@_inheritsConvenienceInitializers open class DiscoverableBenefitCardConciergeViewable : FlybitsConcierge.BenefitCardConciergeViewable {
+  override open var tileViewControllerLayout: Foundation.URL? {
+    get
+  }
+  override public init()
+  @objc deinit
+}
 public func safariViewController(for url: Foundation.URL, withPresentationStyle presentationStyle: UIKit.UIModalPresentationStyle? = .fullScreen, context: FlybitsCoreConcierge.ConciergeContext? = nil) -> FlybitsConcierge.ConciergeSafariViewController?
 public func performOnMainThread(closure: @escaping () -> Swift.Void)
 public struct JwtConciergeIDP : FlybitsConcierge.ConciergeIDPConvertable {
@@ -668,6 +733,23 @@ public struct FlybitsSettingsConfiguration {
     public func build() -> FlybitsConcierge.FlybitsConciergeConfiguration
     @objc deinit
   }
+  @objc deinit
+}
+public struct WebCardDetails : Swift.Decodable {
+  public var stringUrl: FlybitsSDK.LocalizedObject<Swift.String>? {
+    get
+  }
+  public init(from decoder: Swift.Decoder) throws
+}
+final public class WebCardContentData : FlybitsKernelSDK.ContentData {
+  final public let html: FlybitsSDK.LocalizedObject<Swift.String>?
+  final public let url: FlybitsSDK.LocalizedObject<Swift.String>?
+  final public let links: [FlybitsConcierge.WebCardDetails]?
+  final public var forwardedLink: Foundation.URL? {
+    get
+  }
+  required public init(from decoder: Swift.Decoder) throws
+  @objc override dynamic public init()
   @objc deinit
 }
 extension FlybitsConcierge.VideoPlayerState : Swift.Equatable {}

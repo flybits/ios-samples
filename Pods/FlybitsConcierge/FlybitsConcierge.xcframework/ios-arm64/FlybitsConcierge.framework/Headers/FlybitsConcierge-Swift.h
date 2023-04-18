@@ -209,6 +209,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
+
 @class NSString;
 @class NSCoder;
 @class NSNumber;
@@ -283,6 +284,7 @@ SWIFT_CLASS("_TtC16FlybitsConcierge16MediaContentData")
 @interface UICollectionViewFlowLayout (SWIFT_EXTENSION(FlybitsConcierge))
 @property (nonatomic, readonly) BOOL flipsHorizontallyInOppositeLayoutDirection;
 @end
+
 
 
 

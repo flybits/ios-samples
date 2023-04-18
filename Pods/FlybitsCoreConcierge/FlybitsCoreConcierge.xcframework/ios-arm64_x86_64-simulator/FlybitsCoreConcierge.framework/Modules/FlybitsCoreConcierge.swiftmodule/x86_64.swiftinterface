@@ -154,7 +154,7 @@ public struct CoreConcierge {
   @discardableResult
   public static func getZonesAndModulesMetadata(completion: @escaping (Swift.Result<FlybitsCoreConcierge.ZonesModules, Swift.Error>) -> Swift.Void) -> FlybitsSDK.FlybitsRequest
   public static func storeZoneMetaConfiguration(_ zoneMod: FlybitsCoreConcierge.ZonesModules)
-  public static func zoneConfiguration(_ zoneReferenceIDs: [Swift.String]) -> [FlybitsCoreConcierge.Zone]?
+  public static func zoneConfiguration(_ zoneReferenceIDs: [Swift.String]) -> [FlybitsCoreConcierge.Zone]
   public static func removeZoneConfiguration()
 }
 public class Zone : Swift.Codable {
@@ -307,6 +307,20 @@ public protocol ConciergeStyle {
   var exposeContainerBackgroundColor: UIKit.UIColor { get }
   var exposeSectionTitleFont: FlybitsCoreConcierge.ConciergeAppearance.Font { get }
   var exposeCallToActionTitleFont: FlybitsCoreConcierge.ConciergeAppearance.Font { get }
+  var contentBenefitHeaderPadding: FlybitsCoreConcierge.ConciergeAppearance.Padding { get }
+  var contentBenefitTitlePadding: FlybitsCoreConcierge.ConciergeAppearance.Padding { get }
+  var contentBenefitExplanationPadding: FlybitsCoreConcierge.ConciergeAppearance.Padding { get }
+  var contentBenefitSourcePadding: FlybitsCoreConcierge.ConciergeAppearance.Padding { get }
+  var contentBenefitHeaderFont: FlybitsCoreConcierge.ConciergeAppearance.Font { get }
+  var contentBenefitTitleFont: FlybitsCoreConcierge.ConciergeAppearance.Font { get }
+  var contentBenefitExplanationFont: FlybitsCoreConcierge.ConciergeAppearance.Font { get }
+  var contentBenefitSourceFont: FlybitsCoreConcierge.ConciergeAppearance.Font { get }
+  var contentBenefitButtonStackPadding: FlybitsCoreConcierge.ConciergeAppearance.Padding { get }
+  var contentBenefitPrimaryButton: FlybitsCoreConcierge.ConciergeAppearance.ButtonConfig { get }
+  var contentBenefitTruncationLinkColor: UIKit.UIColor { get }
+  var bannerBenefitTitleFont: FlybitsCoreConcierge.ConciergeAppearance.Font { get }
+  var bannerBenefitExplanationFont: FlybitsCoreConcierge.ConciergeAppearance.Font { get }
+  var bannerBenefitPrimaryButton: FlybitsCoreConcierge.ConciergeAppearance.ButtonConfig { get }
 }
 extension ConciergeAppearance {
   public struct NavigationBar {
@@ -394,6 +408,10 @@ extension ConciergeAppearance {
   public struct Expose {
     public struct Container {
     }
+  }
+  public struct BenefitCards {
+  }
+  public struct BenefitBanner {
   }
 }
 extension ConciergeAppearance {

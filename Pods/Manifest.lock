@@ -1,21 +1,21 @@
 PODS:
-  - FlybitsConcierge (5.0.0-alpha13):
-    - FlybitsCoreConcierge (= 5.0.0-alpha13)
-  - FlybitsContextSDK (5.0.0-alpha13):
-    - FlybitsSDK (= 5.0.0-alpha13)
-  - FlybitsCoreConcierge (5.0.0-alpha13):
-    - FlybitsContextSDK (= 5.0.0-alpha13)
-    - FlybitsKernelSDK (= 5.0.0-alpha13)
-    - FlybitsPushSDK (= 5.0.0-alpha13)
-    - FlybitsSDK (= 5.0.0-alpha13)
-  - FlybitsKernelSDK (5.0.0-alpha13):
-    - FlybitsSDK (= 5.0.0-alpha13)
-  - FlybitsPushSDK (5.0.0-alpha13):
-    - FlybitsSDK (= 5.0.0-alpha13)
-  - FlybitsSDK (5.0.0-alpha13)
+  - FlybitsConcierge (5.0.0):
+    - FlybitsCoreConcierge (= 5.0.0)
+  - FlybitsContextSDK (5.0.0):
+    - FlybitsSDK (= 5.0.0)
+  - FlybitsCoreConcierge (5.0.0):
+    - FlybitsContextSDK (= 5.0.0)
+    - FlybitsKernelSDK (= 5.0.0)
+    - FlybitsPushSDK (= 5.0.0)
+    - FlybitsSDK (= 5.0.0)
+  - FlybitsKernelSDK (5.0.0):
+    - FlybitsSDK (= 5.0.0)
+  - FlybitsPushSDK (5.0.0):
+    - FlybitsSDK (= 5.0.0)
+  - FlybitsSDK (5.0.0)
 
 DEPENDENCIES:
-  - FlybitsConcierge (~> 5.0.0-alpha13)
+  - FlybitsConcierge (~> 5.0.0)
 
 SPEC REPOS:
   https://github.com/flybits/Spec-XCFramework.git:
@@ -27,13 +27,13 @@ SPEC REPOS:
     - FlybitsSDK
 
 SPEC CHECKSUMS:
-  FlybitsConcierge: c595e826aec96ad26bf8bd2a169041a02e701404
-  FlybitsContextSDK: cab55b62549ca4362ba61904f4b3411772b9d233
-  FlybitsCoreConcierge: e5676fa4c102def6aa10859649460de7b8ddd618
-  FlybitsKernelSDK: 5487e39c44a1453c06b80cf905dc532199bbbe81
-  FlybitsPushSDK: 4ebb4976feca219876bae90b874a5748546d2fc2
-  FlybitsSDK: 7ac68eee0084299422b62bd4dfa35440e53b3b68
+  FlybitsConcierge: 3698f7fd475dd03ac6f3ec7c5a606a8510f379a5
+  FlybitsContextSDK: 3fd514865403c753a4469b518540d84141eb7d75
+  FlybitsCoreConcierge: e261cc2900352cee339b728ea707f5af55cb2a7f
+  FlybitsKernelSDK: 3dbae48b91af9ac076bec2b0739494b51c07a92a
+  FlybitsPushSDK: af2d235073bf60b5aa636db182517f02c10de61b
+  FlybitsSDK: 7561e74cc376987f9b89694cefe79545f461d820
 
-PODFILE CHECKSUM: 35c77c16c96f44ac08d39649cceccd8c99a9190e
+PODFILE CHECKSUM: 0b24e6a39254960523bf7271e8d37c2e90f7cb97
 
 COCOAPODS: 1.11.3
