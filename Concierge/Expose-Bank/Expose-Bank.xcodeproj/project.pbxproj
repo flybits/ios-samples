@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		196A99112F5ECE4BB548928B /* Pods_Expose_Bank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A567FE867237D537B3D6B055 /* Pods_Expose_Bank.framework */; };
 		1DF109BEDDCCA76601914A56 /* Pods_Contextual_Theming.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B14336B81CACEA6843A67135 /* Pods_Contextual_Theming.framework */; };
-		2572B73628241FB9000499D2 /* Expose_BankUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2572B73528241FB9000499D2 /* Expose_BankUITests.swift */; };
-		2572B73828241FB9000499D2 /* Expose_BankUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2572B73728241FB9000499D2 /* Expose_BankUITestsLaunchTests.swift */; };
 		25B2F7D528E219EE0086F403 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B2F7D428E219EE0086F403 /* AppDelegate.swift */; };
 		25B2F7D728E219EE0086F403 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B2F7D628E219EE0086F403 /* SceneDelegate.swift */; };
 		25B2F7D928E219EE0086F403 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B2F7D828E219EE0086F403 /* ViewController.swift */; };
@@ -89,8 +87,6 @@
 		2559EADF0C6E2F5A457278C9 /* Pods-Modify-Existing-Style.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Modify-Existing-Style.debug.xcconfig"; path = "Target Support Files/Pods-Modify-Existing-Style/Pods-Modify-Existing-Style.debug.xcconfig"; sourceTree = "<group>"; };
 		2563FEA32822FE7F00FF53F3 /* Expose-Bank.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Expose-Bank.entitlements"; sourceTree = "<group>"; };
 		2572B73328241FB9000499D2 /* Expose-BankUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Expose-BankUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2572B73528241FB9000499D2 /* Expose_BankUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expose_BankUITests.swift; sourceTree = "<group>"; };
-		2572B73728241FB9000499D2 /* Expose_BankUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expose_BankUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		258FE55646B1A02D8EDAC877 /* Pods-Modify-Existing-Style.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Modify-Existing-Style.release.xcconfig"; path = "Target Support Files/Pods-Modify-Existing-Style/Pods-Modify-Existing-Style.release.xcconfig"; sourceTree = "<group>"; };
 		25B2F7D228E219EE0086F403 /* Customize-Expose-Button.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Customize-Expose-Button.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25B2F7D428E219EE0086F403 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -274,15 +270,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2572B73428241FB9000499D2 /* Expose-BankUITests */ = {
-			isa = PBXGroup;
-			children = (
-				2572B73528241FB9000499D2 /* Expose_BankUITests.swift */,
-				2572B73728241FB9000499D2 /* Expose_BankUITestsLaunchTests.swift */,
-			);
-			path = "Expose-BankUITests";
-			sourceTree = "<group>";
-		};
 		25B2F7D328E219EE0086F403 /* Customize-Expose-Button */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,7 +309,6 @@
 				25B2F7EB28E234440086F403 /* Contextual_Theming */,
 				25B2F7D328E219EE0086F403 /* Customize-Expose-Button */,
 				25EA00102820655A004F982B /* Expose-Bank */,
-				2572B73428241FB9000499D2 /* Expose-BankUITests */,
 				14438011C5946C63B2E0C055 /* Frameworks */,
 				576A4AA42836917500498C70 /* FullScreen_Concierge */,
 				57E55DD92842A90400A9BE59 /* Modify-Existing-Style */,
@@ -1113,8 +1099,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2572B73828241FB9000499D2 /* Expose_BankUITestsLaunchTests.swift in Sources */,
-				2572B73628241FB9000499D2 /* Expose_BankUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
