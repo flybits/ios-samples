@@ -17,7 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         Concierge.enableLogging()
 
-        //Call configure on Concierge
+        // Call configure on Concierge
+        // When calling the configure API the Flybits code will check if the `ConciergeConfiguration.json` file exists, if exists, it will be used as input automatically.
+        // There is no extra steps when using the JSON configuration. Just make sure the file is included in the app target.
         Concierge.configure(contextPlugins: [], launchOptions: launchOptions)
         return true
     }
