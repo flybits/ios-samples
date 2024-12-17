@@ -16,8 +16,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "25F8D284294137EF001E6C15"
-               BuildableName = "Connect-builder-Sample.app"
-               BlueprintName = "Connect-builder-Sample"
+               BuildableName = "Connect-Sample.app"
+               BlueprintName = "Connect-Sample"
                ReferencedContainer = "container:Expose-Bank.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "25F8D284294137EF001E6C15"
-            BuildableName = "Connect-builder-Sample.app"
-            BlueprintName = "Connect-builder-Sample"
+            BuildableName = "Connect-Sample.app"
+            BlueprintName = "Connect-Sample"
             ReferencedContainer = "container:Expose-Bank.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "25F8D284294137EF001E6C15"
-            BuildableName = "Connect-builder-Sample.app"
-            BlueprintName = "Connect-builder-Sample"
+            BuildableName = "Connect-Sample.app"
+            BlueprintName = "Connect-Sample"
             ReferencedContainer = "container:Expose-Bank.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

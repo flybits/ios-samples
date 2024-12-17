@@ -55,7 +55,7 @@ target 'Contextual_Theming' do
   pod 'FlybitsConcierge', $flybitsSDKVersion
 end
 
-target 'Connect-builder-Sample' do
+target 'Connect-Sample' do
   project 'Concierge/Expose-Bank/Expose-Bank.xcodeproj'
   inherit! :search_paths
 

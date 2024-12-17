@@ -1,6 +1,0 @@
-framework module Pods_Connect_builder_Sample {
-  umbrella header "Pods-Connect-builder-Sample-umbrella.h"
-
-  export *
-  module * { export * }
-}
