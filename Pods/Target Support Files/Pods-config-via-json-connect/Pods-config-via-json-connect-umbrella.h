@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_Connect_json_sampleVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_Connect_json_sampleVersionString[];
+FOUNDATION_EXPORT double Pods_config_via_json_connectVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_config_via_json_connectVersionString[];
 

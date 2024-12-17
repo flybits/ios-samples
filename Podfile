@@ -63,7 +63,7 @@ target 'Connect-Sample' do
   pod 'FlybitsConcierge', $flybitsSDKVersion
 end
 
-target 'Connect-json-sample' do
+target 'config-via-json-connect' do
   project 'Concierge/Expose-Bank/Expose-Bank.xcodeproj'
   inherit! :search_paths
 
