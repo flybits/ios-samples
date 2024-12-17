@@ -6,11 +6,11 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		r3QD+pgD85AWcjxGCLPKvf8zf8c=
+		IqgwnhcmYbS1zxPBlqVJDhqo64c=
 		</data>
 		<key>Base.lproj/Localizable.strings</key>
 		<data>
-		CUprAv+UC8Mjpucm1xuVBuQUpmY=
+		677RnAFmQK5mjq6hM8nSTgLu+Mo=
 		</data>
 		<key>ButtonBannerViewControllerVFL.json</key>
 		<data>
@@ -19,6 +19,10 @@
 		<key>ButtonsCardViewControllerVFL.json</key>
 		<data>
 		zsfDI9rQ05SexBSvBoCJNaQNMyo=
+		</data>
+		<key>DiscoverableBenefitVFL.json</key>
+		<data>
+		I8Zf4u4dtGBztP0IDAPpvdR5p/8=
 		</data>
 		<key>DiscoverableButtonsCardConciergeViewableVFL.json</key>
 		<data>
@@ -30,7 +34,7 @@
 		</data>
 		<key>Headers/FlybitsConcierge-Swift.h</key>
 		<data>
-		l74EwWdU6FvPxVKMt0m/UYR4qNM=
+		UyqGBYKhxiaco3aq9v88ADUuN4o=
 		</data>
 		<key>Headers/FlybitsConcierge.h</key>
 		<data>
@@ -38,7 +42,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		QcKcLKaIjIrTL4WZUxHsW/+KXu8=
+		lqeXLUHNSMJoNCuZJZR0ARQOJNQ=
 		</data>
 		<key>LinkBannerViewControllerVFL.json</key>
 		<data>
@@ -48,63 +52,67 @@
 		<data>
 		zJ5Cn4jamfl/Hb3P3nFWELeuW8k=
 		</data>
+		<key>Modules/FlybitsConcierge.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
+		<data>
+		P3uI6A993q6VBIaRsfYAAgeUBMo=
+		</data>
+		<key>Modules/FlybitsConcierge.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
+		<data>
+		ruJAiPruXUMx4welReHmxvTpM2Q=
+		</data>
 		<key>Modules/FlybitsConcierge.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		K/hMjtVaZdphvmpPUksKA0/AOrU=
+		XbCJu/VYN7R3EYyrS4UVuHW9t70=
 		</data>
 		<key>Modules/FlybitsConcierge.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		/xwlj7Fn2ArJkJao1IcqcU4zqw8=
+		ruJAiPruXUMx4welReHmxvTpM2Q=
 		</data>
 		<key>Modules/FlybitsConcierge.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		K7bnc7Cn7XuHCUCn8zRq2LXuUqs=
+		XaT9AXHRTetVUsFNI9OswRundcE=
 		</data>
-		<key>Modules/FlybitsConcierge.swiftmodule/arm64.swiftdoc</key>
+		<key>Modules/FlybitsConcierge.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		K/hMjtVaZdphvmpPUksKA0/AOrU=
+		P3uI6A993q6VBIaRsfYAAgeUBMo=
 		</data>
-		<key>Modules/FlybitsConcierge.swiftmodule/arm64.swiftinterface</key>
+		<key>Modules/FlybitsConcierge.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		/xwlj7Fn2ArJkJao1IcqcU4zqw8=
-		</data>
-		<key>Modules/FlybitsConcierge.swiftmodule/arm64.swiftmodule</key>
-		<data>
-		K7bnc7Cn7XuHCUCn8zRq2LXuUqs=
+		nUcTJr5x5kg2rNOYv2fQuKYrt8A=
 		</data>
 		<key>Modules/FlybitsConcierge.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		HsreljGEE1HS33Xf2JiT6Fv8Jo8=
+		KJtExT6hY4kXqbqsFvQhJrl6DmY=
 		</data>
 		<key>Modules/FlybitsConcierge.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		zmQU9Tcoocb/ARFgICAckWNh7LA=
+		nUcTJr5x5kg2rNOYv2fQuKYrt8A=
 		</data>
 		<key>Modules/FlybitsConcierge.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		hebCh8sm7o7kglS0LWdeZfmBMfk=
-		</data>
-		<key>Modules/FlybitsConcierge.swiftmodule/x86_64.swiftdoc</key>
-		<data>
-		HsreljGEE1HS33Xf2JiT6Fv8Jo8=
-		</data>
-		<key>Modules/FlybitsConcierge.swiftmodule/x86_64.swiftinterface</key>
-		<data>
-		zmQU9Tcoocb/ARFgICAckWNh7LA=
-		</data>
-		<key>Modules/FlybitsConcierge.swiftmodule/x86_64.swiftmodule</key>
-		<data>
-		hebCh8sm7o7kglS0LWdeZfmBMfk=
+		TQySiWlozswrtaQPnUB3nYm8wBo=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		8kHFepFyfgTHXoCD2kq0Kib0Vvg=
+		hBVX03OgaCtJ9601EX1J+OPc6mk=
+		</data>
+		<key>PrivacyInfo.xcprivacy</key>
+		<data>
+		rYfewOXT30dBhQs5RVgxBEi/G6k=
+		</data>
+		<key>SingleBenefitBannerVFL.json</key>
+		<data>
+		kUYvn3qXA0XOqbwENPFnEO7rqME=
+		</data>
+		<key>SingleBenefitVFL.json</key>
+		<data>
+		pE/2l5SUSHiiMyN27pb6ruZ9Rt4=
 		</data>
 		<key>ar.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			TgJiD2HCXZfBxCDZ8IvIOhIJsXY=
+			AzPGU+tYFwre7dGJm43utE3dtVI=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -117,7 +125,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			dtsWzPl3xx7Y0kRgf+qTVPeuVqw=
+			lWfGAimq5NFm/I3FIo0Fouvpr1A=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -126,7 +134,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			JFohiW97f9w+uBMg+ER+McEfg+c=
+			bCeTSDngEQfURNhBgqoVn3qwXtQ=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -139,7 +147,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			bmg0TlCC4uzo16Bh7fYCupcH608=
+			8DLbOdG3JRs7cnBOWJNMSh6sNfI=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -148,7 +156,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			OXBdgWkOGcVduOd6iR7SJoBK+lM=
+			fwQxTPCDT0xCcZnfvHcPVfTJ4qU=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -160,14 +168,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			cgIZT5NzKPBVie4G6RPhQhIArQGayI3ym/CTCJgwrqc=
+			6VSKbmK9jSdDEzDNU3lyyEzjlnQJAcljs5NE0RPSOqs=
 			</data>
 		</dict>
 		<key>Base.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			UavXNH+1Jnz2WDbKA4Qr09WiAkpyAgL6+QKrl/TSWUo=
+			OoF4QxuD2EA1YBdhaNJwS317D1JJxtAggF0BrGKWDDU=
 			</data>
 		</dict>
 		<key>ButtonBannerViewControllerVFL.json</key>
@@ -182,6 +190,13 @@
 			<key>hash2</key>
 			<data>
 			LZHXK1Y6kB8NdNA/0CjczQe81Bh3PBiZ2YCVrppz17Q=
+			</data>
+		</dict>
+		<key>DiscoverableBenefitVFL.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			/dJ6Nhsvfh30XL0slXJ0z1Xh/7fM8VZOn3uKGyMKrmM=
 			</data>
 		</dict>
 		<key>DiscoverableButtonsCardConciergeViewableVFL.json</key>
@@ -202,7 +217,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			JAzC6uugEhuGhHtWNf6uzjucH/rf8IKK6ftEz4hkzW0=
+			ePH35VYRKv22nB2pPqGEVUbG7jl7x+M+99CXw33QRXw=
 			</data>
 		</dict>
 		<key>Headers/FlybitsConcierge.h</key>
@@ -226,102 +241,109 @@
 			xgLk7sMoInEABt2QB1PFZxcnCaw1IGcFlGu8vHKeEzg=
 			</data>
 		</dict>
+		<key>Modules/FlybitsConcierge.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Ex1dL+g3mj18ygJbl78q/Q3aAF+g5A2Uf9/0JtAnVFs=
+			</data>
+		</dict>
+		<key>Modules/FlybitsConcierge.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			h0ey3lJ23ObLyqVyJ/h55vQ7Ytn3Q2e6OMTYBKJ6Ios=
+			</data>
+		</dict>
 		<key>Modules/FlybitsConcierge.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6FHLcwudNB/Wjjt7849m7qF9Mjx0HR2+eAOt3If4cf4=
+			h7+DlUeLpU6A9F2YdoWE8XK3mfZUkFFo0eFPbEjuA7M=
 			</data>
 		</dict>
 		<key>Modules/FlybitsConcierge.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DZZs0eGzMddVm8yO94/Z5Giw1X6dbGK5Rh+fALCxn3k=
+			h0ey3lJ23ObLyqVyJ/h55vQ7Ytn3Q2e6OMTYBKJ6Ios=
 			</data>
 		</dict>
 		<key>Modules/FlybitsConcierge.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OEd2IXkOUQOSPoGkj4wGflSZiGL22VQVqzGxcDpekxU=
+			TNnfPz1X8mx3wznPCiLdOh6Q/LpDRjrB3PacCXZEFLI=
 			</data>
 		</dict>
-		<key>Modules/FlybitsConcierge.swiftmodule/arm64.swiftdoc</key>
+		<key>Modules/FlybitsConcierge.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6FHLcwudNB/Wjjt7849m7qF9Mjx0HR2+eAOt3If4cf4=
+			Ex1dL+g3mj18ygJbl78q/Q3aAF+g5A2Uf9/0JtAnVFs=
 			</data>
 		</dict>
-		<key>Modules/FlybitsConcierge.swiftmodule/arm64.swiftinterface</key>
+		<key>Modules/FlybitsConcierge.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DZZs0eGzMddVm8yO94/Z5Giw1X6dbGK5Rh+fALCxn3k=
-			</data>
-		</dict>
-		<key>Modules/FlybitsConcierge.swiftmodule/arm64.swiftmodule</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			OEd2IXkOUQOSPoGkj4wGflSZiGL22VQVqzGxcDpekxU=
+			whs7gUIbvtG5kYu3oz+kK367WM5LdzuaAyFi7qaF7HY=
 			</data>
 		</dict>
 		<key>Modules/FlybitsConcierge.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			HX0IYA8cWKABVS/cQntDPQGt3HvagV2m2w2ICAXEm64=
+			SfNj17umXi3QdzDsdbJob+GNBdr3cbVQ6TQvCJHRJB4=
 			</data>
 		</dict>
 		<key>Modules/FlybitsConcierge.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DFTmO5+2d31lTr8ylb0e9WQtmDLi7+CIhKWN6hWVLaU=
+			whs7gUIbvtG5kYu3oz+kK367WM5LdzuaAyFi7qaF7HY=
 			</data>
 		</dict>
 		<key>Modules/FlybitsConcierge.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qynl/vcMsn1mzrXirdZNOKmMqiBrArD0umvnxax2ygY=
-			</data>
-		</dict>
-		<key>Modules/FlybitsConcierge.swiftmodule/x86_64.swiftdoc</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			HX0IYA8cWKABVS/cQntDPQGt3HvagV2m2w2ICAXEm64=
-			</data>
-		</dict>
-		<key>Modules/FlybitsConcierge.swiftmodule/x86_64.swiftinterface</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			DFTmO5+2d31lTr8ylb0e9WQtmDLi7+CIhKWN6hWVLaU=
-			</data>
-		</dict>
-		<key>Modules/FlybitsConcierge.swiftmodule/x86_64.swiftmodule</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			qynl/vcMsn1mzrXirdZNOKmMqiBrArD0umvnxax2ygY=
+			yaN8hQ/XYUGjVQDOHgIzydevRumIBz5hwc/YAB3PTSQ=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			bPCTCI7z9+Q1UEZE7mwNrPUAQa4pY6UOg8QSghOzWE0=
+			B05edVuR291YGQvhWXgbAurkx5KcMNB+uZoQ2XwehUo=
+			</data>
+		</dict>
+		<key>PrivacyInfo.xcprivacy</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			UO2Zz0mKYMq0xFp/YX84eAr3Gp2xna36AKPLFH/hNuk=
+			</data>
+		</dict>
+		<key>SingleBenefitBannerVFL.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			wZHW9e4qbqpbq06+qoXf4fpB1vSpa0xMvmLht0OIMl4=
+			</data>
+		</dict>
+		<key>SingleBenefitVFL.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			qm4wdKfUVw8Rtl9E1TSEVWo/I4ii479jGfSey6//OBo=
 			</data>
 		</dict>
 		<key>ar.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Bn/sA/hX9IaHsCkWaN1tI05dtW3K4ldr9vhus/0gOwE=
+			DHrI0rCOvxfs32v1P3tzw9mH/abn8ARYXeeA6tOFXYI=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -337,7 +359,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			f4AwyjM2USz4T796Vq0hZS3hAyFmLjbfz/AAT+kWlF4=
+			8iTDGhWWh+c/Vk2pBbHOQwFBCpjpnHBzcIo/Tty10Es=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -346,7 +368,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rPlNNoHnE5nF6IFiVo9CB78QJ6f10UzoFXwdh21/Trc=
+			mS9VJUi6EzDGosLh3CA+CCo/06UT4/5Sj2oeVd5yN5M=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -362,7 +384,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			VsZS/bHKzL8dmU2DqoKNN74VWnUUk9XovTbwYKAsK1o=
+			17CPAMMMngZBzaOTQaOWrhWm1ww+Ro/WuiZpqqfR1l4=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -371,7 +393,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/NTCfPxQ8+HqUpFQy5guACifO9q3PfMLkHGzQHlOWds=
+			HBlrJUTXp7/tvF1PQZw7eX831DabeLedH5wNdrd791k=
 			</data>
 			<key>optional</key>
 			<true/>

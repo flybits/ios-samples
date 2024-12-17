@@ -1,0 +1,27 @@
+{
+    "layout": [
+        "H:|[headerView]|",
+        "H:|[headerLabel]|",
+        "H:|[titleLabel]|",
+        "H:|[buttonStackView]|",
+        "H:|[sourceLabel][mediaView(36)]-padding-|",
+        "V:|[headerView(10)]-10-[headerLabel]",
+        "V:[headerLabel][titleLabel]",
+        "V:[titleLabel][buttonStackView]",
+        "V:[buttonStackView][sourceLabel(>=0)]|",
+        "V:[buttonStackView][mediaView]",
+        "V:[mediaView]-(>=10)-|"
+    ],
+    "imageViewAspect": 1,
+    "views":[
+        "headerView",
+        "headerLabel",
+        "titleLabel",
+        "buttonStackView",
+        "sourceLabel",
+        "mediaView"
+    ],
+    "metrics": {
+        "padding": 16.0
+    }
+}
