@@ -1,0 +1,6 @@
+framework module Pods_zones_and_modules_storyboard {
+  umbrella header "Pods-zones-and-modules-storyboard-umbrella.h"
+
+  export *
+  module * { export * }
+}
