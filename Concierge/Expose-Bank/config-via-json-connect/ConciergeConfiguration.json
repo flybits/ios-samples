@@ -1,0 +1,16 @@
+{
+     "conciergeConfiguration": {
+         "projectConfiguration": {
+             "projectId": "2CE41988-B1D3-4116-98DD-42FFB8754384",
+             "gatewayUrl": "https://api.demo.flybits.com",
+             "autoRegisterForLocation": true
+         },
+         "settingsConfiguration": {
+             "tncUrl": "https://flybits.com/legal/terms-of-use/",
+             "privacyUrl": "https://flybits.com/legal/privacy-policy/",
+             "showOptOut": true
+         },
+         "webService": "https://static-files-concierge.production.flybits.com/latest",
+         "webViewPoolingSize": 0
+     }
+}

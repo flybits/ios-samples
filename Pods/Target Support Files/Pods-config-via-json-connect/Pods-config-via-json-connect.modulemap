@@ -1,0 +1,6 @@
+framework module Pods_config_via_json_connect {
+  umbrella header "Pods-config-via-json-connect-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,15 +1,3 @@
-//
-// FlybitsSDK.h
-// Copyright (c) :YEAR: Flybits (http://flybits.com)
-//
-// Permission to use this codebase and all related and dependent interfaces
-// are granted as bound by the licensing agreement between Flybits and
-// :COMPANY_NAME: effective :EFFECTIVE_DATE:.
-//
-// Flybits Framework version :VERSION:
-// Built: :BUILD_DATE:
-//
-
 #import <Foundation/Foundation.h>
 
 //! Project version number for FlybitsSDK.

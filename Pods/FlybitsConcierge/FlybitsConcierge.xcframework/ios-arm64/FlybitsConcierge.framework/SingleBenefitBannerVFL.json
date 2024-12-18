@@ -1,0 +1,29 @@
+{
+    "layout": [
+        "H:|[headerView(10)]-10-[sourceImage]",
+        "H:|[headerView(10)]-10-[titleLabel]-10-[bannerImage]",
+        "H:|[headerView(10)]-10-[explanationLabel]-10-[bannerImage]",
+        "H:|[headerView(10)]-10-[buttonStackView]-10-[bannerImage]",
+        "H:[bannerImage(114@750)]|",
+        "V:|[headerView]|",
+        "V:|[bannerImage]|",
+        "V:|-8-[sourceImage(16)][titleLabel][explanationLabel][buttonStackView]-(>=10)-|"
+    ],
+    "views":[
+        "headerView",
+        "titleLabel",
+        "explanationLabel",
+        "buttonStackView",
+        "sourceImage",
+        "bannerImage"
+    ],
+    "metrics": {
+        "padding": 16.0
+    },
+    "mediaHiddenOptions": [
+        "horizontal"
+    ],
+    "height": 140.0,
+}
+
+
