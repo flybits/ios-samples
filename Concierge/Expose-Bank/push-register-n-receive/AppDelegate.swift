@@ -6,31 +6,71 @@
 //
 
 import UIKit
+import FlybitsConcierge
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+    var window: UIWindow?
+    let projectIdentifier: String = "2CE41988-B1D3-4116-98DD-42FFB8754384"
+    let gatewayURL: String = "https://api.demo.flybits.com"
+    let webServiceURL: String = "https://api.demo.flybits.com"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        UNUserNotificationCenter.current().delegate = self
+
+        Concierge.enableLogging()
+
+        /// Default configuration auto setup to set the project ID and the gateway so connect can happen any time
+        let config = FlybitsConciergeConfiguration.Builder()
+            .setProjectId(projectIdentifier)
+            .setGatewayUrl(gatewayURL)
+            .setWebService(webServiceURL)
+            .build()
+
+        Concierge.configure(configuration: config, contextPlugins: [], launchOptions: launchOptions)
+
         return true
     }
 
-    // MARK: UISceneSession Lifecycle
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        guard deviceToken.count > 0 else {
+            print("Not valid device token: \(deviceToken)")
+            return
+        }
 
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+        let deviceTokenString = deviceToken.map { String(format: "%02x", $0) }.joined()
+        print("Device Token: \(deviceTokenString)")
+        // Setting the device token here will cause the token to be registered with Flybits.
+        Concierge.sendPush(token: deviceToken)
     }
-
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-    }
-
-
 }
 
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler(.banner)
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        if let conciergePush = Concierge.handlePush(response.notification.request.content.userInfo) {
+            // It is Push message that Concierge can handle
+            if let vc = Concierge.deepLink(conciergePush: conciergePush) {
+                vc.title = "Notification Detail"
+                self.window?.rootViewController?.show(vc, sender: nil)
+            } else {
+                // Nothing to be done because Concierge will act on it automatically.
+            }
+        } else {
+            // It is the kind of push message that Concierge SDK won't handle. please use FlybitsPushSDK to handle it. or handle it in your own logic
+        }
+
+        completionHandler()
+    }
+}
+
+extension UIViewController {
+    @objc
+    func dismissAnimated() {
+        dismiss(animated: true, completion: nil)
+    }
+}
