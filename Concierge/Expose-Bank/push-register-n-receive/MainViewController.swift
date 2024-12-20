@@ -57,7 +57,9 @@ class MainViewController: UIViewController {
 
                 UIApplication.shared.registerForRemoteNotifications()
 
-                self.updateButtons()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.updateButtons()
+                }
             } catch {
                 print("Error requesting the push permission. More info: \(error.localizedDescription)")
             }
@@ -66,11 +68,11 @@ class MainViewController: UIViewController {
 
     private func updateButtons() {
         if Thread.isMainThread {
-            self.connectButton.isEnabled = Concierge.isConnected
+            self.connectButton.isEnabled = !Concierge.isConnected
             self.requestPushPermissionButton.isEnabled = Concierge.pushTokenUploadStatus() == .sent ? true : Concierge.isConnected;
         } else {
             DispatchQueue.main.async {
-                self.connectButton.isEnabled = Concierge.isConnected
+                self.connectButton.isEnabled = !Concierge.isConnected
                 self.requestPushPermissionButton.isEnabled = Concierge.pushTokenUploadStatus() == .sent ? true : Concierge.isConnected;
             }
         }

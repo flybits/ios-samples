@@ -192,6 +192,7 @@
 		95F01DA12D14AED300601884 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95F01DA32D14AED300601884 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95F01DC62D160B7700601884 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		95F01DC82D1616C700601884 /* push-register-n-receive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "push-register-n-receive.entitlements"; sourceTree = "<group>"; };
 		96A5540F0A4DE827C81B490A /* Pods_Connect_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Connect_Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A567FE867237D537B3D6B055 /* Pods_Expose_Bank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Expose_Bank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A75CAC46C5349CD7EC7E0DB5 /* Pods-Expose-Bank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Expose-Bank.release.xcconfig"; path = "Target Support Files/Pods-Expose-Bank/Pods-Expose-Bank.release.xcconfig"; sourceTree = "<group>"; };
@@ -505,6 +506,7 @@
 		95F01D942D14AED000601884 /* push-register-n-receive */ = {
 			isa = PBXGroup;
 			children = (
+				95F01DC82D1616C700601884 /* push-register-n-receive.entitlements */,
 				95F01DA32D14AED300601884 /* Info.plist */,
 				95F01D952D14AED000601884 /* AppDelegate.swift */,
 				95F01DC62D160B7700601884 /* MainViewController.swift */,
@@ -2309,6 +2311,7 @@
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = "push-register-n-receive/push-register-n-receive.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CH9YG7X49H;
@@ -2345,6 +2348,7 @@
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = "push-register-n-receive/push-register-n-receive.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CH9YG7X49H;

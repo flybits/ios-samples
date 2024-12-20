@@ -17,8 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        UNUserNotificationCenter.current().delegate = self
-
         Concierge.enableLogging()
 
         /// Default configuration auto setup to set the project ID and the gateway so connect can happen any time
