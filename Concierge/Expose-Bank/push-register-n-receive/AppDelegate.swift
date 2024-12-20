@@ -28,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         Concierge.configure(configuration: config, contextPlugins: [], launchOptions: launchOptions)
 
+        UNUserNotificationCenter.current().delegate = self
+
         return true
     }
 
