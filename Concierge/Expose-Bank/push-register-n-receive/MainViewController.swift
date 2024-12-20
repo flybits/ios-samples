@@ -14,8 +14,6 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.requestPushPermissionButton.isEnabled = Concierge.pushTokenUploadStatus() == .sent
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -25,23 +23,13 @@ class MainViewController: UIViewController {
     }
 
     @IBAction func connectOnTouchUpInside(sender: UIButton) {
+        self.connectButton.isEnabled = false
+
         Concierge.connect(with: AnonymousConciergeIDP()) { error in
             if let error = error {
                 print("Failed to connect. Reason \(error.localizedDescription)")
             } else {
                 print("Connected with success")
-            }
-
-            self.updateButtons()
-        }
-    }
-
-    @IBAction func disconnectOnTouchUpInside(sender: UIButton) {
-        Concierge.disconnect { error in
-            if let error = error {
-                print("Failed to disconnect. Reason \(error.localizedDescription)")
-            } else {
-                print("Disconnected with success")
             }
 
             self.updateButtons()
@@ -57,7 +45,7 @@ class MainViewController: UIViewController {
 
                 UIApplication.shared.registerForRemoteNotifications()
 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                     self.updateButtons()
                 }
             } catch {
@@ -69,11 +57,11 @@ class MainViewController: UIViewController {
     private func updateButtons() {
         if Thread.isMainThread {
             self.connectButton.isEnabled = !Concierge.isConnected
-            self.requestPushPermissionButton.isEnabled = Concierge.pushTokenUploadStatus() == .sent ? true : Concierge.isConnected;
+            self.requestPushPermissionButton.isEnabled = Concierge.pushTokenUploadStatus() == .sent ? false : Concierge.isConnected;
         } else {
             DispatchQueue.main.async {
                 self.connectButton.isEnabled = !Concierge.isConnected
-                self.requestPushPermissionButton.isEnabled = Concierge.pushTokenUploadStatus() == .sent ? true : Concierge.isConnected;
+                self.requestPushPermissionButton.isEnabled = Concierge.pushTokenUploadStatus() == .sent ? false : Concierge.isConnected;
             }
         }
     }

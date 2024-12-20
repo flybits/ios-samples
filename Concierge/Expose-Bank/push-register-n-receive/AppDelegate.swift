@@ -56,7 +56,9 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             // It is Push message that Concierge can handle
             if let vc = Concierge.deepLink(conciergePush: conciergePush) {
                 vc.title = "Notification Detail"
-                self.window?.rootViewController?.show(vc, sender: nil)
+                DispatchQueue.main.async {
+                    self.window?.rootViewController?.show(vc, sender: nil)
+                }
             } else {
                 // Nothing to be done because Concierge will act on it automatically.
             }

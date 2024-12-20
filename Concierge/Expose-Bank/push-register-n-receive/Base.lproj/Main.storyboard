@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VRK-Ea-CZm" userLabel="Main Stack">
-                                <rect key="frame" x="8" y="406" width="377" height="109.33333333333337"/>
+                                <rect key="frame" x="8" y="375.33333333333331" width="377" height="170.33333333333331"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check the network via Xcode console due to SDK logging or a network sniffer app like Charles." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nbj-6q-rt0">
                                         <rect key="frame" x="0.0" y="0.0" width="377" height="40.666666666666664"/>
@@ -41,6 +41,13 @@
                                             <action selector="requestPushPermissionOnTouchUpInsideSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t3Z-l1-1gI"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="moV-v7-ulT">
+                                        <rect key="frame" x="0.0" y="109.33333333333337" width="377" height="61"/>
+                                        <string key="text">If both buttons are disabled, it is because the app is all set and ready to receive pushes. Trigger the push from your Flybits Tenant</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </stackView>
                         </subviews>
