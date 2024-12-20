@@ -86,3 +86,11 @@ target 'zones-and-modules-swiftui' do
   # Pods
   pod 'FlybitsConcierge', $flybitsSDKVersion
 end
+
+target 'push-register-n-receive' do
+  project 'Concierge/Expose-Bank/Expose-Bank.xcodeproj'
+  inherit! :search_paths
+
+  # Pods
+  pod 'FlybitsConcierge', $flybitsSDKVersion
+end
