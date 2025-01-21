@@ -2,7 +2,7 @@
 
 This project is to show how simple it is to display Flybits Concierge using the Storyboard way.
 
-The [ViewController](/ViewController.swift) file has three buttons.
+The [ViewController](ViewController.swift) file has three buttons.
 
 When the project/scheme zones-and-modules-storyboard runs, it will load the ViewController code which will show the below screen:
 

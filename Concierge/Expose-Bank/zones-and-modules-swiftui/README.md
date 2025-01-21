@@ -2,7 +2,7 @@
 
 This project is to show how simple it is to display Flybits Concierge using Swift UI language.
 
-The [ContentView](/ContentView.swift) file has two buttons and a Concierge instance below the buttons.
+The [ContentView](ContentView.swift) file has two buttons and a Concierge instance below the buttons.
 
 When the project/scheme zones-and-modules-swiftui runs, it will load the ContentView code which will show the below screen:
 
