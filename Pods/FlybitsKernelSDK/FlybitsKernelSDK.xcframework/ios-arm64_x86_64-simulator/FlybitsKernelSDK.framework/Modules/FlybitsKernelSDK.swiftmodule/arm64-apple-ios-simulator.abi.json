@@ -15774,98 +15774,98 @@
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Group\/Group.swift",
       "kind": "BooleanLiteral",
-      "offset": 5506,
+      "offset": 5498,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Group\/Group.swift",
       "kind": "StringLiteral",
-      "offset": 6409,
+      "offset": 6393,
       "length": 38,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Group\/Group.swift",
       "kind": "StringLiteral",
-      "offset": 6440,
+      "offset": 6424,
       "length": 1,
       "value": "\"\/\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Group\/Group.swift",
       "kind": "StringLiteral",
-      "offset": 6446,
+      "offset": 6430,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Group\/Group.swift",
       "kind": "BooleanLiteral",
-      "offset": 6636,
+      "offset": 6620,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Group\/Group.swift",
       "kind": "StringLiteral",
-      "offset": 7660,
+      "offset": 7636,
       "length": 4,
       "value": "\"id\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Group\/Group.swift",
       "kind": "IntegerLiteral",
-      "offset": 7790,
+      "offset": 7766,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Group\/Group.swift",
       "kind": "StringLiteral",
-      "offset": 9360,
+      "offset": 9336,
       "length": 52,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Group\/Group.swift",
       "kind": "StringLiteral",
-      "offset": 9391,
+      "offset": 9367,
       "length": 1,
       "value": "\"\/\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Group\/Group.swift",
       "kind": "StringLiteral",
-      "offset": 9411,
+      "offset": 9387,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Group\/Group.swift",
       "kind": "IntegerLiteral",
-      "offset": 9626,
+      "offset": 9602,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Group\/Group.swift",
       "kind": "StringLiteral",
-      "offset": 11182,
+      "offset": 11158,
       "length": 38,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Group\/Group.swift",
       "kind": "StringLiteral",
-      "offset": 11213,
+      "offset": 11189,
       "length": 1,
       "value": "\"\/\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Group\/Group.swift",
       "kind": "StringLiteral",
-      "offset": 11219,
+      "offset": 11195,
       "length": 1,
       "value": "\"\""
     },
@@ -16565,91 +16565,91 @@
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Experience\/Experience.swift",
       "kind": "StringLiteral",
-      "offset": 7191,
+      "offset": 7183,
       "length": 49,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Experience\/Experience.swift",
       "kind": "StringLiteral",
-      "offset": 7233,
+      "offset": 7225,
       "length": 1,
       "value": "\"\/\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Experience\/Experience.swift",
       "kind": "StringLiteral",
-      "offset": 7239,
+      "offset": 7231,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Experience\/Experience.swift",
       "kind": "BooleanLiteral",
-      "offset": 7429,
+      "offset": 7421,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Experience\/Experience.swift",
       "kind": "StringLiteral",
-      "offset": 8532,
+      "offset": 8516,
       "length": 4,
       "value": "\"id\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Experience\/Experience.swift",
       "kind": "IntegerLiteral",
-      "offset": 8662,
+      "offset": 8646,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Experience\/Experience.swift",
       "kind": "StringLiteral",
-      "offset": 10288,
+      "offset": 10272,
       "length": 68,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Experience\/Experience.swift",
       "kind": "StringLiteral",
-      "offset": 10330,
+      "offset": 10314,
       "length": 1,
       "value": "\"\/\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Experience\/Experience.swift",
       "kind": "StringLiteral",
-      "offset": 10355,
+      "offset": 10339,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Experience\/Experience.swift",
       "kind": "IntegerLiteral",
-      "offset": 10575,
+      "offset": 10559,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Experience\/Experience.swift",
       "kind": "StringLiteral",
-      "offset": 11970,
+      "offset": 11954,
       "length": 49,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Experience\/Experience.swift",
       "kind": "StringLiteral",
-      "offset": 12012,
+      "offset": 11996,
       "length": 1,
       "value": "\"\/\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Experience\/Experience.swift",
       "kind": "StringLiteral",
-      "offset": 12018,
+      "offset": 12002,
       "length": 1,
       "value": "\"\""
     },
@@ -17013,581 +17013,581 @@
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 14374,
+      "offset": 14366,
       "length": 70,
       "value": "\"Error initializing paged content data: \""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 14443,
+      "offset": 14435,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "BooleanLiteral",
-      "offset": 15493,
+      "offset": 15485,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "BooleanLiteral",
-      "offset": 16042,
+      "offset": 16034,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 16680,
+      "offset": 16664,
       "length": 79,
       "value": "\"Error converting data into EmbeddedContentData: \""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 16758,
+      "offset": 16742,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "BooleanLiteral",
-      "offset": 17681,
+      "offset": 17665,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "BooleanLiteral",
-      "offset": 18113,
+      "offset": 18097,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 19147,
+      "offset": 19123,
       "length": 70,
       "value": "\"Error initializing paged content data: \""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 19216,
+      "offset": 19192,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "BooleanLiteral",
-      "offset": 20189,
+      "offset": 20165,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "IntegerLiteral",
-      "offset": 20318,
+      "offset": 20294,
       "length": 2,
       "value": "50"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "IntegerLiteral",
-      "offset": 20380,
+      "offset": 20356,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 20405,
+      "offset": 20381,
       "length": 73,
       "value": "\"You have requested more than the allowed limit of 50 Content instances.\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 20605,
+      "offset": 20581,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "IntegerLiteral",
-      "offset": 20702,
+      "offset": 20678,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 20727,
+      "offset": 20703,
       "length": 38,
       "value": "\"Content ids array must not be empty.\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 20913,
+      "offset": 20889,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 20975,
+      "offset": 20951,
       "length": 3,
       "value": "\"&\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 21015,
+      "offset": 20991,
       "length": 100,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 21114,
+      "offset": 21090,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 21138,
+      "offset": 21114,
       "length": 47,
       "value": "\"contentIds=\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 21179,
+      "offset": 21155,
       "length": 3,
       "value": "\",\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 21184,
+      "offset": 21160,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 21247,
+      "offset": 21223,
       "length": 17,
       "value": "\"&\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 21263,
+      "offset": 21239,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "BooleanLiteral",
-      "offset": 21483,
+      "offset": 21459,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 22517,
+      "offset": 22485,
       "length": 70,
       "value": "\"Error initializing paged content data: \""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 22586,
+      "offset": 22554,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "BooleanLiteral",
-      "offset": 23526,
+      "offset": 23494,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 23628,
+      "offset": 23596,
       "length": 49,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 23662,
+      "offset": 23630,
       "length": 1,
       "value": "\"\/\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 23676,
+      "offset": 23644,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "BooleanLiteral",
-      "offset": 23970,
+      "offset": 23938,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 24869,
+      "offset": 24829,
       "length": 70,
       "value": "\"Error initializing paged content data: \""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 24938,
+      "offset": 24898,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "IntegerLiteral",
-      "offset": 26068,
+      "offset": 26028,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 27730,
+      "offset": 27690,
       "length": 57,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 27764,
+      "offset": 27724,
       "length": 1,
       "value": "\"\/\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 27786,
+      "offset": 27746,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "IntegerLiteral",
-      "offset": 28003,
+      "offset": 27963,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 29633,
+      "offset": 29593,
       "length": 49,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 29667,
+      "offset": 29627,
       "length": 1,
       "value": "\"\/\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 29681,
+      "offset": 29641,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "BooleanLiteral",
-      "offset": 30689,
+      "offset": 30649,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 30996,
+      "offset": 30956,
       "length": 97,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 31030,
+      "offset": 30990,
       "length": 1,
       "value": "\"\/\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 31057,
+      "offset": 31017,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 31092,
+      "offset": 31052,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "BooleanLiteral",
-      "offset": 31385,
+      "offset": 31345,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "BooleanLiteral",
-      "offset": 32603,
+      "offset": 32555,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 32927,
+      "offset": 32879,
       "length": 111,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 32961,
+      "offset": 32913,
       "length": 1,
       "value": "\"\/\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 32988,
+      "offset": 32940,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 33023,
+      "offset": 32975,
       "length": 1,
       "value": "\"\/\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 33037,
+      "offset": 32989,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "BooleanLiteral",
-      "offset": 33330,
+      "offset": 33282,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 34722,
+      "offset": 34674,
       "length": 97,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 34756,
+      "offset": 34708,
       "length": 1,
       "value": "\"\/\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 34783,
+      "offset": 34735,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 34818,
+      "offset": 34770,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 35074,
+      "offset": 35026,
       "length": 5,
       "value": "\"_id\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "IntegerLiteral",
-      "offset": 35205,
+      "offset": 35157,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 36562,
+      "offset": 36514,
       "length": 46,
       "value": "\"Couldn't find an identifier for ContentData.\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 36952,
+      "offset": 36904,
       "length": 103,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 36986,
+      "offset": 36938,
       "length": 1,
       "value": "\"\/\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 37013,
+      "offset": 36965,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 37048,
+      "offset": 37000,
       "length": 1,
       "value": "\"\/\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 37054,
+      "offset": 37006,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "IntegerLiteral",
-      "offset": 37395,
+      "offset": 37347,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 39002,
+      "offset": 38954,
       "length": 111,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 39036,
+      "offset": 38988,
       "length": 1,
       "value": "\"\/\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 39063,
+      "offset": 39015,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 39098,
+      "offset": 39050,
       "length": 1,
       "value": "\"\/\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 39112,
+      "offset": 39064,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "BooleanLiteral",
-      "offset": 40141,
+      "offset": 40093,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 41655,
+      "offset": 41599,
       "length": 70,
       "value": "\"Error initializing paged content data: \""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 41724,
+      "offset": 41668,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "BooleanLiteral",
-      "offset": 44421,
+      "offset": 44365,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "BooleanLiteral",
-      "offset": 45357,
+      "offset": 45301,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 48638,
+      "offset": 48582,
       "length": 10,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 48647,
+      "offset": 48591,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsKernelSDK\/FlybitsKernelSDK\/Content\/Content.swift",
       "kind": "StringLiteral",
-      "offset": 49674,
+      "offset": 49618,
       "length": 33,
       "value": "\"User initialized content object\""
     },

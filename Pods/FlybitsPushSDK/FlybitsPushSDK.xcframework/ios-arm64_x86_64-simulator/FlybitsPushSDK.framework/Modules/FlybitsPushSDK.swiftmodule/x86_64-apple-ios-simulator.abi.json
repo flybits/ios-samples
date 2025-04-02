@@ -21364,7 +21364,7 @@
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsPushSDK\/FlybitsPushSDK\/API\/Requests\/DeviceRequest.swift",
       "kind": "IntegerLiteral",
-      "offset": 2908,
+      "offset": 2900,
       "length": 1,
       "value": "0"
     },
@@ -21798,35 +21798,35 @@
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsPushSDK\/FlybitsPushSDK\/Push\/APNSPreferences.swift",
       "kind": "BooleanLiteral",
-      "offset": 4852,
+      "offset": 4844,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsPushSDK\/FlybitsPushSDK\/Push\/APNSPreferences.swift",
       "kind": "BooleanLiteral",
-      "offset": 5959,
+      "offset": 5943,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsPushSDK\/FlybitsPushSDK\/Push\/APNSPreferences.swift",
       "kind": "BooleanLiteral",
-      "offset": 6272,
+      "offset": 6256,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsPushSDK\/FlybitsPushSDK\/Push\/APNSPreferences.swift",
       "kind": "BooleanLiteral",
-      "offset": 6497,
+      "offset": 6481,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsPushSDK\/FlybitsPushSDK\/Push\/APNSPreferences.swift",
       "kind": "StringLiteral",
-      "offset": 6677,
+      "offset": 6661,
       "length": 3,
       "value": "\",\""
     },
@@ -22302,84 +22302,84 @@
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsPushSDK\/FlybitsPushSDK\/Push\/PushManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 19339,
+      "offset": 19331,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsPushSDK\/FlybitsPushSDK\/Push\/PushManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 20066,
+      "offset": 20058,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsPushSDK\/FlybitsPushSDK\/Push\/PushManager.swift",
       "kind": "Dictionary",
-      "offset": 20823,
+      "offset": 20815,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsPushSDK\/FlybitsPushSDK\/Push\/PushManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 21847,
+      "offset": 21839,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsPushSDK\/FlybitsPushSDK\/Push\/PushManager.swift",
       "kind": "StringLiteral",
-      "offset": 21958,
+      "offset": 21950,
       "length": 60,
       "value": "\"Unable to update unsubscribed push topics to \""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsPushSDK\/FlybitsPushSDK\/Push\/PushManager.swift",
       "kind": "StringLiteral",
-      "offset": 22016,
+      "offset": 22008,
       "length": 31,
       "value": "\" \""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsPushSDK\/FlybitsPushSDK\/Push\/PushManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 22525,
+      "offset": 22517,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsPushSDK\/FlybitsPushSDK\/Push\/PushManager.swift",
       "kind": "StringLiteral",
-      "offset": 22718,
+      "offset": 22710,
       "length": 46,
       "value": "\"Failed to retrieve unsubscribed push topics \""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsPushSDK\/FlybitsPushSDK\/Push\/PushManager.swift",
       "kind": "StringLiteral",
-      "offset": 22799,
+      "offset": 22791,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsPushSDK\/FlybitsPushSDK\/Push\/PushManager.swift",
       "kind": "StringLiteral",
-      "offset": 23163,
+      "offset": 23155,
       "length": 43,
       "value": "\"Unable to decode push data to PushMessage\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsPushSDK\/FlybitsPushSDK\/Push\/PushManager.swift",
       "kind": "StringLiteral",
-      "offset": 23370,
+      "offset": 23362,
       "length": 43,
       "value": "\"Unable to decode push data to PushMessage\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsPushSDK\/FlybitsPushSDK\/Push\/PushManager.swift",
       "kind": "StringLiteral",
-      "offset": 23716,
+      "offset": 23708,
       "length": 43,
       "value": "\"Unable to decode push data to PushMessage\""
     },

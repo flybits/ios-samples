@@ -230,11 +230,21 @@ public class ContentDataStrategy : FlybitsCoreConcierge.DataStrategy {
   public func clean()
   @objc deinit
 }
+public enum ContextDisplayMode {
+  case normal
+  case details
+  case overlay
+  public static func == (a: FlybitsCoreConcierge.ContextDisplayMode, b: FlybitsCoreConcierge.ContextDisplayMode) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
 public class ConciergeContext {
   final public let style: any FlybitsCoreConcierge.ConciergeStyle
-  final public let isOverlay: Swift.Bool
+  final public let displayMode: FlybitsCoreConcierge.ContextDisplayMode
   public var overlayContextWindow: UIKit.UIWindow?
-  public init(_ style: any FlybitsCoreConcierge.ConciergeStyle, isOverlay: Swift.Bool = false)
+  public init(_ style: any FlybitsCoreConcierge.ConciergeStyle, displayMode: FlybitsCoreConcierge.ContextDisplayMode)
   @objc deinit
 }
 final public class ZonesModules : Swift.Decodable {
@@ -544,6 +554,8 @@ final public class LocalZonesAPIStrategy : FlybitsCoreConcierge.APIStrategy {
   @objc deinit
 }
 extension FlybitsCoreConcierge.ActionTypeIntent : Swift.Hashable {}
+extension FlybitsCoreConcierge.ContextDisplayMode : Swift.Equatable {}
+extension FlybitsCoreConcierge.ContextDisplayMode : Swift.Hashable {}
 extension FlybitsCoreConcierge.ConfigurationState : Swift.Equatable {}
 extension FlybitsCoreConcierge.ConfigurationState : Swift.Hashable {}
 extension FlybitsCoreConcierge.ConciergeTransition : Swift.Equatable {}

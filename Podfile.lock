@@ -1,24 +1,24 @@
 PODS:
-  - FlybitsConcierge (5.1.1):
-    - FlybitsCoreConcierge (= 5.1.1)
-  - FlybitsContextSDK (5.1.1):
-    - FlybitsSDK (= 5.1.1)
-  - FlybitsCoreConcierge (5.1.1):
-    - FlybitsContextSDK (= 5.1.1)
-    - FlybitsKernelSDK (= 5.1.1)
-    - FlybitsPushSDK (= 5.1.1)
-    - FlybitsSDK (= 5.1.1)
-  - FlybitsKernelSDK (5.1.1):
-    - FlybitsSDK (= 5.1.1)
-  - FlybitsPushSDK (5.1.1):
-    - FlybitsSDK (= 5.1.1)
-  - FlybitsSDK (5.1.1)
+  - FlybitsConcierge (5.1.2):
+    - FlybitsCoreConcierge (= 5.1.2)
+  - FlybitsContextSDK (5.1.2):
+    - FlybitsSDK (= 5.1.2)
+  - FlybitsCoreConcierge (5.1.2):
+    - FlybitsContextSDK (= 5.1.2)
+    - FlybitsKernelSDK (= 5.1.2)
+    - FlybitsPushSDK (= 5.1.2)
+    - FlybitsSDK (= 5.1.2)
+  - FlybitsKernelSDK (5.1.2):
+    - FlybitsSDK (= 5.1.2)
+  - FlybitsPushSDK (5.1.2):
+    - FlybitsSDK (= 5.1.2)
+  - FlybitsSDK (5.1.2)
 
 DEPENDENCIES:
-  - FlybitsConcierge (~> 5.1)
+  - FlybitsConcierge (~> 5.1.2)
 
 SPEC REPOS:
-  https://github.com/flybits/Spec-XCFramework-new:
+  https://github.com/flybits/Spec-XCFramework-new.git:
     - FlybitsConcierge
     - FlybitsContextSDK
     - FlybitsCoreConcierge
@@ -27,13 +27,13 @@ SPEC REPOS:
     - FlybitsSDK
 
 SPEC CHECKSUMS:
-  FlybitsConcierge: 5ae16e91c515e83370c16cef6c754adb68bc86ab
-  FlybitsContextSDK: 91e46eb3a000a38f4e78789c3bfa788e167acb39
-  FlybitsCoreConcierge: 9818d742f3f6114819f0c812352455555c4a0cb2
-  FlybitsKernelSDK: ba3bf1238b00f6b9df4f2869c64518932dea99dc
-  FlybitsPushSDK: 5a785a1a9d16d09e9c961681a2b59b7313f77172
-  FlybitsSDK: 14069a96950682d62713b0a2aab4d83ddbcd4c83
+  FlybitsConcierge: 301db55874e68f6a670f389ba88189bf664b9a43
+  FlybitsContextSDK: 82617660dd072f058e88e0ffca39d3fad974a798
+  FlybitsCoreConcierge: f504a1406ba4c374b23e6ca1a3fc39d97efe34d6
+  FlybitsKernelSDK: 33f6a1833b1a85e637d8fd50433a70838aba89dc
+  FlybitsPushSDK: 3eb114a6ba274a56b25b004be1e7649a747eba45
+  FlybitsSDK: f7efee987fab70f4c7718934b7d8cab53f642475
 
-PODFILE CHECKSUM: 156c46fe92abd94caa3edd0ab29f58678c99c89a
+PODFILE CHECKSUM: 3b41ef2d051e1a581f162644e12d2941368040e1
 
-COCOAPODS: 1.14.3
+COCOAPODS: 1.16.2
