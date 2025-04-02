@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -161,6 +161,7 @@
 		87B2D2CBFF7AFAB704CA02B8 /* Pods_zones_and_modules_swiftui.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zones_and_modules_swiftui.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91C0A4CDAB1E585045FA314E /* Pods-push-register-n-receive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-push-register-n-receive.release.xcconfig"; path = "Target Support Files/Pods-push-register-n-receive/Pods-push-register-n-receive.release.xcconfig"; sourceTree = "<group>"; };
 		94B5497659053715FBA1730D /* Pods_config_via_json_connect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_config_via_json_connect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95A21A6E2D9DBA550006823D /* Use-DeepLinkHandlerProtocol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Use-DeepLinkHandlerProtocol.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F01D4D2D121FE000601884 /* config-via-json-connect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "config-via-json-connect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F01D4F2D121FE000601884 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95F01D512D121FE000601884 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -216,6 +217,10 @@
 		F5EFE8BEC30DD8D05CDAB0A2 /* Pods-Banner-Bank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Banner-Bank.debug.xcconfig"; path = "Target Support Files/Pods-Banner-Bank/Pods-Banner-Bank.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		95A21A6F2D9DBA550006823D /* Use-DeepLinkHandlerProtocol */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Use-DeepLinkHandlerProtocol"; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		25B2F7CF28E219EE0086F403 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -262,6 +267,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3EDA3BA252498ACA326B123 /* Pods_Modify_Existing_Style.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95A21A6B2D9DBA550006823D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +378,7 @@
 				25B2F7EB28E234440086F403 /* Contextual_Theming */,
 				25B2F7D328E219EE0086F403 /* Customize-Expose-Button */,
 				25EA00102820655A004F982B /* Expose-Bank */,
+				95A21A6F2D9DBA550006823D /* Use-DeepLinkHandlerProtocol */,
 				14438011C5946C63B2E0C055 /* Frameworks */,
 				576A4AA42836917500498C70 /* FullScreen_Concierge */,
 				57E55DD92842A90400A9BE59 /* Modify-Existing-Style */,
@@ -391,6 +404,7 @@
 				95F01D672D1313CE00601884 /* zones-and-modules-storyboard.app */,
 				95F01D812D1378C200601884 /* zones-and-modules-swiftui.app */,
 				95F01D932D14AED000601884 /* push-register-n-receive.app */,
+				95A21A6E2D9DBA550006823D /* Use-DeepLinkHandlerProtocol.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -678,6 +692,28 @@
 			productReference = 57E55DD82842A90400A9BE59 /* Modify-Existing-Style.app */;
 			productType = "com.apple.product-type.application";
 		};
+		95A21A6D2D9DBA550006823D /* Use-DeepLinkHandlerProtocol */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95A21A7B2D9DBA570006823D /* Build configuration list for PBXNativeTarget "Use-DeepLinkHandlerProtocol" */;
+			buildPhases = (
+				95A21A6A2D9DBA550006823D /* Sources */,
+				95A21A6B2D9DBA550006823D /* Frameworks */,
+				95A21A6C2D9DBA550006823D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				95A21A6F2D9DBA550006823D /* Use-DeepLinkHandlerProtocol */,
+			);
+			name = "Use-DeepLinkHandlerProtocol";
+			packageProductDependencies = (
+			);
+			productName = "Use-DeepLinkHandlerProtocol";
+			productReference = 95A21A6E2D9DBA550006823D /* Use-DeepLinkHandlerProtocol.app */;
+			productType = "com.apple.product-type.application";
+		};
 		95F01D4C2D121FE000601884 /* config-via-json-connect */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 95F01D5E2D121FE100601884 /* Build configuration list for PBXNativeTarget "config-via-json-connect" */;
@@ -780,7 +816,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1540;
+				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
 					25B2F7D128E219EE0086F403 = {
@@ -800,6 +836,9 @@
 					};
 					57E55DD72842A90400A9BE59 = {
 						CreatedOnToolsVersion = 13.4;
+					};
+					95A21A6D2D9DBA550006823D = {
+						CreatedOnToolsVersion = 16.0;
 					};
 					95F01D4C2D121FE000601884 = {
 						CreatedOnToolsVersion = 15.4;
@@ -842,6 +881,7 @@
 				95F01D662D1313CE00601884 /* zones-and-modules-storyboard */,
 				95F01D802D1378C200601884 /* zones-and-modules-swiftui */,
 				95F01D922D14AED000601884 /* push-register-n-receive */,
+				95A21A6D2D9DBA550006823D /* Use-DeepLinkHandlerProtocol */,
 			);
 		};
 /* End PBXProject section */
@@ -907,6 +947,13 @@
 				57E55DE72842A90600A9BE59 /* LaunchScreen.storyboard in Resources */,
 				57E55DE42842A90600A9BE59 /* Assets.xcassets in Resources */,
 				57E55DE22842A90400A9BE59 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95A21A6C2D9DBA550006823D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1452,6 +1499,13 @@
 				57E55DDF2842A90400A9BE59 /* ViewController.swift in Sources */,
 				57E55DDB2842A90400A9BE59 /* AppDelegate.swift in Sources */,
 				57E55DDD2842A90400A9BE59 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95A21A6A2D9DBA550006823D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2153,6 +2207,77 @@
 			};
 			name = Release;
 		};
+		95A21A792D9DBA570006823D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Use-DeepLinkHandlerProtocol/Preview Content\"";
+				DEVELOPMENT_TEAM = CH9YG7X49H;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.flybits.Use-DeepLinkHandlerProtocol";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		95A21A7A2D9DBA570006823D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Use-DeepLinkHandlerProtocol/Preview Content\"";
+				DEVELOPMENT_TEAM = CH9YG7X49H;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.flybits.Use-DeepLinkHandlerProtocol";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		95F01D5F2D121FE100601884 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1BF50E5B1B2080A9F456D732 /* Pods-config-via-json-connect.debug.xcconfig */;
@@ -2556,6 +2681,15 @@
 			buildConfigurations = (
 				57E55DE92842A90600A9BE59 /* Debug */,
 				57E55DEA2842A90600A9BE59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		95A21A7B2D9DBA570006823D /* Build configuration list for PBXNativeTarget "Use-DeepLinkHandlerProtocol" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95A21A792D9DBA570006823D /* Debug */,
+				95A21A7A2D9DBA570006823D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
