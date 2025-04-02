@@ -796,6 +796,12 @@ public enum ConciergePushNetwork : Swift.String, Swift.Codable {
   public var webViewPoolingSize: Swift.Int {
     get
   }
+  public var timeToRefreshInterval: Swift.Double {
+    get
+  }
+  public var timeToRefreshNoDataInterval: Swift.Double {
+    get
+  }
   public class Builder {
     public init()
     @discardableResult
@@ -812,6 +818,10 @@ public enum ConciergePushNetwork : Swift.String, Swift.Codable {
     public func setPushNetwork(_ value: FlybitsConcierge.ConciergePushNetwork) -> Self
     @discardableResult
     public func setWebviewPoolingSize(_ value: Swift.Int) -> Self
+    @discardableResult
+    public func setTimeToRefreshInterval(_ value: Swift.Int) -> Self
+    @discardableResult
+    public func setTimeToRefreshNoDataInterval(_ value: Swift.Int) -> Self
     public func build() -> FlybitsConcierge.FlybitsConciergeConfiguration
     @objc deinit
   }

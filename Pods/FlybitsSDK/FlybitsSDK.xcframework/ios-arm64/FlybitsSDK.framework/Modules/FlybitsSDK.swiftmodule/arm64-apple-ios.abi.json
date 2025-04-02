@@ -74952,581 +74952,581 @@
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 11517,
+      "offset": 11501,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 12085,
+      "offset": 12069,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 12801,
+      "offset": 12785,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 13478,
+      "offset": 13462,
       "length": 21,
       "value": "\"application\/x-plist\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 13815,
+      "offset": 13799,
       "length": 49,
       "value": "\"Cannot convert empty parameters to PropertyList\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 14114,
+      "offset": 14098,
       "length": 58,
       "value": "\"---------------------------14737809831466499882746641449\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 14205,
+      "offset": 14189,
       "length": 19,
       "value": "\"--\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 14219,
+      "offset": 14203,
       "length": 1,
       "value": "\"\r\n\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 14296,
+      "offset": 14280,
       "length": 32,
       "value": "\"multipart\/form-data; boundary=\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 14361,
+      "offset": 14345,
       "length": 14,
       "value": "\"Content-Type\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 14906,
+      "offset": 14890,
       "length": 57,
       "value": "\"Content-Disposition: form-data; name=\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 14952,
+      "offset": 14936,
       "length": 1,
       "value": "\"\"\r\n\r\n\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 15044,
+      "offset": 15028,
       "length": 14,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 15053,
+      "offset": 15037,
       "length": 1,
       "value": "\"\r\n\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 15205,
+      "offset": 15189,
       "length": 106,
       "value": "\"Content-Disposition: form-data; name=\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 15268,
+      "offset": 15252,
       "length": 1,
       "value": "\"\"; filename=\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 15304,
+      "offset": 15288,
       "length": 1,
       "value": "\"\"\r\n\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 15429,
+      "offset": 15413,
       "length": 48,
       "value": "\"Content-Type: \""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 15468,
+      "offset": 15452,
       "length": 1,
       "value": "\"\r\n\r\n\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 15659,
+      "offset": 15643,
       "length": 6,
       "value": "\"\r\n\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 15738,
+      "offset": 15722,
       "length": 21,
       "value": "\"--\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 15752,
+      "offset": 15736,
       "length": 2,
       "value": "\"--\r\n\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 15883,
+      "offset": 15867,
       "length": 16,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 15898,
+      "offset": 15882,
       "length": 24,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 15921,
+      "offset": 15905,
       "length": 16,
       "value": "\"Content-Length\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 16219,
+      "offset": 16203,
       "length": 21,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 16229,
+      "offset": 16213,
       "length": 1,
       "value": "\"=\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 16239,
+      "offset": 16223,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 16269,
+      "offset": 16253,
       "length": 3,
       "value": "\"&\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "Array",
-      "offset": 16590,
+      "offset": 16574,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 16935,
+      "offset": 16919,
       "length": 7,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 16941,
+      "offset": 16925,
       "length": 101,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 17041,
+      "offset": 17025,
       "length": 3,
       "value": "\",\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 17076,
+      "offset": 17060,
       "length": 13,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 17086,
+      "offset": 17070,
       "length": 1,
       "value": "\"[]\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 17353,
+      "offset": 17337,
       "length": 32,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 17363,
+      "offset": 17347,
       "length": 1,
       "value": "\"[\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 17383,
+      "offset": 17367,
       "length": 1,
       "value": "\"]\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 17463,
+      "offset": 17447,
       "length": 10,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 17472,
+      "offset": 17456,
       "length": 78,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 17648,
+      "offset": 17632,
       "length": 87,
       "value": "\"Can't generate dictionary for key \""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 17692,
+      "offset": 17676,
       "length": 4,
       "value": "\" when parsing urlEncoded in NetworkManager\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 18293,
+      "offset": 18277,
       "length": 4,
       "value": "1"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 18325,
+      "offset": 18309,
       "length": 3,
       "value": "2"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 18359,
+      "offset": 18343,
       "length": 6,
       "value": "3"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 18537,
+      "offset": 18521,
       "length": 5,
       "value": "\"GET\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 18584,
+      "offset": 18568,
       "length": 6,
       "value": "\"POST\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 18631,
+      "offset": 18615,
       "length": 5,
       "value": "\"PUT\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 18680,
+      "offset": 18664,
       "length": 8,
       "value": "\"DELETE\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 18293,
+      "offset": 18277,
       "length": 4,
       "value": "1"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 18325,
+      "offset": 18309,
       "length": 3,
       "value": "2"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 18359,
+      "offset": 18343,
       "length": 6,
       "value": "3"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 19242,
+      "offset": 19226,
       "length": 6,
       "value": "\"make\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 19298,
+      "offset": 19282,
       "length": 7,
       "value": "\"model\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 19307,
+      "offset": 19291,
       "length": 25,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 19331,
+      "offset": 19315,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 19350,
+      "offset": 19334,
       "length": 11,
       "value": "\"osVersion\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 19411,
+      "offset": 19395,
       "length": 12,
       "value": "\"deviceType\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 19473,
+      "offset": 19457,
       "length": 12,
       "value": "\"sdkVersion\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 19525,
+      "offset": 19509,
       "length": 18,
       "value": "\"physicalDeviceId\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 19714,
+      "offset": 19698,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 19837,
+      "offset": 19821,
       "length": 71,
       "value": "\"Can't generate DefaultUserAgent json string from UserAgent dictionary\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 19933,
+      "offset": 19917,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 20266,
+      "offset": 20250,
       "length": 21,
       "value": "\"com.flybits.network\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 20345,
+      "offset": 20329,
       "length": 3,
       "value": "\";\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 20426,
+      "offset": 20410,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 20583,
+      "offset": 20567,
       "length": 17,
       "value": "\"Accept-Language\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 20691,
+      "offset": 20675,
       "length": 18,
       "value": "\"application\/json\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 20793,
+      "offset": 20777,
       "length": 14,
       "value": "\"Content-Type\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 20890,
+      "offset": 20874,
       "length": 17,
       "value": "\"X-Authorization\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "StringLiteral",
-      "offset": 20989,
+      "offset": 20973,
       "length": 14,
       "value": "\"X-User-Agent\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 21145,
+      "offset": 21129,
       "length": 3,
       "value": "200"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 21213,
+      "offset": 21197,
       "length": 3,
       "value": "201"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 21296,
+      "offset": 21280,
       "length": 3,
       "value": "203"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 21369,
+      "offset": 21353,
       "length": 3,
       "value": "204"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 21452,
+      "offset": 21436,
       "length": 3,
       "value": "400"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 21530,
+      "offset": 21514,
       "length": 3,
       "value": "401"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 21602,
+      "offset": 21586,
       "length": 3,
       "value": "403"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 21673,
+      "offset": 21657,
       "length": 3,
       "value": "404"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 21761,
+      "offset": 21745,
       "length": 3,
       "value": "429"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 21842,
+      "offset": 21826,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 21933,
+      "offset": 21917,
       "length": 3,
       "value": "503"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/NetworkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 22001,
+      "offset": 21985,
       "length": 3,
       "value": "100"
     },
@@ -77073,70 +77073,70 @@
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/FlybitsPreference.swift",
       "kind": "BooleanLiteral",
-      "offset": 22886,
+      "offset": 22878,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/FlybitsPreference.swift",
       "kind": "BooleanLiteral",
-      "offset": 22984,
+      "offset": 22976,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/FlybitsPreference.swift",
       "kind": "StringLiteral",
-      "offset": 23324,
+      "offset": 23316,
       "length": 27,
       "value": "\"Can't get endpoint string\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/FlybitsPreference.swift",
       "kind": "StringLiteral",
-      "offset": 23572,
+      "offset": 23564,
       "length": 14,
       "value": "\"\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/FlybitsPreference.swift",
       "kind": "StringLiteral",
-      "offset": 23583,
+      "offset": 23575,
       "length": 1,
       "value": "\"\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/FlybitsPreference.swift",
       "kind": "StringLiteral",
-      "offset": 23608,
+      "offset": 23600,
       "length": 10,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/FlybitsPreference.swift",
       "kind": "StringLiteral",
-      "offset": 23617,
+      "offset": 23609,
       "length": 20,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/FlybitsPreference.swift",
       "kind": "StringLiteral",
-      "offset": 23908,
+      "offset": 23900,
       "length": 64,
       "value": "\"Failed to serialize \""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/FlybitsPreference.swift",
       "kind": "StringLiteral",
-      "offset": 23935,
+      "offset": 23927,
       "length": 1,
       "value": "\": \""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/Requests\/FlybitsPreference.swift",
       "kind": "StringLiteral",
-      "offset": 23945,
+      "offset": 23937,
       "length": 4,
       "value": "\" user preference into JSON\""
     },
@@ -77640,42 +77640,42 @@
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/FlybitsManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 19128,
+      "offset": 19120,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/FlybitsManager.swift",
       "kind": "StringLiteral",
-      "offset": 19170,
+      "offset": 19162,
       "length": 30,
       "value": "\"Expected proper user object.\""
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/FlybitsManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 20591,
+      "offset": 20583,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/FlybitsManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 21038,
+      "offset": 21030,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/FlybitsManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 23992,
+      "offset": 23976,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsSDK\/FlybitsSDK\/API\/FlybitsManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 24020,
+      "offset": 24004,
       "length": 4,
       "value": "true"
     },

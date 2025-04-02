@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		g0RJAmWssSQrttP7OfWlEBoQoCI=
+		qngEjOZr+jgY5F1kA0hwTuqSZtM=
 		</data>
 		<key>LICENSE</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>Modules/FlybitsKernelSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		0U5xXETlGQbNyfSeHxS2xeQCRxE=
+		gtiGeUdyBn7rVLhafh5uO9M+Dmc=
 		</data>
 		<key>Modules/FlybitsKernelSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>Modules/FlybitsKernelSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		0U5xXETlGQbNyfSeHxS2xeQCRxE=
+		gtiGeUdyBn7rVLhafh5uO9M+Dmc=
 		</data>
 		<key>Modules/FlybitsKernelSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -92,7 +92,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1TcJNBkbH2FCcBjQqmAQqFww440LzDHTrDBbs6LbNS8=
+			4Vmc/bxxUGEyN6sNte2lM5TeOMil/wSeWMc55Sg1Jss=
 			</data>
 		</dict>
 		<key>Modules/FlybitsKernelSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -127,7 +127,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1TcJNBkbH2FCcBjQqmAQqFww440LzDHTrDBbs6LbNS8=
+			4Vmc/bxxUGEyN6sNte2lM5TeOMil/wSeWMc55Sg1Jss=
 			</data>
 		</dict>
 		<key>Modules/FlybitsKernelSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>

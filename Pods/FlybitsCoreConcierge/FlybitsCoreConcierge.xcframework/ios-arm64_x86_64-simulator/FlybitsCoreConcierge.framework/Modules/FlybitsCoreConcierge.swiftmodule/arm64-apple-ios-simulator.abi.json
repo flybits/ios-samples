@@ -7396,6 +7396,253 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "ContextDisplayMode",
+        "printedName": "ContextDisplayMode",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "normal",
+            "printedName": "normal",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(FlybitsCoreConcierge.ContextDisplayMode.Type) -> FlybitsCoreConcierge.ContextDisplayMode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ContextDisplayMode",
+                    "printedName": "FlybitsCoreConcierge.ContextDisplayMode",
+                    "usr": "s:20FlybitsCoreConcierge18ContextDisplayModeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "FlybitsCoreConcierge.ContextDisplayMode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ContextDisplayMode",
+                        "printedName": "FlybitsCoreConcierge.ContextDisplayMode",
+                        "usr": "s:20FlybitsCoreConcierge18ContextDisplayModeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:20FlybitsCoreConcierge18ContextDisplayModeO6normalyA2CmF",
+            "mangledName": "$s20FlybitsCoreConcierge18ContextDisplayModeO6normalyA2CmF",
+            "moduleName": "FlybitsCoreConcierge",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "details",
+            "printedName": "details",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(FlybitsCoreConcierge.ContextDisplayMode.Type) -> FlybitsCoreConcierge.ContextDisplayMode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ContextDisplayMode",
+                    "printedName": "FlybitsCoreConcierge.ContextDisplayMode",
+                    "usr": "s:20FlybitsCoreConcierge18ContextDisplayModeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "FlybitsCoreConcierge.ContextDisplayMode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ContextDisplayMode",
+                        "printedName": "FlybitsCoreConcierge.ContextDisplayMode",
+                        "usr": "s:20FlybitsCoreConcierge18ContextDisplayModeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:20FlybitsCoreConcierge18ContextDisplayModeO7detailsyA2CmF",
+            "mangledName": "$s20FlybitsCoreConcierge18ContextDisplayModeO7detailsyA2CmF",
+            "moduleName": "FlybitsCoreConcierge",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "overlay",
+            "printedName": "overlay",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(FlybitsCoreConcierge.ContextDisplayMode.Type) -> FlybitsCoreConcierge.ContextDisplayMode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ContextDisplayMode",
+                    "printedName": "FlybitsCoreConcierge.ContextDisplayMode",
+                    "usr": "s:20FlybitsCoreConcierge18ContextDisplayModeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "FlybitsCoreConcierge.ContextDisplayMode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ContextDisplayMode",
+                        "printedName": "FlybitsCoreConcierge.ContextDisplayMode",
+                        "usr": "s:20FlybitsCoreConcierge18ContextDisplayModeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:20FlybitsCoreConcierge18ContextDisplayModeO7overlayyA2CmF",
+            "mangledName": "$s20FlybitsCoreConcierge18ContextDisplayModeO7overlayyA2CmF",
+            "moduleName": "FlybitsCoreConcierge",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ContextDisplayMode",
+                "printedName": "FlybitsCoreConcierge.ContextDisplayMode",
+                "usr": "s:20FlybitsCoreConcierge18ContextDisplayModeO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ContextDisplayMode",
+                "printedName": "FlybitsCoreConcierge.ContextDisplayMode",
+                "usr": "s:20FlybitsCoreConcierge18ContextDisplayModeO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:20FlybitsCoreConcierge18ContextDisplayModeO2eeoiySbAC_ACtFZ",
+            "mangledName": "$s20FlybitsCoreConcierge18ContextDisplayModeO2eeoiySbAC_ACtFZ",
+            "moduleName": "FlybitsCoreConcierge",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "hashValue",
+            "printedName": "hashValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20FlybitsCoreConcierge18ContextDisplayModeO9hashValueSivp",
+            "mangledName": "$s20FlybitsCoreConcierge18ContextDisplayModeO9hashValueSivp",
+            "moduleName": "FlybitsCoreConcierge",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20FlybitsCoreConcierge18ContextDisplayModeO9hashValueSivg",
+                "mangledName": "$s20FlybitsCoreConcierge18ContextDisplayModeO9hashValueSivg",
+                "moduleName": "FlybitsCoreConcierge",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "hash",
+            "printedName": "hash(into:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Hasher",
+                "printedName": "Swift.Hasher",
+                "paramValueOwnership": "InOut",
+                "usr": "s:s6HasherV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:20FlybitsCoreConcierge18ContextDisplayModeO4hash4intoys6HasherVz_tF",
+            "mangledName": "$s20FlybitsCoreConcierge18ContextDisplayModeO4hash4intoys6HasherVz_tF",
+            "moduleName": "FlybitsCoreConcierge",
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:20FlybitsCoreConcierge18ContextDisplayModeO",
+        "mangledName": "$s20FlybitsCoreConcierge18ContextDisplayModeO",
+        "moduleName": "FlybitsCoreConcierge",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
         "name": "ConciergeContext",
         "printedName": "ConciergeContext",
         "children": [
@@ -7450,24 +7697,25 @@
           },
           {
             "kind": "Var",
-            "name": "isOverlay",
-            "printedName": "isOverlay",
+            "name": "displayMode",
+            "printedName": "displayMode",
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
+                "name": "ContextDisplayMode",
+                "printedName": "FlybitsCoreConcierge.ContextDisplayMode",
+                "usr": "s:20FlybitsCoreConcierge18ContextDisplayModeO"
               }
             ],
             "declKind": "Var",
-            "usr": "s:20FlybitsCoreConcierge0C7ContextC9isOverlaySbvp",
-            "mangledName": "$s20FlybitsCoreConcierge0C7ContextC9isOverlaySbvp",
+            "usr": "s:20FlybitsCoreConcierge0C7ContextC11displayModeAA0d7DisplayF0Ovp",
+            "mangledName": "$s20FlybitsCoreConcierge0C7ContextC11displayModeAA0d7DisplayF0Ovp",
             "moduleName": "FlybitsCoreConcierge",
             "declAttributes": [
               "Final",
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "isLet": true,
             "hasStorage": true,
@@ -7479,14 +7727,14 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Bool",
-                    "printedName": "Swift.Bool",
-                    "usr": "s:Sb"
+                    "name": "ContextDisplayMode",
+                    "printedName": "FlybitsCoreConcierge.ContextDisplayMode",
+                    "usr": "s:20FlybitsCoreConcierge18ContextDisplayModeO"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:20FlybitsCoreConcierge0C7ContextC9isOverlaySbvg",
-                "mangledName": "$s20FlybitsCoreConcierge0C7ContextC9isOverlaySbvg",
+                "usr": "s:20FlybitsCoreConcierge0C7ContextC11displayModeAA0d7DisplayF0Ovg",
+                "mangledName": "$s20FlybitsCoreConcierge0C7ContextC11displayModeAA0d7DisplayF0Ovg",
                 "moduleName": "FlybitsCoreConcierge",
                 "implicit": true,
                 "declAttributes": [
@@ -7523,7 +7771,8 @@
             "declAttributes": [
               "HasInitialValue",
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -7609,7 +7858,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(_:isOverlay:)",
+            "printedName": "init(_:displayMode:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -7625,15 +7874,14 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "hasDefaultArg": true,
-                "usr": "s:Sb"
+                "name": "ContextDisplayMode",
+                "printedName": "FlybitsCoreConcierge.ContextDisplayMode",
+                "usr": "s:20FlybitsCoreConcierge18ContextDisplayModeO"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:20FlybitsCoreConcierge0C7ContextC_9isOverlayAcA0C5Style_p_Sbtcfc",
-            "mangledName": "$s20FlybitsCoreConcierge0C7ContextC_9isOverlayAcA0C5Style_p_Sbtcfc",
+            "usr": "s:20FlybitsCoreConcierge0C7ContextC_11displayModeAcA0C5Style_p_AA0d7DisplayF0Otcfc",
+            "mangledName": "$s20FlybitsCoreConcierge0C7ContextC_11displayModeAcA0C5Style_p_AA0d7DisplayF0Otcfc",
             "moduleName": "FlybitsCoreConcierge",
             "declAttributes": [
               "AccessControl",
@@ -19941,16 +20189,9 @@
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsCoreConcierge\/FlybitsCoreConcierge\/Contexture\/ConciergeContext.swift",
       "kind": "IntegerLiteral",
-      "offset": 598,
+      "offset": 1094,
       "length": 1,
       "value": "0"
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsCoreConcierge\/FlybitsCoreConcierge\/Contexture\/ConciergeContext.swift",
-      "kind": "BooleanLiteral",
-      "offset": 837,
-      "length": 5,
-      "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/ios-flybits-sdk\/ios-flybits-sdk\/FlybitsCoreConcierge\/FlybitsCoreConcierge\/Models\/ZonesModules.swift",

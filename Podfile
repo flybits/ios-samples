@@ -5,7 +5,7 @@ source 'https://github.com/flybits/Spec-XCFramework-new.git'
 
 use_frameworks!
 
-$flybitsSDKVersion = '~> 5.1'
+$flybitsSDKVersion = '~> 5.1.2'
 
 target 'Expose-Bank' do
   project 'Concierge/Expose-Bank/Expose-Bank.xcodeproj'
