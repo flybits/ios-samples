@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -218,7 +218,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		95A21A6F2D9DBA550006823D /* Use-DeepLinkHandlerProtocol */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Use-DeepLinkHandlerProtocol"; sourceTree = "<group>"; };
+		95A21A6F2D9DBA550006823D /* Use-DeepLinkHandlerProtocol */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Use-DeepLinkHandlerProtocol";
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -858,7 +862,6 @@
 				};
 			};
 			buildConfigurationList = 25EA00092820655A004F982B /* Build configuration list for PBXProject "Expose-Bank" */;
-			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -866,6 +869,7 @@
 				Base,
 			);
 			mainGroup = 25EA00052820655A004F982B;
+			preferredProjectObjectVersion = 77;
 			productRefGroup = 25EA000F2820655A004F982B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
