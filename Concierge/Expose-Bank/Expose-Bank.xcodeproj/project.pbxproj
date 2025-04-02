@@ -224,8 +224,6 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		95A21A6F2D9DBA550006823D /* Use-DeepLinkHandlerProtocol */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = "Use-DeepLinkHandlerProtocol";
 			sourceTree = "<group>";
 		};
