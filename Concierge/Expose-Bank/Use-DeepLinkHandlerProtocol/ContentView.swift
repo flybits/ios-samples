@@ -32,7 +32,7 @@ struct ContentView: View {
                     }
                 }
             } label: {
-                Text("Disconect")
+                Text("Disconnect")
             }
             ConciergeViewController()
         }
