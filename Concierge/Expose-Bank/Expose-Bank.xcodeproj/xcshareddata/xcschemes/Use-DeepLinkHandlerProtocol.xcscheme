@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1540"
+   LastUpgradeVersion = "1600"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,9 +15,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "95F01D4C2D121FE000601884"
-               BuildableName = "config-via-json-connect.app"
-               BlueprintName = "config-via-json-connect"
+               BlueprintIdentifier = "95A21A6D2D9DBA550006823D"
+               BuildableName = "Use-DeepLinkHandlerProtocol.app"
+               BlueprintName = "Use-DeepLinkHandlerProtocol"
                ReferencedContainer = "container:Expose-Bank.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -44,9 +44,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "95F01D4C2D121FE000601884"
-            BuildableName = "config-via-json-connect.app"
-            BlueprintName = "config-via-json-connect"
+            BlueprintIdentifier = "95A21A6D2D9DBA550006823D"
+            BuildableName = "Use-DeepLinkHandlerProtocol.app"
+            BlueprintName = "Use-DeepLinkHandlerProtocol"
             ReferencedContainer = "container:Expose-Bank.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -61,9 +61,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "95F01D4C2D121FE000601884"
-            BuildableName = "config-via-json-connect.app"
-            BlueprintName = "config-via-json-connect"
+            BlueprintIdentifier = "95A21A6D2D9DBA550006823D"
+            BuildableName = "Use-DeepLinkHandlerProtocol.app"
+            BlueprintName = "Use-DeepLinkHandlerProtocol"
             ReferencedContainer = "container:Expose-Bank.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

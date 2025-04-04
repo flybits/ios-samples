@@ -94,3 +94,11 @@ target 'push-register-n-receive' do
   # Pods
   pod 'FlybitsConcierge', $flybitsSDKVersion
 end
+
+target 'Use-DeepLinkHandlerProtocol' do
+  project 'Concierge/Expose-Bank/Expose-Bank.xcodeproj'
+  inherit! :search_paths
+
+  # Pods
+  pod 'FlybitsConcierge', $flybitsSDKVersion
+end
