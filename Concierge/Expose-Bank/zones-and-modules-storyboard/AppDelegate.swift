@@ -12,7 +12,7 @@ import FlybitsConcierge
 class AppDelegate: UIResponder, UIApplicationDelegate {
     let projectIdentifier: String = "2CE41988-B1D3-4116-98DD-42FFB8754384"
     let gatewayURL: String = "https://api.demo.flybits.com"
-    let webSericeURL: String = "https://static-files-concierge.demo.flybits.com/latest"
+    let webServiceURL: String = "https://static-files-concierge.demo.flybits.com/latest"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let config = FlybitsConciergeConfiguration.Builder()
             .setProjectId(projectIdentifier)
             .setGatewayUrl(gatewayURL)
-            .setWebService(webSericeURL)
+            .setWebService(webServiceURL)
             .build()
 
         Concierge.configure(configuration: config, contextPlugins: [], launchOptions: launchOptions)
